@@ -1,15 +1,62 @@
-<nav class="top-nav">
-  <div class="left">
+<nav
+  class="top-nav"
+  [ngClass]="{ 'logged-in': isLoggedIn, 'not-logged-in': !isLoggedIn }"
+>
+  <div class="nav-left left">
     <picture>
+      <source
+        media="(max-width: 768px)"
+        srcset="/assets/images/Logo-half.png"
+      />
+
       <img class="logo" src="/assets/images/Logo-Full.png" alt="UnSKUATA" />
     </picture>
   </div>
-  <div class="right">
-    <button class="post-button">
-      <img src="/assets/images/btn-post.png" alt="Post Button" />
-    </button>
-    <span class="divider">|</span>
-    <img class="icon bell" src="/assets/icons/bell.png" alt="Notifications" />
-    <img class="icon profile" src="/assets/images/Profile.png" alt="Profile" />
+
+  <div class="nav-center" *ngIf="!isLoggedIn">
+    <a class="nav-link" href="#">Home</a>
+    <a class="nav-link" href="#">About</a>
+    <a class="nav-link" href="#">Contact</a>
+  </div>
+
+  <div class="nav-right right">
+    <ng-container *ngIf="!isLoggedIn; else loggedInNav">
+      <a class="nav-link login" href="#">Log In</a>
+      <a class="nav-button signup" href="#">Sign Up</a>
+      <a class="nav-link post-room" href="#">Property Owner / Post Room</a>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </ng-container>
+
+    <ng-template #loggedInNav>
+      <button class="post-button" aria-label="Create post">
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcset="/assets/images/btn-post-half.png"
+          />
+          <img src="/assets/images/btn-post.png" alt="Post Button" />
+        </picture>
+      </button>
+
+      <span class="divider">|</span>
+
+      <button class="icon-btn" aria-label="Notifications">
+        <img
+          class="icon bell"
+          src="/assets/icons/bell.png"
+          alt="Notifications"
+        />
+      </button>
+
+      <button class="profile-btn" aria-label="Profile">
+        <img
+          class="icon profile"
+          src="/assets/images/Profile.png"
+          alt="Profile"
+        />
+      </button>
+    </ng-template>
   </div>
 </nav>
