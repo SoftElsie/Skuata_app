@@ -13,7 +13,7 @@ import { NgIf } from '@angular/common';
 })
 export class TopNavComponent implements OnInit {
   constructor(private router: Router) { }
-isLoggedIn = true; // set true when user is logged in
+isLoggedIn = false; 
   ngOnInit(): void {
   }
 

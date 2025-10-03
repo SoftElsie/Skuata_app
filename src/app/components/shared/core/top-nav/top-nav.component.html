@@ -11,19 +11,22 @@
 
       <img class="logo" src="/assets/images/Logo-Full.png" alt="UnSKUATA" />
     </picture>
-  </div>
-
-  <div class="nav-center" *ngIf="!isLoggedIn">
-    <a class="nav-link" href="#">Home</a>
-    <a class="nav-link" href="#">About</a>
-    <a class="nav-link" href="#">Contact</a>
+    <div class="nav-center" *ngIf="!isLoggedIn">
+      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="#">About</a>
+      <a class="nav-link" href="#">Contact</a>
+    </div>
   </div>
 
   <div class="nav-right right">
     <ng-container *ngIf="!isLoggedIn; else loggedInNav">
-      <a class="nav-link login" href="#">Log In</a>
-      <a class="nav-button signup" href="#">Sign Up</a>
-      <a class="nav-link post-room" href="#">Property Owner / Post Room</a>
+      <!-- Need to use assets -->
+      <a class="nav-link login-btn" href="#">Log In</a>
+      <a class="nav-button signup" href="#">
+        <img src="/assets/images/sign-up.png" alt="Sign Up" />
+      </a>
+      <span class="divider">|</span>
+      <a class="nav-link post-room" href="#">Property Owner/Post Room </a>
       <button class="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
