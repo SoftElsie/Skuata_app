@@ -1,6 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { RouterModule } from "@angular/router";
+import { RegisterComponent} from "../auth/register/register.component";
 
 @NgModule({
   declarations: [
@@ -8,7 +9,8 @@ import { RouterModule } from "@angular/router";
   ],
   imports: [
     
-    RouterModule
+    RouterModule,
+  
  
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
