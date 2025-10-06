@@ -222,13 +222,33 @@
 }
 
 
-.section-title {
+.menu-btn-login{
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  color: #314d47;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
   font-weight: bold;
   font-size: 1.3rem;
-  color: #314d47;
-  margin-bottom: 0.3rem;
 }
 
+.menu-btn-register{
+   display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  color: #314d47;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.2rem;
+
+}
 .follow-us {
   margin-top: auto; 
   padding-top: 1.4rem;
