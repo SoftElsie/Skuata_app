@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterOutlet } from '@angular/router';
+import { TopNavComponent } from "./components/shared/core/top-nav/top-nav.component";
+import { share } from 'rxjs';
+import { SharedModule } from './components/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,8 +19,9 @@ import { RouterOutlet } from '@angular/router';
     RouterOutlet,
     BrowserModule, HttpClientModule,
     AppRoutingModule,
-   
-  ],
+    TopNavComponent,
+    SharedModule
+],
   providers: [],
   bootstrap: [AppComponent]
 })
