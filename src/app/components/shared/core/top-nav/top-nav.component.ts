@@ -12,8 +12,11 @@ import { NgIf } from '@angular/common';
   styleUrl: './top-nav.component.css'
 })
 export class TopNavComponent implements OnInit {
-  constructor(private router: Router) { }
-isLoggedIn = false; 
+  constructor(private router: Router) {}
+  isLoggedIn = false;
+  isMenuOpen = false;
+
+
   ngOnInit(): void {
   }
 
@@ -25,5 +28,8 @@ isLoggedIn = false;
     this.router.navigate(['/post']);
   }
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
   
 }
