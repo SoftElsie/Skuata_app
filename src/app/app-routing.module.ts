@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { CheckInboxComponent } from './auth/reset-password/check-inbox/check-inbox.component';
 
 const routes: Routes = [
     {
@@ -9,6 +11,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {   path:'dash',component:DashboardComponent},
+  {   path:'reset-password',component:ResetPasswordComponent},
+  {   path:'check-inbox',component:CheckInboxComponent},
 ];
 
 @NgModule({

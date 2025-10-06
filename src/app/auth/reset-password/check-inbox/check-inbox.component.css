@@ -31,27 +31,6 @@
   margin-top: -.5em;
 }
 
-.container form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  gap: .95em;
-  width: 80%;
-}
-.container form > .buttons {
-  display: flex;
-  flex-direction: column;
-  gap: .45em;
-}
-
-form input {
-  background-color: hsl(var(--primary-100));
-  padding: .8em .5em;
-  border-radius: .2em;
-  border: 1px solid hsl(var(--neutral-600));
-}
-
 .container button {
   padding: .85em 0;
   font-size: .85rem;
@@ -62,23 +41,11 @@ form input {
   cursor: pointer;
 }
 
-.container form button:first-child {
+.container button {
   background-color: hsl(var(--primary-900));
   transition: background-color .25s ease-in-out;
 }
 
-.container form button:first-child:hover {
+.container button:hover {
   background-color: hsl(var(--primary-900) / .8);
-
-}
-
-.container form button:last-child {
-  background-color: transparent;
-  border: solid hsl(var(--primary-900));
-  color: hsl(var(--primary-900));
-  transition: background-color .25s ease-in-out;
-}
-
-.container form button:last-child:hover {
-  background-color: hsl(var(--secondary-300) / .8);
 }
