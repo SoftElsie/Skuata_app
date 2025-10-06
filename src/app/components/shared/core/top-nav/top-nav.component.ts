@@ -1,13 +1,16 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgClass } from '@angular/common';
 import { NgIf } from '@angular/common';
 
+
+
 @Component({
   selector: 'app-top-nav',
   standalone: true,
-  imports: [CommonModule, NgIf],
+  imports: [CommonModule,RouterModule,  NgIf],
   templateUrl: './top-nav.component.html',
   styleUrl: './top-nav.component.css'
 })

@@ -21,9 +21,9 @@
 
     <!-- Navigation links (only for not logged in) -->
     <div class="nav-center" *ngIf="!isLoggedIn">
-      <a class="nav-link" href="#">Home</a>
-      <a class="nav-link" href="#">About</a>
-      <a class="nav-link" href="#">Contact</a>
+      <a class="nav-link" [routerLink]="['/home']">Home</a>
+      <a class="nav-link" [routerLink]="['/about']">About</a>
+      <a class="nav-link" [routerLink]="['/contact-us']">Contact</a>
     </div>
   </div>
 
@@ -56,11 +56,9 @@
         </div>
 
         <div class="menu-content">
-          <a href="#">Home</a>
-          <a href="#">About Us</a>
-          <a href="#">Contact Us</a>
-
-          <hr />
+          <a [routerLink]="['/home']">Home</a>
+          <a [routerLink]="['/about']">About Us</a>
+          <a [routerLink]="['/contact-us']">Contact Us</a>
 
           <button
             class="menu-btn-login"
@@ -70,7 +68,7 @@
           </button>
           <button
             class="menu-btn-register"
-            onclick="window.location.href='/register'"
+            onclick="window.location.href='/signup'"
           >
             Sign Up
           </button>
