@@ -15,12 +15,19 @@ import { NgIf } from '@angular/common';
   styleUrl: './top-nav.component.css'
 })
 export class TopNavComponent implements OnInit {
-  constructor(private router: Router) {}
-  isLoggedIn = false;
+  // constructor(private router: Router,notificationService: NotificationServicet) {}
+  constructor(private router:Router){}
+  isLoggedIn = true;
   isMenuOpen = false;
+  isProfileOpen = false;
+  userName = 'John Doe'; // Mock user data, replace with auth service
+  userEmail = 'john.doe@example.com'; // Mock user data, replace with auth service
+  notificationCount: number = 0; // Initialize to 0
+
 
 
   ngOnInit(): void {
+    //this.fetchNotificationCount();
   }
 
   navigateToDashboard(): void {
@@ -35,4 +42,24 @@ export class TopNavComponent implements OnInit {
     this.isMenuOpen = !this.isMenuOpen;
   }
   
+
+  toggleProfile() {
+    this.isProfileOpen = !this.isProfileOpen;
+  }
+
+  navigateTo(path: string) {
+    this.router.navigate([path]);
+    this.isMenuOpen = false;
+  }
+  // fetchNotificationCount(): void {
+  //   this.notificationService.getNotificationCount().subscribe({
+  //     next: (count: number) => {
+  //       this.notificationCount = count;
+  //     },
+  //     error: (error) => {
+  //       console.error('Error fetching notification count:', error);
+  //       this.notificationCount = 0; // Fallback value
+  //     }
+  //   });
+  // }
 }

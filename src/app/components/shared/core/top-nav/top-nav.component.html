@@ -114,13 +114,56 @@
         />
       </button>
 
-      <button class="profile-btn" aria-label="Profile">
+      <button
+        class="profile-btn"
+        aria-label="Profile"
+        (click)="toggleProfile()"
+      >
         <img
           class="icon profile"
           src="/assets/images/Profile.png"
           alt="Profile"
         />
       </button>
+      <div class="profile-dropdown" [ngClass]="{ active: isProfileOpen }">
+        <div class="profile-header">
+          <div class="profile-placeholder">
+            <img src="/assets/icons/user-round.png" alt="Profile Picture" />
+          </div>
+          <div class="user-info">
+            <span class="username">{{ userName }}</span>
+            <span class="user-email">{{ userEmail }}</span>
+          </div>
+          <button class="close-btn" (click)="toggleProfile()">×</button>
+        </div>
+        <div class="profile-content">
+          <a [routerLink]="['/notifications']">
+            <img src="assets/icons/bell.png" alt="Notifications Icon" />
+            Notifications
+            <span class="notification-counter">{{ notificationCount }}</span>
+          </a>
+          <a [routerLink]="['/user-settings']">
+            <img src="assets/icons/pen-line.png" alt="User Icon" /> Edit Profile
+          </a>
+          <a [routerLink]="['/manage-caretakers']">
+            <img src="assets/icons/user-star.png" alt="Caretaker Icon" /> Manage
+            Caretaker
+          </a>
+          <div class="profile-support">
+            <a [routerLink]="['/contact-us']">
+              <img
+                src="assets/icons/circle-question-mark.png"
+                alt="Support Icon"
+              />
+              Support
+            </a>
+            <a [routerLink]="['/signout']">
+              <img src="assets/icons/log-out.png" alt="Sign Out Icon" /> Sign
+              out
+            </a>
+          </div>
+        </div>
+      </div>
     </ng-template>
   </div>
 </nav>
