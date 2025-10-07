@@ -8,7 +8,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterOutlet } from '@angular/router';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 
-
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
     RouterOutlet,
     BrowserModule, HttpClientModule,
     AppRoutingModule,
-
+    CommonModule,
+    FormsModule
 
   ],
   providers: [],

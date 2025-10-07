@@ -1,0 +1,80 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--neutral-00));
+}
+
+label {
+  font-weight: 500;
+  font-size: .8rem;
+}
+
+.container .upload{
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid red;
+  gap: .5em;
+}
+
+.upload .dropzone {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  width: 100%;
+  padding: 1.2em 0;
+  background-color: hsl(var(--primary-100));
+  border-radius: .25em;
+  text-align: center;
+  min-width: 600px;
+}
+
+.upload .dropzone img{
+  opacity: .4;
+  width: 4em;
+  margin: 0 auto;
+}
+
+.upload .dropzone p {
+  font-size: 1.1rem;
+}
+
+.upload .dropzone a {
+  color: hsl(var(--secondary-600));
+}
+
+.upload .dropzone .file-support {
+  font-size: .8em;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  color: hsl(var(--neutral-600) / .5);
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  padding: 1em;
+  border: 1px solid red;
+}
+
+.button button {
+  padding: .65em 3.5em;
+  border: none;
+  border-radius: .25em;
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(var(--neutral-00));
+  background-color: hsl(var(--primary-900));
+  transition: background-color .25s ease-in-out;
+  cursor: pointer;
+}
+
+.button button:hover {
+  background-color: hsl(var(--primary-600));
+}

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -7,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./reset-password.component.css'],
 })
 export class ResetPasswordComponent {
+  feedback = {
+    email: ''
+  }
+
+  submitted = false;
+
+  onSubmit(form: any){
+    if(!form.valid) return;
+    console.log('Form Submitted!', this.feedback);
+    this.submitted = true;
+  }
 
 }
