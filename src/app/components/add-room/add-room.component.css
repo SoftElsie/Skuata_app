@@ -1,10 +1,27 @@
 .container {
-  min-height: 100vh;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: hsl(var(--neutral-00));
+  padding: 2rem;
+  border-radius: .3em;
+  margin: 0 auto;
+  gap: 1.5em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.container .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 label {
@@ -12,14 +29,57 @@ label {
   font-size: .8rem;
 }
 
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+form .columns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.columns div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: flex-end;
+  gap: .35em;
+
+}
+
+.left-group {
+  margin-right: 1em;
+
+}
+
+.right-group {
+  margin-left: 1em;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: .75em .5em;
+  border: none;
+  border-radius: .25em;
+  background-color: hsl(var(--primary-100));
+  font-family: Inter, sans-serif;
+  font-size: .8rem;
+  margin-bottom: 1em;
+}
+
 .container .upload{
-  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  border: 1px solid red;
   gap: .5em;
 }
 
@@ -32,7 +92,7 @@ label {
   background-color: hsl(var(--primary-100));
   border-radius: .25em;
   text-align: center;
-  min-width: 600px;
+
 }
 
 .upload .dropzone img{
@@ -59,8 +119,8 @@ label {
 .button {
   width: 100%;
   display: flex;
-  padding: 1em;
-  border: 1px solid red;
+  padding: 1em 0;
+
 }
 
 .button button {
@@ -73,8 +133,30 @@ label {
   background-color: hsl(var(--primary-900));
   transition: background-color .25s ease-in-out;
   cursor: pointer;
+  margin: 1.5em 0 0;
 }
 
 .button button:hover {
   background-color: hsl(var(--primary-600));
+}
+
+@media (max-width: 550px) {
+  .container {
+    margin: 0 1em;
+  }
+
+  form .columns {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-group, .right-group {
+    margin: 0;
+  }
+
+  .button button {
+    width: 100%;
+  }
 }
