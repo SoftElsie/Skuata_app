@@ -1,0 +1,179 @@
+/* Overall Container */
+.login-container {
+  min-height: 100vh;
+  background-color: #eaeded;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Logo Section */
+.logo-section {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+}
+
+/* Login Card */
+.login-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.login-title {
+  color: #292828;
+  font-size: 24px;
+  font-weight: 530;
+  margin-bottom: 24px;
+  font-family: 'Barlow', sans-serif;
+}
+
+/* Input Field */
+.input-group {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;        /* adjust size to your design */
+  width: 20px;         /* adjust size to your design */
+  object-fit: contain;
+}
+.input-field {
+  width: 100%;
+  height: 48px;
+  padding-left: 40px;
+  border: 1px solid #7f7e7e;
+  border-radius: 4px;
+  background-color: #eaeded;
+  color: #292828;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-field::placeholder {
+  color: #7f7e7e;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-continue {
+  background-color: #263e39;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.btn-continue:hover {
+  background-color: #163a34;
+}
+
+.btn-google {
+  background-color: transparent;
+  border: 1px solid #292828;
+  color: #292828;
+  margin-bottom: 16px;
+}
+
+.btn-google:hover {
+  background-color: #eaeded;
+}
+
+.google-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #292828;
+  color: #292828;
+}
+
+.btn-outline:hover {
+  background-color: #eaeded;
+}
+
+/* Divider */
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #7f7e7e;
+}
+
+.divider span {
+  background-color: #ffffff;
+  padding: 0 12px;
+  color: #7f7e7e;
+  position: relative;
+  font-size: 14px;
+}
+
+/* Signup Section */
+.signup-section p {
+  color: #7f7e7e;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 32px;
+  text-align: center;
+  color: #7f7e7e;
+  font-size: 13px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.privacy {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Chevron icon (>) */
+.chevron {
+  margin-left: 8px;
+  font-size: 18px;
+}
