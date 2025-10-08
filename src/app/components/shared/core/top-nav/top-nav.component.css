@@ -343,20 +343,20 @@
   column-gap: normal;
 }
 .profile-content a .notification-counter {
-  background-color: #df8841; /* Orange background */
-  color: #fff; /* White text */
+  background-color: #df8841; 
+  color: #fff; 
   font-size: 0.8rem;
   font-weight: bold;
   padding: 0.2rem 0.5rem;
-  border-radius: 2px; /* Rounded for a badge-like look */
-  margin-left: auto; /* Pushes counter to the far right */
-  line-height: 1; /* Tightens vertical spacing */
+  border-radius: 2px; 
+  margin-left: auto; 
+  line-height: 1; 
 }
 .profile-content a img {
-  width: 1.5rem; /* Adjust size as needed */
-  height: 1.5rem; /* Ensure consistent size */
-  margin-right: 0.5rem; /* Space between icon and text */
-  object-fit: contain; /* Prevent distortion */
+  width: 1.5rem; 
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  object-fit: contain; 
 }
 .profile-support{
   padding-top: 1rem;
@@ -392,46 +392,46 @@
   .hamburger { display: flex; }
   .profile-dropdown {
     right: 0.75rem;
-    width: 200px; /* Smaller width for mobile */
-    padding: 0.75rem; /* Reduced padding */
-    top: 50px; /* Adjusted to fit under smaller nav */
+    width: 200px;
+    padding: 0.75rem;
+    top: 50px; 
   }
   .profile-dropdown.active {
     visibility: visible;
     opacity: 1;
   }
   .profile-header {
-    padding-bottom: 0.8rem; /* Reduced padding */
-    margin-bottom: 0.3rem; /* Reduced margin */
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.3rem; 
   }
   .profile-placeholder img {
-    width: 40px; /* Smaller profile image */
+    width: 40px;
     height: 40px;
   }
   .user-info {
-    margin-left: 0.75rem; /* Reduced margin */
+    margin-left: 0.75rem; 
   }
   .username {
-    font-size: 0.9rem; /* Smaller font */
+    font-size: 0.9rem;
   }
   .user-email {
-    font-size: 0.6rem; /* Smaller font */
+    font-size: 0.6rem;
   }
   .profile-content a {
-    padding: 0.3rem 0; /* Reduced padding */
-    font-size: 1rem; /* Smaller font */
+    padding: 0.3rem 0;
+    font-size: 1rem; 
   }
   .profile-content a img {
-    width: 1.2rem; /* Smaller icons */
+    width: 1.2rem; 
     height: 1.2rem;
-    margin-right: 0.3rem; /* Reduced spacing */
+    margin-right: 0.3rem; 
   }
   .profile-content a .notification-counter {
-    font-size: 0.7rem; /* Smaller counter */
-    padding: 0.15rem 0.4rem; /* Reduced padding */
+    font-size: 0.7rem; 
+    padding: 0.15rem 0.4rem; 
   }
   .profile-support {
-    padding-top: 0.75rem; /* Reduced padding */
+    padding-top: 0.75rem; 
   }
 }
 
@@ -442,37 +442,37 @@
   .post-button img { height: 1.75rem; }
   .profile-dropdown {
     right: 1.25rem;
-    width: 220px; /* Slightly smaller width for tablet */
-    padding: 0.85rem; /* Slightly reduced padding */
-    top: 55px; /* Adjusted for tablet nav height */
+    width: 220px; 
+    padding: 0.85rem; 
+    top: 55px; 
   }
   .profile-dropdown.active {
     visibility: visible;
     opacity: 1;
   }
   .profile-header {
-    padding-bottom: 1rem; /* Slightly reduced */
+    padding-bottom: 1rem; 
     margin-bottom: 0.4rem;
   }
   .profile-placeholder img {
-    width: 45px; /* Slightly smaller image */
+    width: 45px;
     height: 45px;
   }
   .user-info {
     margin-left: 0.85rem;
   }
   .username {
-    font-size: 0.95rem; /* Slightly smaller font */
+    font-size: 0.95rem; 
   }
   .user-email {
     font-size: 0.65rem;
   }
   .profile-content a {
-    padding: 0.4rem 0; /* Slightly reduced */
-    font-size: 1.1rem; /* Slightly smaller */
+    padding: 0.4rem 0; 
+    font-size: 1.1rem;
   }
   .profile-content a img {
-    width: 1.3rem; /* Slightly smaller icons */
+    width: 1.3rem; 
     height: 1.3rem;
     margin-right: 0.4rem;
   }
@@ -491,9 +491,9 @@
   .icon, .profile { display: block; }
   .hamburger { display: none; }
   .profile-dropdown {
-    right: 1.5rem; /* Original positioning */
-    width: 250px; /* Original width */
-    top: 60px; /* Original top */
+    right: 1.5rem; 
+    width: 250px;
+    top: 60px; 
   }
   .profile-dropdown.active {
     visibility: visible;
