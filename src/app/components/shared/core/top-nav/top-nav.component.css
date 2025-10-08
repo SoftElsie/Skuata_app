@@ -147,20 +147,26 @@
 
 /* MENU STYLES */
 .menu-dropdown {
-  display: none;
-  position: fixed; 
+  position: fixed;
   top: 0;
-  right: 0;
+  right: -200px; 
   width: 200px;
-  height: 50% auto;
+  height: 60% auto; 
   background: #fff;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   z-index: 1001;
+  visibility: hidden; 
+  opacity: 0; 
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out, right 0.3s ease-out; 
+  transform: translateX(20px); 
 }
 
 .menu-dropdown.active {
-  display: block;
+  visibility: visible; 
+  opacity: 1; 
+  right: 0; 
+  transform: translateX(0); 
 }
 .menu-overlay {
   display: none;
@@ -222,17 +228,38 @@
 }
 
 
-.section-title {
+.menu-btn-login{
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  color: #314d47;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
   font-weight: bold;
   font-size: 1.3rem;
-  color: #314d47;
-  margin-bottom: 0.3rem;
 }
 
+.menu-btn-register{
+   display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  color: #314d47;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.2rem;
+
+}
 .follow-us {
   margin-top: auto; 
   padding-top: 1.4rem;
   font-size: 1.3em;
+  color: #314d47;
 }
 
 .social-icons {
