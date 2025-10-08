@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 
 import { UserSettingsComponent } from "./core/user-settings/user-settings.component";
-
-import { TopNavComponent } from "./core/top-nav/top-nav.component";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
 
 @NgModule({
   declarations: [
-  
+   UserSettingsComponent,
+ 
   ],
   imports: [
-    TopNavComponent
+    CommonModule,
+    RouterModule
   ],
 
     exports:[
  UserSettingsComponent,
- 
-   TopNavComponent
   ],
   providers: [],
 

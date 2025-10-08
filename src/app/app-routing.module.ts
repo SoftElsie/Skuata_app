@@ -10,7 +10,7 @@ import { ContactInfoComponent } from './components/contact-info/contact-info.com
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'register',
+    redirectTo: 'app',
     pathMatch: 'full'
   },
 
