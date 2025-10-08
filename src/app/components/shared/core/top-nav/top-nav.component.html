@@ -1,1 +1,118 @@
-<p>top-nav works!</p>
+<nav
+  class="top-nav"
+  [ngClass]="{ 'logged-in': isLoggedIn, 'not-logged-in': !isLoggedIn }"
+>
+  <div class="nav-left left">
+    <!-- Logged-in: responsive logo -->
+    <ng-container *ngIf="isLoggedIn; else fullLogo">
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcset="/assets/images/Logo-half.png"
+        />
+        <img class="logo" src="/assets/images/Logo-Full.png" alt="UnSKUATA" />
+      </picture>
+    </ng-container>
+
+    <!-- Not logged in: always full logo -->
+    <ng-template #fullLogo>
+      <img class="logo" src="/assets/images/Logo-Full.png" alt="UnSKUATA" />
+    </ng-template>
+
+    <!-- Navigation links (only for not logged in) -->
+    <div class="nav-center" *ngIf="!isLoggedIn">
+      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="#">About</a>
+      <a class="nav-link" href="#">Contact</a>
+    </div>
+  </div>
+
+  <div class="nav-right right">
+    <ng-container *ngIf="!isLoggedIn; else loggedInNav">
+      <!-- Need to use assets -->
+      <a class="nav-link login-btn" href="#">Log In</a>
+      <a class="nav-button signup" href="#">
+        <img src="/assets/images/sign-up.png" alt="Sign Up" />
+      </a>
+      <span class="divider">|</span>
+      <a class="nav-link post-room" href="#">Property Owner/Post Room </a>
+      <button class="hamburger" aria-label="Menu" (click)="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <div
+        class="menu-overlay"
+        [class.active]="isMenuOpen"
+        (click)="toggleMenu()"
+      ></div>
+
+      <div class="menu-dropdown" [ngClass]="{ active: isMenuOpen }">
+        <div class="menu-header">
+          <img
+            class="dropdown-logo"
+            src="/assets/images/Logo-half.png"
+            alt="UnSKUATA"
+          />
+          <button class="close-btn" (click)="toggleMenu()">×</button>
+        </div>
+
+        <div class="menu-content">
+          <a href="#">Home</a>
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+
+          <hr />
+
+          <strong class="section-title">Login</strong>
+          <a href="#">Sign Up</a>
+
+          <hr />
+
+          <div class="follow-us">
+            <strong class="section-title">Follow Us:</strong>
+            <div class="social-icons">
+              <a href="#"
+                ><img src="/assets/images/linkedIn.png" alt="LinkedIn"
+              /></a>
+              <a href="#"
+                ><img src="/assets/images/instagram.png" alt="Instagram"
+              /></a>
+              <a href="#"
+                ><img src="/assets/images/twitter.png" alt="Twitter"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #loggedInNav>
+      <button class="post-button" aria-label="Create post">
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcset="/assets/images/btn-post-half.png"
+          />
+          <img src="/assets/images/btn-post.png" alt="Post Button" />
+        </picture>
+      </button>
+
+      <span class="divider">|</span>
+
+      <button class="icon-btn" aria-label="Notifications">
+        <img
+          class="icon bell"
+          src="/assets/icons/bell.png"
+          alt="Notifications"
+        />
+      </button>
+
+      <button class="profile-btn" aria-label="Profile">
+        <img
+          class="icon profile"
+          src="/assets/images/Profile.png"
+          alt="Profile"
+        />
+      </button>
+    </ng-template>
+  </div>
+</nav>
