@@ -9,7 +9,6 @@ import { RouterModule } from "@angular/router";
   imports: [
     
     RouterModule
- 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
