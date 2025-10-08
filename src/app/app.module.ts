@@ -8,19 +8,38 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterOutlet } from '@angular/router';
 import { RegisterComponent } from './auth/register/register.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { UserSettingsComponent } from './components/shared/core/user-settings/user-settings.component';
+
+import { TopNavComponent } from "./components/shared/core/top-nav/top-nav.component";
+import { share } from 'rxjs';
+import { SharedModule } from './components/shared/shared.module';
+
+
 @NgModule({
   declarations: [
-     DashboardComponent
-     
+
+    AppComponent,
+     DashboardComponent,
+     ContactInfoComponent,
+     UserSettingsComponent
+
   ],
   imports: [
     RouterOutlet,
     BrowserModule, HttpClientModule,
     AppRoutingModule,
+       FormsModule,
+    ReactiveFormsModule,
+    
+    TopNavComponent,
+    SharedModule
+
     
    
   ],
   providers: [AppComponent],
-  bootstrap: [AppComponent]
+
 })
 export class AppModule { }

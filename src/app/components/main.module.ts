@@ -9,9 +9,11 @@ import { RegisterComponent} from "../auth/register/register.component";
   ],
   imports: [
     
+
     RouterModule,
   
  
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

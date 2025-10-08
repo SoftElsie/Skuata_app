@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TopNavComponent } from './components/shared/core/top-nav/top-nav.component';
 
 
 interface WeatherForecast {
