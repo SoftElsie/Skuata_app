@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
 
 const routes: Routes = [
     {
@@ -9,6 +10,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {   path:'dash',component:DashboardComponent},
+  {   path:'manage-caretaker',component:ManageCaretakerComponent},
 ];
 
 @NgModule({

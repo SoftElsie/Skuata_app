@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterOutlet } from '@angular/router';
+import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-     DashboardComponent
+     DashboardComponent,
+     ManageCaretakerComponent
   ],
   imports: [
     RouterOutlet,

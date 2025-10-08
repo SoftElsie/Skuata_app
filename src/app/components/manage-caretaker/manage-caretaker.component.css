@@ -1,0 +1,298 @@
+.container {
+  padding: 2rem;
+  background-color: #f5f7f6;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+/* ---------- HEADER LAYOUT ---------- */
+.header {
+  display: flex;
+  flex-direction: column; /* back button above title */
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.back-btn {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem; /* spacing between back button and title */
+}
+
+.back-btn img {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+/* ---------- TITLE ---------- */
+h2 {
+  text-align: left;
+  color: #292828;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  border-bottom: 3px solid #ccc;
+  display: inline-block; /* ✅ makes border match text width */
+  padding-bottom: 0.25rem;
+}
+
+/* ---------- ADD BUTTON ---------- */
+.add-btn {
+  background-color: #263e39;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  align-self: flex-end; /* keeps Add Caretaker button aligned right */
+  margin-top: -2.5rem; /* visually aligns with h2 */
+}
+
+.add-btn img {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.4rem;
+}
+
+/* ---------- TABLE ---------- */
+.table-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+  color: #292828;
+  border-bottom: 1px solid #7f7e7e;
+  padding: 0.75rem 1rem;
+}
+
+/* alternating background colors for table rows */
+tbody tr:nth-child(odd) {
+  background-color: #eaeded;
+}
+tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* ---------- STATUS BADGES ---------- */
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status.pending {
+  color: #b87333;
+  border: 1px solid #e7b874;
+}
+
+.status.granted {
+  color: #2b6b4f;
+  border: 1px solid #8cc8b1;
+}
+
+/* ---------- ACTION BUTTONS ---------- */
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.edit-btn {
+  background-color: #1c3b32;
+  color: white;
+  margin-right: 0.4rem;
+}
+
+.edit-btn img,
+.delete-btn img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* ---------- PAGINATION ---------- */
+.pagination {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  margin: 0 0.25rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+}
+
+.pagination button.active {
+  background-color: #1c3b32;
+  color: white;
+  border-radius: 4px;
+}
+
+/* ---------- RESPONSIVE (MOBILE) VIEW ---------- */
+@media (max-width: 768px) {
+  .table-container {
+    width: 95%;
+    overflow-x: hidden;
+    
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem; 
+  }
+
+  .back-btn {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem; 
+  }
+
+  .back-btn img {
+    height: 1.5rem; 
+    width: 1.5rem;
+  }
+
+  h2 {
+    margin-bottom: 0.75rem; 
+    text-align: left;
+    font-size: 18px; 
+    font-weight: 700;
+    padding-bottom: 0.1rem; 
+    color: #292828;
+  }
+
+  .add-btn {
+    align-self: flex-end; 
+    padding: 0.4rem 0.8rem; 
+    font-size: 0.8rem;
+    border-radius: 4px; 
+  }
+
+  .add-btn img {
+    width: 14px; 
+    height: 14px;
+    margin-right: 0.3rem; 
+  }
+
+  .status.pending {
+    color: #b87333;
+    border: 1px solid #e7b874;
+    flex: none;
+  }
+
+  .status.granted {
+    color: #2b6b4f;
+    border: 1px solid #8cc8b1;
+    flex: none;
+  }
+
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    background-color: #f5f7f6;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+
+  td {
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem 0;
+    color: #292828;
+    font-size: 0.95rem;
+    gap: 0.5rem;
+  }
+
+  td::before {
+    content: attr(data-label);
+    color: #292828;
+    flex: 0 0 40%;
+    text-align: left;
+    letter-spacing: 0px;
+    font-weight: 600;
+  }
+
+  td span,
+  td a {
+    flex: 1;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60%;
+  }
+
+  td a {
+    color: #1c3b32;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .btn-text {
+    display: none;
+  }
+
+  td[data-label="Actions"] {
+    display: flex;
+    justify-content: left;
+    gap: 0.5rem;
+  }
+
+  td[data-label="Email"] {
+    display: flex;
+    color: #292828;
+    justify-content: left;
+    overflow: hidden;
+    gap: 0.5rem;
+  }
+}
