@@ -1,0 +1,103 @@
+.add-room-container {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: left;
+  font-size: 24px;
+  color: #1d1d1d;
+  margin-bottom: 20px;
+}
+
+.add-room-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  background: #f8f9f9;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.upload-section .upload-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  background: #f7f9f9;
+  height: 150px;
+  cursor: pointer;
+}
+
+.upload-section .browse {
+  color: #e07b00;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.upload-section .note {
+  font-size: 12px;
+  color: #666;
+}
+
+.submit-btn {
+  width: 100px;
+  align-self: flex-start;
+  margin-top: 25px;
+  padding: 10px 20px;
+  border: none;
+  background: #1c3d35;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #2d5a4e;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
