@@ -1,10 +1,10 @@
 <div class="container">
   <div class="header">
-    <button class="back-btn">
+    <button class="back-btn" routerLink="/dashboard">
       <img src="/assets/icons/arrow-left.png" alt="Back" />
     </button>
     <h2>Manage Caretaker</h2>
-    <button class="add-btn">
+    <button class="add-btn" routerLink="/add-caretaker">
       <img src="/assets/icons/user-round-plus.png" alt="Add" />
       Add Caretaker
     </button>
@@ -50,11 +50,11 @@
             </span>
           </td>
           <td data-label="Actions">
-            <button class="edit-btn">
+            <button class="edit-btn" routerLink="/edit-caretaker">
               <img src="/assets/icons/pen-line.png" alt="Edit" />
               <span class="btn-text">Edit</span>
             </button>
-            <button class="delete-btn">
+            <button class="delete-btn" routerLink="/delete-caretaker">
               <img src="/assets/icons/trash-2.png" alt="Delete" />
               <span class="btn-text">Delete</span>
             </button>
