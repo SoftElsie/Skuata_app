@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterOutlet } from '@angular/router';
 import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
+import { LucideAngularModule, File, Phone, Mail, User, AtSign, MessageSquare, UserRound, House, Menu, UserCheck } from 'lucide-angular';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { ContactManagerComponent } from './components/contact-manager/contact-ma
     RouterOutlet,
     BrowserModule, HttpClientModule,
     AppRoutingModule,
+    LucideAngularModule.pick({File, Phone, Mail, User, AtSign, MessageSquare, UserRound, House, Menu, UserCheck})
 
   ],
   providers: [],

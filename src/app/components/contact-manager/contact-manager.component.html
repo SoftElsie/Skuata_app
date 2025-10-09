@@ -1,25 +1,31 @@
 <main class="container">
   <div class="header">
     <h3>Contact Manager</h3>
-    <button>Show Phone Number</button>
+    <button> <lucide-angular name="phone" class="icon-button" [size]="18"></lucide-angular>Show Phone Number</button>
   </div>
   <form>
     <div>
       <label for="name">Your Name</label>
       <input type="text" name="name">
+      <lucide-angular name="user-round" class="input-icon"></lucide-angular>
     </div>
     <div>
       <label for="email">Your Email</label>
       <input type="text" name="email">
+      <lucide-angular name="at-sign" class="input-icon"></lucide-angular>
     </div>
     <div>
       <label for="number">Your Phone Number</label>
       <input type="text" name="number">
+      <lucide-angular name="phone" class="input-icon"></lucide-angular>
     </div>
     <div>
       <label for="message">Message</label>
-      <textarea name="" id="" rows="4"></textarea>
+      <textarea name="" id="" rows="4">
+      </textarea>
+      <lucide-angular name="message-square" class="textarea-icon"></lucide-angular>
     </div>
-    <button type="submit">Send Message</button>
+    <button type="submit"> <lucide-angular name="mail" class="button-icon" [size]="18"></lucide-angular> Send Message</button>
+
   </form>
 </main>
