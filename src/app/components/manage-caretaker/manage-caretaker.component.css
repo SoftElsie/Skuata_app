@@ -18,7 +18,7 @@
   background: none;
   font-size: 1.5rem;
   cursor: pointer;
-  margin-bottom: 0.5rem; /* spacing between back button and title */
+  margin-bottom: 0.5rem;
 }
 
 .back-btn img {
@@ -34,7 +34,7 @@ h2 {
   font-weight: 700;
   font-size: 32px;
   border-bottom: 3px solid #ccc;
-  display: inline-block; /* ✅ makes border match text width */
+  display: inline-block;
   padding-bottom: 0.25rem;
 }
 
@@ -47,8 +47,8 @@ h2 {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  align-self: flex-end; /* keeps Add Caretaker button aligned right */
-  margin-top: -2.5rem; /* visually aligns with h2 */
+  align-self: flex-end;
+  margin-top: -2.5rem;
 }
 
 .add-btn img {
@@ -77,7 +77,6 @@ th {
   padding: 0.75rem 1rem;
 }
 
-/* alternating background colors for table rows */
 tbody tr:nth-child(odd) {
   background-color: #eaeded;
 }
@@ -156,7 +155,7 @@ td {
   border-radius: 4px;
 }
 
-/* ---------- RESPONSIVE (MOBILE) VIEW ---------- */
+
 @media (max-width: 768px) {
   .table-container {
     width: 95%;
@@ -265,11 +264,12 @@ td {
   td span,
   td a {
     flex: 1;
-    text-align: right;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 60%;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   td a {
@@ -294,5 +294,75 @@ td {
     justify-content: left;
     overflow: hidden;
     gap: 0.5rem;
+  }
+}
+
+
+/* ---------- RESPONSIVE (TABLET) VIEW ---------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .add-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  table {
+    font-size: 0.95rem;
+  }
+
+  th,
+  td {
+    padding: 0.65rem 0.8rem;
+  }
+
+  .table-container {
+    padding: 1rem;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 0.4rem 0.8rem;
+  }
+   .btn-text {
+    display: none;
+  }
+}
+
+/* ---------- RESPONSIVE (LARGE DESKTOP) VIEW ---------- */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  .add-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .table-container {
+    padding: 1.5rem;
+  }
+
+  table {
+    font-size: 1rem;
+  }
+
+  th,
+  td {
+    padding: 1rem;
   }
 }
