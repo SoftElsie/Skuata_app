@@ -7,29 +7,56 @@
       <button (click)="seePhoneNumber()"> <lucide-angular name="phone" class="icon-button" [size]="18"></lucide-angular>+27 81 834 8593</button>
     }
   </div>
-  <form>
+  <form #contactManagerForm = "ngForm" (ngSubmit)="onSubmit(contactManagerForm)">
     <div>
       <label for="name">Your Name</label>
-      <input type="text" name="name">
+      <input type="text" name="name" autocomplete="off" [(ngModel)]="feedback.name" #name="ngModel" required />
       <lucide-angular name="user-round" class="input-icon"></lucide-angular>
+      @if(name.invalid && name.touched) {
+        <div class="error">
+          Name is required
+        </div>
+      }
     </div>
     <div>
       <label for="email">Your Email</label>
-      <input type="email" name="email" required>
+      <input type="email" name="email" autocomplete="off" [(ngModel)]="feedback.email" #email="ngModel" required email/>
       <lucide-angular name="at-sign" class="input-icon"></lucide-angular>
+      @if(email.invalid && email.touched) {
+        <div class="error">
+          @if (email.errors?.['required']) {
+            <div>Email is required</div>
+          } @if (email.errors?.['email']) {
+            <div>
+              Invalid email format
+            </div>
+          }
+        </div>
+      }
     </div>
     <div>
       <label for="number">Your Phone Number</label>
-      <input type="text" name="number">
+      <input type="text" name="phoneNumber" autocomplete="off" [(ngModel)]="feedback.phoneNumber" #phoneNumber="ngModel" required />
       <lucide-angular name="phone" class="input-icon"></lucide-angular>
+
+      @if (phoneNumber.invalid && phoneNumber.touched){
+        <div class="error">
+          Phone number is required
+        </div>
+      }
     </div>
     <div>
       <label for="message">Message</label>
-      <textarea name="" id="" rows="4">
+      <textarea name="message" id="" rows="4" autocomplete="off" [(ngModel)]="feedback.message" #messageField="ngModel" required>
       </textarea>
       <lucide-angular name="message-square" class="textarea-icon"></lucide-angular>
+      @if (messageField.invalid && messageField.touched) {
+        <div class="error">
+          Your message is required
+        </div>
+      }
     </div>
-    <button type="submit"> <lucide-angular name="mail" class="button-icon" [size]="18"></lucide-angular> Send Message</button>
+    <button type="submit" [disabled]="contactManagerForm.invalid"> <lucide-angular name="mail" class="button-icon" [size]="18"></lucide-angular> Send Message</button>
 
   </form>
 </main>
