@@ -5,7 +5,7 @@
   font-family: "Inter", sans-serif;
 }
 
-/* ---------- HEADER LAYOUT ---------- */
+/* HEADER LAYOUT */
 .header {
   display: flex;
   flex-direction: column; 
@@ -26,7 +26,7 @@
   width: 1.8rem;
 }
 
-/* ---------- TITLE ---------- */
+/*  TITLE */
 h2 {
   text-align: left;
   color: #292828;
@@ -38,7 +38,7 @@ h2 {
   padding-bottom: 0.25rem;
 }
 
-/* ---------- ADD BUTTON ---------- */
+/* ADD BUTTON */
 .add-btn {
   background-color: #263e39;
   color: white;
@@ -57,16 +57,19 @@ h2 {
   margin-right: 0.4rem;
 }
 
-/* ---------- TABLE ---------- */
+/* TABLE */
 .table-container {
   background: white;
   border-radius: 8px;
   padding: 1rem;
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed; /* ensures columns stay proportional */
+  
 }
 
 th {
@@ -78,6 +81,7 @@ th {
 thead tr{
   display: visible;
   border-bottom: 3px solid #eaeded;
+  text-overflow: ellipsis;
 }
 
 tbody tr:nth-child(odd) {
@@ -91,13 +95,17 @@ td {
   text-align: left;
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #eee;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;          
 }
 td a{
   color: #292828;
   text-decoration: none;
+  text-overflow: ellipsis;
 }
 
-/* ---------- STATUS BADGES ---------- */
+/* STATUS BADGES */
 .status {
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
@@ -107,15 +115,15 @@ td a{
 
 .status.pending {
   color: #b87333;
-  border: 1px solid #e7b874;
+  /* border: 1px solid #e7b874; */
 }
 
 .status.granted {
   color: #2b6b4f;
-  border: 1px solid #8cc8b1;
+  /* border: 1px solid #8cc8b1; */
 }
 
-/* ---------- ACTION BUTTONS ---------- */
+/* ACTION BUTTONS */
 .edit-btn,
 .delete-btn {
   border: none;
@@ -142,7 +150,7 @@ td a{
   color: white;
 }
 
-/* ---------- PAGINATION ---------- */
+/* PAGINATION */
 .pagination {
   text-align: center;
   margin-top: 1rem;
@@ -167,7 +175,6 @@ td a{
   .table-container {
     width: 95%;
     overflow-x: hidden;
-    
   }
 
   .header {
@@ -189,7 +196,7 @@ td a{
   h2 {
     margin-bottom: 0.75rem; 
     text-align: left;
-    font-size: 18px; 
+    font-size: 17px; 
     font-weight: 700;
     padding-bottom: 0.1rem; 
     color: #292828;
@@ -210,13 +217,13 @@ td a{
 
   .status.pending {
     color: #b87333;
-    border: 1px solid #e7b874;
+    /* border: 1px solid #e7b874; */
     flex: none;
   }
 
   .status.granted {
     color: #2b6b4f;
-    border: 1px solid #8cc8b1;
+    /* border: 1px solid #8cc8b1; */
     flex: none;
   }
 
@@ -246,7 +253,7 @@ td a{
   tbody tr:nth-child(odd) {
   background-color: #ffffff;
 }
-tbody tr:nth-child(even) {
+  tbody tr:nth-child(even) {
   background-color: #eaeded;
 }
 
@@ -307,7 +314,7 @@ tbody tr:nth-child(even) {
 }
 
 
-/* ---------- RESPONSIVE (TABLET) VIEW ---------- */
+/* RESPONSIVE (TABLET) VIEW */
 @media (min-width: 769px) and (max-width: 1024px) {
   .container {
     padding: 1.5rem;

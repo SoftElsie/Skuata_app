@@ -17,7 +17,7 @@ export class ManageCaretakerComponent implements OnInit {
     {
       registerDate: '13/06/2025',
       name: 'Katlego Modise',
-      email: 'katlemodi@hotmail.com',
+      email: 'katlemoffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdi@hotmail.com',
       profileImage: 'https://image.com/profile2',
       permission: 'Granted'
     },
