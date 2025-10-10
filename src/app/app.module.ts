@@ -9,20 +9,44 @@ import { RouterOutlet } from '@angular/router';
 import { FilterComponent } from './components/filter/filter.component';
 import { FormsModule } from '@angular/forms';
 
+import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+
+import { CommonModule } from '@angular/common';
+
+import { RegisterComponent } from './auth/register/register.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+
+import { TopNavComponent } from "./components/shared/core/top-nav/top-nav.component";
+import { share } from 'rxjs';
+import { SharedModule } from './components/shared/shared.module';
+
+
+
 @NgModule({
   declarations: [
-      AppComponent,
+
+    AppComponent,
+
      DashboardComponent,
+     ContactInfoComponent,
      FilterComponent
   ],
   imports: [
-      RouterOutlet,
     BrowserModule, HttpClientModule,
     AppRoutingModule,
-     FormsModule
-   
+    CommonModule,
+      RouterOutlet,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule,
+
+
   ],
-  providers: [],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
+
+
