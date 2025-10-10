@@ -36,12 +36,19 @@
     </div>
     <div>
       <label for="number">Your Phone Number</label>
-      <input type="text" name="phoneNumber" autocomplete="off" [(ngModel)]="feedback.phoneNumber" #phoneNumber="ngModel" required />
+      <input type="tel" name="phoneNumber" autocomplete="off" [(ngModel)]="feedback.phoneNumber" #phoneNumber="ngModel" required pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"/>
+
       <lucide-angular name="phone" class="input-icon"></lucide-angular>
 
       @if (phoneNumber.invalid && phoneNumber.touched){
         <div class="error">
-          Phone number is required
+          @if (phoneNumber.errors?.['required']) {
+            <div>Phone Number is required</div>
+          } @if (phoneNumber.errors?.['pattern']) {
+            <div>
+              Invalid phone number format
+            </div>
+          }
         </div>
       }
     </div>
