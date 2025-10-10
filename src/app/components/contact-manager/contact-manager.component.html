@@ -1,7 +1,11 @@
 <main class="container">
   <div class="header">
     <h3>Contact Manager</h3>
-    <button> <lucide-angular name="phone" class="icon-button" [size]="18"></lucide-angular>Show Phone Number</button>
+    @if(!showPhoneNumber){
+      <button (click)="seePhoneNumber()"> <lucide-angular name="phone" class="icon-button" [size]="18"></lucide-angular>Show Phone Number</button>
+    } @else {
+      <button (click)="seePhoneNumber()"> <lucide-angular name="phone" class="icon-button" [size]="18"></lucide-angular>+27 81 834 8593</button>
+    }
   </div>
   <form>
     <div>
@@ -11,7 +15,7 @@
     </div>
     <div>
       <label for="email">Your Email</label>
-      <input type="text" name="email">
+      <input type="email" name="email" required>
       <lucide-angular name="at-sign" class="input-icon"></lucide-angular>
     </div>
     <div>

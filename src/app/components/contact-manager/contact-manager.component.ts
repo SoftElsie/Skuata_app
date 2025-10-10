@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './contact-manager.component.css'
 })
 export class ContactManagerComponent {
+  showPhoneNumber = false;
 
+  seePhoneNumber() {
+    if(!this.showPhoneNumber){
+      this.showPhoneNumber = true
+    } else {
+      this.showPhoneNumber = false
+    }
+    console.log(this.showPhoneNumber)
+  }
 }
