@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
+
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { CheckInboxComponent } from './auth/reset-password/check-inbox/check-inbox.component';
 import { AddRoomComponent } from './components/add-room/add-room.component';
@@ -8,6 +11,7 @@ import { AddRoomComponent } from './components/add-room/add-room.component';
 import { RegisterComponent } from './auth/register/register.component';
 
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+
 
 
 const routes: Routes = [
@@ -20,6 +24,9 @@ const routes: Routes = [
   },
 
   {   path:'dash',component:DashboardComponent},
+
+  {   path:'manage-caretaker',component:ManageCaretakerComponent},
+
   {   path:'reset-password',component:ResetPasswordComponent},
   {   path:'check-inbox',component:CheckInboxComponent},
   {   path:'add-room',component:AddRoomComponent},
@@ -28,6 +35,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
 
    {   path:'contact-info',component:ContactInfoComponent},
+
 
 ];
 

@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterOutlet } from '@angular/router';
+
+import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
+
 import { FilterComponent } from './components/filter/filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -26,6 +29,9 @@ import { SharedModule } from './components/shared/shared.module';
   declarations: [
 
     AppComponent,
+
+     ManageCaretakerComponent
+
 
      DashboardComponent,
      ContactInfoComponent,
