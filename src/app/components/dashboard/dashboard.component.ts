@@ -40,7 +40,7 @@ searchQuery = ""
       availabilityDate: "15/10/25",
       views: 18,
       isFavorite: false,
-      roomIcon:"assets/Icons/bed.png"
+      roomIcon:"assets/icons/bed.png"
 
     },
     {
@@ -53,7 +53,7 @@ searchQuery = ""
       availability: "unavailable",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/Icons/building.png"
+       roomIcon:"assets/icons/building.png"
     },
     {
       id: 3,
@@ -66,7 +66,7 @@ searchQuery = ""
       availabilityDate: "15/10/25",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/Icons/house.png"
+       roomIcon:"assets/icons/house.png"
     },
     {
       id: 4,
@@ -78,7 +78,7 @@ searchQuery = ""
       availability: "unavailable",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/Icons/bed.png"
+       roomIcon:"assets/icons/bed.png"
     },
     {
       id: 5,
@@ -91,7 +91,7 @@ searchQuery = ""
       availabilityDate: "15/10/25",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/Icons/bed.png"
+       roomIcon:"assets/icons/bed.png"
     },
     {
       id: 6,
@@ -103,7 +103,7 @@ searchQuery = ""
       availability: "unavailable",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/Icons/building.png"
+       roomIcon:"assets/icons/building.png"
     },
      {
       id: 7,
@@ -115,7 +115,7 @@ searchQuery = ""
       availability: "unavailable",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/Icons/house.png"
+       roomIcon:"assets/icons/house.png"
     },
   ]
 

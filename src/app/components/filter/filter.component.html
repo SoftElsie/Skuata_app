@@ -1,7 +1,7 @@
 
 <div class="search-container">
   <div class="search-wrapper">
-    <img [src]="'assets/Icons/search.png'" />
+    <img [src]="'assets/icons/search.png'" />
     <input 
       type="text" 
       class="search-input"
@@ -10,7 +10,7 @@
       
     <div class="search-divider"></div>
     <button class="filter-btn filter-buttons" (click)="toggleFilter()">
-     <img [src]="'assets/Icons/sliders-horizontal.png'" />
+     <img [src]="'assets/icons/sliders-horizontal.png'" />
       Filter
     </button>
      <button class="btn-find filter-buttons" (click)="applyFilters()">
@@ -29,7 +29,7 @@
   <div class="filter-header">
     <h2>Filter</h2>
     <button class="close-btn" (click)="closeFilter()" aria-label="Close filter">
-   <img [src]="'assets/Icons/square-x.png'" />
+   <img [src]="'assets/icons/square-x.png'" />
     </button>
   </div>
 
@@ -144,11 +144,11 @@
 
   <div class="filter-actions">
     <button class="btn-clear" (click)="clearAllFilters()">
-      <img [src]="'assets/Icons/paintbrush.png'" />
+      <img [src]="'assets/icons/paintbrush.png'" />
       Clear All
     </button>
     <button class="btn-apply" (click)="applyFilters()">
-     <img [src]="'assets/Icons/eye.png'" />
+     <img [src]="'assets/icons/eye.png'" />
       Show Results
     </button>
   </div>
