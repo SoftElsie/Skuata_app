@@ -1,8 +1,10 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 
+
 import { UserSettingsComponent } from "./core/user-settings/user-settings.component";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,6 +13,7 @@ import { RouterModule } from "@angular/router";
  
   ],
   imports: [
+    FormsModule,
     CommonModule,
     RouterModule
   ],
