@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterOutlet } from '@angular/router';
+import { FilterComponent } from './components/filter/filter.component';
+import { FormsModule } from '@angular/forms';
 
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 
@@ -24,19 +26,22 @@ import { SharedModule } from './components/shared/shared.module';
 
 @NgModule({
   declarations: [
+
     AppComponent,
 
      DashboardComponent,
      ContactInfoComponent,
+     FilterComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule,
     CommonModule,
-    
+      RouterOutlet,
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+
 
   ],
   bootstrap: [AppComponent]

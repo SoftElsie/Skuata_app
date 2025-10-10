@@ -11,9 +11,11 @@ import { ContactInfoComponent } from './components/contact-info/contact-info.com
 
 
 const routes: Routes = [
-  {
+
+ {
+
     path: '',
-    redirectTo: 'app',
+    redirectTo: 'dash',
     pathMatch: 'full'
   },
 
