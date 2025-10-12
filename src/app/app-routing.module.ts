@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './auth/register/register.component';
 
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   },
 
   { path: 'register', component: RegisterComponent },
-  { path: 'dash', component: DashboardComponent },
+  { path: 'profile', component: ProfileComponent },
+
 
    {   path:'contact-info',component:ContactInfoComponent},
 

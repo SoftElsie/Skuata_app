@@ -10,13 +10,13 @@ import { TopNavComponent } from "./core/top-nav/top-nav.component";
   
   ],
   imports: [
-    TopNavComponent
+  
   ],
 
     exports:[
- UserSettingsComponent,
+
  
-   TopNavComponent
+  
   ],
   providers: [],
 

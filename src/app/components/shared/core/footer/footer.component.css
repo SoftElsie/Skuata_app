@@ -11,7 +11,7 @@ footer {
   padding-bottom: 30px;
   padding: 15px 0;
   text-align: center;
-  background-color: #F5F5F5; /* Consistent light grey */
+  background-color: #EAEDED; /* Consistent light grey */
   font-size: 12px;
   color: #888;
   margin-top: auto;
@@ -48,5 +48,16 @@ footer a {
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
+  }
+
+  footer {
+    position: absolute;
+    width: 252px;
+    height: 21px;
+    opacity: 1;
+    top: 976px;
+    left: 72px;
+    gap: 8px;
+    background-color: #FFFFFF;
   }
 }

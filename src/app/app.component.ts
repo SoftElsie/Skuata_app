@@ -13,8 +13,7 @@ interface WeatherForecast {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet,],
+  standalone: false,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
