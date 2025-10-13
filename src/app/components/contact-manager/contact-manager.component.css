@@ -41,8 +41,8 @@ form div {
 
 .input-icon {
   position: absolute;
-  top: 40%;
-  left: 3%;
+  top: 2em;
+  left: .3em;
   color: hsl(var(--primary-300));
 }
 
@@ -126,4 +126,8 @@ form button:disabled {
   font-family: Inter, sans-serif;
   font-weight: 600;
   margin-top: -1.3em;
+}
+
+.error div {
+  margin: .5em 0;
 }

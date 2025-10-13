@@ -9,7 +9,8 @@ import { RouterOutlet } from '@angular/router';
 import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
 import { LucideAngularModule, File, Phone, Mail, User, AtSign, MessageSquare, UserRound, House, Menu, UserCheck } from 'lucide-angular';
 import { FormsModule } from '@angular/forms';
-
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule, HttpClientModule,
     AppRoutingModule,
     LucideAngularModule.pick({File, Phone, Mail, User, AtSign, MessageSquare, UserRound, House, Menu, UserCheck}),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule
 
   ],
   providers: [],
