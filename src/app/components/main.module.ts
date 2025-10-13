@@ -3,16 +3,18 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { RouterModule } from "@angular/router";
 import { RegisterComponent} from "../auth/register/register.component";
 
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     DashboardComponent,
   ],
   imports: [
-    
 
     RouterModule,
-  
- 
+    CommonModule,
+    FormsModule
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

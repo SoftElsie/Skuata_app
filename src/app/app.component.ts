@@ -13,29 +13,28 @@ interface WeatherForecast {
 
 @Component({
   selector: 'app-root',
-  standalone: false,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
+  // public forecasts: WeatherForecast[] = [];
 
-  constructor(private http: HttpClient) {}
+  // constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.getForecasts();
+    
   }
 
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
+  // getForecasts() {
+  //   this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
+  //     (result) => {
+  //       this.forecasts = result;
+  //     },
+  //     (error) => {
+  //       console.error(error);
+  //     }
+  //   );
+  // }
 
   title = 'skuata_app.client';
 }
