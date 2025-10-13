@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors }
   styleUrls: ['./password-security.component.css']
 })
 export class PasswordSecurityComponent {
-   passwordForm!: FormGroup;
+  passwordForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
@@ -15,11 +15,22 @@ export class PasswordSecurityComponent {
     this.passwordForm = this.fb.group(
       {
         currentPassword: ['', [Validators.required]],
-        newPassword: ['', [Validators.required, Validators.minLength(6)]],
+        newPassword: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(8),
+            Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/)
+          ]
+        ],
         confirmPassword: ['', [Validators.required]],
       },
-      { validator: this.passwordMatchValidator }
+      { validators: this.passwordMatchValidator }
     );
+  }
+
+  get f() {
+    return this.passwordForm.controls;
   }
 
   passwordMatchValidator(form: FormGroup) {
@@ -29,14 +40,21 @@ export class PasswordSecurityComponent {
   }
 
   onSubmit() {
-    console.log('Form submit triggered!');
-    if (this.passwordForm.valid) {
-      console.log('✅ Password change submitted:', this.passwordForm.value);
-      alert('Password changed successfully!');
-      this.passwordForm.reset();
-    } else {
-      this.passwordForm.markAllAsTouched();
-      console.warn('⚠️ Form invalid', this.passwordForm.errors);
-    }
+  if (this.passwordForm.valid) {
+    console.log(' Form submitted successfully');
+    console.log('Entered values:', {
+      currentPassword: this.passwordForm.get('currentPassword')?.value,
+      newPassword: this.passwordForm.get('newPassword')?.value,
+      confirmPassword: this.passwordForm.get('confirmPassword')?.value
+    });
+
+    alert('Password changed successfully!');
+    this.passwordForm.reset();
+  } else {
+    console.warn('⚠️ Invalid form submission');
+    console.log('Form errors:', this.passwordForm.errors);
+    this.passwordForm.markAllAsTouched();
+    alert('Please fix the errors before submitting.');
   }
+}
 }
