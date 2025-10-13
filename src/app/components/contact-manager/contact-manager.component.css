@@ -28,34 +28,34 @@ form {
 }
 
 form div {
-  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-self: flex-end;
   gap: .35em;
-  margin-bottom: .25em;
+  margin-bottom: .2em;
 
 }
 
 .input-icon {
   position: absolute;
   top: 2em;
-  left: .3em;
+  left: .4em;
   color: hsl(var(--primary-300));
+
 }
 
 .textarea-icon {
   position: absolute;
-  top: 25%;
-  left: 3%;
+  top: 2em;
+  left: .4em;
   color: hsl(var(--primary-300));
 }
 
 textarea {
   width: 100%;
-  padding: .75em .5em .75em 2.5em;
+  padding: .85em .5em .85em 2.5em;
   border: none;
   border-radius: .25em;
   background-color: hsl(var(--primary-100));
@@ -68,14 +68,14 @@ textarea {
 
 input {
   width: 100%;
-  padding: .75em .5em .75em 2.5em;
+  padding: .85em .5em .85em 2.5em;
   border: none;
   border-radius: .25em;
   background-color: hsl(var(--primary-100));
   font-family: Inter, sans-serif;
   font-size: .9rem;
   color: hsl(var(--neutral-900));
-  margin-bottom: 1em;
+  margin-bottom: .8em;
   resize: none;
 }
 
@@ -89,6 +89,7 @@ textarea:focus {
 }
 
 label {
+  position: relative;
   font-weight: 500;
   font-size: .8rem;
 }
@@ -121,13 +122,20 @@ form button:disabled {
 }
 
 .error {
-  font-size: .75rem;
+  font-size: .85rem;
   color: hsl(var(--danger));
   font-family: Inter, sans-serif;
   font-weight: 600;
-  margin-top: -1.3em;
 }
 
 .error div {
-  margin: .5em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: -.8em;
+}
+
+.form-group {
+  position: relative;
 }

@@ -8,7 +8,7 @@
     }
   </div>
   <form [formGroup] = "contactManagerForm" (ngSubmit)="onSubmit()" autocomplete="off">
-    <div>
+    <div class="form-group">
       <label for="name">Your Name</label>
       <input type="text" name="name" autocomplete="off" formControlName="name" [class.error]="name?.touched && name?.invalid"/>
       <lucide-angular name="user-round" class="input-icon"></lucide-angular>
@@ -23,7 +23,7 @@
         </div>
       }
     </div>
-    <div>
+    <div class="form-group">
       <label for="email">Your Email</label>
       <input type="email" name="email" autocomplete="off" formControlName="email" [class.error]="email?.touched && email?.invalid" />
       <lucide-angular name="at-sign" class="input-icon"></lucide-angular>
@@ -39,7 +39,7 @@
         </div>
       }
     </div>
-    <div>
+    <div class="form-group">
       <label for="number">Your Phone Number</label>
       <input type="tel" name="phoneNumber" formControlName="phoneNumber" [class.error]="phoneNumber?.touched && phoneNumber?.invalid" pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"/>
       <lucide-angular name="phone" class="input-icon"></lucide-angular>
@@ -59,7 +59,7 @@
         </div>
       }
     </div>
-    <div>
+    <div class="form-group">
       <label for="message">Message</label>
       <textarea name="message" id="" rows="4" autocomplete="off" formControlName="message" [class.error]="message?.touched && message?.invalid">
       </textarea>

@@ -8,12 +8,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactManagerComponent {
   showPhoneNumber = false;
-  feedback = {
-    name: '',
-    email: '',
-    phoneNumber: '',
-    message:''
-  }
 
   contactManagerForm!: FormGroup;
   submitted = false;
@@ -47,9 +41,6 @@ export class ContactManagerComponent {
       this.submissionStatus = 'success'
     }
 
-    setTimeout(() => {
-      this.submissionStatus = null;
-    }, 3000);
   }
 
   seePhoneNumber() {
@@ -62,12 +53,7 @@ export class ContactManagerComponent {
   }
 
   clearFields (){
-    this.feedback = {
-      name: '',
-      email: '',
-      phoneNumber: '',
-      message:''
-    }
+
   }
 
 }
