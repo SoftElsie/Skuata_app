@@ -30,7 +30,7 @@ import { SharedModule } from './components/shared/shared.module';
 
     AppComponent,
 
-     ManageCaretakerComponent
+     ManageCaretakerComponent,
 
 
      DashboardComponent,
