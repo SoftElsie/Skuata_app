@@ -1,40 +1,42 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-password-security',
   templateUrl: './password-security.component.html',
-  styleUrl: './password-security.component.css'
+  styleUrls: ['./password-security.component.css']
 })
 export class PasswordSecurityComponent {
- passwordForm: FormGroup;
-  isLoading = false;
+   passwordForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.passwordForm = this.fb.group({
-      currentPassword: ['', Validators.required],
-      newPassword: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(8)]]
-    });
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.passwordForm = this.fb.group(
+      {
+        currentPassword: ['', [Validators.required]],
+        newPassword: ['', [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', [Validators.required]],
+      },
+      { validator: this.passwordMatchValidator }
+    );
   }
 
-  async onSubmit() {
-    if (this.passwordForm.invalid) return;
+  passwordMatchValidator(form: FormGroup) {
+    const newPassword = form.get('newPassword')?.value;
+    const confirmPassword = form.get('confirmPassword')?.value;
+    return newPassword === confirmPassword ? null : { mismatch: true };
+  }
 
-    const { newPassword, confirmPassword } = this.passwordForm.value;
-
-    if (newPassword !== confirmPassword) {
-      alert('New passwords do not match');
-      return;
+  onSubmit() {
+    console.log('Form submit triggered!');
+    if (this.passwordForm.valid) {
+      console.log('✅ Password change submitted:', this.passwordForm.value);
+      alert('Password changed successfully!');
+      this.passwordForm.reset();
+    } else {
+      this.passwordForm.markAllAsTouched();
+      console.warn('⚠️ Form invalid', this.passwordForm.errors);
     }
-
-    this.isLoading = true;
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    this.isLoading = false;
-
-    alert('Password updated successfully!');
-    this.passwordForm.reset();
   }
-
 }

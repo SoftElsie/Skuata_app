@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterOutlet } from '@angular/router';
 import { PasswordSecurityComponent } from './components/password-security/password-security.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { PasswordSecurityComponent } from './components/password-security/passwo
     BrowserModule, HttpClientModule,
     AppRoutingModule,
    ReactiveFormsModule, // <-- add this
-    
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
