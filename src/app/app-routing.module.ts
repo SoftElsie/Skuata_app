@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
 
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
 
@@ -24,6 +25,9 @@ const routes: Routes = [
   },
 
   {   path:'dash',component:DashboardComponent},
+
+  {   path:'contact-manager',component:ContactManagerComponent},
+
 
   {   path:'manage-caretaker',component:ManageCaretakerComponent},
 

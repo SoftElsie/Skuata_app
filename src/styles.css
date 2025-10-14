@@ -1,5 +1,6 @@
 
 
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -66,6 +67,7 @@ html, body {
 
 
 
+
 :root {
     --primary-900: 170 23% 25%;
     --primary-600: 168 12% 40%;
@@ -95,5 +97,4 @@ html, body {
 body {
   background-color: hsl(var(--primary-100));
 }
-
 
