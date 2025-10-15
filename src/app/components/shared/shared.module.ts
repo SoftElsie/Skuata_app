@@ -7,17 +7,14 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-   
+    UserSettingsComponent,
   ],
-  imports: [
-    CommonModule,
-   UserSettingsComponent,
- 
-  ],
+
   imports: [
     FormsModule,
     CommonModule,
     RouterModule,
+    
   ],
 
     exports:[

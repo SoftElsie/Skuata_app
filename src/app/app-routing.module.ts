@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
-import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { CheckInboxComponent } from './auth/reset-password/check-inbox/check-inbox.component';
@@ -22,8 +21,6 @@ const routes: Routes = [
   },
   { path: 'dash', component: DashboardComponent },
   { path: 'view-details', component: ViewDetailsComponent },
-  {   path:'dash',component:DashboardComponent},
-  {   path:'contact-manager',component:ContactManagerComponent},
   {   path:'manage-caretaker',component:ManageCaretakerComponent},
   {   path:'reset-password',component:ResetPasswordComponent},
   {   path:'check-inbox',component:CheckInboxComponent},
