@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterOutlet } from '@angular/router';
+import { NotificationSettingsComponent } from './components/notification-settings/notification-settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-     DashboardComponent
+     DashboardComponent,
+     NotificationSettingsComponent
   ],
   imports: [
     RouterOutlet,
