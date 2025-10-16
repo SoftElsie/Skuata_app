@@ -9,6 +9,7 @@ import { CheckInboxComponent } from './auth/reset-password/check-inbox/check-inb
 import { AddRoomComponent } from './components/add-room/add-room.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   {   path:'add-room',component:AddRoomComponent},
   { path: 'register', component: RegisterComponent },
    {  path:'contact-info',component:ContactInfoComponent},
+   {  path:'profile',component:ProfileIconComponent},
 
 
 ];

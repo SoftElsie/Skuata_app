@@ -19,34 +19,26 @@ import { ContactInfoComponent } from './components/contact-info/contact-info.com
 import { TopNavComponent } from "./components/shared/core/top-nav/top-nav.component";
 import { share } from 'rxjs';
 import { SharedModule } from './components/shared/shared.module';
-
-
+import { RouterModule } from '@angular/router';
+import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 
 @NgModule({
   declarations: [
 
-    AppComponent,
-
+     AppComponent,
      PasswordSecurityComponent,
-
-
      DashboardComponent,
      ContactManagerComponent,
-
-
      ManageCaretakerComponent,
-
-
      DashboardComponent,
      ContactInfoComponent,
-     FilterComponent
-
-
+     FilterComponent,
+     ProfileIconComponent ,
   ],
   imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule,
-
+     RouterModule ,
     LucideAngularModule.pick({File, Phone, Mail, User, AtSign, MessageSquare, UserRound, House, Menu, UserCheck}),
     FormsModule,
     ReactiveFormsModule,
@@ -54,7 +46,8 @@ import { SharedModule } from './components/shared/shared.module';
       RouterOutlet,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    
 ],
   bootstrap: [AppComponent]
 
