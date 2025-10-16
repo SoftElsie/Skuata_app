@@ -7,16 +7,19 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterOutlet } from '@angular/router';
 
+import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component'
+
 @NgModule({
   declarations: [
     AppComponent,
-     DashboardComponent
+    DashboardComponent,
+    AddCaretakerComponent
   ],
   imports: [
     RouterOutlet,
     BrowserModule, HttpClientModule,
     AppRoutingModule,
-   
+
   ],
   providers: [],
   bootstrap: [AppComponent]
