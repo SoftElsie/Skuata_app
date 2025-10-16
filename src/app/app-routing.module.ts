@@ -8,6 +8,7 @@ import { CheckInboxComponent } from './auth/reset-password/check-inbox/check-inb
 import { AddRoomComponent } from './components/add-room/add-room.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { PasswordSecurityComponent } from './components/password-security/password-security.component';
 
 
 
@@ -27,7 +28,7 @@ const routes: Routes = [
   {   path:'add-room',component:AddRoomComponent},
   { path: 'register', component: RegisterComponent },
    {  path:'contact-info',component:ContactInfoComponent},
-
+{  path:'password-security',component:PasswordSecurityComponent},
 
 ];
 
