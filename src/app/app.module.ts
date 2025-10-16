@@ -9,6 +9,10 @@ import { RouterOutlet } from '@angular/router';
 
 import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component'
 
+import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +23,10 @@ import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.
     RouterOutlet,
     BrowserModule, HttpClientModule,
     AppRoutingModule,
+
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule
 
   ],
   providers: [],

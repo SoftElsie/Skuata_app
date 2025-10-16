@@ -1,0 +1,133 @@
+.container {
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--neutral-00));
+  padding: 2rem;
+  border-radius: .3em;
+  margin: 0 auto;
+  gap: 1.5em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.container .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+label {
+  font-weight: 500;
+  font-size: .8rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+form .column {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.column div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .35em;
+
+}
+
+
+
+input, select {
+  width: 100%;
+  padding: .75em .5em;
+  border: none;
+  border-radius: .25em;
+  background-color: hsl(var(--primary-100));
+  font-family: Inter, sans-serif;
+  font-size: .8rem;
+  margin-bottom: 1em;
+}
+
+input[type='file']::file-selector-button {
+  background: transparent;
+  padding: .4em .8em;
+  border: .2em solid hsl(var(--primary-900));
+  border-radius: .3em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+
+}
+
+input[type='file']::file-selector-button:hover {
+  background-color: hsl(var(--primary-300));
+  color: hsl(var(--neutral-00));
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  padding: 1em 0;
+
+}
+
+.button button {
+  padding: .65em 3.5em;
+  border: none;
+  border-radius: .25em;
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(var(--neutral-00));
+  background-color: hsl(var(--primary-900));
+  transition: background-color .15s ease-in-out;
+  cursor: pointer;
+
+}
+
+.button button:hover {
+  background-color: hsl(var(--primary-600));
+}
+
+@media (max-width: 550px) {
+  .container {
+    margin: 0 1em;
+  }
+
+  form .column {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+.group{
+    margin: 0;
+  }
+
+  .button button {
+    width: 100%;
+  }
+
+  #description {
+    width: 100%;
+
+  }
+}
