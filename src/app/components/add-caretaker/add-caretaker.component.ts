@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AddCaretakerComponent {
 
+  permissions = ["Granted", "Denied", "Pending"]
 
 }

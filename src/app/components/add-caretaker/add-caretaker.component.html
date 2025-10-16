@@ -10,7 +10,7 @@
       <div class="group">
         <div>
           <label for="name"> Name</label>
-          <input type="text" name="name" placeholder="e.g. Backroom">
+          <input type="text" name="name" placeholder="e.g. John Doe">
         </div>
         <div>
           <label for="email"> Email</label>
@@ -23,7 +23,9 @@
         <div>
           <label for="permission"> Permission</label>
           <select name="permission" id="permission">
-            <option value=""></option>
+            <option value="">Choose Permission</option>
+              <option value="permission.toLowerCase()" *ngFor="let permission of permissions">{{permission}}</option>
+
           </select>
         </div>
       </div>
