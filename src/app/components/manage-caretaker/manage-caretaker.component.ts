@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-manage-caretaker',
   templateUrl: './manage-caretaker.component.html',
-  styleUrl: './manage-caretaker.component.css'
+  styleUrls: ['./manage-caretaker.component.css']
 })
 export class ManageCaretakerComponent implements OnInit {
   caretakers = [

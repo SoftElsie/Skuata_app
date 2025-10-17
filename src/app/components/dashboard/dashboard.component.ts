@@ -32,7 +32,7 @@ searchQuery = ""
     {
       id: 1,
       title: "Backroom",
-      image: "assets/images/image-card-1.png",
+      image: "assets/images/image-card-2.png",
       address: "16 Leyds Street, Sunnyside, Gauteng...",
       price: 1500,
       type: "Backroom",
@@ -71,7 +71,7 @@ searchQuery = ""
     {
       id: 4,
       title: "Backroom",
-      image: "assets/images/image-card-1.png",
+      image: "assets/images/image-card-2.png",
       address: "16 Leyds Street, Sunnyside, Gauteng...",
       price: 1500,
       type: "Backroom",
@@ -108,7 +108,7 @@ searchQuery = ""
      {
       id: 7,
       title: "Backroom",
-      image: "assets/images/image-card-1.png",
+      image: "assets/images/image-card-2.png",
       address: "16 Leyds Street, Sunnyside, Gauteng...",
       price: 4000,
       type: "House",

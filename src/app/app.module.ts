@@ -1,57 +1,51 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { RouterOutlet } from '@angular/router';
+import { NotificationSettingsComponent } from './components/notification-settings/notification-settings.component';
 import { PasswordSecurityComponent } from './components/password-security/password-security.component';
-import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
-import { LucideAngularModule, File, Phone, Mail, User, AtSign, MessageSquare, UserRound, House, Menu, UserCheck } from 'lucide-angular';
-import { FormsModule } from '@angular/forms';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
 import { FilterComponent } from './components/filter/filter.component';
-import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
-import { RegisterComponent } from './auth/register/register.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
-import { TopNavComponent } from "./components/shared/core/top-nav/top-nav.component";
-import { share } from 'rxjs';
 import { SharedModule } from './components/shared/shared.module';
-import { RouterModule } from '@angular/router';
+
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
+
+
 
 @NgModule({
   declarations: [
+    AppComponent,
+    DashboardComponent,
+    NotificationSettingsComponent,
+    PasswordSecurityComponent,
+    ManageCaretakerComponent,
+    ContactInfoComponent,
+    FilterComponent,
+    ProfileIconComponent ,
 
-     AppComponent,
-     PasswordSecurityComponent,
-     DashboardComponent,
-     ContactManagerComponent,
-     ManageCaretakerComponent,
-     DashboardComponent,
-     ContactInfoComponent,
-     FilterComponent,
-     ProfileIconComponent ,
   ],
   imports: [
-    BrowserModule, HttpClientModule,
+    BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-     RouterModule ,
-    LucideAngularModule.pick({File, Phone, Mail, User, AtSign, MessageSquare, UserRound, House, Menu, UserCheck}),
+
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-      RouterOutlet,
-    FormsModule,
-    ReactiveFormsModule,
+    RouterModule,
     SharedModule,
-    
-],
-  bootstrap: [AppComponent]
+  
+      RouterOutlet,
+  ],
 
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-

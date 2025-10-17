@@ -8,19 +8,16 @@ import { LucideAngularModule, File as FileIcon, Phone, Mail, User, AtSign, Messa
 
 @NgModule({
   declarations: [
-    UserSettingsComponent
+
+    UserSettingsComponent,
   ],
+
   imports: [
+    FormsModule,
     CommonModule,
     RouterModule,
-    LucideAngularModule.pick({
-      File: FileIcon,
-      Phone,
-      Mail,
-      User,
-      AtSign,
-      MessageSquare
-    })
+    
+
   ],
   exports: [
     UserSettingsComponent,
