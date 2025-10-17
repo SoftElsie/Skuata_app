@@ -1,25 +1,23 @@
-<<<<<<< HEAD
+
 /* You can add global styles to this file, and also import other style files */
+
 * {
-=======
-
-
+  font-family: Barlow, sans-serif;
+  box-sizing: border-box;
+}
 
 body::-webkit-scrollbar {
   display: none;
 }
 
-
 body {
-
-  overflow-x: hidden;     
+  overflow-x: hidden;
 }
 
 html, body {
->>>>>>> fd0d9663df581a9af10f715de4dda88f6d4d22fd
   margin: 0;
   padding: 0;
-  
+
   background-color: #e8e8e8;
 }
 
@@ -69,8 +67,6 @@ html, body {
 .filter-btn:hover {
   background: #f9fafb;
 }
-
-
 
 
 :root {
