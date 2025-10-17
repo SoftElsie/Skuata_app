@@ -11,13 +11,12 @@ import { CommonModule } from '@angular/common';
 export class ViewDetailsComponent {
   property = {
     name: 'Backroom',
-    description:
-      'The room stretches on endlessly; it by the sickly hum of buzzing fluorescent lights. The carpet beneath your feet is damp, though no water is in sight. The yellow wallpaper is stained, peeling in places, repeating in an unsettlingly perfect pattern. Every corridor looks the same, yet somehow feels unfamiliar when you turn around The room stretches on endlessly; it by the sickly hum of buzzing fluorescent lights. The carpet beneath your feet is damp, though no water is in sight. The yellow wallpaper is stained, peeling in places, repeating in an unsettlingly perfect pattern. Every corridor looks the same, yet somehow feels unfamiliar when you turn around',
+    description:'The room stretches on endlessly; it by the sickly hum of buzzing fluorescent lights. The carpet beneath your feet is damp, though no water is in sight. The yellow wallpaper is stained, peeling in places, repeating in an unsettlingly perfect pattern. Every corridor looks the same, yet somehow feels unfamiliar when you turn around The room stretches on endlessly; it by the sickly hum of buzzing fluorescent lights. The carpet beneath your feet is damp, though no water is in sight. The yellow wallpaper is stained, peeling in places, repeating in an unsettlingly perfect pattern. Every corridor looks the same, yet somehow feels unfamiliar when you turn around',
     mainImage: '/assets/images/image-card-1.png',
     thumbnails: [
       { url: '/assets/images/image-card-1.png', alt: 'Thumbnail 1' },
       { url: '/assets/images/image-card-1.png', alt: 'Thumbnail 2' },
-      { url: '/assets/images/image-cannrd-1.png', alt: 'Thumbnail 3' },
+      { url: '/assets/images/image-card-1.png', alt: 'Thumbnail 3' },
       { url: '/assets/images/image-card-1.png', alt: 'Thumbnail 4' },
     ],
     additionalThumbnails: 3,
@@ -28,7 +27,7 @@ export class ViewDetailsComponent {
 
   getShortDescription(text: string): string {
     if (!text) return '';
-    return text.length > 600 ? text.substring(0, 150) + '...' : text;
+    return text.length > 600 ? text.substring(0, 350) + '...' : text;
   }
 
   openModal(event: Event): void {
