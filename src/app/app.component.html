@@ -1,1 +1,12 @@
+﻿
 ﻿<router-outlet></router-outlet>
+
+﻿<div class="page-layout">
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer [showFullLinks]="showFullLinksOnFooter" [centerContent]="centerFooterContent"></app-footer>
+</div>
+
+
+
