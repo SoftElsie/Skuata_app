@@ -16,6 +16,10 @@ import { FilterComponent } from './components/filter/filter.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { SharedModule } from './components/shared/shared.module';
 
+import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,18 +28,24 @@ import { SharedModule } from './components/shared/shared.module';
     PasswordSecurityComponent,
     ManageCaretakerComponent,
     ContactInfoComponent,
-    FilterComponent
+    FilterComponent,
+    ProfileIconComponent ,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+  
+      RouterOutlet,
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

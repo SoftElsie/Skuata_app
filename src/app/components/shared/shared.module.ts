@@ -2,11 +2,13 @@ import { CommonModule } from "@angular/common";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { UserSettingsComponent } from "./core/user-settings/user-settings.component";
 import { RouterModule } from "@angular/router";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { LucideAngularModule, File as FileIcon, Phone, Mail, User, AtSign, MessageSquare } from 'lucide-angular';
 
 
 @NgModule({
   declarations: [
+
     UserSettingsComponent,
   ],
 
@@ -15,13 +17,15 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     
-  ],
 
-    exports:[
- UserSettingsComponent,
   ],
-  providers: [],
-
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  exports: [
+    UserSettingsComponent,
+    LucideAngularModule,
+    RouterModule,
+    CommonModule
+  ]
 })
 export class SharedModule { }
+
+
