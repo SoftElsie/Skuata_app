@@ -27,7 +27,6 @@ const routes: Routes = [
   },
   {   path:'dash',component:DashboardComponent},
   {   path:'notification',component: NotificationSettingsComponent},
-  { path: 'dash', component: DashboardComponent },
   { path: 'view-details', component: ViewDetailsComponent },
   {   path:'manage-caretaker',component:ManageCaretakerComponent},
   {   path:'reset-password',component:ResetPasswordComponent},
