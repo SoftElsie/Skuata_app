@@ -18,23 +18,25 @@
 .logo-img {
   height: 60px;
   width: auto;
+  max-width: 80%;
 }
 
 /* Login Card */
 .login-card {
   background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 32px;
   width: 100%;
   max-width: 420px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .login-title {
   color: #292828;
-  font-size: 24px;
-  font-weight: 530;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 24px;
   font-family: 'Barlow', sans-serif;
 }
@@ -50,10 +52,11 @@
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  height: 20px;        /* adjust size to your design */
-  width: 20px;         /* adjust size to your design */
+  height: 20px;
+  width: 20px;
   object-fit: contain;
 }
+
 .input-field {
   width: 100%;
   height: 48px;
@@ -84,6 +87,7 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
+  box-sizing: border-box;
 }
 
 .btn-continue {
@@ -176,4 +180,75 @@
 .chevron {
   margin-left: 8px;
   font-size: 18px;
+}
+
+/* --------------------------- */
+/* 🌍 Responsive Adjustments */
+/* --------------------------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .login-card {
+    max-width: 90%;
+    padding: 24px;
+  }
+
+  .login-title {
+    font-size: 1.3rem;
+  }
+
+  .input-field {
+    height: 46px;
+    font-size: 13px;
+  }
+
+  .btn {
+    height: 46px;
+    font-size: 14px;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .login-title {
+    font-size: 1.2rem;
+  }
+
+  .input-field {
+    font-size: 13px;
+    height: 44px;
+  }
+
+  .btn {
+    height: 44px;
+    font-size: 13px;
+  }
+
+  .divider span {
+    font-size: 12px;
+  }
+
+  .google-icon {
+    height: 18px;
+    width: 18px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+  }
 }
