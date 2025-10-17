@@ -2,16 +2,33 @@
 .property-container {
   background-color: #eaeded;
   font-family: "Inter", sans-serif;
-}
-
-/* ---------- IMAGE SECTION ---------- */
-.image-section {
-  background-color: #eaeded;
-  border-radius: 8px;
   padding: 1.5rem;
 }
 
-/* Main image container */
+/* ---------- FLEX LAYOUT ---------- */
+.property-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Left: Image section */
+.image-section {
+  flex: 1 1 55%;
+  background-color: #eaeded;
+  border-radius: 8px;
+}
+
+/* Right: Details section */
+.details-section {
+  flex: 1 1 45%;
+  background-color: #eaeded;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- IMAGE SECTION ---------- */
 .main-image-container {
   position: relative;
   width: 100%;
@@ -34,7 +51,7 @@
   top: 50%;
   transform: translateY(-50%);
   border: none;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.4);
   padding: 0.4rem 0.8rem;
   border-radius: 50%;
   cursor: pointer;
@@ -105,12 +122,12 @@
 }
 
 /* ---------- DETAILS SECTION ---------- */
-.details-section {
-  background-color: #EAEDED; border-radius: 8px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); margin-top: 1rem; font-family: "Inter", sans-serif;
-}
-
 .details-section h2 {
- text-align: left; font-size: 1.6rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.75rem;
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
 }
 
 .details-section p {
@@ -118,6 +135,9 @@
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 1rem;
+  justify-content: left;
+  align-items: left;
+
 }
 
 .details-section a {
@@ -165,11 +185,9 @@
   margin: 0;
   color: #222;
   font-size: 1.25rem;
-   display: inline-block;
+  display: inline-block;
   border-bottom: 3px solid #ccc;
-  padding-bottom: 0rem;
 }
-
 
 .close-btn {
   background: none;
@@ -177,22 +195,10 @@
   font-size: 1.5rem;
   color: #555;
   cursor: pointer;
-  transition: color 0.2s;
 }
 
 .close-btn:hover {
   color: #000;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 /* ---------- RESPONSIVENESS ---------- */
