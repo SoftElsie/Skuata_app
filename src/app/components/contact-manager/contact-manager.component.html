@@ -1,32 +1,29 @@
 <main class="container">
   <div class="header">
     <h3>Contact Manager</h3>
-    @if(!showPhoneNumber){
-      <button (click)="seePhoneNumber()"> <lucide-angular name="phone" class="icon-button" [size]="18"></lucide-angular>Show Phone Number</button>
-    } @else {
-      <button (click)="seePhoneNumber()"> <lucide-angular name="phone" class="icon-button" [size]="18"></lucide-angular>+27 81 834 8593</button>
-    }
+
+      <button (click)="seePhoneNumber()" *ngIf="!showPhoneNumber"> Show Phone Number</button>
+
+      <button (click)="seePhoneNumber()" *ngIf="showPhoneNumber"> <img src="../../../assets/icons/phone.svg" alt="user icon" class="icon-color"> +27 81 834 8593</button>
+
   </div>
   <form [formGroup] = "contactManagerForm" (ngSubmit)="onSubmit()" autocomplete="off">
     <div class="form-group">
       <label for="name">Your Name</label>
       <input type="text" name="name" autocomplete="off" formControlName="name" [class.error]="name?.touched && name?.invalid"/>
-      <lucide-angular name="user-round" class="input-icon"></lucide-angular>
-      @if(name?.invalid && name?.touched) {
-        <div class="error">
-          @if(name?.errors?.['required']){
-            <div>Name is required</div>
-          } @else if (name?.errors?.['minlength']){
-            <div>Name is required at least 3 characters</div>
-          }
+      <img src="../../../assets/icons/lucide/user-round.svg" alt="user icon" class="input-icon icon-color">
 
+        <div class="error" *ngIf="name?.invalid && name?.touched">
+            <div *ngIf="name?.errors?.['required']">Name is required</div>
+            <div *ngIf="name?.errors?.['minlength']">Name is required at least 3 characters</div>
         </div>
-      }
+
     </div>
     <div class="form-group">
       <label for="email">Your Email</label>
       <input type="email" name="email" autocomplete="off" formControlName="email" [class.error]="email?.touched && email?.invalid" />
-      <lucide-angular name="at-sign" class="input-icon"></lucide-angular>
+      <img src="../../../assets/icons/lucide/at-sign.svg" alt="at-sign icon" class="input-icon icon-color">
+
       @if(email?.touched && email?.invalid) {
         <div class="error">
           @if (email?.errors?.['required']) {
@@ -42,7 +39,7 @@
     <div class="form-group">
       <label for="number">Your Phone Number</label>
       <input type="tel" name="phoneNumber" formControlName="phoneNumber" [class.error]="phoneNumber?.touched && phoneNumber?.invalid" pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"/>
-      <lucide-angular name="phone" class="input-icon"></lucide-angular>
+      <img src="../../../assets/icons/phone.svg" alt="phone icon" class="input-icon icon-color">
       @if (phoneNumber?.invalid && phoneNumber?.touched){
         <div class="error">
           @if (phoneNumber?.errors?.['required']) {
@@ -63,7 +60,7 @@
       <label for="message">Message</label>
       <textarea name="message" id="" rows="4" autocomplete="off" formControlName="message" [class.error]="message?.touched && message?.invalid">
       </textarea>
-      <lucide-angular name="message-square" class="textarea-icon"></lucide-angular>
+      <img src="../../../assets/icons/lucide/message-square.svg" alt="user icon" class="input-icon icon-color">
       @if (message?.invalid && message?.touched) {
         <div class="error">
           @if (message?.errors?.['required']){
@@ -77,7 +74,7 @@
             </div>
           }
       </div>
-    <button type="submit" [disabled]="contactManagerForm.invalid"> <lucide-angular name="mail" class="button-icon" [size]="18"></lucide-angular> Send Message</button>
+    <button type="submit" [disabled]="contactManagerForm.invalid"> <img src="../../../assets/icons/lucide/mail.svg" alt="user icon" class="icon-color"> Send Message</button>
 
   </form>
 </main>
