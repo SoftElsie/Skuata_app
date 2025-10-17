@@ -3,7 +3,8 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { RouterModule } from "@angular/router";
 
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
 
     RouterModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

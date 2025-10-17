@@ -9,12 +9,13 @@ import { RouterOutlet } from '@angular/router';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ResetPasswordComponent
 
   ],
   imports: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule, HttpClientModule,
     AppRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

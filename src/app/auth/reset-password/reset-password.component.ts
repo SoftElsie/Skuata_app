@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reset-password',
@@ -9,16 +7,27 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./reset-password.component.css'],
 })
 export class ResetPasswordComponent {
-  feedback = {
-    email: ''
+
+  resetPasswordForm!: FormGroup;
+  submitted = false;
+  submissionStatus: 'success' | 'error' | null = null;
+
+  constructor(private form: FormBuilder) {
+    this.resetPasswordForm = this.form.group({
+      email: ['', [Validators.required, Validators.email]]
+    })
   }
 
-  submitted = false;
+  get email() {
+    return this.resetPasswordForm.get('email')
+  }
 
-  onSubmit(form: any){
-    if(!form.valid) return;
-    console.log('Form Submitted!', this.feedback);
-    this.submitted = true;
+  onSubmit(){
+    if(this.resetPasswordForm.valid) {
+      console.log('Form Submitted!', this.resetPasswordForm.value);
+      this.submissionStatus = 'success'
+
+    }
   }
 
 }

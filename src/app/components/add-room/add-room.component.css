@@ -159,4 +159,9 @@ input, select, textarea {
   .button button {
     width: 100%;
   }
+
+  #description {
+    width: 100%;
+
+  }
 }
