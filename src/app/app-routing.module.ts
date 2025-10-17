@@ -9,6 +9,7 @@ import { AddRoomComponent } from './components/add-room/add-room.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { PasswordSecurityComponent } from './components/password-security/password-security.component';
+import { NotificationSettingsComponent } from './components/notification-settings/notification-settings.component';
 
 
 
@@ -20,6 +21,8 @@ const routes: Routes = [
     redirectTo: 'dash',
     pathMatch: 'full'
   },
+  {   path:'dash',component:DashboardComponent},
+  {   path:'notification',component: NotificationSettingsComponent},
   { path: 'dash', component: DashboardComponent },
   { path: 'view-details', component: ViewDetailsComponent },
   {   path:'manage-caretaker',component:ManageCaretakerComponent},
