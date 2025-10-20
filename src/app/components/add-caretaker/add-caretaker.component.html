@@ -5,33 +5,46 @@
     </h1>
     <button><img src="../assets/icons/lucide/x.svg" alt=""></button>
   </div>
-  <form>
+  <form [formGroup]="addCaretakerForm" (ngSubmit)="onSubmit()" autocomplete="off">
     <div class="column">
       <div class="group">
         <div>
           <label for="name"> Name</label>
-          <input type="text" name="name" placeholder="e.g. John Doe">
+          <input type="text" name="name" placeholder="e.g. John Doe" formControlName="name" [class.error]="name?.touched && name?.invalid">
+          <div class="error" *ngIf="name?.touched && name?.invalid">
+            <div *ngIf="name?.errors?.['required']">Name is required</div>
+            <div *ngIf="name?.errors?.['minlength']">Name is required at least 3 characters</div>
+          </div>
         </div>
         <div>
           <label for="email"> Email</label>
-          <input type="text" name="email" >
+          <input type="text" name="email" placeholder="johndoe@example.com" formControlName="email" [class.error]="email?.touched && email?.invalid">
+          <div class="error" *ngIf="email?.touched && email?.invalid">
+            <div *ngIf="email?.errors?.['required']">Email is required</div>
+            <div *ngIf="email?.errors?.['email']">Invalid email format</div>
+          </div>
         </div>
         <div>
           <label for="profile-image"> Profile Image</label>
-          <input type="file" name="profile-image" >
+          <input type="file" name="profileImage" formControlName="profileImage" [class.error]="profileImage?.touched && profileImage?.invalid">
+          <div class="error" *ngIf="profileImage?.touched && profileImage?.invalid">
+            <div *ngIf="profileImage?.errors?.['required']">Profile Image is required</div>
+          </div>
         </div>
         <div>
           <label for="permission"> Permission</label>
-          <select name="permission" id="permission">
+          <select name="permission" id="permission" formControlName="permission" [class.error]="permission?.touched && permission?.invalid">
             <option value="">Choose Permission</option>
-              <option value="permission.toLowerCase()" *ngFor="let permission of permissions">{{permission}}</option>
-
+            <option value={{permission.toLowerCase()}} *ngFor="let permission of permissions">{{permission}}</option>
           </select>
+          <div class="error" *ngIf="permission?.touched && permission?.invalid">
+            <div *ngIf="permission?.errors?.['required']">Permission type is required</div>
+          </div>
         </div>
       </div>
     </div>
     <div class="button">
-      <button>Add Caretaker</button>
+      <button type="submit" [disabled]="addCaretakerForm.invalid">Add Caretaker</button>
     </div>
   </form>
 
