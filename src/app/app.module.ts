@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterOutlet } from '@angular/router';
+import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-     DashboardComponent
+     DashboardComponent,
+     LoaderBtnComponent,
   ],
   imports: [
     RouterOutlet,

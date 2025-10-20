@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoaderBtnComponent } from './shared/loader-btn/loader-btn.component';
 
 const routes: Routes = [
   {
@@ -9,6 +10,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {   path:'dash',component:DashboardComponent},
+  {  path:'loader', component:LoaderBtnComponent },
 ];
 
 
