@@ -1,0 +1,5 @@
+<!-- loader-btn.component.html -->
+<button class="load-more-btn" [disabled]="isLoading" (click)="handleLoadMore()">
+  <span class="btn-text">Load More</span>
+  <div class="loader" *ngIf="isLoading"></div>
+</button>

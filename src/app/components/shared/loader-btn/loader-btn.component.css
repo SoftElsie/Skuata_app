@@ -1,0 +1,37 @@
+/* loader-btn.component.css */
+.load-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 10px;
+  background-color: #263E39;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.loader {
+  width: 8px;
+  height: 8px;
+  margin-left: 7px;
+  border: 3px solid #ccc;
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 0.8s ease-in-out infinite;
+  transform-origin: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.load-more-btn:disabled {
+  cursor: not-allowed;
+}
