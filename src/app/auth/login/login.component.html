@@ -1,1 +1,49 @@
-<p>login works!</p>
+<div class="login-container">
+  <!-- Logo -->
+  <div class="logo-section">
+    <img src="assets/images/Logo-Full.png" alt="SKUATA Logo" class="logo-img" />
+  </div>
+
+  <!-- Login Card -->
+  <div class="login-card">
+    <h1 class="login-title">Log in to SKUATA</h1>
+
+    <!-- Email Input -->
+    <div class="input-group">
+      <img src="assets/Icons/user-round-email.png" alt="Email Icon" class="input-icon" />
+      <input type="email" placeholder="Email address..." class="input-field" />
+    </div>
+
+    <!-- Continue Button -->
+    <button class="btn btn-continue" (click)="onContinue()">
+      Continue
+      <span class="chevron">&#8250;</span>
+    </button>
+
+    <!-- Divider -->
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+    <!-- Google Sign In Image Button -->
+    <button class="img-btn" (click)="onGoogleSignIn()">
+      <img
+        src="assets/Icons/Frame 281.svg"
+        alt="Continue with Google"
+        class="img-button"
+      />
+    </button>
+
+    <!-- Sign Up Image Button -->
+    <div class="signup-section">
+      <p>Don't have an account?</p>
+      <button class="img-btn" (click)="onSignUp()">
+        <img
+          src="assets/Icons/Frame 317.svg"
+          alt="Sign Up Button"
+          class="img-button"
+        />
+      </button>
+    </div>
+  </div>
+</div>
