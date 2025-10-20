@@ -7,18 +7,15 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './auth/login/login.component';
 import { NotificationSettingsComponent } from './components/notification-settings/notification-settings.component';
 import { PasswordSecurityComponent } from './components/password-security/password-security.component';
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { SharedModule } from './components/shared/shared.module';
-
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
-
-
 
 @NgModule({
   declarations: [
@@ -36,14 +33,14 @@ import { ProfileIconComponent } from './components/profile-icon/profile-icon.com
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-
+    LoginComponent,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
     RouterModule,
     SharedModule,
-  
-      RouterOutlet,
+    RouterOutlet,
+
   ],
 
   bootstrap: [AppComponent]
