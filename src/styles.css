@@ -1,6 +1,7 @@
 
 
 
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -64,6 +65,7 @@ html, body {
 .filter-btn:hover {
   background: #f9fafb;
 }
+
 
 
 

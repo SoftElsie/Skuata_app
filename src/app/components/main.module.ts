@@ -6,8 +6,17 @@ import { RegisterComponent} from "../auth/register/register.component";
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
+
+
 @NgModule({
   declarations: [
+
+    DashboardComponent,
+
+
+
+ 
     
   ],
   imports: [

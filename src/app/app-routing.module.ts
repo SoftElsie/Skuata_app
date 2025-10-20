@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
+
 import { LoginComponent } from './auth/login/login.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
@@ -14,6 +17,7 @@ import { PasswordSecurityComponent } from './components/password-security/passwo
 import { NotificationSettingsComponent } from './components/notification-settings/notification-settings.component';
 
 
+
 const routes: Routes = [
 
  {
@@ -23,6 +27,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {   path:'dash',component:DashboardComponent},
+
+  {   path:'add-caretaker',component:AddCaretakerComponent},
+
   {   path:'login',component:LoginComponent},
   {   path:'notification',component: NotificationSettingsComponent},
   { path: 'view-details', component: ViewDetailsComponent },
@@ -34,6 +41,7 @@ const routes: Routes = [
    {  path:'contact-info',component:ContactInfoComponent},
    {  path:'profile',component:ProfileIconComponent},
 {  path:'password-security',component:PasswordSecurityComponent},
+
 
 ];
 

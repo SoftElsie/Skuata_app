@@ -17,10 +17,19 @@ import { ContactInfoComponent } from './components/contact-info/contact-info.com
 import { SharedModule } from './components/shared/shared.module';
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 
+import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component'
+
+import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+
+    AddCaretakerComponent
+
     NotificationSettingsComponent,
     PasswordSecurityComponent,
     ManageCaretakerComponent,
@@ -28,11 +37,13 @@ import { ProfileIconComponent } from './components/profile-icon/profile-icon.com
     FilterComponent,
     ProfileIconComponent ,
 
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+
     LoginComponent,
     FormsModule,
     ReactiveFormsModule,
