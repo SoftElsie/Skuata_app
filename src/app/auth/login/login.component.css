@@ -252,3 +252,27 @@
     font-size: 12px;
   }
 }
+
+/* Image buttons */
+.img-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-button {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.img-button:hover {
+  transform: scale(1.03);
+}
