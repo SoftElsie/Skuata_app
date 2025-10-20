@@ -1,17 +1,4 @@
-<<<<<<< Updated upstream
-import { Component } from '@angular/core';
 
-@Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
-})
-export class FooterComponent {
-
-}
-=======
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Added CommonModule
 
@@ -28,4 +15,4 @@ export class FooterComponent {
   // Input to control whether footer content is centered
   @Input() centerContent: boolean = false;
 }
->>>>>>> Stashed changes
+

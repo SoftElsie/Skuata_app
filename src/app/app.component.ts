@@ -1,34 +1,22 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-<<<<<<< Updated upstream
-import { RouterOutlet } from '@angular/router';
-=======
-import { Router, NavigationEnd } from '@angular/router'; // Added NavigationEnd
-import { TopNavComponent } from './components/shared/core/top-nav/top-nav.component';
-
->>>>>>> Stashed changes
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
-}
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FooterComponent } from './components/shared/core/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, FooterComponent],
 })
 export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
   showFullLinksOnFooter: boolean = true;
   centerFooterContent: boolean = false;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.getForecasts();
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         const authRoutes = ['/register', '/login'];
@@ -41,17 +29,6 @@ export class AppComponent implements OnInit {
         }
       }
     });
-  }
-
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
   }
 
   title = 'skuata_app.client';
