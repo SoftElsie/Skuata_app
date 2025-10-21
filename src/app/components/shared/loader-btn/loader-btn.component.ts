@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-loader-btn',
@@ -6,16 +6,21 @@ import { Component } from '@angular/core';
   styleUrl: './loader-btn.component.css'
 })
 export class LoaderBtnComponent {
-isLoading = false;
+@Input() active = false;            // shows the loader when true
+  @Output() started = new EventEmitter<void>();
+  @Output() stopped = new EventEmitter<void>();
 
-  handleLoadMore() {
-    this.isLoading = true;
-    console.log('Loading started');
+  start() {
+    if (!this.active) {
+      this.active = true;
+      this.started.emit();
+    }
+  }
 
-    // Simulate loading delay (replace with your logic)
-    setTimeout(() => {
-      console.log('Loading finished');
-      this.isLoading = false;
-    }, 2000); // 2-second delay
+  stop() {
+    if (this.active) {
+      this.active = false;
+      this.stopped.emit();
+    }
   }
 }
