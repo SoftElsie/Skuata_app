@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, CommonModule  ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+ email: string = '';
 
   onContinue(): void {
-    console.log('Continue button clicked');
+    console.log('Continue button clicked with email:', this.email);
   }
 
   onGoogleSignIn(): void {
