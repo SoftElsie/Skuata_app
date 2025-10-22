@@ -29,8 +29,8 @@ jobs:
           - name: build and push docker image to DockerHub
             uses: docker/build-push-action@v5
             with:
-              context: ./Skuata-app
-              file: ./Skuata-app/Dockerfile
+              context: ./Skuata_app
+              file: ./Skuata_app/Dockerfile
               push: true
               tags: phedzi/skuata:latest
               build-args: |
@@ -43,3 +43,4 @@ jobs:
              app-name: 'skuata'              
              publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
              images: 'phedzi/skuata:latest'
+

@@ -14,8 +14,8 @@ ENV NUGET_GITHUB_PAT
 WORKDIR /src
 
 
-COPY ["Skuata-app/package.json", "Skuata-app/"]
-COPY ["Skuata-app.client.csproj", ""]
+COPY ["Skuata_app/package.json", "Skuata_app/"]
+COPY ["Skuata_app.client.csproj", ""]
 
 #Install Node.js and npm
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
@@ -31,7 +31,7 @@ RUN dotnet nuget add source \
 
 COPY . .
 
-RUN dotnet restore "Skuata-app.client.csproj" \
+RUN dotnet restore "Skuata_app.client.csproj" \
     --source "https://nuget.pkg.github.com/SoftElsie/index.json" \
     --source "https://api.nuget.org/v3/index.json"
 
@@ -43,7 +43,7 @@ RUN node --version
  
 WORKDIR "/src"
 
-RUN dotnet build "Skuata-app.client.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "Skuata_app.client.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
@@ -53,7 +53,8 @@ FROM base AS final
 WORKDIR /app
 ENV ASPNETCORE_URLS=http://+:80
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Skuata-app.client.dll"]
+ENTRYPOINT ["dotnet", "Skuata_app.client.dll"]
+
 
 
 
