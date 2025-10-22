@@ -4,9 +4,12 @@
       <img src="/assets/icons/arrow-left.png" alt="Back" />
     </button>
     <h2>Manage Caretaker</h2>
-    <button class="add-btn" routerLink="/add-caretaker">
+    <button class="add-btn" (click)="addCaretaker()" [disabled]="loading">
       <img src="/assets/icons/user-round-plus.png" alt="Add" />
       Add Caretaker
+      <app-loader-btn
+        [active]="loading && loadingButton === 'addCaretaker'"
+      ></app-loader-btn>
     </button>
   </div>
 

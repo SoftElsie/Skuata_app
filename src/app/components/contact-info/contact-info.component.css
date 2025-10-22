@@ -40,7 +40,7 @@ body, .user-settings-container {
 }
 
 .save-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px; 
   background-color: #263E39;

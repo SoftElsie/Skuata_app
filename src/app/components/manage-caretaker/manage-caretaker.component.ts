@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { ButtonBaseComponent } from '../shared/base/button-base/button-base.component';
 
 @Component({
   selector: 'app-manage-caretaker',
   templateUrl: './manage-caretaker.component.html',
   styleUrls: ['./manage-caretaker.component.css']
 })
-export class ManageCaretakerComponent implements OnInit {
+export class ManageCaretakerComponent extends ButtonBaseComponent implements OnInit {
   caretakers = [
     {
       registerDate: '10/05/2025',
@@ -33,6 +34,7 @@ export class ManageCaretakerComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 3;
   totalPages = 3;
+  router: any;
 
   ngOnInit() {
     this.totalPages = Math.ceil(this.caretakers.length / this.itemsPerPage);
@@ -45,6 +47,15 @@ export class ManageCaretakerComponent implements OnInit {
 
   get totalPagesArray() {
     return Array.from({ length: this.totalPages }, (_, i) => i + 1);
+  }
+  
+    addCaretaker() {
+    this.runWithLoader('addCaretaker', () => {
+      // optional delay to show loader briefly
+      setTimeout(() => {
+        this.router.navigate(['/add-caretaker']);
+      }, 200); 
+    });
   }
 
   goToPage(page: number) {

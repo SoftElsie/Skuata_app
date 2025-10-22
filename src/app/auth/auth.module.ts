@@ -14,7 +14,7 @@ import { AddRoomComponent } from "../components/add-room/add-room.component";
 
    ResetPasswordComponent,
    CheckInboxComponent,
-   AddRoomComponent
+   //AddRoomComponent
 
   ],
   imports: [

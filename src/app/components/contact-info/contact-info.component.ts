@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ButtonBaseComponent } from '../shared/base/button-base/button-base.component';
 
 @Component({
   selector: 'app-contact-info',
   templateUrl: './contact-info.component.html',
   styleUrls: ['./contact-info.component.css']
 })
-export class ContactInfoComponent implements OnInit {
+export class ContactInfoComponent  extends ButtonBaseComponent implements OnInit{
   contactForm!: FormGroup;
 
   menuItems = [
@@ -15,7 +16,9 @@ export class ContactInfoComponent implements OnInit {
     { label: 'Notification Settings', route: '/notifications' },
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+    super();
+  }
 
   ngOnInit(): void {
    
@@ -33,11 +36,19 @@ export class ContactInfoComponent implements OnInit {
     });
   }
 
-  handleSaveChanges(): void {
-    if (this.contactForm.invalid) {
-      this.contactForm.markAllAsTouched();
-      return;
-    }
-    console.log('✅ Saving changes:', this.contactForm.value);
+ handleSaveChanges(): void {
+  if (this.contactForm.invalid) {
+    this.contactForm.markAllAsTouched();
+    return;
   }
+
+  this.runWithLoader('save', () => {
+    console.log('✅ Saving changes:', this.contactForm.value);
+    setTimeout(() => {
+      // save completed
+      console.log('Save completed');
+    }, 1000);
+  });
+}
+
 }

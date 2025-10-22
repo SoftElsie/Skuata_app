@@ -40,6 +40,9 @@ h2 {
 
 /* ADD BUTTON */
 .add-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background-color: #263e39;
   color: white;
   border: none;

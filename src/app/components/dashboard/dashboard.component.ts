@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FilterOptions } from '../filter/filter.component';
+import { ButtonBaseComponent } from '../shared/base/button-base/button-base.component';
 
 interface Property {
   id: number
@@ -20,7 +21,7 @@ interface Property {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent extends ButtonBaseComponent {
 searchQuery = ""
   visibleProperties: Property[] = [] 
    filteredProperties: Property[] = [];
@@ -129,21 +130,23 @@ searchQuery = ""
     const end = this.currentPage * this.itemsPerPage;
     this.visibleProperties = this.filteredProperties.slice(start, end); 
   }
- loadMore(): void {
-  const totalPages = Math.ceil(this.filteredProperties.length / this.itemsPerPage);
-  if (this.currentPage < totalPages) {
-    this.currentPage++;
-    this.loadProperties();
+  loadMore(): void {
+    this.runWithLoader('next', () => {
+      const totalPages = Math.ceil(this.filteredProperties.length / this.itemsPerPage);
+      if (this.currentPage < totalPages) {
+        this.currentPage++;
+        this.loadProperties();
+      }
+    });
   }
-}
 
-
-
-   loadPrevious(): void {
-    if (this.currentPage > 1) {
-      this.currentPage--;
-      this.loadProperties();
-    }
+  loadPrevious(): void {
+    this.runWithLoader('previous', () => {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+        this.loadProperties();
+      }
+    });
   }
   onSearch(): void {
     console.log("Searching for:", this.searchQuery)

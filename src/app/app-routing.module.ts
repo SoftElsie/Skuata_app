@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
+import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
 import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
-
 import { LoginComponent } from './auth/login/login.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
@@ -41,8 +40,7 @@ const routes: Routes = [
    {  path:'contact-info',component:ContactInfoComponent},
    {  path:'profile',component:ProfileIconComponent},
 {  path:'password-security',component:PasswordSecurityComponent},
-
-
+  {  path:'loader', component:LoaderBtnComponent },
 ];
 
 @NgModule({
