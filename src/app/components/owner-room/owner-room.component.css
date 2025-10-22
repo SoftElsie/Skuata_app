@@ -162,8 +162,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
    font-size: 0.9rem;
-  height: 360px; 
-  display: flex;
+  height: 321px; 
   flex-direction: column;
   justify-content: space-between;
 }

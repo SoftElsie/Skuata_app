@@ -34,11 +34,11 @@
 
 .search-divider {
   width: 1px;
-  height: 32px;
+  height: 24px;
   background: #d1d5db;
   flex-shrink: 0;
   position: absolute;
-  left: 63%;
+  left: 65%;
 }
 
 .filter-overlay {
