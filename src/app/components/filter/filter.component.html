@@ -1,4 +1,3 @@
-
 <div class="search-container">
   <div class="search-wrapper">
     <img [src]="'assets/icons/search.png'" />
@@ -13,13 +12,12 @@
      <img [src]="'assets/icons/sliders-horizontal.png'" />
       Filter
     </button>
-     <button class="btn-find filter-buttons" (click)="applyFilters()">
+     <button *ngIf="showFilterButton" class="btn-find filter-buttons" (click)="applyFilters()">
     Find Rooms
     </button>
   </div>
-
-
 </div>
+
 
  
 <div class="filter-overlay" *ngIf="isFilterOpen" (click)="closeFilter()"></div>

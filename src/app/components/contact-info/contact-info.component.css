@@ -30,7 +30,10 @@ body, .user-settings-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+   flex-wrap: wrap;
   padding-bottom: -10%;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .form-title {
@@ -157,9 +160,11 @@ body, .user-settings-container {
   }
 
   .form-header {
-    flex-direction: column;
-    gap: 1rem;
     
+    gap: 1rem;
+     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .form-row {
@@ -179,6 +184,9 @@ body, .user-settings-container {
   .save-btn {
     width: 100%;
     justify-content: center;
+     flex-shrink: 0;
+    font-size: 0.9rem;
+    padding: 8px 14px;
   }
 
   .menu-nav {

@@ -11,6 +11,7 @@ import { CheckInboxComponent } from './auth/reset-password/check-inbox/check-inb
 import { AddRoomComponent } from './components/add-room/add-room.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 import { PasswordSecurityComponent } from './components/password-security/password-security.component';
 import { NotificationSettingsComponent } from './components/notification-settings/notification-settings.component';
@@ -37,9 +38,10 @@ const routes: Routes = [
   {   path:'check-inbox',component:CheckInboxComponent},
   {   path:'add-room',component:AddRoomComponent},
   { path: 'register', component: RegisterComponent },
-   {  path:'contact-info',component:ContactInfoComponent},
+   {   path:'contact-info',component:ContactInfoComponent},
+   {   path:'owner-room',component:OwnerRoomComponent},
    {  path:'profile',component:ProfileIconComponent},
-{  path:'password-security',component:PasswordSecurityComponent},
+  {  path:'password-security',component:PasswordSecurityComponent},
   {  path:'loader', component:LoaderBtnComponent },
 ];
 

@@ -14,6 +14,7 @@ import { ManageCaretakerComponent } from './components/manage-caretaker/manage-c
 import { FilterComponent } from './components/filter/filter.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { SharedModule } from './components/shared/shared.module';
+import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
 import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
@@ -31,9 +32,9 @@ import { AddRoomComponent } from './components/add-room/add-room.component';
     FilterComponent,
     ProfileIconComponent ,
     AddRoomComponent,
-
-
-     DashboardComponent,
+     ContactInfoComponent,
+     OwnerRoomComponent,
+     FilterComponent,
      LoaderBtnComponent,
   ],
   imports: [

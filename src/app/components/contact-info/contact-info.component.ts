@@ -9,7 +9,6 @@ import { ButtonBaseComponent } from '../shared/base/button-base/button-base.comp
 })
 export class ContactInfoComponent  extends ButtonBaseComponent implements OnInit{
   contactForm!: FormGroup;
-
   menuItems = [
     { label: 'Contact Info', route: '/contact-info' },
     { label: 'Password & Security', route: '/security' },

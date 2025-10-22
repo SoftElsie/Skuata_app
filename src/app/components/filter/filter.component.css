@@ -38,7 +38,7 @@
   background: #d1d5db;
   flex-shrink: 0;
   position: absolute;
-  left: 41%;
+  left: 63%;
 }
 
 .filter-overlay {
@@ -180,6 +180,7 @@
   border-radius: 3px;
   cursor: pointer;
 }
+
 
 
 .price-inputs {

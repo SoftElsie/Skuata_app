@@ -19,6 +19,7 @@ export interface FilterOptions {
 })
 export class FilterComponent {
     @Output() filtersChanged = new EventEmitter<FilterOptions>()
+ @Input() showFilterButton: boolean = true;
 
   isFilterOpen = false
 
