@@ -34,8 +34,8 @@ jobs:
               push: true
               tags: phedzi/skuata:latest
               build-args: |
-                SOFTELSIE_GITHUB_PACKAGE_INSTALLER_USERNAME=${{secrets.SOFTELSIE_GITHUB_PACKAGE_INSTALLER_USERNAME}}
-                SOFTELSIE_GITHUB_PACKAGE_INSTALLER_TOKEN=${{secrets.SOFTELSIE_GITHUB_PACKAGE_INSTALLER_TOKEN}}
+                NUGET_USERNAME=${{secrets.SOFTELSIE_GITHUB_PACKAGE_INSTALLER_USERNAME}}
+                NUGET_GITHUB_PAT=${{secrets.SOFTELSIE_GITHUB_PACKAGE_INSTALLER_TOKEN}}
 
           - name: Deploy to Azure Web App for Containers
             uses: azure/webapps-deploy@v2
