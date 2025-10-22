@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="header">
+    <button class="back-btn" routerLink="">
+      <img src="/assets/icons/arrow-left.png" alt="Back" />
+    </button>
+    <h2>Manage Caretaker</h2>
+    <button class="add-btn" (click)="addCaretaker()" [disabled]="loading">
+      <img src="/assets/icons/user-round-plus.png" alt="Add" />
+      Add Caretaker
+      <app-loader-btn
+        [active]="loading && loadingButton === 'addCaretaker'"
+      ></app-loader-btn>
+    </button>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Register Date</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Profile Image</th>
+          <th>Permission</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let caretaker of paginatedCaretakers">
+          <td data-label="Register Date">
+            {{ caretaker.registerDate }}
+          </td>
+          <td data-label="Name">
+            {{ caretaker.name }}
+          </td>
+          <td data-label="Email">
+            {{ caretaker.email }}
+          </td>
+          <td data-label="Profile Image">
+            <a [href]="caretaker.profileImage" target="_blank">
+              {{ caretaker.profileImage }}
+            </a>
+          </td>
+          <td data-label="Permission">
+            <span
+              class="status"
+              [ngClass]="{
+                pending: caretaker.permission === 'Pending',
+                granted: caretaker.permission === 'Granted'
+              }"
+            >
+              {{ caretaker.permission }}
+            </span>
+          </td>
+          <td data-label="Actions">
+            <button class="edit-btn" routerLink="/edit-caretaker">
+              <img src="/assets/icons/pen-line.png" alt="Edit" />
+              <span class="btn-text">Edit</span>
+            </button>
+            <button class="delete-btn" routerLink="/delete-caretaker">
+              <img src="/assets/icons/trash-2.png" alt="Delete" />
+              <span class="btn-text">Delete</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">«</button>
+      <button
+        *ngFor="let page of totalPagesArray"
+        [ngClass]="{ active: currentPage === page }"
+        (click)="goToPage(page)"
+      >
+        {{ page }}
+      </button>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+        »
+      </button>
+    </div>
+  </div>
+</div>
