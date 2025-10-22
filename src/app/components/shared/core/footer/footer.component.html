@@ -1,1 +1,13 @@
-<p>footer works!</p>
+<footer>
+  <hr class="footer-divider" />
+  <div class="footer-content" [ngClass]="{'centered-content': centerContent}">
+    <span>&copy; 2025 Softelsie</span>
+    <span>|</span>
+    <a href="#">Privacy Policy</a>
+    <!-- Only show links if showFullLinks is true -->
+    <ng-container *ngIf="showFullLinks">
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Settings</a>
+    </ng-container>
+  </div>
+</footer>

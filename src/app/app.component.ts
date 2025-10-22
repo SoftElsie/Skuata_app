@@ -1,37 +1,34 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
-}
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FooterComponent } from './components/shared/core/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, FooterComponent],
 })
 export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
+  showFullLinksOnFooter: boolean = true;
+  centerFooterContent: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.getForecasts();
-  }
-
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
-      },
-      (error) => {
-        console.error(error);
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const authRoutes = ['/register', '/login'];
+        if (authRoutes.some(route => event.urlAfterRedirects.includes(route))) {
+          this.showFullLinksOnFooter = false;
+          this.centerFooterContent = true;
+        } else {
+          this.showFullLinksOnFooter = true;
+          this.centerFooterContent = false;
+        }
       }
-    );
+    });
   }
 
   title = 'skuata_app.client';

@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
+
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Added CommonModule
 
 @Component({
   selector: 'app-footer',
-  standalone: true,
-  imports: [],
+  standalone: true, // Added standalone: true
+  imports: [CommonModule], // Added imports array with CommonModule
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-
+  // Input to control whether full links are shown
+  @Input() showFullLinks: boolean = true;
+  // Input to control whether footer content is centered
+  @Input() centerContent: boolean = false;
 }
+
