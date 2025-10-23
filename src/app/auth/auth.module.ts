@@ -24,4 +24,4 @@ import { AddRoomComponent } from "../components/add-room/add-room.component";
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })
-export class MainModule { }
+export class AuthModule { }

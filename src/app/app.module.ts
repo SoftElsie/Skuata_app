@@ -1,4 +1,3 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -38,6 +37,8 @@ import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.
 
   ],
   imports: [
+    BrowserModule,
+    HttpClientModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
