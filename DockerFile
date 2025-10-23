@@ -12,28 +12,31 @@ ARG NUGET_GITHUB_PAT
 
 WORKDIR /src
 
-# Copy project files and restore dependencies
-COPY ["skuata_app.client.csproj", "./"]
+# Copy the project files
+COPY ["skuata_app.client/skuata_app.client.csproj", "skuata_app.client/"]
+
+# Add GitHub Packages feed (if needed)
 RUN dotnet nuget add source \
     --username $NUGET_USERNAME \
     --password $NUGET_GITHUB_PAT \
     --store-password-in-clear-text \
     --name github "https://nuget.pkg.github.com/SoftElsie/index.json"
 
-RUN dotnet restore "./skuata_app.client.csproj" \
+# Restore dependencies
+RUN dotnet restore "skuata_app.client/skuata_app.client.csproj" \
     --source "https://nuget.pkg.github.com/SoftElsie/index.json" \
     --source "https://api.nuget.org/v3/index.json"
 
-# Copy the rest of the source code
+# Copy everything else
 COPY . .
 
-# Install Node.js (for Blazor WASM or front-end build)
+# Install Node.js (for Blazor WebAssembly / front-end builds)
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -y nodejs && \
     node --version && npm --version
 
 # Build and publish
-RUN dotnet publish "skuata_app.client.csproj" -c $BUILD_CONFIGURATION -o /app/publish
+RUN dotnet publish "skuata_app.client/skuata_app.client.csproj" -c $BUILD_CONFIGURATION -o /app/publish
 
 # Final runtime image
 FROM base AS final
