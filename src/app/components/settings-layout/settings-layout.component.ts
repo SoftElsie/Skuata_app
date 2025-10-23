@@ -9,7 +9,7 @@ export class SettingsLayoutComponent {
 menuItems = [
   { label: 'Contact Info', route: 'contact-info' },
   { label: 'Password & Security', route: 'password-security' },
-  { label: 'Notification Settings', route: 'notification-settings' },
+  { label: 'Notification Settings', route: 'notification' },
 ];
 
 }
