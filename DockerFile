@@ -43,7 +43,7 @@ RUN dotnet build "skuata_app.client.csproj" -c $BUILD_CONFIGURATION -o /app/buil
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
 RUN mkdir -p /app/publish
-RUN dotnet publish "/src/skuata_app.client.csproj" -c $BUILD_CONFIGURATION -o /app/publish
+RUN dotnet publish "skuata_app.client.csproj" -c $BUILD_CONFIGURATION -o /app/publish
  
 
 FROM base AS final
