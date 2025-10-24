@@ -1,0 +1,43 @@
+<div class="property-card property-card-layout">
+  <div class="row header-row">
+    <div class="price-section">
+      <span class="currency">R</span>
+      <span class="amount">{{ property.price | number }}</span>
+      <span class="unit">{{ property.unit }}</span>
+    </div>
+
+    <div class="rating-section">
+      <div class="stars-container">
+        <span *ngFor="let star of getStars(property.rating, property.maxRating)">
+          <img *ngIf="star" src="assets/Vector.svg" alt="Filled Star" width="16" height="16">
+          <img *ngIf="!star" src="assets/star.svg" alt="Empty Star" width="16" height="16">
+        </span>
+      </div>
+      <span class="rating-text">{{ property.rating | number:'1.1-1' }} out of {{ property.maxRating }}</span>
+    </div>
+  </div>
+
+  <div class="row detail-row location-row">
+    <i class="fas fa-map-marker-alt"></i>
+    <span>{{ property.address }}</span>
+  </div>
+
+  <div class="row detail-row type-availability-row">
+    <div class="property-type-section">
+      <img src="assets/bed.png" alt="Property Type">
+      <span>{{ property.propertyType }}</span>
+    </div>
+    
+    <div class="availability-section">
+      <div *ngIf="property.isAvailable" class="available-badge default-extra-small">
+        <img src="assets/square-check-big.svg" alt="Available"> Available
+      </div>
+    </div>
+  </div>
+
+  <div class="row detail-row views-row">
+    <img src="assets/eye.jpg" alt="Views">
+    <span>{{ property.views }} people viewed this property</span>
+  </div>
+</div>
+

@@ -43,10 +43,41 @@ footer a {
   line-height: 150%;
   letter-spacing: -0.3px;
   color: #263E39;
+  padding-left: 20px; /* To move content to the right */
+}
+
+.footer-content.centered-content {
+  justify-content: center;
+  padding-left: 0; /* Remove padding when centered */
+}
+
+footer a {
+  text-decoration: none;
+  color: #263E39;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #115757;
 }
 
 @media (max-width: 768px) {
+  footer {
+    padding: 15px px 30px;
+  }
+
   .footer-content {
     flex-direction: column;
+  }
+
+  footer {
+    position: absolute;
+    width: 252px;
+    height: 21px;
+    opacity: 1;
+    top: 976px;
+    left: 72px;
+    gap: 8px;
+    background-color: #FFFFFF;
   }
 }
