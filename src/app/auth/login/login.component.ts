@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -10,36 +11,38 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  
-email = '';
+  email = '';
   password = '';
   showPassword = false;
 
-  // Toggle show/hide password visibility
+  constructor(private router: Router) {}
+
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
   }
 
-  // Called when user submits form
+  // ✅ When Continue is clicked
   onContinue(): void {
     if (this.email && this.password) {
       console.log('Email:', this.email);
       console.log('Password:', this.password);
-      // 🔐 TODO: Add authentication logic
+
+      // ✅ Navigate to dashboard page
+      this.router.navigate(['/dash']);
     } else {
       console.warn('Please fill in both fields');
     }
   }
 
-  // Google Sign-In handler
+  // ✅ Google Sign-In
   onGoogleSignIn(): void {
     console.log('Google Sign-In clicked');
-    // 🌐 TODO: Integrate Google Auth
+    // 🔧 Later integrate Firebase or Google OAuth here
   }
 
-  // Navigation to Sign-Up
+  // ✅ Navigate to Sign-Up page
   onSignUp(): void {
     console.log('Navigate to Sign-Up page');
-    // 🧭 TODO: Add navigation logic
+    this.router.navigate(['/register']);
   }
 }
