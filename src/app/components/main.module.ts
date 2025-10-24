@@ -4,7 +4,7 @@ import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
-    DashboardComponent,
+    // DashboardComponent,
   ],
   imports: [
     
