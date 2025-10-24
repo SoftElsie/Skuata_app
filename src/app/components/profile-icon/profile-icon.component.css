@@ -1,0 +1,62 @@
+.empty-state-container { 
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 50vh; /* responsive height */
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Text above image */
+.empty-text {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
+  font-size: 2rem; /* scalable font size */
+  line-height: 1.2;
+  text-align: center;
+  color: #BFBEBE;
+  opacity: 0.9;
+  margin-bottom: 2rem; /* space between text and image */
+}
+
+/* Clickable Image */
+.empty-image {
+  width: 60vw;
+  max-width: 330px;
+  height: auto;
+  opacity: 0.6;
+  cursor: pointer; /* shows the hand pointer on hover */
+  transition: transform 0.2s;
+}
+
+.empty-image:hover {
+  transform: scale(1.05); /* subtle hover effect */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .empty-text {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .empty-image {
+    width: 70vw;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .empty-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .empty-image {
+    width: 80vw;
+    max-width: 200px;
+  }
+}
