@@ -1,7 +1,7 @@
 .form-sidebar {
   width: 260px;
   background-color: #f8f9fa;
-  padding: 2rem 1.5rem;
+  padding: 0rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,11 +23,11 @@
 .menu-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0rem;
 }
 
 .menu-item {
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0rem;
   border-radius: 6px;
   text-decoration: none;
   text-align: left;
@@ -48,11 +48,11 @@
 }
 
 .delete-account-btn {
-  margin-top: 2rem;
+  margin-top: 0.6rem;
   background: none;
   border: none;
   color: #dc2626;
   font-weight: 500;
-   margin-right: 52%;
+   margin-right: 60%;
   cursor: pointer;
 }
