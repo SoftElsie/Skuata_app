@@ -25,7 +25,7 @@ export class PasswordSecurityComponent {
         ],
         confirmPassword: ['', [Validators.required]],
       },
-      { validators: this.passwordMatchValidator }
+      { validators: PasswordSecurityComponent.passwordMatchValidator }
     );
   }
 
@@ -33,13 +33,13 @@ export class PasswordSecurityComponent {
     return this.passwordForm.controls;
   }
 
-  passwordMatchValidator(form: FormGroup) {
+  static passwordMatchValidator(form: FormGroup): ValidationErrors | null {
     const newPassword = form.get('newPassword')?.value;
     const confirmPassword = form.get('confirmPassword')?.value;
     return newPassword === confirmPassword ? null : { mismatch: true };
   }
 
-  onSubmit() {
+  onSubmit = () => {
   if (this.passwordForm.valid) {
     console.log(' Form submitted successfully');
     console.log('Entered values:', {

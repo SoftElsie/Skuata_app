@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,8 @@ import { FilterComponent } from './components/filter/filter.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { SharedModule } from './components/shared/shared.module';
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
+import { AddRoomComponent } from './components/add-room/add-room.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component'
 
@@ -26,6 +29,8 @@ import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.
     DashboardComponent,
 
     AddCaretakerComponent,
+    AddRoomComponent,
+    ModalComponent,
 
     NotificationSettingsComponent,
     PasswordSecurityComponent,
@@ -37,8 +42,6 @@ import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.
 
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
