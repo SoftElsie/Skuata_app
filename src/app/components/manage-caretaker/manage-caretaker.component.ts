@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ButtonBaseComponent } from '../shared/base/button-base/button-base.component';
 
 @Component({
   selector: 'app-manage-caretaker',
   templateUrl: './manage-caretaker.component.html',
   styleUrls: ['./manage-caretaker.component.css']
 })
-export class ManageCaretakerComponent extends ButtonBaseComponent implements OnInit {
+export class ManageCaretakerComponent implements OnInit {
   caretakers = [
     {
       registerDate: '10/05/2025',
@@ -35,6 +34,11 @@ export class ManageCaretakerComponent extends ButtonBaseComponent implements OnI
   itemsPerPage = 3;
   totalPages = 3;
   router: any;
+  loading = false;
+loadingButton: string | null = null;
+
+
+
 
   ngOnInit() {
     this.totalPages = Math.ceil(this.caretakers.length / this.itemsPerPage);
@@ -50,13 +54,16 @@ export class ManageCaretakerComponent extends ButtonBaseComponent implements OnI
   }
   
     addCaretaker() {
-    this.runWithLoader('addCaretaker', () => {
-      // optional delay to show loader briefly
-      setTimeout(() => {
-        this.router.navigate(['/add-caretaker']);
-      }, 200); 
-    });
-  }
+  if (this.loading) return;
+  this.loading = true;
+  this.loadingButton = 'addCaretaker';
+
+  setTimeout(() => {
+    this.router.navigate(['/add-caretaker']);
+    this.loading = false;
+    this.loadingButton = null;
+  }, 200); // short delay to show loader
+}
 
   goToPage(page: number) {
     this.currentPage = page;
@@ -69,4 +76,19 @@ export class ManageCaretakerComponent extends ButtonBaseComponent implements OnI
   nextPage() {
     if (this.currentPage < this.totalPages) this.currentPage++;
   }
+  runWithLoader(action: string, fn: () => void) {
+  if (this.loading) return;
+  this.loading = true;
+  this.loadingButton = action;
+
+  setTimeout(() => {
+    fn();
+    this.loading = false;
+    this.loadingButton = null;
+  });
+}
+goToAddCaretaker() {
+  this.router.navigate(['/add-caretaker']);
+}
+
 }

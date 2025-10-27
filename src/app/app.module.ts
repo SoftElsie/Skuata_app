@@ -19,6 +19,7 @@ import { ProfileIconComponent } from './components/profile-icon/profile-icon.com
 import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
 import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
 import { AddRoomComponent } from './components/add-room/add-room.component';
+import { ActionButtonComponent } from './components/shared/base/action-button/action-button.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AddRoomComponent } from './components/add-room/add-room.component';
      OwnerRoomComponent,
      FilterComponent,
      LoaderBtnComponent,
+     ActionButtonComponent,
   ],
   imports: [
     BrowserModule,

@@ -86,8 +86,8 @@
 
     <button
       class="btn-find filter-buttons"
-      (click)="loadMore()"
       *ngIf="currentPage * itemsPerPage < filteredProperties.length"
+      (click)="loadMore()"
       [disabled]="loading"
     >
       Load More
