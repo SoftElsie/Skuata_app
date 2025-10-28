@@ -47,12 +47,8 @@
   margin-bottom: 16px;
 }
 
-<<<<<<< HEAD
-.input-icon {
-=======
 .input-icon,
 .icon-left {
->>>>>>> origin/Development
   position: absolute;
   left: 12px;
   top: 50%;
@@ -79,8 +75,6 @@
   color: #7f7e7e;
 }
 
-<<<<<<< HEAD
-=======
 /* Eye (Show/Hide Password) Button */
 .eye-btn {
   position: absolute;
@@ -113,7 +107,6 @@
   margin-bottom: 12px;
 }
 
->>>>>>> origin/Development
 /* Buttons */
 .btn {
   width: 100%;
@@ -200,15 +193,9 @@
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 8px;
-<<<<<<< HEAD
- font-family: 'Barlow', sans-serif;
-  Line-height:100%;
-  Letter-spacing: 0%;
-=======
   font-family: 'Barlow', sans-serif;
   line-height: 100%;
   letter-spacing: 0%;
->>>>>>> origin/Development
 }
 
 /* Footer */
@@ -327,10 +314,6 @@
 .img-button:hover {
   transform: scale(1.03);
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/Development
 /* Custom Google icon (Vector.png) */
 .google-icon-custom {
   height: 20px;
@@ -338,18 +321,12 @@
   margin-right: 10px;
   object-fit: contain;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/Development
 /* Email validation error message */
 .error-message {
   color: red;
   font-size: 13px;
   text-align: left;
   margin-bottom: 12px;
-<<<<<<< HEAD
-=======
 }
 .password-group {
   position: relative;
@@ -372,5 +349,4 @@
 
 .input-field {
   padding-right: 40px; /* Make space for the toggle icon */
->>>>>>> origin/Development
 }

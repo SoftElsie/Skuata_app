@@ -5,31 +5,11 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
-<<<<<<< HEAD
   imports: [FormsModule, CommonModule  ],
-=======
-  imports: [FormsModule, CommonModule],
->>>>>>> origin/Development
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-<<<<<<< HEAD
- email: string = '';
-
-  onContinue(): void {
-    console.log('Continue button clicked with email:', this.email);
-  }
-
-  onGoogleSignIn(): void {
-    console.log('Continue with Google clicked');
-  }
-
-  onSignUp(): void {
-    console.log('Sign Up button clicked');
-  }
-}
-=======
   
 email = '';
   password = '';
@@ -63,4 +43,3 @@ email = '';
     // 🧭 TODO: Add navigation logic
   }
 }
->>>>>>> origin/Development
