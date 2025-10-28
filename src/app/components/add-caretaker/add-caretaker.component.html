@@ -1,13 +1,5 @@
 <main class="container">
   <div class="header">
-<<<<<<< HEAD
-    <h1>
-      Add Caretaker
-    </h1>
-    <button><img src="../assets/icons/lucide/x.svg" alt=""></button>
-  </div>
-  <form [formGroup]="addCaretakerForm" (ngSubmit)="onSubmit()" autocomplete="off">
-=======
     <h1>Add Caretaker</h1>
     <button><img src="../assets/icons/lucide/x.svg" alt="" /></button>
   </div>
@@ -16,17 +8,10 @@
     (ngSubmit)="onSubmit()"
     autocomplete="off"
   >
->>>>>>> origin/Development
     <div class="column">
       <div class="group">
         <div>
           <label for="name"> Name</label>
-<<<<<<< HEAD
-          <input type="text" name="name" placeholder="e.g. John Doe" formControlName="name" [class.error]="name?.touched && name?.invalid">
-          <div class="error" *ngIf="name?.touched && name?.invalid">
-            <div *ngIf="name?.errors?.['required']">Name is required</div>
-            <div *ngIf="name?.errors?.['minlength']">Name is required at least 3 characters</div>
-=======
           <input
             type="text"
             name="name"
@@ -39,14 +24,10 @@
             <div *ngIf="name?.errors?.['minlength']">
               Name is required at least 3 characters
             </div>
->>>>>>> origin/Development
           </div>
         </div>
         <div>
           <label for="email"> Email</label>
-<<<<<<< HEAD
-          <input type="text" name="email" placeholder="johndoe@example.com" formControlName="email" [class.error]="email?.touched && email?.invalid">
-=======
           <input
             type="text"
             name="email"
@@ -54,7 +35,6 @@
             formControlName="email"
             [class.error]="email?.touched && email?.invalid"
           />
->>>>>>> origin/Development
           <div class="error" *ngIf="email?.touched && email?.invalid">
             <div *ngIf="email?.errors?.['required']">Email is required</div>
             <div *ngIf="email?.errors?.['email']">Invalid email format</div>
@@ -62,11 +42,6 @@
         </div>
         <div>
           <label for="profile-image"> Profile Image</label>
-<<<<<<< HEAD
-          <input type="file" name="profileImage" formControlName="profileImage" [class.error]="profileImage?.touched && profileImage?.invalid">
-          <div class="error" *ngIf="profileImage?.touched && profileImage?.invalid">
-            <div *ngIf="profileImage?.errors?.['required']">Profile Image is required</div>
-=======
           <input
             type="file"
             name="profileImage"
@@ -80,19 +55,10 @@
             <div *ngIf="profileImage?.errors?.['required']">
               Profile Image is required
             </div>
->>>>>>> origin/Development
           </div>
         </div>
         <div>
           <label for="permission"> Permission</label>
-<<<<<<< HEAD
-          <select name="permission" id="permission" formControlName="permission" [class.error]="permission?.touched && permission?.invalid">
-            <option value="">Choose Permission</option>
-            <option value={{permission.toLowerCase()}} *ngFor="let permission of permissions">{{permission}}</option>
-          </select>
-          <div class="error" *ngIf="permission?.touched && permission?.invalid">
-            <div *ngIf="permission?.errors?.['required']">Permission type is required</div>
-=======
           <select
             name="permission"
             id="permission"
@@ -111,18 +77,11 @@
             <div *ngIf="permission?.errors?.['required']">
               Permission type is required
             </div>
->>>>>>> origin/Development
           </div>
         </div>
       </div>
     </div>
     <div class="button">
-<<<<<<< HEAD
-      <button type="submit" [disabled]="addCaretakerForm.invalid">Add Caretaker</button>
-    </div>
-  </form>
-
-=======
       <button
         type="submit"
         [disabled]="addCaretakerForm.invalid || loading"
@@ -135,5 +94,4 @@
       </button>
     </div>
   </form>
->>>>>>> origin/Development
 </main>

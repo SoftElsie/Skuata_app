@@ -8,36 +8,6 @@
   <div class="login-card">
     <h1 class="login-title">Log in to SKUATA</h1>
 
-<<<<<<< HEAD
-   <!-- Email Input -->
-<form #loginForm="ngForm" (ngSubmit)="onContinue()" novalidate>
-  <div class="input-group">
-    <img src="assets/Icons/user-round-email.png" alt="Email Icon" class="input-icon" />
-    <input
-      type="email"
-      name="email"
-      [(ngModel)]="email"
-      #emailField="ngModel"
-      placeholder="Email address..."
-      class="input-field"
-      required
-      email
-    />
-  </div>
-
-  <!-- Email Error Message -->
-  <div *ngIf="emailField.invalid && emailField.touched" class="error-message">
-    <small *ngIf="emailField.errors?.['required']">Email is required.</small>
-    <small *ngIf="emailField.errors?.['email']">Please enter a valid email address.</small>
-  </div>
-
-  <!-- Continue Button -->
-  <button class="btn btn-continue" type="submit" [disabled]="loginForm.invalid">
-    Continue
-    <span class="chevron">&#8250;</span>
-  </button>
-</form>
-=======
     <!-- Login Form -->
     <form #loginForm="ngForm" (ngSubmit)="onContinue()" novalidate>
       <!-- Email Input -->
@@ -98,18 +68,13 @@
         Continue <span class="chevron">&#8250;</span>
       </button>
     </form>
->>>>>>> origin/Development
 
     <!-- Divider -->
     <div class="divider">
       <span>OR</span>
     </div>
 
-<<<<<<< HEAD
-    <!-- Google Sign In (with custom icon) -->
-=======
     <!-- Google Sign In -->
->>>>>>> origin/Development
     <button class="btn btn-google" (click)="onGoogleSignIn()">
       <img src="assets/Icons/Google.svg" alt="Google Icon" class="google-icon-custom" />
       Continue with Google

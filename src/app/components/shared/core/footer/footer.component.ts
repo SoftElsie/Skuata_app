@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
@@ -37,16 +36,4 @@ export class FooterComponent {
  
 
   legalLinks = ["Terms of Service", "Privacy Policy", "Cookie Settings"]
-=======
-
-@Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
-})
-export class FooterComponent {
-
->>>>>>> origin/Development
 }
