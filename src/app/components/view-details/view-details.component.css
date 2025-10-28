@@ -18,6 +18,16 @@
   background-color: #eaeded;
   border-radius: 8px;
 }
+/* reviews under images */
+.image-section app-reviews {
+  display: flex;
+  margin-top: 0.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0.3rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
 
 /* Right: Details section */
 .details-section {
@@ -78,15 +88,15 @@
 /* Thumbnails */
 .thumbnail-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 5px;
   margin-top: 10px;
 }
 
 .thumb {
   position: relative;
   border-radius: 6px;
-  overflow: hidden;
+  overflow: auto;
   cursor: pointer;
   background-color: #f5f5f5;
   transition: transform 0.2s ease-in-out;

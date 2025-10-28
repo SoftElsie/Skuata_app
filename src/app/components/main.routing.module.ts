@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotificationSettingsComponent } from './notification-settings/notification-settings.component';
+import { LoaderBtnComponent } from './shared/loader-btn/loader-btn.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
   },
   {   path:'dash',component:DashboardComponent},
   {   path:'notification', component:NotificationSettingsComponent},
+  {  path:'loader', component:LoaderBtnComponent },
 ];
 
 

@@ -4,7 +4,7 @@
     <div class="image-section">
       <div class="main-image-container">
         <button class="nav-btn prev" (click)="prevImage()">
-          <img src="/assets/icons/chevron-left.png" alt="Previous" />
+          <img src="/assets/Icons/chevron-left.png" alt="Previous" />
         </button>
 
         <img
@@ -14,7 +14,7 @@
         />
 
         <button class="nav-btn next" (click)="nextImage()">
-          <img src="/assets/icons/chevron-right.png" alt="Next" />
+          <img src="/assets/Icons/chevron-right.png" alt="Next" />
         </button>
       </div>
 
@@ -38,9 +38,10 @@
           </span>
         </div>
       </div>
+      <app-reviews></app-reviews>
     </div>
 
-    <!-- RIGHT: DETAILS SECTION -->
+    <!-- RIGHT: DETAILS -->
     <div class="details-section">
       <h2>{{ property.name }}</h2>
       <p>
@@ -58,6 +59,10 @@
           <p>{{ property.description }}</p>
         </div>
       </div>
+      <app-property-card></app-property-card>
+      <!-- CONTACT PLACEHOLDER -->
+      <!-- <app-contact-manager></app-contact-manager> -->
     </div>
   </div>
 </div>
+<!-- </div> -->

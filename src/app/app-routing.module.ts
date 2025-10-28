@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
+import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
 import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
-
 import { LoginComponent } from './auth/login/login.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
@@ -11,9 +10,12 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { CheckInboxComponent } from './auth/reset-password/check-inbox/check-inbox.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 import { PasswordSecurityComponent } from './components/password-security/password-security.component';
 import { NotificationSettingsComponent } from './components/notification-settings/notification-settings.component';
+import { ReviewComponent } from './components/review/review.component';
+import { PropertyCardComponent } from './components/property-card/property-card.component';
 
 
 
@@ -36,12 +38,12 @@ const routes: Routes = [
   {   path:'reset-password',component:ResetPasswordComponent},
   {   path:'check-inbox',component:CheckInboxComponent},
   { path: 'register', component: RegisterComponent },
-   {  path:'contact-info',component:ContactInfoComponent},
+   {   path:'contact-info',component:ContactInfoComponent},
+   {   path:'owner-room',component:OwnerRoomComponent},
    {  path:'profile',component:ProfileIconComponent},
-{  path:'password-security',component:PasswordSecurityComponent},
-
-
-
+  {  path:'password-security',component:PasswordSecurityComponent},
+  {  path:'loader', component:LoaderBtnComponent },
+ 
 ];
 
 @NgModule({

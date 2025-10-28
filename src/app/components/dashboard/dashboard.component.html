@@ -1,25 +1,27 @@
 <div class="listings-container">
-  
-  <app-filter  (filtersChanged)="onFiltersChanged($event)"></app-filter>
-   
+  <app-filter (filtersChanged)="onFiltersChanged($event)"></app-filter>
+
   <div class="properties-grid">
-    <div class="property-card" *ngFor="let property of visibleProperties" (click)="viewDetails(property)">
+    <div
+      class="property-card"
+      *ngFor="let property of visibleProperties"
+      (click)="viewDetails(property)"
+    >
       <div class="property-image">
         <img [src]="property.image" [alt]="property.title" />
       </div>
-      
+
       <div class="property-content">
         <div class="property-header">
           <h3 class="property-title">{{ property.title }}</h3>
           <div class="property-actions">
-           
-            <button 
-              class="icon-button-small favorite-button" 
+            <button
+              class="icon-button-small favorite-button"
               [class.active]="property.isFavorite"
               (click)="toggleFavorite(property)"
               aria-label="Add to favorites"
             >
-            <img [src]="'assets/icons/Frame 287.png'" />
+              <img [src]="'assets/icons/Frame 287.png'" />
             </button>
           </div>
         </div>
@@ -30,14 +32,20 @@
         </div>
 
         <div class="property-status">
-          <span 
-            class="availability-badge" 
+          <span
+            class="availability-badge"
             [class.available]="property.availability === 'available'"
             [class.unavailable]="property.availability === 'unavailable'"
           >
-            {{ property.availability === 'available' ? 'Available' : 'Unavailable' }}
+            {{
+              property.availability === "available"
+                ? "Available"
+                : "Unavailable"
+            }}
           </span>
-          <a class="view-details-link" (click)="viewDetails(property)">View Details</a>
+          <a class="view-details-link" (click)="viewDetails(property)"
+            >View Details</a
+          >
         </div>
 
         <div class="property-details">
@@ -49,38 +57,43 @@
         </div>
 
         <div class="property-meta">
-  <div class="meta-item" *ngIf="property.availabilityDate">
-   <img [src]="'assets/icons/calendar-check-2.png'" />
-    <span>Availability: {{ property.availabilityDate }}</span>
-  </div>
+          <div class="meta-item" *ngIf="property.availabilityDate">
+            <img [src]="'assets/icons/calendar-check-2.png'" />
+            <span>Availability: {{ property.availabilityDate }}</span>
+          </div>
 
-  <div class="meta-item">
-  <img [src]="'assets/icons/eye.png'" />
-    <span>{{ property.views }} views</span>
-  </div>
-</div>
-
+          <div class="meta-item">
+            <img [src]="'assets/icons/eye.png'" />
+            <span>{{ property.views }} views</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  
-   <div class="pagination-buttons">
-  <button 
-    class="btn-find filter-buttons" 
-    *ngIf="currentPage > 1"
-    (click)="loadPrevious()"
-  >
-    Previous
-  </button>
 
-  <button 
-    class="btn-find filter-buttons" 
-    (click)="loadMore()" 
-    *ngIf="currentPage * itemsPerPage < filteredProperties.length"
-  >
-    Load More
-  </button>
-</div>
+  <div class="pagination-buttons">
+    <button
+      class="btn-find filter-buttons"
+      *ngIf="currentPage > 1"
+      (click)="loadPrevious()"
+      [disabled]="loading"
+    >
+      Previous
+      <app-loader-btn
+        [active]="loading && loadingButton === 'previous'"
+      ></app-loader-btn>
+    </button>
 
- 
+    <button
+      class="btn-find filter-buttons"
+      *ngIf="currentPage * itemsPerPage < filteredProperties.length"
+      (click)="loadMore()"
+      [disabled]="loading"
+    >
+      Load More
+      <app-loader-btn
+        [active]="loading && loadingButton === 'next'"
+      ></app-loader-btn>
+    </button>
+  </div>
 </div>

@@ -6,16 +6,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './contact-info.component.html',
   styleUrls: ['./contact-info.component.css']
 })
-export class ContactInfoComponent implements OnInit {
+export class ContactInfoComponent implements OnInit{
   contactForm!: FormGroup;
-
+  loading = false;
+loadingButton: string | null = null;
   menuItems = [
     { label: 'Contact Info', route: '/contact-info' },
     { label: 'Password & Security', route: '/security' },
     { label: 'Notification Settings', route: '/notifications' },
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit(): void {
    
@@ -32,12 +34,27 @@ export class ContactInfoComponent implements OnInit {
       postalCode: ['0002', [Validators.required, Validators.pattern(/^[0-9]{4,6}$/)]]
     });
   }
-
-  handleSaveChanges(): void {
-    if (this.contactForm.invalid) {
-      this.contactForm.markAllAsTouched();
-      return;
-    }
-    console.log('✅ Saving changes:', this.contactForm.value);
+handleSaveChanges(): void {
+  if (this.contactForm.invalid) {
+    this.contactForm.markAllAsTouched();
+    return;
   }
+
+  if (this.loading) return;
+
+  this.loading = true;
+  this.loadingButton = 'saveChanges';
+
+  // yield to render spinner
+  setTimeout(() => {
+    console.log('✅ Saving changes:', this.contactForm.value);
+
+    // TODO: replace with actual save logic / API call
+    // e.g., this.api.save(this.contactForm.value).subscribe(...)
+
+    this.loading = false;
+    this.loadingButton = null;
+  }, 500);
 }
+}
+
