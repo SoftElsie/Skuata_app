@@ -20,6 +20,11 @@ import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.
 import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
 import { AddRoomComponent } from './components/add-room/add-room.component';
 
+
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,8 +53,10 @@ import { AddRoomComponent } from './components/add-room/add-room.component';
     RouterModule,
     SharedModule,
     RouterOutlet,
-
-  ],
+  
+     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
+ ],
 
   bootstrap: [AppComponent]
 })
