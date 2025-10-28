@@ -20,6 +20,7 @@ import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.
 import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
 import { AddRoomComponent } from './components/add-room/add-room.component';
 import { ActionButtonComponent } from './components/shared/base/action-button/action-button.component';
+import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
 
 @NgModule({
   declarations: [
