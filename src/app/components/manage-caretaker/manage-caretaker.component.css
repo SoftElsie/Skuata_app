@@ -1,15 +1,8 @@
 .container {
-<<<<<<< HEAD
   padding: 2rem 6rem;
   min-height: 100vh;
   font-family: "Inter", sans-serif;
   align-self: center;
-=======
-  padding: 2rem;
-  background-color: #f5f7f6;
-  min-height: 100vh;
-  font-family: "Inter", sans-serif;
->>>>>>> origin/Development
 }
 
 /* HEADER LAYOUT */
@@ -17,11 +10,7 @@
   display: flex;
   flex-direction: column; 
   align-items: flex-start;
-<<<<<<< HEAD
   margin-bottom: 1rem;
-=======
-  margin-bottom: 1.5rem;
->>>>>>> origin/Development
 }
 
 .back-btn {
@@ -29,10 +18,6 @@
   background: none;
   font-size: 1.5rem;
   cursor: pointer;
-<<<<<<< HEAD
-=======
-  margin-bottom: 0.5rem;
->>>>>>> origin/Development
 }
 
 .back-btn img {
@@ -78,11 +63,7 @@ h2 {
 .table-container {
   background: white;
   border-radius: 8px;
-<<<<<<< HEAD
   padding: 0.5rem;
-=======
-  padding: 1rem;
->>>>>>> origin/Development
   overflow-x: auto;
 }
 
@@ -97,11 +78,7 @@ th {
   text-align: left;
   font-weight: 600;
   color: #292828;
-<<<<<<< HEAD
   padding: 1rem 1rem;
-=======
-  padding: 2rem 1rem;
->>>>>>> origin/Development
 }
 thead tr{
   display: visible;
@@ -118,14 +95,9 @@ tbody tr:nth-child(even) {
 
 td {
   text-align: left;
-<<<<<<< HEAD
   padding: 0.55rem 0.5rem;
   border-bottom: 1px solid #eee;
   text-overflow: ellipsis;
-=======
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #eee;
->>>>>>> origin/Development
   overflow: hidden;
   white-space: nowrap;          
 }
@@ -145,27 +117,16 @@ td a{
 
 .status.pending {
   color: #b87333;
-<<<<<<< HEAD
-  /* border: 1px solid #e7b874; */
-=======
->>>>>>> origin/Development
 }
 
 .status.granted {
   color: #2b6b4f;
-<<<<<<< HEAD
-  /* border: 1px solid #8cc8b1; */
-=======
->>>>>>> origin/Development
 }
 
 /* ACTION BUTTONS */
 .edit-btn,
 .delete-btn {
-<<<<<<< HEAD
-=======
   display: inline-flex;
->>>>>>> origin/Development
   border: none;
   padding: 0.4rem 0.9rem;
   border-radius: 6px;

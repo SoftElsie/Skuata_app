@@ -78,24 +78,15 @@
 /* Thumbnails */
 .thumbnail-gallery {
   display: grid;
-<<<<<<< HEAD
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 8px;
-=======
   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   gap: 5px;
->>>>>>> origin/Development
   margin-top: 10px;
 }
 
 .thumb {
   position: relative;
   border-radius: 6px;
-<<<<<<< HEAD
-  overflow: hidden;
-=======
   overflow: auto;
->>>>>>> origin/Development
   cursor: pointer;
   background-color: #f5f5f5;
   transition: transform 0.2s ease-in-out;
