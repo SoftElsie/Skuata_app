@@ -38,6 +38,7 @@ import { ActionButtonComponent } from './components/shared/base/action-button/ac
      FilterComponent,
      LoaderBtnComponent,
      ActionButtonComponent,
+        ContactManagerComponent,
   ],
   imports: [
     BrowserModule,
