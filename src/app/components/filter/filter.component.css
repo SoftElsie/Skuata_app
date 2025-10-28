@@ -9,8 +9,13 @@
   display: flex;
   align-items: center;
   background: white;
+<<<<<<< HEAD
   border: 2px solid #F2A250;
   border-radius: 6px;
+=======
+  border: 2px solid #f97316;
+  border-radius: 12px;
+>>>>>>> origin/Development
   padding: 2px 16px;
   gap: 12px;
 }
@@ -34,11 +39,19 @@
 
 .search-divider {
   width: 1px;
+<<<<<<< HEAD
   height: 32px;
   background: #d1d5db;
   flex-shrink: 0;
   position: absolute;
   left: 41%;
+=======
+  height: 24px;
+  background: #d1d5db;
+  flex-shrink: 0;
+  position: absolute;
+  left: 65%;
+>>>>>>> origin/Development
 }
 
 .filter-overlay {
@@ -182,6 +195,10 @@
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Development
 .price-inputs {
   display: flex;
   gap: 92px;

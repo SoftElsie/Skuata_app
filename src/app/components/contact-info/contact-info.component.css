@@ -6,7 +6,12 @@ body, .user-settings-container {
 .user-settings-container {
   display: flex;
   gap: 2rem;
+<<<<<<< HEAD
   padding: 6rem 4rem;
+=======
+  padding: 0rem 4rem;
+  background-color: #f9fafb;
+>>>>>>> origin/Development
   min-height: 100vh;
   box-sizing: border-box;
 }
@@ -29,7 +34,14 @@ body, .user-settings-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
   padding-bottom: -10%;
+=======
+   flex-wrap: wrap;
+  padding-bottom: -10%;
+  gap: 1rem;
+  margin-bottom: 1rem;
+>>>>>>> origin/Development
 }
 
 .form-title {
@@ -156,9 +168,17 @@ body, .user-settings-container {
   }
 
   .form-header {
+<<<<<<< HEAD
     flex-direction: column;
     gap: 1rem;
     
+=======
+    
+    gap: 1rem;
+     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+>>>>>>> origin/Development
   }
 
   .form-row {
@@ -178,6 +198,12 @@ body, .user-settings-container {
   .save-btn {
     width: 100%;
     justify-content: center;
+<<<<<<< HEAD
+=======
+     flex-shrink: 0;
+    font-size: 0.9rem;
+    padding: 8px 14px;
+>>>>>>> origin/Development
   }
 
   .menu-nav {

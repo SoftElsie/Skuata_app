@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterModule, RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -27,6 +26,7 @@ import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.co
 import { AddRoomComponent } from './components/add-room/add-room.component';
 import { NotificationSettingsComponent } from './components/user-settings/notification-settings/notification-settings.component';
 import { PasswordSecurityComponent } from './components/user-settings/password-security/password-security.component';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 
 @NgModule({

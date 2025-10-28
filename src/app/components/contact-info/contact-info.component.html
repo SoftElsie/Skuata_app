@@ -1,5 +1,13 @@
 <div class="user-settings-container">
+<<<<<<< HEAD
   
+=======
+  <app-user-settings
+    [title]="'User Settings'"
+    [subtitle]="'Edit Profile'"
+    [menuItems]="menuItems"
+  ></app-user-settings>
+>>>>>>> origin/Development
 
   <main class="settings-content">
     <form
@@ -18,7 +26,11 @@
           <img src="assets/icons/save.png" alt="Save" class="save-icon" />
           Save Changes
           <app-loader-btn
+<<<<<<< HEAD
             [active]="loading && loadingButton === 'save'"
+=======
+            [active]="loading && loadingButton === 'saveChanges'"
+>>>>>>> origin/Development
           ></app-loader-btn>
         </button>
       </div>

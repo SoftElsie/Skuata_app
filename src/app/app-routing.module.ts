@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
@@ -18,6 +17,7 @@ import { PasswordSecurityComponent } from './components/user-settings/password-s
 import { NotificationSettingsComponent } from './components/user-settings/notification-settings/notification-settings.component';
 
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
 

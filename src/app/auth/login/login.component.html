@@ -8,6 +8,7 @@
   <div class="login-card">
     <h1 class="login-title">Log in to SKUATA</h1>
 
+<<<<<<< HEAD
    <!-- Email Input -->
 <form #loginForm="ngForm" (ngSubmit)="onContinue()" novalidate>
   <div class="input-group">
@@ -36,13 +37,79 @@
     <span class="chevron">&#8250;</span>
   </button>
 </form>
+=======
+    <!-- Login Form -->
+    <form #loginForm="ngForm" (ngSubmit)="onContinue()" novalidate>
+      <!-- Email Input -->
+      <div class="input-group">
+        <img src="assets/Icons/user-round-email.png" alt="Email Icon" class="input-icon" />
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          #emailField="ngModel"
+          placeholder="Email address..."
+          class="input-field"
+          required
+          email
+        />
+      </div>
+
+      <!-- Email Error Message -->
+      <div *ngIf="emailField.invalid && emailField.touched" class="error-message">
+        <small *ngIf="emailField.errors?.['required']">Email is required.</small>
+        <small *ngIf="emailField.errors?.['email']">Please enter a valid email address.</small>
+      </div>
+
+       <!-- Password Input -->
+<div class="input-group password-group">
+  <img src="assets/Icons/lock-keyhole.svg" alt="Password Icon" class="input-icon" />
+  <input
+    [type]="showPassword ? 'text' : 'password'"
+    name="password"
+    [(ngModel)]="password"
+    #passwordField="ngModel"
+    placeholder="Password..."
+    class="input-field"
+    required
+    minlength="6"
+    pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?':{}|<>]).+$"
+  />
+  <img
+    [src]="showPassword ? 'assets/Icons/eye.svg' : 'assets/Icons/eye-closed.svg'"
+    alt="Toggle Password Visibility"
+    class="toggle-password"
+    (click)="togglePasswordVisibility()"
+  />
+</div>
+
+<!-- Password Error Message -->
+<div *ngIf="passwordField.invalid && passwordField.touched" class="error-message">
+  <small *ngIf="passwordField.errors?.['required']">Password is required.</small>
+  <small *ngIf="passwordField.errors?.['minlength']">Password must be at least 6 characters long.</small>
+  <small *ngIf="passwordField.errors?.['pattern']">
+    Password must include at least one uppercase letter and at least one special character (!&#64;#$%^&* etc.).
+  </small>
+</div>
+
+
+      <!-- Continue Button -->
+      <button class="btn btn-continue" type="submit" [disabled]="loginForm.invalid">
+        Continue <span class="chevron">&#8250;</span>
+      </button>
+    </form>
+>>>>>>> origin/Development
 
     <!-- Divider -->
     <div class="divider">
       <span>OR</span>
     </div>
 
+<<<<<<< HEAD
     <!-- Google Sign In (with custom icon) -->
+=======
+    <!-- Google Sign In -->
+>>>>>>> origin/Development
     <button class="btn btn-google" (click)="onGoogleSignIn()">
       <img src="assets/Icons/Google.svg" alt="Google Icon" class="google-icon-custom" />
       Continue with Google

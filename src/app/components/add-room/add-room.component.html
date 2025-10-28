@@ -78,10 +78,17 @@
       </div>
     </div>
     <div class="button">
+<<<<<<< HEAD
       <button (click)="addRoom()" [disabled]="loading">
         Add Room
         <app-loader-btn
           [active]="loading && loadingButton === 'add'"
+=======
+      <button (click)="handleAddRoom()" [disabled]="loading">
+        Add Room
+        <app-loader-btn
+          [active]="loading && loadingButton === 'addRoom'"
+>>>>>>> origin/Development
         ></app-loader-btn>
       </button>
     </div>

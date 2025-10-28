@@ -21,15 +21,16 @@ interface Property {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent{
 
-   currentYear = new Date().getFullYear()
+  currentYear = new Date().getFullYear()
 searchQuery = ""
   visibleProperties: Property[] = [] 
-   filteredProperties: Property[] = [];
+  filteredProperties: Property[] = [];
   itemsPerPage = 6              
   currentPage = 1   
-
+loading = false;
+loadingButton: string | null = null;
 
   properties: Property[] = [
     {
@@ -134,20 +135,42 @@ searchQuery = ""
     const end = this.currentPage * this.itemsPerPage;
     this.visibleProperties = this.filteredProperties.slice(start, end); 
   }
-  loadMore(): void {
-      const totalPages = Math.ceil(this.filteredProperties.length / this.itemsPerPage);
-      if (this.currentPage < totalPages) {
-        this.currentPage++;
-        this.loadProperties();
-      }
-  }
+ loadMore(): void {
+  if (this.loading) return;
 
-  loadPrevious(): void {
-      if (this.currentPage > 1) {
-        this.currentPage--;
-        this.loadProperties();
-      }
-  }
+  this.loading = true;
+  this.loadingButton = 'next';
+
+  // yield to allow Angular to render spinner
+  setTimeout(() => {
+    const totalPages = Math.ceil(this.filteredProperties.length / this.itemsPerPage);
+    if (this.currentPage < totalPages) {
+      this.currentPage++;
+      this.loadProperties();
+    }
+
+    this.loading = false;
+    this.loadingButton = null;
+  }, 800); // 0ms yields a frame
+}
+
+loadPrevious(): void {
+  if (this.loading) return;
+
+  this.loading = true;
+  this.loadingButton = 'previous';
+
+  setTimeout(() => {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.loadProperties();
+    }
+
+    this.loading = false;
+    this.loadingButton = null;
+  }, 800);
+}
+
   onSearch(): void {
     console.log("Searching for:", this.searchQuery)
 
