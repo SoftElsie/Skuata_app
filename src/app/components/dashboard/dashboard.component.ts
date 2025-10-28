@@ -20,19 +20,20 @@ interface Property {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent{
 searchQuery = ""
   visibleProperties: Property[] = [] 
-   filteredProperties: Property[] = [];
+  filteredProperties: Property[] = [];
   itemsPerPage = 6              
   currentPage = 1   
-
+loading = false;
+loadingButton: string | null = null;
 
   properties: Property[] = [
     {
       id: 1,
       title: "Backroom",
-      image: "assets/images/image-card-1.png",
+      image: "assets/images/image-card-2.png",
       address: "16 Leyds Street, Sunnyside, Gauteng...",
       price: 1500,
       type: "Backroom",
@@ -66,12 +67,12 @@ searchQuery = ""
       availabilityDate: "15/10/25",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/icons/house.png"
+      roomIcon:"assets/icons/house.png"
     },
     {
       id: 4,
       title: "Backroom",
-      image: "assets/images/image-card-1.png",
+      image: "assets/images/image-card-2.png",
       address: "16 Leyds Street, Sunnyside, Gauteng...",
       price: 1500,
       type: "Backroom",
@@ -108,7 +109,7 @@ searchQuery = ""
      {
       id: 7,
       title: "Backroom",
-      image: "assets/images/image-card-1.png",
+      image: "assets/images/image-card-2.png",
       address: "16 Leyds Street, Sunnyside, Gauteng...",
       price: 4000,
       type: "House",
@@ -130,21 +131,41 @@ searchQuery = ""
     this.visibleProperties = this.filteredProperties.slice(start, end); 
   }
  loadMore(): void {
-  const totalPages = Math.ceil(this.filteredProperties.length / this.itemsPerPage);
-  if (this.currentPage < totalPages) {
-    this.currentPage++;
-    this.loadProperties();
-  }
+  if (this.loading) return;
+
+  this.loading = true;
+  this.loadingButton = 'next';
+
+  // yield to allow Angular to render spinner
+  setTimeout(() => {
+    const totalPages = Math.ceil(this.filteredProperties.length / this.itemsPerPage);
+    if (this.currentPage < totalPages) {
+      this.currentPage++;
+      this.loadProperties();
+    }
+
+    this.loading = false;
+    this.loadingButton = null;
+  }, 800); // 0ms yields a frame
 }
 
+loadPrevious(): void {
+  if (this.loading) return;
 
+  this.loading = true;
+  this.loadingButton = 'previous';
 
-   loadPrevious(): void {
+  setTimeout(() => {
     if (this.currentPage > 1) {
       this.currentPage--;
       this.loadProperties();
     }
-  }
+
+    this.loading = false;
+    this.loadingButton = null;
+  }, 800);
+}
+
   onSearch(): void {
     console.log("Searching for:", this.searchQuery)
 

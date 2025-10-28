@@ -1,64 +1,59 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { RouterOutlet } from '@angular/router';
-import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-
+import { LoginComponent } from './auth/login/login.component';
+import { NotificationSettingsComponent } from './components/notification-settings/notification-settings.component';
+import { PasswordSecurityComponent } from './components/password-security/password-security.component';
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
-
 import { FilterComponent } from './components/filter/filter.component';
-import { FormsModule } from '@angular/forms';
-
-import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
-
-
-import { RegisterComponent } from './auth/register/register.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
-
-import { TopNavComponent } from "./components/shared/core/top-nav/top-nav.component";
-import { share } from 'rxjs';
 import { SharedModule } from './components/shared/shared.module';
-
-
+import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
+import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
+import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
+import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
+import { AddRoomComponent } from './components/add-room/add-room.component';
+import { ActionButtonComponent } from './components/shared/base/action-button/action-button.component';
 
 @NgModule({
   declarations: [
-
     AppComponent,
-
-     DashboardComponent,
-     ContactManagerComponent,
-
-
-     ManageCaretakerComponent,
-
-
-     DashboardComponent,
+    DashboardComponent,
+    AddCaretakerComponent,
+    NotificationSettingsComponent,
+    PasswordSecurityComponent,
+    ManageCaretakerComponent,
+    ContactInfoComponent,
+    FilterComponent,
+    ProfileIconComponent ,
+    AddRoomComponent,
      ContactInfoComponent,
-     FilterComponent
-
+     OwnerRoomComponent,
+     FilterComponent,
+     LoaderBtnComponent,
+     ActionButtonComponent,
+        ContactManagerComponent,
   ],
   imports: [
-    BrowserModule, HttpClientModule,
+    BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
+    LoginComponent,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-      RouterOutlet,
-    FormsModule,
-    ReactiveFormsModule,
+    RouterModule,
     SharedModule,
+    RouterOutlet,
 
   ],
-  bootstrap: [AppComponent]
 
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
