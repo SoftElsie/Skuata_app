@@ -67,7 +67,7 @@ export class ReviewComponent implements OnInit {
     }
   ];
   reviews: Review[] = []; // This will be the currently displayed reviews
-  initialDisplayCount: number = 3;
+  initialDisplayCount: number = 2;
   displayCount: number = this.initialDisplayCount;
 
   overallRating: number = 0;
