@@ -1,0 +1,44 @@
+<footer class="footer">
+   <hr class="divider" />
+<div class="footer-container">
+     
+    <div class="footer-top">
+      
+     <ng-container >
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcset="/assets/images/Logo-half.png"
+        />
+        <img class="logo" src="/assets/images/Logo-Full.png" alt="UnSKUATA" />
+      </picture>
+    </ng-container>
+
+      
+      <div class="footer-nav">
+        <span *ngFor="let link of navigationLinks" class="footer-link">
+          {{ link }}
+        </span>
+      </div>
+
+      
+      <div class="footer-nav">
+        <span *ngFor="let link of roomLinks" class="footer-link">
+          {{ link }}
+        </span>
+      </div>
+
+      
+      <div class="footer-social">
+        <p class="social-title">Follow Us:</p>
+        <div class="social-icons">
+          <span *ngFor="let social of socialIcons" 
+             class="social-icon"
+             [attr.aria-label]="social.name">
+          <img [src]="social.icon"  />
+          </span>
+        </div>
+      </div>
+    </div>
+    </div>
+    </footer>

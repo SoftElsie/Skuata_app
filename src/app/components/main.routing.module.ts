@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NotificationSettingsComponent } from './notification-settings/notification-settings.component';
+import { LoaderBtnComponent } from './shared/widgets/loader-btn/loader-btn.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -9,6 +11,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {   path:'dash',component:DashboardComponent},
+  {   path:'notification', component:NotificationSettingsComponent},
+  {  path:'loader', component:LoaderBtnComponent },
 ];
 
 
@@ -17,3 +21,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class MainRoutingModule { }
+
+

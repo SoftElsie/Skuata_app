@@ -1,1 +1,11 @@
-<p>footer works!</p>
+<footer class="footer">
+  
+<div class="footer-bottom">
+      <p class="copyright">© Copyright {{ currentYear }} SofteIsle</p>
+      <div class="legal-links">
+        <span *ngFor="let link of legalLinks" class="legal-link">
+          {{ link }}
+        </span>
+      </div>
+    </div>
+</footer>

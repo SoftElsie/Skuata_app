@@ -1,0 +1,41 @@
+/* Footer styling */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #EAEDED;
+  text-align: center;
+  padding: 15px 0;
+  color: #888;
+  font-size: 12px;
+}
+
+.footer-divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #7F7E7E;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  color: #263E39;
+}
+
+footer a {
+  text-decoration: none;
+  color: #115757;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+}

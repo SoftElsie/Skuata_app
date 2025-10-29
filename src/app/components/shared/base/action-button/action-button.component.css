@@ -1,0 +1,16 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent; /* adapt to your styles */
+  cursor: pointer;
+}
+

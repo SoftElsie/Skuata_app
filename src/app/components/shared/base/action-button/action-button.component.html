@@ -1,0 +1,9 @@
+<button
+  [type]="type"
+  class="action-button"
+  [disabled]="disabled || active"
+  (click)="onClick()"
+>
+  <ng-content></ng-content>
+  <app-loader-btn [active]="active"></app-loader-btn>
+</button>

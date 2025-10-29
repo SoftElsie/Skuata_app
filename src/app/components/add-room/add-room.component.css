@@ -1,0 +1,169 @@
+.container {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: hsl(var(--neutral-00));
+  padding: 2rem;
+  border-radius: .3em;
+  margin: 0 auto;
+  gap: 1.5em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Barlow, sans-serif;
+  box-sizing: border-box;
+}
+.container .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+label {
+  font-weight: 500;
+  font-size: .8rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+form .columns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.columns div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: flex-end;
+  gap: .35em;
+
+}
+
+.left-group {
+  margin-right: 1em;
+
+}
+
+.right-group {
+  margin-left: 1em;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: .75em .5em;
+  border: none;
+  border-radius: .25em;
+  background-color: hsl(var(--primary-100));
+  font-family: Inter, sans-serif;
+  font-size: .8rem;
+  margin-bottom: 1em;
+}
+
+.container .upload{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  gap: .5em;
+}
+
+.upload .dropzone {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  width: 100%;
+  padding: 1.2em 0;
+  background-color: hsl(var(--primary-100));
+  border-radius: .25em;
+  text-align: center;
+
+}
+
+.upload .dropzone img{
+  opacity: .4;
+  width: 4em;
+  margin: 0 auto;
+}
+
+.upload .dropzone p {
+  font-size: 1.1rem;
+}
+
+.upload .dropzone a {
+  color: hsl(var(--secondary-600));
+}
+
+.upload .dropzone .file-support {
+  font-size: .8em;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  color: hsl(var(--neutral-600) / .5);
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  padding: 1em 0;
+
+}
+
+.button button {
+  padding: .65em 3.5em;
+  border: none;
+  border-radius: .25em;
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(var(--neutral-00));
+  background-color: hsl(var(--primary-900));
+  transition: background-color .25s ease-in-out;
+  cursor: pointer;
+  margin: 1.5em 0 0;
+}
+
+.button button:hover {
+  background-color: hsl(var(--primary-600));
+}
+
+@media (max-width: 550px) {
+  .container {
+    margin: 0 1em 4em;
+  }
+
+  form .columns {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-group, .right-group {
+    margin: 0;
+  }
+
+  .button button {
+    width: 100%;
+  }
+}

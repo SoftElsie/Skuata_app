@@ -1,0 +1,48 @@
+<div class="reviews-section">
+  <div class="reviews-header">
+    <h2>Reviews & Ratings</h2>
+    <hr />
+  </div>
+
+  <div class="reviews-container">
+    <!-- Left side summary -->
+    <div class="reviews-summary">
+      <div class="average-rating">3.2</div>
+      <div class="stars-summary" style="white-space: nowrap;">
+        <div class="stars-container">
+          <ng-container *ngFor="let star of getOverallStars(overallRating)">
+            <img *ngIf="star" src="assets/Vector.svg" alt="Filled Star" width="16" height="16">
+            <img *ngIf="!star" src="assets/star.svg" alt="Empty Star" width="16" height="16">
+          </ng-container>
+        </div>
+        <p>Based on {{ totalRatings }} ratings</p>
+      </div>
+    </div>
+
+    <!-- Right side user reviews -->
+    <div class="reviews-list">
+      <div *ngFor="let review of reviews" class="review-item">
+        <div class="review-header">
+          <span class="reviewer-name">{{ review.name }}</span>
+          <span class="review-date">{{ review.date }}</span>
+        </div>
+        <div class="review-stars">
+          <ng-container *ngFor="let star of getOverallStars(review.rating)">
+            <img *ngIf="star" src="assets/Vector.svg" alt="Filled Star" width="14" height="14">
+            <img *ngIf="!star" src="assets/star.svg" alt="Empty Star" width="14" height="14">
+          </ng-container>
+        </div>
+        <p class="review-text">{{ review.text }}</p>
+        <hr />
+      </div>
+
+      <button *ngIf="reviews.length < allReviews.length" (click)="loadMoreReviews()" class="show-more-btn">
+        Show More <img src="assets/Icons/chevron-down.svg" alt="Show More" width="16" height="16">
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+
