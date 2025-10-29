@@ -33,7 +33,6 @@ import { PropertyCardComponent } from "./components/property-card/property-card.
     AppComponent,
     DashboardComponent,
     AddCaretakerComponent,
-    AddRoomComponent,
     ModalComponent,
     NotificationSettingsComponent,
     PasswordSecurityComponent,

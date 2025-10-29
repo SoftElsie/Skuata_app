@@ -1,9 +1,9 @@
 <main class="container">
   <div class="header">
-    <h1>Add Room</h1>
-    <button (click)="closeModal()">
-      <img src="../../assets/Icons/lucide/x.svg" alt="" />
-    </button>
+    <h1>
+      Add Room
+    </h1>
+    <button (click)="closeModal()"><img src="../../assets/Icons/lucide/x.svg" alt=""></button>
   </div>
   <form>
     <div class="columns">
@@ -80,10 +80,7 @@
       </div>
     </div>
     <div class="button">
-      <<<<<<< HEAD
-      <!-- <button type="button" (click)="addRoomAndCloseModal()">Add Room</button> -->
-      ======= >>>>>>> 5498e659a7c8cd92c18f015b73a3e91158b23f28
-      <button (click)="handleAddRoom()" [disabled]="loading">
+      <button (click)="addRoomAndCloseModal()" [disabled]="loading">
         Add Room
         <app-loader-btn
           [active]="loading && loadingButton === 'addRoom'"
