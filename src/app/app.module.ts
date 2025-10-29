@@ -70,14 +70,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     SharedModule,
     MainModule,
     RouterOutlet,
-     AuthModule,
-   AngularFireModule.initializeApp(environment.firebase),
+    AuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
- 
-   
-
-
-  ],
+   ],
 
   bootstrap: [AppComponent]
 })
