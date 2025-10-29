@@ -11,8 +11,6 @@ export interface Review {
 
 @Component({
   selector: 'app-reviews',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './review.component.html',
   styleUrls: ['./review.component.css'],
  

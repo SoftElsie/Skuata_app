@@ -30,6 +30,8 @@ import { ModalComponent } from './components/modal/modal.component';
 import { PropertyCardComponent } from './components/property-card/property-card.component';
 import { ReviewComponent } from './components/review/review.component';
 import { MainModule } from './components/main.module';
+import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -48,9 +50,11 @@ import { MainModule } from './components/main.module';
     ViewDetailsComponent,
     UserSettingsComponent,
     SettingsLayoutComponent,
-
+     ReviewComponent,
+    PropertyCardComponent,
     AddRoomComponent,
      LoaderBtnComponent,
+     ContactManagerComponent
   ],
   imports: [
     BrowserModule,
@@ -63,8 +67,7 @@ import { MainModule } from './components/main.module';
     SharedModule,
     MainModule,
     RouterOutlet,
-    ReviewComponent,
-    PropertyCardComponent,
+    AuthModule
 
 
   ],

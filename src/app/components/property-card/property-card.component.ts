@@ -14,11 +14,9 @@ export interface Property {
 }
 
 @Component({
-  standalone:true,
   selector: 'app-property-card',
   templateUrl: './property-card.component.html',
   styleUrls: ['./property-card.component.css'],
-  imports: [CommonModule],
 })
 export class PropertyCardComponent {
   // Use @Input to pass data into the component
