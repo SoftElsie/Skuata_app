@@ -35,17 +35,23 @@
 
 /* --- Keep the rest of your original CSS below --- */
 
+/* REPLACEMENT: make the card flow inside .details-section */
 .property-card-layout {
-  width: 419px;
-  height: 161px;
-  opacity: 1;
-  position: absolute;
-  top: 410px;
-  left: 821px;
-  border-radius: 4px;
+  display: block;            /* participate in normal document flow */
+  position: relative;        /* not absolute */
+  margin: 1rem 0 0 0;        /* push it below previous content */
   padding: 16px;
   gap: 8px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+  opacity: 1;
 }
+
+
+
+
 
 .property-card {
   /* General Card Styling */
@@ -54,7 +60,6 @@
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  max-width: 500px; /* Limit width for realistic card size */
   font-family: "Inter", sans-serif; /* Changed to Inter */
 }
 

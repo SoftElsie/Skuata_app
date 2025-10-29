@@ -2,64 +2,131 @@
   <div class="header">
     <h3>Contact Manager</h3>
 
-      <button (click)="seePhoneNumber()" *ngIf="!showPhoneNumber"> Show Phone Number</button>
+    <button (click)="seePhoneNumber()" *ngIf="!showPhoneNumber">
+      Show Phone Number
+    </button>
 
-      <button (click)="seePhoneNumber()" *ngIf="showPhoneNumber"> <img src="../../../assets/icons/phone.svg" alt="user icon" class="icon-color"> +27 81 834 8593</button>
-
+    <button (click)="seePhoneNumber()" *ngIf="showPhoneNumber">
+      <img src="/assets/Icons/phone.svg" alt="user icon" class="icon-color" />
+      +27 81 834 8593
+    </button>
   </div>
-  <form [formGroup] = "contactManagerForm" (ngSubmit)="onSubmit()" autocomplete="off">
+  <form
+    [formGroup]="contactManagerForm"
+    (ngSubmit)="onSubmit()"
+    autocomplete="off"
+  >
     <div class="form-group">
       <label for="name">Your Name</label>
-      <input type="text" name="name" autocomplete="off" formControlName="name" [class.error]="name?.touched && name?.invalid"/>
-      <img src="../../../assets/icons/lucide/user-round.svg" alt="user icon" class="input-icon icon-color">
+      <input
+        type="text"
+        name="name"
+        autocomplete="off"
+        formControlName="name"
+        [class.error]="name?.touched && name?.invalid"
+      />
+      <img
+        src="/assets/Icons/lucide/user-round.svg"
+        alt="user icon"
+        class="input-icon icon-color"
+      />
 
-        <div class="error" *ngIf="name?.invalid && name?.touched">
-            <div *ngIf="name?.errors?.['required']">Name is required</div>
-            <div *ngIf="name?.errors?.['minlength']">Name is required at least 3 characters</div>
+      <div class="error" *ngIf="name?.invalid && name?.touched">
+        <div *ngIf="name?.errors?.['required']">Name is required</div>
+        <div *ngIf="name?.errors?.['minlength']">
+          Name is required at least 3 characters
         </div>
-
+      </div>
     </div>
     <div class="form-group">
       <label for="email">Your Email</label>
-      <input type="email" name="email" autocomplete="off" formControlName="email" [class.error]="email?.touched && email?.invalid" />
-      <img src="../../../assets/icons/lucide/at-sign.svg" alt="at-sign icon" class="input-icon icon-color">
+      <input
+        type="email"
+        name="email"
+        autocomplete="off"
+        formControlName="email"
+        [class.error]="email?.touched && email?.invalid"
+      />
+      <img
+        src="/assets/Icons/lucide/at-sign.svg"
+        alt="at-sign icon"
+        class="input-icon icon-color"
+      />
 
-
-        <div class="error" *ngIf="email?.touched && email?.invalid">
-
-            <div *ngIf="email?.errors?.['required']">Email is required</div>
-            <div *ngIf="email?.errors?.['email']">
-              Invalid email format
-            </div>
-        </div>
-
+      <div class="error" *ngIf="email?.touched && email?.invalid">
+        <div *ngIf="email?.errors?.['required']">Email is required</div>
+        <div *ngIf="email?.errors?.['email']">Invalid email format</div>
+      </div>
     </div>
     <div class="form-group">
       <label for="number">Your Phone Number</label>
-      <input type="tel" name="phoneNumber" formControlName="phoneNumber" [class.error]="phoneNumber?.touched && phoneNumber?.invalid" pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"/>
-      <img src="../../../assets/icons/phone.svg" alt="phone icon" class="input-icon icon-color">
+      <input
+        type="tel"
+        name="phoneNumber"
+        formControlName="phoneNumber"
+        [class.error]="phoneNumber?.touched && phoneNumber?.invalid"
+        pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"
+      />
+      <img
+        src="/assets/Icons/phone.svg"
+        alt="phone icon"
+        class="input-icon icon-color"
+      />
 
-        <div class="error" *ngIf="phoneNumber?.invalid && phoneNumber?.touched">
-            <div *ngIf="phoneNumber?.errors?.['required']">Phone Number is required</div>
-            <div *ngIf="phoneNumber?.errors?.['pattern']">
-              Invalid phone number format
-            </div>
-            <div *ngIf="phoneNumber?.errors?.['maxlength']">
-              Phone number cannot exceed 10 characters
-            </div>
+      <div class="error" *ngIf="phoneNumber?.invalid && phoneNumber?.touched">
+        <div *ngIf="phoneNumber?.errors?.['required']">
+          Phone Number is required
         </div>
+        <div *ngIf="phoneNumber?.errors?.['pattern']">
+          Invalid phone number format
+        </div>
+        <div *ngIf="phoneNumber?.errors?.['maxlength']">
+          Phone number cannot exceed 10 characters
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label for="message">Message</label>
-      <textarea name="message" id="" rows="4" autocomplete="off" formControlName="message" [class.error]="message?.touched && message?.invalid">
+      <textarea
+        name="message"
+        id=""
+        rows="4"
+        autocomplete="off"
+        formControlName="message"
+        [class.error]="message?.touched && message?.invalid"
+      >
       </textarea>
-      <img src="../../../assets/icons/lucide/message-square.svg" alt="user icon" class="input-icon icon-color">
-        <div class="error" *ngIf="message?.invalid && message?.touched">
-            <div *ngIf="message?.errors?.['required']">Your message is required</div>
-            <div *ngIf="message?.errors?.['minlength']">Message must be at least 10 characters</div>
-            <div *ngIf="message?.errors?.['maxlength']">Message cannot exceed 255 characters</div>
-            </div>
+      <img
+        src="/assets/Icons/lucide/message-square.svg"
+        alt="user icon"
+        class="input-icon icon-color"
+      />
+      <div class="error" *ngIf="message?.invalid && message?.touched">
+        <div *ngIf="message?.errors?.['required']">
+          Your message is required
+        </div>
+        <div *ngIf="message?.errors?.['minlength']">
+          Message must be at least 10 characters
+        </div>
+        <div *ngIf="message?.errors?.['maxlength']">
+          Message cannot exceed 255 characters
+        </div>
       </div>
-    <button type="submit" [disabled]="contactManagerForm.invalid"> <img src="../../../assets/icons/lucide/mail.svg" alt="user icon" class="icon-color"> Send Message</button>
+    </div>
+    <button
+      type="submit"
+      [disabled]="contactManagerForm.invalid || loading"
+      (click)="handleSendMessage()"
+    >
+      <img
+        src="/assets/Icons/lucide/mail.svg"
+        alt="user icon"
+        class="icon-color"
+      />
+      Send Message
+      <app-loader-btn
+        [active]="loading && loadingButton === 'sendMessage'"
+      ></app-loader-btn>
+    </button>
   </form>
 </main>

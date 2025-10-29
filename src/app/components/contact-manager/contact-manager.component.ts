@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactManagerComponent {
  showPhoneNumber = false;
+ loading = false;
+loadingButton: string | null = null;
 
   contactManagerForm!: FormGroup;
   submitted = false;
@@ -55,6 +57,25 @@ export class ContactManagerComponent {
   clearFields (){
 
   }
+  
+
+handleSendMessage(): void {
+  if (this.contactManagerForm.invalid || this.loading) return;
+
+  this.loading = true;
+  this.loadingButton = 'sendMessage';
+
+  setTimeout(() => {
+    console.log('✅ Sending message:', this.contactManagerForm.value);
+
+    // TODO: replace with actual send logic, e.g.,
+    // this.api.sendMessage(this.contactManagerForm.value).subscribe(...)
+
+    this.loading = false;
+    this.loadingButton = null;
+  }, 500);
+}
+
 
 
 }

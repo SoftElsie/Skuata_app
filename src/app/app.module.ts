@@ -16,13 +16,17 @@ import { ContactInfoComponent } from './components/contact-info/contact-info.com
 import { SharedModule } from './components/shared/shared.module';
 import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
-import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
-import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
 import { AddRoomComponent } from './components/add-room/add-room.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component'
+import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
 import { ActionButtonComponent } from './components/shared/base/action-button/action-button.component';
 import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
+import { MainModule } from './components/main.module';
+import { ViewDetailsComponent } from './components/view-details/view-details.component';
+import { ReviewComponent } from "./components/review/review.component";
+import { PropertyCardComponent } from "./components/property-card/property-card.component";
 
-import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,9 @@ import { ModalComponent } from './components/modal/modal.component';
      FilterComponent,
      LoaderBtnComponent,
      ActionButtonComponent,
-        ContactManagerComponent,
+     ViewDetailsComponent,
+     ContactManagerComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -54,9 +60,11 @@ import { ModalComponent } from './components/modal/modal.component';
     CommonModule,
     RouterModule,
     SharedModule,
+    MainModule,
     RouterOutlet,
-
-  ],
+    ReviewComponent,
+    PropertyCardComponent,
+],
 
   bootstrap: [AppComponent]
 })
