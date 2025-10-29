@@ -328,6 +328,8 @@
   flex-shrink: 0;
 }
 
+<<<<<<< HEAD
+=======
 
 .footer {
   background-color: #e8e8e8;
@@ -357,6 +359,7 @@
 }
 
 
+>>>>>>> origin/Development
 @media (max-width: 768px) {
   .header,
   .search-section,

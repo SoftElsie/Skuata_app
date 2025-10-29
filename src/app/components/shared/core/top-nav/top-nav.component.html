@@ -68,7 +68,7 @@
           </button>
           <button
             class="menu-btn-register"
-            onclick="window.location.href='/signup'"
+            onclick="window.location.href='/register'"
           >
             Sign Up
           </button>
@@ -142,10 +142,10 @@
             Notifications
             <span class="notification-counter">{{ notificationCount }}</span>
           </a>
-          <a [routerLink]="['/user-settings']">
+          <a [routerLink]="['/settings']">
             <img src="assets/icons/pen-line.png" alt="User Icon" /> Edit Profile
           </a>
-          <a [routerLink]="['/manage-caretakers']">
+          <a [routerLink]="['/app/manage-caretaker']">
             <img src="assets/icons/user-star.png" alt="Caretaker Icon" /> Manage
             Caretaker
           </a>

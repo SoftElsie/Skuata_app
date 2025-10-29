@@ -17,6 +17,7 @@ loadingButton: string | null = null;
   ];
 
   constructor(private fb: FormBuilder) {
+   
   }
 
   ngOnInit(): void {
@@ -34,7 +35,8 @@ loadingButton: string | null = null;
       postalCode: ['0002', [Validators.required, Validators.pattern(/^[0-9]{4,6}$/)]]
     });
   }
-handleSaveChanges(): void {
+
+ handleSaveChanges(): void {
   if (this.contactForm.invalid) {
     this.contactForm.markAllAsTouched();
     return;

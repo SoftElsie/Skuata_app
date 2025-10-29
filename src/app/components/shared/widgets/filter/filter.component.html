@@ -41,11 +41,12 @@
   <div class="filter-header">
     <h2>Filter</h2>
     <button class="close-btn" (click)="closeFilter()" aria-label="Close filter">
-      <img [src]="'assets/icons/square-x.png'" />
+   <img [src]="'assets/icons/square-x.png'" />
     </button>
   </div>
 
   <div class="filter-content">
+      
     <div class="filter-section">
       <label class="filter-label">Price Range</label>
       <div class="price-range-container">
@@ -78,19 +79,18 @@
         <div class="price-inputs">
           <div class="price-input-wrapper">
             <span class="currency">R</span>
-            <input
-              type="number"
+            <input 
+              type="number" 
               class="price-input"
               [value]="filters.minPrice"
               (change)="onMinPriceChange($event)"
               [min]="priceMin"
-              [max]="filters.maxPrice"
-            />
+              [max]="filters.maxPrice">
           </div>
           <div class="price-input-wrapper">
             <span class="currency">R</span>
-            <input
-              type="number"
+            <input 
+              type="number" 
               class="price-input"
               [value]="filters.maxPrice"
               (change)="onMaxPriceChange($event)"
@@ -129,56 +129,38 @@
       </div>
     </div>
 
+    
     <div class="filter-section">
       <label class="filter-label">City</label>
       <div class="select-wrapper">
-        <select class="filter-select" [(ngModel)]="filters.city">
+        <select 
+          class="filter-select"
+          [(ngModel)]="filters.city">
           <option value="">Select city...</option>
           <option *ngFor="let city of cities" [value]="city">
             {{ city }}
           </option>
         </select>
-        <svg
-          class="select-arrow"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M4 6L8 10L12 6"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
+        <svg class="select-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
 
+     
     <div class="filter-section">
       <label class="filter-label">Room Type</label>
       <div class="select-wrapper">
-        <select class="filter-select" [(ngModel)]="filters.roomType">
+        <select 
+          class="filter-select"
+          [(ngModel)]="filters.roomType">
           <option value="">Select room type...</option>
           <option *ngFor="let type of roomTypes" [value]="type">
             {{ type }}
           </option>
         </select>
-        <svg
-          class="select-arrow"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M4 6L8 10L12 6"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
+        <svg class="select-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -190,7 +172,7 @@
       Clear All
     </button>
     <button class="btn-apply" (click)="applyFilters()">
-      <img [src]="'assets/icons/eye.png'" />
+     <img [src]="'assets/icons/eye.png'" />
       Show Results
     </button>
   </div>

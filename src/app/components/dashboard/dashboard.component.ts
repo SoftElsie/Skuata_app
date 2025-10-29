@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FilterOptions } from '../filter/filter.component';
+import { FilterOptions } from '../shared/widgets/filter/filter.component';
+import { Router } from '@angular/router';
 
 interface Property {
   id: number
@@ -21,6 +22,8 @@ interface Property {
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent{
+
+  currentYear = new Date().getFullYear()
 searchQuery = ""
   visibleProperties: Property[] = [] 
   filteredProperties: Property[] = [];
@@ -67,7 +70,7 @@ loadingButton: string | null = null;
       availabilityDate: "15/10/25",
       views: 18,
       isFavorite: false,
-      roomIcon:"assets/icons/house.png"
+       roomIcon:"assets/icons/house.png"
     },
     {
       id: 4,
@@ -119,6 +122,8 @@ loadingButton: string | null = null;
        roomIcon:"assets/icons/house.png"
     },
   ]
+
+  constructor( private router: Router) {}
 
    ngOnInit(): void {
       this.filteredProperties = [...this.properties];
@@ -198,9 +203,29 @@ loadPrevious(): void {
     property.isFavorite = !property.isFavorite
   }
 
-  viewDetails(property: Property): void {
-    console.log("Viewing details for property:", property.id)
+  viewDetails(): void {
+    console.log("Viewing details for property:")
+     this.router.navigate(['/app/view-details']);
    
   }
+
+   socialIcons = [
+    {
+      name: "LinkedIn",
+      icon: "assets/icons/linkedin.png",
+    },
+    {
+      name: "Instagram",
+      icon: "assets/icons/instagram.png",
+    },
+    {
+      name: "Twitter",
+      icon: "assets/icons/twitter.png",
+    },
+  ]
+
+ 
+
+  legalLinks = ["Terms of Service", "Privacy Policy", "Cookie Settings"]
 
 }

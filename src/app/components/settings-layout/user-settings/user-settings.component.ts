@@ -9,9 +9,9 @@ export class UserSettingsComponent {
   @Input() title: string = 'User Settings';
   @Input() subtitle: string = 'Edit Profile';
   @Input() menuItems: { label: string; route?: string }[] = [
-    { label: 'Contact Info', route: '/profile' },
+    { label: 'Contact Info', route: '/app/contact-info' },
     { label: 'Password & Security', route: '/security' },
-    { label: 'Notification Settings', route: '/notifications' },
+    { label: 'Notification Settings', route: '/notification' },
   ];
 
   @Output() deleteAccount = new EventEmitter<void>();

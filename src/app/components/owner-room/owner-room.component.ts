@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FilterOptions } from '../filter/filter.component';
+import { FilterOptions } from '../shared/widgets/filter/filter.component';
 interface Property {
   id: number;
   image: string;
@@ -14,7 +14,7 @@ interface Property {
 @Component({
   selector: 'app-owner-room',
   templateUrl: './owner-room.component.html',
-  styleUrl: './owner-room.component.css'
+  styleUrls: ['./owner-room.component.css']
 })
 export class OwnerRoomComponent {
   searchQuery = '';

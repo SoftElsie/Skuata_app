@@ -18,8 +18,8 @@ body {
 html, body {
   margin: 0;
   padding: 0;
-
-  background-color: #e8e8e8;
+  height: 100%;
+  background-color: #EAEDED;
 }
 
 .btn-find {

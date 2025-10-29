@@ -8,8 +8,6 @@ import { FooterComponent } from "../../components/shared/core/footer/footer.comp
   selector: 'app-Register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FooterComponent],
   animations: [
     trigger('slideInAnimation', [
       transition(':enter', [
@@ -28,11 +26,7 @@ export class RegisterComponent implements OnInit {
   showRoleError: boolean = false;
   regForm!: FormGroup;
 
-  userIcon = '/asse/user-round.png';
-  atSignIcon = '/assets/at-sign.png';
-  lockKeyIcon = '/asss/lock-keyhole.png';
-  chevronRightIcon = '/assets/chevron-right.png';
-
+  
   showPassword = false;
 
   constructor(private fb: FormBuilder) { }

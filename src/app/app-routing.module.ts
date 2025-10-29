@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
-import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { CheckInboxComponent } from './auth/reset-password/check-inbox/check-inbox.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { ContactInfoComponent } from './components/contact-info/contact-info.component';
-import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
+import { ContactInfoComponent } from './components/settings-layout/user-settings/contact-info/contact-info.component';
+
+import { ContainerLayoutComponent } from './components/shared/core/container-layout/container-layout.component';
+import { AuthLayoutComponent } from './components/shared/core/auth-layout/auth-layout.component';
+import { UserSettingsComponent } from './components/settings-layout/user-settings/user-settings.component';
+import { SettingsLayoutComponent } from './components/settings-layout/settings-layout.component';
+import { PasswordSecurityComponent } from './components/settings-layout/user-settings/password-security/password-security.component';
+import { NotificationSettingsComponent } from './components/settings-layout/user-settings/notification-settings/notification-settings.component';
+
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
-import { PasswordSecurityComponent } from './components/password-security/password-security.component';
-import { NotificationSettingsComponent } from './components/notification-settings/notification-settings.component';
-import { ReviewComponent } from './components/review/review.component';
-import { PropertyCardComponent } from './components/property-card/property-card.component';
-import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
+import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
+import { AddRoomComponent } from './components/add-room/add-room.component';
 
 
 
@@ -25,24 +28,49 @@ const routes: Routes = [
  {
 
     path: '',
-    redirectTo: 'dash',
+    redirectTo: 'app',
     pathMatch: 'full'
   },
-  {  path:'dash',component:DashboardComponent},
+
+ {
+    path: 'app',
+    component: ContainerLayoutComponent,
+    children: [
+      { path: '', component: DashboardComponent, pathMatch: 'full' }, 
+      { path: 'manage-caretaker', component: ManageCaretakerComponent },
+      { path: 'add-room',component:AddRoomComponent},
+      
+   {  path:'profile',component:ProfileIconComponent},
+      { path: 'view-details',component:ViewDetailsComponent},
+       { path: 'user-settings',component:UserSettingsComponent},
+      
   {  path:'add-caretaker',component:AddCaretakerComponent},
-  {  path:'login',component:LoginComponent},
-  {  path:'notification',component: NotificationSettingsComponent},
-  {  path: 'view-details', component: ViewDetailsComponent },
-  {  path:'manage-caretaker',component:ManageCaretakerComponent},
-  {  path:'reset-password',component:ResetPasswordComponent},
-  {  path:'check-inbox',component:CheckInboxComponent},
-  {  path: 'register', component: RegisterComponent },
-  {  path:'contact-info',component:ContactInfoComponent},
   {  path:'owner-room',component:OwnerRoomComponent},
-  {  path:'profile',component:ProfileIconComponent},
-  {  path:'password-security',component:PasswordSecurityComponent},
-  {  path:'loader', component:LoaderBtnComponent },
-  {  path:'review', component:ReviewComponent },
+    ]
+  },
+   {
+    path: 'auth',
+    component: AuthLayoutComponent,
+    children: [
+      {   path:'login',component:LoginComponent},
+      { path: 'reset-password', component: ResetPasswordComponent },
+      { path: 'check-inbox', component: CheckInboxComponent },
+      { path: 'register',component:RegisterComponent},
+    ]
+  },
+  {
+    path: 'settings',
+    component: SettingsLayoutComponent,
+    children: [
+     { path: 'contact-info',component:ContactInfoComponent},
+      { path: 'password-security', component: PasswordSecurityComponent },
+      { path: 'notification',component:NotificationSettingsComponent},
+    ]
+  },
+  
+
+
+
 ];
 
 @NgModule({

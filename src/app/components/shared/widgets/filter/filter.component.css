@@ -9,8 +9,8 @@
   display: flex;
   align-items: center;
   background: white;
-  border: 2px solid #f97316;
-  border-radius: 12px;
+  border: 2px solid #F2A250;
+  border-radius: 6px;
   padding: 2px 16px;
   gap: 12px;
 }
@@ -34,11 +34,11 @@
 
 .search-divider {
   width: 1px;
-  height: 24px;
+  height: 32px;
   background: #d1d5db;
   flex-shrink: 0;
   position: absolute;
-  left: 65%;
+  left: 41%;
 }
 
 .filter-overlay {
@@ -180,7 +180,6 @@
   border-radius: 3px;
   cursor: pointer;
 }
-
 
 
 .price-inputs {

@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-footer',
-
-  templateUrl: './footer.component.html',
-  styleUrls:[ './footer.component.css']
+  selector: 'app-dash-footer',
+  templateUrl: './dash-footer.component.html',
+  styleUrls: ['./dash-footer.component.css']
 })
-export class FooterComponent {
-  currentYear = new Date().getFullYear()
+export class DashFooterComponent {
+ currentYear = new Date().getFullYear()
 
   constructor(private router: Router) {}
 
