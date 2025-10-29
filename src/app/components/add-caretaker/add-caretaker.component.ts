@@ -12,6 +12,8 @@ export class AddCaretakerComponent {
   addCaretakerForm!: FormGroup;
   submissionStatus: 'success' | 'error' | null = null;
   permissions = ["Granted", "Denied", "Pending"]
+  loading = false;
+loadingButton: string | null = null;
 
   constructor(private form: FormBuilder) {
     this.addCaretakerForm = this.form.group({
@@ -46,5 +48,30 @@ export class AddCaretakerComponent {
       console.log('Form is invalid')
     }
   }
+
+
+handleAddCaretaker(): void {
+  if (this.addCaretakerForm.invalid) {
+    this.addCaretakerForm.markAllAsTouched();
+    return;
+  }
+
+  if (this.loading) return;
+
+  this.loading = true;
+  this.loadingButton = 'addCaretaker';
+
+  // yield to render spinner
+  setTimeout(() => {
+    console.log('✅ Adding caretaker:', this.addCaretakerForm.value);
+
+    // TODO: replace with actual save / API call
+    // e.g., this.api.addCaretaker(this.addCaretakerForm.value).subscribe(...)
+
+    this.loading = false;
+    this.loadingButton = null;
+  }, 500);
+}
+
 
 }

@@ -1,21 +1,24 @@
 
+/* You can add global styles to this file, and also import other style files */
 
+* {
+  font-family: Barlow, sans-serif;
+  box-sizing: border-box;
+}
 
 
 body::-webkit-scrollbar {
   display: none;
 }
 
-
 body {
-
-  overflow-x: hidden;     
+  overflow-x: hidden;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  
+
   background-color: #e8e8e8;
 }
 
@@ -41,11 +44,11 @@ html, body {
 .filter-btn {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(126%);
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 10px 16px;
   background: white;
   border: 2px solid #1f2937;
   border-radius: 8px;
@@ -54,7 +57,7 @@ html, body {
   color: #1f2937;
   cursor: pointer;
   transition: all 0.2s;
-  height: 34px;
+  height: 27px;
 }
 
 .filter-buttons {
@@ -65,9 +68,6 @@ html, body {
 .filter-btn:hover {
   background: #f9fafb;
 }
-
-
-
 
 
 :root {

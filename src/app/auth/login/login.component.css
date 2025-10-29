@@ -47,7 +47,8 @@
   margin-bottom: 16px;
 }
 
-.input-icon {
+.input-icon,
+.icon-left {
   position: absolute;
   left: 12px;
   top: 50%;
@@ -74,14 +75,46 @@
   color: #7f7e7e;
 }
 
+/* Eye (Show/Hide Password) Button */
+.eye-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.eye-btn img {
+  height: 20px;
+  width: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.eye-btn img:hover {
+  opacity: 1;
+}
+
+/* Password Error */
+.error {
+  color: red;
+  font-size: 13px;
+  text-align: left;
+  margin-top: -8px;
+  margin-bottom: 12px;
+}
+
 /* Buttons */
 .btn {
   width: 100%;
   height: 48px;
-  border: none;
+  border: 2px;
   border-radius: 4px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
   display: inline-flex;
   align-items: center;
@@ -94,6 +127,7 @@
   background-color: #263e39;
   color: white;
   margin-bottom: 24px;
+  font-weight: 600;
 }
 
 .btn-continue:hover {
@@ -102,7 +136,7 @@
 
 .btn-google {
   background-color: transparent;
-  border: 1px solid #292828;
+  border: 2px solid #292828;
   color: #292828;
   margin-bottom: 16px;
 }
@@ -120,7 +154,7 @@
 /* Outline Button */
 .btn-outline {
   background-color: transparent;
-  border: 1px solid #292828;
+  border: 2px solid #292828;
   color: #292828;
 }
 
@@ -156,8 +190,12 @@
 /* Signup Section */
 .signup-section p {
   color: #7f7e7e;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 400;
   margin-bottom: 8px;
+  font-family: 'Barlow', sans-serif;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
 /* Footer */
@@ -275,4 +313,42 @@
 
 .img-button:hover {
   transform: scale(1.03);
+}
+
+/* Custom Google icon (Vector.png) */
+.google-icon-custom {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+/* Email validation error message */
+.error-message {
+  color: red;
+  font-size: 13px;
+  text-align: left;
+  margin-bottom: 12px;
+}
+.password-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  transition: opacity 0.2s;
+}
+
+.toggle-password:hover {
+  opacity: 0.7;
+}
+
+.input-field {
+  padding-right: 40px; /* Make space for the toggle icon */
 }

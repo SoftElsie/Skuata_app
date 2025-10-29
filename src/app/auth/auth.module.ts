@@ -12,7 +12,8 @@ import { AppComponent } from "../app.component";
   declarations: [
 
    ResetPasswordComponent,
-   CheckInboxComponent
+   CheckInboxComponent,
+   //AddRoomComponent
 
   ],
   imports: [

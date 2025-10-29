@@ -12,12 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
 
-    DashboardComponent,
-
-
-
- 
-    
+    // DashboardComponent,
   ],
   imports: [
 

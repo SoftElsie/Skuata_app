@@ -3,6 +3,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { UserSettingsComponent } from "./core/user-settings/user-settings.component";
 import { RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { ActionButtonComponent } from './base/action-button/action-button.component';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
   exports: [
     UserSettingsComponent,
     RouterModule,
-    CommonModule
+    CommonModule,
   ]
 })
 export class SharedModule { }
