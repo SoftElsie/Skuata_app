@@ -16,6 +16,7 @@ import { PasswordSecurityComponent } from './components/password-security/passwo
 import { NotificationSettingsComponent } from './components/notification-settings/notification-settings.component';
 import { ReviewComponent } from './components/review/review.component';
 import { PropertyCardComponent } from './components/property-card/property-card.component';
+import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
 
 
 
@@ -27,23 +28,21 @@ const routes: Routes = [
     redirectTo: 'dash',
     pathMatch: 'full'
   },
-  {   path:'dash',component:DashboardComponent},
-
-  {   path:'add-caretaker',component:AddCaretakerComponent},
-
-  {   path:'login',component:LoginComponent},
-  {   path:'notification',component: NotificationSettingsComponent},
-  { path: 'view-details', component: ViewDetailsComponent },
-  {   path:'manage-caretaker',component:ManageCaretakerComponent},
-  {   path:'reset-password',component:ResetPasswordComponent},
-  {   path:'check-inbox',component:CheckInboxComponent},
-  { path: 'register', component: RegisterComponent },
-   {   path:'contact-info',component:ContactInfoComponent},
-   {   path:'owner-room',component:OwnerRoomComponent},
-   {  path:'profile',component:ProfileIconComponent},
+  {  path:'dash',component:DashboardComponent},
+  {  path:'add-caretaker',component:AddCaretakerComponent},
+  {  path:'login',component:LoginComponent},
+  {  path:'notification',component: NotificationSettingsComponent},
+  {  path: 'view-details', component: ViewDetailsComponent },
+  {  path:'manage-caretaker',component:ManageCaretakerComponent},
+  {  path:'reset-password',component:ResetPasswordComponent},
+  {  path:'check-inbox',component:CheckInboxComponent},
+  {  path: 'register', component: RegisterComponent },
+  {  path:'contact-info',component:ContactInfoComponent},
+  {  path:'owner-room',component:OwnerRoomComponent},
+  {  path:'profile',component:ProfileIconComponent},
   {  path:'password-security',component:PasswordSecurityComponent},
   {  path:'loader', component:LoaderBtnComponent },
- 
+  {  path:'review', component:ReviewComponent },
 ];
 
 @NgModule({

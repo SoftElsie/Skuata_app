@@ -2,7 +2,20 @@
 .property-container {
   background-color: #eaeded;
   font-family: "Inter", sans-serif;
-  padding: 1.5rem;
+  padding: 8rem 8rem;
+}
+
+.back-btn {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.back-btn img {
+  height: 1.8rem;
+  width: 1.8rem;
 }
 
 /* ---------- FLEX LAYOUT ---------- */
@@ -24,19 +37,10 @@
   margin-top: 0.5rem;
   background: #ffffff;
   border-radius: 8px;
-  padding: 0.3rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  /* padding: 0.3rem; */
 }
 
 
-/* Right: Details section */
-.details-section {
-  flex: 1 1 45%;
-  background-color: #eaeded;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
 
 /* ---------- IMAGE SECTION ---------- */
 .main-image-container {
@@ -132,6 +136,18 @@
 }
 
 /* ---------- DETAILS SECTION ---------- */
+.details-section {
+  flex: 1 1 50%;
+  background-color: #eaeded;
+  border-radius: 8px;
+  padding: 0.5rem 0rem;
+}
+.right-side {
+  flex: 1 1 50%;
+  background-color: #eaeded;
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem;
+}
 .details-section h2 {
   text-align: left;
   font-size: 1.6rem;

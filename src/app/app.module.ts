@@ -21,6 +21,12 @@ import { ModalComponent } from './components/modal/modal.component';
 import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component'
 import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
 import { ActionButtonComponent } from './components/shared/base/action-button/action-button.component';
+import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
+import { MainModule } from './components/main.module';
+import { ViewDetailsComponent } from './components/view-details/view-details.component';
+import { ReviewComponent } from "./components/review/review.component";
+import { PropertyCardComponent } from "./components/property-card/property-card.component";
+
 
 @NgModule({
   declarations: [
@@ -41,6 +47,9 @@ import { ActionButtonComponent } from './components/shared/base/action-button/ac
      FilterComponent,
      LoaderBtnComponent,
      ActionButtonComponent,
+     ViewDetailsComponent,
+     ContactManagerComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -52,9 +61,11 @@ import { ActionButtonComponent } from './components/shared/base/action-button/ac
     CommonModule,
     RouterModule,
     SharedModule,
+    MainModule,
     RouterOutlet,
-
-  ],
+    ReviewComponent,
+    PropertyCardComponent,
+],
 
   bootstrap: [AppComponent]
 })

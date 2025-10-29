@@ -17,7 +17,10 @@ import { AppComponent } from "../app.component";
 =======
    CheckInboxComponent,
    //AddRoomComponent
+<<<<<<< HEAD
 >>>>>>> ba41f5814a7efc4d97fb5f36349c18c37c5112c7
+=======
+>>>>>>> 5498e659a7c8cd92c18f015b73a3e91158b23f28
 
   ],
   imports: [
