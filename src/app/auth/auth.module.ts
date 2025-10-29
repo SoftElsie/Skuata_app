@@ -13,6 +13,7 @@ import { RegisterComponent } from "./register/register.component";
   declarations: [
 
    ResetPasswordComponent,
+
    CheckInboxComponent,
    LoginComponent,
    RegisterComponent,
@@ -28,4 +29,4 @@ import { RegisterComponent } from "./register/register.component";
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })
-export class MainModule { }
+export class AuthModule { }

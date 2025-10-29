@@ -1,13 +1,12 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
-import { LoginComponent } from './auth/login/login.component';
 
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
 import { FilterComponent } from './components/shared/widgets/filter/filter.component';
@@ -26,9 +25,11 @@ import { LoaderBtnComponent } from './components/shared/widgets/loader-btn/loade
 import { AddRoomComponent } from './components/add-room/add-room.component';
 import { NotificationSettingsComponent } from './components/settings-layout/user-settings/notification-settings/notification-settings.component';
 import { PasswordSecurityComponent } from './components/settings-layout/user-settings/password-security/password-security.component';
-import { RouterModule, RouterOutlet } from '@angular/router';
 import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
-import { MainModule } from './auth/auth.module';
+import { ModalComponent } from './components/modal/modal.component';
+import { PropertyCardComponent } from './components/property-card/property-card.component';
+import { ReviewComponent } from './components/review/review.component';
+import { MainModule } from './components/main.module';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { MainModule } from './auth/auth.module';
     AppComponent,
     DashboardComponent,
     AddCaretakerComponent,
+    ModalComponent,
     NotificationSettingsComponent,
     PasswordSecurityComponent,
     ManageCaretakerComponent,
@@ -59,8 +61,11 @@ import { MainModule } from './auth/auth.module';
     CommonModule,
     RouterModule,
     SharedModule,
+    MainModule,
     RouterOutlet,
-    MainModule
+    ReviewComponent,
+    PropertyCardComponent,
+
 
   ],
 

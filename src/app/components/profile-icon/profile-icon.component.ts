@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalService } from '../../domain/services/modal.service';
 
 interface Room {
   id: string;
@@ -21,15 +22,16 @@ export class ProfileIconComponent {
   roomForm: FormGroup;
   selectedFile: File | null = null;
 
- constructor(private fb: FormBuilder, private router: Router) { 
+ constructor(private fb: FormBuilder, private router: Router, private modalService: ModalService) { 
   this.roomForm = this.fb.group({
     name: ['', Validators.required],
     type: ['', Validators.required],
     size: ['', Validators.required],
   });
 }
-goToAddRoomPage() {
-  this.router.navigate(['/add-room']); // <-- use the correct route path
+
+openAddRoomModal() {
+  this.modalService.open();
 }
 
   closeDialog() {

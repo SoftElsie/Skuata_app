@@ -5,7 +5,6 @@ import { ViewDetailsComponent } from './components/view-details/view-details.com
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { CheckInboxComponent } from './auth/reset-password/check-inbox/check-inbox.component';
-import { AddRoomComponent } from './components/add-room/add-room.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ContactInfoComponent } from './components/settings-layout/user-settings/contact-info/contact-info.component';
 
@@ -18,6 +17,9 @@ import { NotificationSettingsComponent } from './components/settings-layout/user
 
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
+import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
+import { AddRoomComponent } from './components/add-room/add-room.component';
 
 
 
@@ -41,6 +43,9 @@ const routes: Routes = [
    {  path:'profile',component:ProfileIconComponent},
       { path: 'view-details',component:ViewDetailsComponent},
        { path: 'user-settings',component:UserSettingsComponent},
+      
+  {  path:'add-caretaker',component:AddCaretakerComponent},
+  {  path:'owner-room',component:OwnerRoomComponent},
     ]
   },
    {
