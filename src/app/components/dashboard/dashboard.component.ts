@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FilterOptions } from '../filter/filter.component';
+import { FilterOptions } from '../shared/widgets/filter/filter.component';
 import { Router } from '@angular/router';
 
 interface Property {

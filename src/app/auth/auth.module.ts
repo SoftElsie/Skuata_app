@@ -3,9 +3,9 @@ import { ResetPasswordComponent } from "./reset-password/reset-password.componen
 import { CheckInboxComponent } from './reset-password/check-inbox/check-inbox.component';
 
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { AppComponent } from "../app.component";
-import { AddRoomComponent } from "../components/add-room/add-room.component";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from "./register/register.component";
 
 
 
@@ -14,13 +14,17 @@ import { AddRoomComponent } from "../components/add-room/add-room.component";
 
    ResetPasswordComponent,
    CheckInboxComponent,
-   //AddRoomComponent
+   LoginComponent,
+   RegisterComponent,
+
 
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
+ 
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })

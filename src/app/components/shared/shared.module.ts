@@ -1,6 +1,6 @@
 import { CommonModule, NgIf } from "@angular/common";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
-import { UserSettingsComponent } from "../user-settings/user-settings.component";
+import { UserSettingsComponent } from "../settings-layout/user-settings/user-settings.component";
 import { RouterModule } from "@angular/router";
 import { ContainerLayoutComponent } from './core/container-layout/container-layout.component';
 import { TopNavComponent } from "./core/top-nav/top-nav.component";
@@ -16,7 +16,6 @@ import { FormsModule  } from '@angular/forms';
    FooterComponent,
    AuthLayoutComponent,
    DashFooterComponent,
-   DashFooterComponent
  
   ],
 

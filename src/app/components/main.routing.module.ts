@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotificationSettingsComponent } from './notification-settings/notification-settings.component';
-import { LoaderBtnComponent } from './shared/loader-btn/loader-btn.component';
+import { LoaderBtnComponent } from './shared/widgets/loader-btn/loader-btn.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [

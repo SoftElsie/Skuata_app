@@ -7,14 +7,14 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { CheckInboxComponent } from './auth/reset-password/check-inbox/check-inbox.component';
 import { AddRoomComponent } from './components/add-room/add-room.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { ContactInfoComponent } from './components/settings-layout/user-settings/contact-info/contact-info.component';
 
 import { ContainerLayoutComponent } from './components/shared/core/container-layout/container-layout.component';
 import { AuthLayoutComponent } from './components/shared/core/auth-layout/auth-layout.component';
-import { UserSettingsComponent } from './components/user-settings/user-settings.component';
+import { UserSettingsComponent } from './components/settings-layout/user-settings/user-settings.component';
 import { SettingsLayoutComponent } from './components/settings-layout/settings-layout.component';
-import { PasswordSecurityComponent } from './components/user-settings/password-security/password-security.component';
-import { NotificationSettingsComponent } from './components/user-settings/notification-settings/notification-settings.component';
+import { PasswordSecurityComponent } from './components/settings-layout/user-settings/password-security/password-security.component';
+import { NotificationSettingsComponent } from './components/settings-layout/user-settings/notification-settings/notification-settings.component';
 
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 import { RouterModule, Routes } from '@angular/router';

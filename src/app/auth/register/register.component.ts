@@ -8,8 +8,6 @@ import { FooterComponent } from "../../components/shared/core/footer/footer.comp
   selector: 'app-Register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
   animations: [
     trigger('slideInAnimation', [
       transition(':enter', [
