@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReviewComponent } from "../review/review.component";
-import { PropertyCardComponent } from "../property-card/property-card.component";
-import { ContactManagerComponent } from '../contact-manager/contact-manager.component';
+import { ReviewComponent } from "./review/review.component";
+import { PropertyCardComponent } from "./property-card/property-card.component";
+import { ContactManagerComponent } from './contact-manager/contact-manager.component';
 
 @Component({
   selector: 'app-view-details',

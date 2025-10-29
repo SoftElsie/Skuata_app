@@ -27,10 +27,10 @@ import { NotificationSettingsComponent } from './components/settings-layout/user
 import { PasswordSecurityComponent } from './components/settings-layout/user-settings/password-security/password-security.component';
 import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { PropertyCardComponent } from './components/property-card/property-card.component';
-import { ReviewComponent } from './components/review/review.component';
+import { PropertyCardComponent } from './components/view-details/property-card/property-card.component';
+import { ReviewComponent } from './components/view-details/review/review.component';
 import { MainModule } from './components/main.module';
-import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
+import { ContactManagerComponent } from './components/view-details/contact-manager/contact-manager.component';
 import { AuthModule } from './auth/auth.module';
 
 
