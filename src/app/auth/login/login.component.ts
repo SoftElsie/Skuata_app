@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Auth, getAuth, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
+import { inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -8,36 +11,43 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  
-email = '';
+  email = '';
   password = '';
   showPassword = false;
 
-  // Toggle show/hide password visibility
+  private auth: Auth = inject(Auth);
+
+  constructor(private router: Router) {}
+
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
   }
 
-  // Called when user submits form
   onContinue(): void {
     if (this.email && this.password) {
-      console.log('Email:', this.email);
-      console.log('Password:', this.password);
-      // 🔐 TODO: Add authentication logic
-    } else {
-      console.warn('Please fill in both fields');
+      console.log('Logging in with email:', this.email);
+      this.router.navigate(['/dash']);
     }
   }
 
-  // Google Sign-In handler
-  onGoogleSignIn(): void {
-    console.log('Google Sign-In clicked');
-    // 🌐 TODO: Integrate Google Auth
-  }
+  async signInWithPopup() {
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({
+    prompt: 'select_account'  // 
+  });
 
-  // Navigation to Sign-Up
+  try {
+    const result = await signInWithPopup(this.auth, provider);
+    const user = result.user;
+    console.log('✅ Google user:', user.displayName, user.email);
+    this.router.navigate(['/dash']);
+  } catch (error) {
+    console.error('❌ Google Sign-In error:', error);
+    alert('Google Sign-In failed. Please try again.');
+  }
+}
+
   onSignUp(): void {
-    console.log('Navigate to Sign-Up page');
-    // 🧭 TODO: Add navigation logic
+    this.router.navigate(['/register']);
   }
 }
