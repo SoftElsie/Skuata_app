@@ -318,22 +318,27 @@
     font-size: 1.1rem;
   }
 }
+
 /* Tablet & Small Desktop */
 @media (min-width: 768px) {
-
+  .thumb img {
+    height: 75px;}
   .property-layout {
     flex-wrap: nowrap;
     gap: 2rem;
   }
+  
+  .details-section h2 {
+    font-size: 1.25rem;}
 
-  .image-section,
-  .right-side {
-    flex: 1 1 48%;
-  }
-
+  .details-section p {
+    font-size: 0.9rem;}
   .main-image-container {
     height: 380px;
   }
 
-}
+  .more-photos {
+    font-size: 0.9rem;
+  }
 
+}
