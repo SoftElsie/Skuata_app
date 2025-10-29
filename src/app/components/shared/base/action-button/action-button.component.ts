@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { LoaderBtnComponent } from '../../loader-btn/loader-btn.component';
+import { LoaderBtnComponent } from '../../widgets/loader-btn/loader-btn.component';
 
 @Component({
   selector: 'app-action-button',

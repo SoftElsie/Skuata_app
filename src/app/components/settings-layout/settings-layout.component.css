@@ -1,0 +1,21 @@
+.user-settings-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem; 
+  padding: 2rem;
+}
+
+
+app-user-settings {
+  flex: 0 0 250px; 
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #00000080;
+  margin: 0 10rem; 
+}
+
+.settings-content {
+  flex: 1;
+}

@@ -2,11 +2,7 @@
   <app-filter (filtersChanged)="onFiltersChanged($event)"></app-filter>
 
   <div class="properties-grid">
-    <div
-      class="property-card"
-      *ngFor="let property of visibleProperties"
-      (click)="viewDetails(property)"
-    >
+    <div class="property-card" *ngFor="let property of visibleProperties" (click)="viewDetails()">
       <div class="property-image">
         <img [src]="property.image" [alt]="property.title" />
       </div>
@@ -43,9 +39,7 @@
                 : "Unavailable"
             }}
           </span>
-          <a class="view-details-link" (click)="viewDetails(property)"
-            >View Details</a
-          >
+          <a class="view-details-link" (click)="viewDetails()">View Details</a>
         </div>
 
         <div class="property-details">
@@ -76,24 +70,24 @@
       class="btn-find filter-buttons"
       *ngIf="currentPage > 1"
       (click)="loadPrevious()"
-      [disabled]="loading"
     >
       Previous
-      <app-loader-btn
+     <!-- <app-loader-btn
         [active]="loading && loadingButton === 'previous'"
-      ></app-loader-btn>
+      ></app-loader-btn>-->
     </button>
 
-    <button
-      class="btn-find filter-buttons"
-      *ngIf="currentPage * itemsPerPage < filteredProperties.length"
-      (click)="loadMore()"
-      [disabled]="loading"
-    >
-      Load More
-      <app-loader-btn
-        [active]="loading && loadingButton === 'next'"
-      ></app-loader-btn>
-    </button>
-  </div>
+  <button 
+    class="btn-find filter-buttons" 
+    (click)="loadMore()" 
+    *ngIf="currentPage * itemsPerPage < filteredProperties.length"
+  >
+    Load More
+  </button>
 </div>
+
+<app-dash-footer></app-dash-footer>
+ 
+</div>
+
+

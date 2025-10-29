@@ -1,18 +1,39 @@
-
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Added CommonModule
+import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
-  standalone: true, // Added standalone: true
-  imports: [CommonModule], // Added imports array with CommonModule
+
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  styleUrls:[ './footer.component.css']
 })
 export class FooterComponent {
-  // Input to control whether full links are shown
-  @Input() showFullLinks: boolean = true;
-  // Input to control whether footer content is centered
-  @Input() centerContent: boolean = false;
-}
+  currentYear = new Date().getFullYear()
 
+  constructor(private router: Router) {}
+
+  navigationLinks = ["Home", "About Us", "Contact Us"]
+  roomLinks = ["Find Rooms", "Post Rooms"]
+
+   showFooter = false;
+
+  socialIcons = [
+    {
+      name: "LinkedIn",
+      icon: "assets/icons/linkedin.png",
+    },
+    {
+      name: "Instagram",
+      icon: "assets/icons/instagram.png",
+    },
+    {
+      name: "Twitter",
+      icon: "assets/icons/twitter.png",
+    },
+  ]
+
+ 
+
+  legalLinks = ["Terms of Service", "Privacy Policy", "Cookie Settings"]
+}

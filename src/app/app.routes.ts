@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { RegisterComponent } from './auth/register/register.component';
-import { PropertyCardComponent } from './components/property-card/property-card.component';
-import { ReviewComponent } from './components/review/review.component';
+import { PropertyCardComponent } from './components/view-details/property-card/property-card.component';
+import { ReviewComponent } from './components/view-details/review/review.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component'; // Import DashboardComponent
 
 export const routes: Routes = [

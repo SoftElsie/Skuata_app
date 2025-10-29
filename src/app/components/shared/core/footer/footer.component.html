@@ -1,8 +1,11 @@
-<footer>
-  <hr class="footer-divider" />
-  <div class="footer-content">
-    <span>&copy; Copyright 2025 Softelsie</span>
-    <span>|</span>
-    <a href="#">Privacy Policy</a>
-  </div>
+<footer class="footer">
+  
+<div class="footer-bottom">
+      <p class="copyright">© Copyright {{ currentYear }} SofteIsle</p>
+      <div class="legal-links">
+        <span *ngFor="let link of legalLinks" class="legal-link">
+          {{ link }}
+        </span>
+      </div>
+    </div>
 </footer>

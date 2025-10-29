@@ -314,7 +314,6 @@
 .img-button:hover {
   transform: scale(1.03);
 }
-
 /* Custom Google icon (Vector.png) */
 .google-icon-custom {
   height: 20px;
@@ -322,7 +321,6 @@
   margin-right: 10px;
   object-fit: contain;
 }
-
 /* Email validation error message */
 .error-message {
   color: red;

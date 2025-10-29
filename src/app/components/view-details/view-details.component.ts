@@ -1,23 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReviewComponent } from "./review/review.component";
+import { PropertyCardComponent } from "./property-card/property-card.component";
+import { ContactManagerComponent } from './contact-manager/contact-manager.component';
 
 @Component({
   selector: 'app-view-details',
   templateUrl: './view-details.component.html',
   styleUrls: ['./view-details.component.css'],
-  standalone: true,
-  imports: [CommonModule],
 })
 export class ViewDetailsComponent {
   property = {
     name: 'Backroom',
     description:'The room stretches on endlessly; it by the sickly hum of buzzing fluorescent lights. The carpet beneath your feet is damp, though no water is in sight. The yellow wallpaper is stained, peeling in places, repeating in an unsettlingly perfect pattern. Every corridor looks the same, yet somehow feels unfamiliar when you turn around The room stretches on endlessly; it by the sickly hum of buzzing fluorescent lights. The carpet beneath your feet is damp, though no water is in sight. The yellow wallpaper is stained, peeling in places, repeating in an unsettlingly perfect pattern. Every corridor looks the same, yet somehow feels unfamiliar when you turn around',
+
     mainImage: '/assets/images/image-card-3.png',
     thumbnails: [
       { url: '/assets/images/image-card-3.png', alt: 'Thumbnail 1' },
       { url: '/assets/images/image-card-2.png', alt: 'Thumbnail 2' },
       { url: '/assets/images/image-card-2.png', alt: 'Thumbnail 3' },
       { url: '/assets/images/image-card-2.png', alt: 'Thumbnail 4' },
+
     ],
     additionalThumbnails: 3,
   };

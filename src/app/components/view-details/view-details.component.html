@@ -1,10 +1,13 @@
 <div class="property-container">
+  <button class="back-btn" routerLink="/dash">
+    <img src="/assets/Icons/arrow-left.png" alt="Back" />
+  </button>
   <div class="property-layout">
     <!-- LEFT: IMAGE SECTION -->
     <div class="image-section">
       <div class="main-image-container">
         <button class="nav-btn prev" (click)="prevImage()">
-          <img src="/assets/Icons/chevron-left.png" alt="Previous" />
+          <img src="/assets/icons/chevron-left.png" alt="Previous" />
         </button>
 
         <img
@@ -14,7 +17,7 @@
         />
 
         <button class="nav-btn next" (click)="nextImage()">
-          <img src="/assets/Icons/chevron-right.png" alt="Next" />
+          <img src="/assets/icons/chevron-right.png" alt="Next" />
         </button>
       </div>
 
@@ -38,26 +41,32 @@
           </span>
         </div>
       </div>
+      <app-reviews></app-reviews>
     </div>
 
-    <!-- RIGHT: DETAILS SECTION -->
-    <div class="details-section">
-      <h2>{{ property.name }}</h2>
-      <p>
-        {{ getShortDescription(property.description) }}
-        <a href="#" (click)="openModal($event)">View More</a>
-      </p>
+    <!-- RIGHT: DETAILS -->
+    <div class="right-side">
+      <div class="details-section">
+        <h2>{{ property.name }}</h2>
+        <p>
+          {{ getShortDescription(property.description) }}
+          <a href="#" (click)="openModal($event)">View More</a>
+        </p>
 
-      <!-- MODAL -->
-      <div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
-        <div class="modal-content" (click)="$event.stopPropagation()">
-          <div class="modal-header">
-            <h3>{{ property.name }}</h3>
-            <button class="close-btn" (click)="closeModal()">×</button>
+        <!-- MODAL -->
+        <div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
+          <div class="modal-content" (click)="$event.stopPropagation()">
+            <div class="modal-header">
+              <h3>{{ property.name }}</h3>
+              <button class="close-btn" (click)="closeModal()">×</button>
+            </div>
+            <p>{{ property.description }}</p>
           </div>
-          <p>{{ property.description }}</p>
         </div>
+        <app-property-card></app-property-card>
       </div>
+      <app-contact-manager></app-contact-manager>
     </div>
   </div>
 </div>
+<!-- </div> -->
