@@ -149,7 +149,7 @@ input, select, textarea {
 
 @media (max-width: 550px) {
   .container {
-    margin: 0 1em;
+    margin: 0 1em 4em;
   }
 
   form .columns {

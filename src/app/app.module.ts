@@ -1,8 +1,8 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,10 @@ import { ProfileIconComponent } from './components/profile-icon/profile-icon.com
 import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
 import { LoaderBtnComponent } from './components/shared/loader-btn/loader-btn.component';
 import { AddRoomComponent } from './components/add-room/add-room.component';
+import { ActionButtonComponent } from './components/shared/base/action-button/action-button.component';
+import { ContactManagerComponent } from './components/contact-manager/contact-manager.component';
+
+import { ModalComponent } from './components/modal/modal.component';
 
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
@@ -30,6 +34,7 @@ import { environment } from '../environments/environment';
     AppComponent,
     DashboardComponent,
     AddCaretakerComponent,
+    ModalComponent,
     NotificationSettingsComponent,
     PasswordSecurityComponent,
     ManageCaretakerComponent,
@@ -41,6 +46,8 @@ import { environment } from '../environments/environment';
      OwnerRoomComponent,
      FilterComponent,
      LoaderBtnComponent,
+     ActionButtonComponent,
+        ContactManagerComponent,
   ],
   imports: [
     BrowserModule,

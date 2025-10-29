@@ -22,6 +22,8 @@ export class FilterComponent {
  @Input() showFilterButton: boolean = true;
 
   isFilterOpen = false
+    loading = false;
+loadingButton: string | null = null;
 
   provinces = ["Gauteng", "Western Cape", "KwaZulu-Natal", "Eastern Cape", "Free State", "Limpopo"]
   cities = ["Johannesburg", "Pretoria", "Cape Town", "Durban", "Port Elizabeth", "Bloemfontein"]
@@ -90,4 +92,32 @@ export class FilterComponent {
   getMaxPricePercentage(): number {
     return ((this.filters.maxPrice - this.priceMin) / (this.priceMax - this.priceMin)) * 100
   }
+
+
+handleToggleFilter(): void {
+  if (this.loading) return;
+
+  this.loading = true;
+  this.loadingButton = 'toggleFilter';
+
+  setTimeout(() => {
+    this.toggleFilter(); // existing function
+    this.loading = false;
+    this.loadingButton = null;
+  }, 500);
+}
+
+handleApplyFilters(): void {
+  if (this.loading) return;
+
+  this.loading = true;
+  this.loadingButton = 'applyFilters';
+
+  setTimeout(() => {
+    this.applyFilters(); // existing function
+    this.loading = false;
+    this.loadingButton = null;
+  }, 500);
+}
+
 }

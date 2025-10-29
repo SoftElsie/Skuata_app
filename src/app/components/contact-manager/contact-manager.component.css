@@ -1,0 +1,149 @@
+.container {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1em;
+  gap: 1em;
+  background-color: hsl(var(--neutral-00));
+  border-radius: .3em;
+  text-align: left;
+}
+
+.header {
+  width: 100%;
+
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: flex-end;
+  gap: .35em;
+  margin-bottom: .2em;
+
+}
+
+.input-icon {
+  position: absolute;
+  top: 2em;
+  left: .4em;
+  color: hsl(var(--primary-300));
+
+}
+
+.icon-color {
+  filter: brightness(0) saturate(100%) invert(59%) sepia(10%) saturate(346%) hue-rotate(120deg) brightness(96%) contrast(86%);
+}
+
+button .icon-color {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7483%) hue-rotate(143deg) brightness(100%) contrast(100%);
+}
+
+.textarea-icon {
+  position: absolute;
+  top: 2em;
+  left: .4em;
+  color: hsl(var(--primary-300));
+}
+
+textarea {
+  width: 100%;
+  padding: .85em .5em .85em 2.5em;
+  border: none;
+  border-radius: .25em;
+  background-color: hsl(var(--primary-100));
+  font-family: Inter, sans-serif;
+  font-size: .9rem;
+  color: hsl(var(--neutral-900));
+  margin-bottom: 1em;
+  resize: none;
+}
+
+input {
+  width: 100%;
+  padding: .85em .5em .85em 2.5em;
+  border: none;
+  border-radius: .25em;
+  background-color: hsl(var(--primary-100));
+  font-family: Inter, sans-serif;
+  font-size: .9rem;
+  color: hsl(var(--neutral-900));
+  margin-bottom: .8em;
+  resize: none;
+}
+
+input:focus {
+  border: 2px solid hsl(var(--secondary-300));
+  outline: none;
+}
+textarea:focus {
+  border: 2px solid hsl(var(--secondary-300));
+  outline: none;
+}
+
+label {
+  position: relative;
+  font-weight: 500;
+  font-size: .8rem;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: .5em 3.5em;
+  border: none;
+  border-radius: .25em;
+  font-size: .9rem;
+  font-weight: 500;
+  color: hsl(var(--neutral-00));
+  background-color: hsl(var(--primary-900));
+  transition: background-color .25s ease-in-out;
+  cursor: pointer;
+  margin: 1em 0 0;
+  width: 100%;
+}
+
+button:hover {
+  background-color: hsl(var(--primary-600));
+}
+
+form button:disabled {
+  background-color: hsl(var(--neutral-300));
+  cursor: not-allowed;
+}
+
+.error {
+  font-size: .85rem;
+  color: hsl(var(--danger));
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+}
+
+.error div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: -.8em;
+}
+
+.form-group {
+  position: relative;
+}

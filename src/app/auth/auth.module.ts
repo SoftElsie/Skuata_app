@@ -5,7 +5,6 @@ import { CheckInboxComponent } from './reset-password/check-inbox/check-inbox.co
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from "../app.component";
-import { AddRoomComponent } from "../components/add-room/add-room.component";
 
 
 
@@ -24,4 +23,4 @@ import { AddRoomComponent } from "../components/add-room/add-room.component";
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })
-export class MainModule { }
+export class AuthModule { }
