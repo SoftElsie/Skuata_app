@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalService } from '../../domain/services/modal.service';
 
 @Component({
   selector: 'app-add-room',
@@ -28,4 +29,14 @@ handleAddRoom(): void {
 }
 
 
+  constructor(private modalService: ModalService) { }
+
+  addRoomAndCloseModal() {
+    // Logic to add room will go here
+    this.modalService.close();
+  }
+
+  closeModal() {
+    this.modalService.close();
+  }
 }

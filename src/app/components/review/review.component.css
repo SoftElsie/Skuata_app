@@ -1,0 +1,376 @@
+/* ===========================
+   Reviews Section
+=========================== */
+.reviews-section {
+  font-family: "Inter", sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+  width: 598px;
+  height: auto;
+  margin-top: 40px;              /* space from top */
+  margin-left: 199px;            /* keep same left alignment */
+  padding: 16px;
+  border-radius: 8px;
+  gap: 16px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+  isolation: isolate;
+  position: relative;            /* ✅ was absolute */
+}
+
+/* ===========================
+   Header
+=========================== */
+.reviews-header h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.reviews-header hr {
+  width: 226px;
+  border: 1px solid rgba(127, 126, 126, 1);
+  margin-bottom: 20px;
+  opacity: 0.4;
+  margin-left: 0;
+}
+
+/* ===========================
+   Container
+=========================== */
+.reviews-container {
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+/* ===========================
+   Left Summary Panel
+=========================== */
+.reviews-summary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 146px;
+  height: 38px;
+  gap: 8px;
+}
+
+.average-rating {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.stars-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 96px;
+  height: 24px;
+  gap: 2px;
+  font-size: 20px;
+  color: #f5a623;
+}
+
+.stars-summary p {
+  color: #777;
+  font-size: 12px;
+  margin: 4px 0 0 0;
+}
+
+/* ===========================
+   Reviews List
+=========================== */
+.reviews-list {
+  flex-grow: 1;
+  min-width: 320px;
+}
+
+.review-item {
+  margin-bottom: 24px;
+  width: 326px;
+  padding: 4px;
+  gap: 8px;
+}
+
+.review-item:nth-child(2) {
+  height: auto;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewer-name {
+  font-weight: 700;
+}
+
+.review-date {
+  font-size: 13px;
+  color: #b1b1b1;
+}
+
+.review-stars {
+  display: flex;
+  width: 58px;
+  height: 14px;
+  border-radius: 2px;
+  gap: 1px;
+  color: #f5a623;
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.review-text {
+  color: #333;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0px;
+  margin-bottom: 0;
+  width: 318px;
+  opacity: 1;
+}
+
+.review-item:nth-child(2) .review-text {
+  width: 303px;
+  height: auto;
+}
+
+.review-item hr {
+  width: 298px;
+  opacity: 0.4;
+  border: 1px solid rgba(127, 126, 126, 1);
+  margin: 12px 0 0 0;
+}
+
+/* ===========================
+   Show More Button
+=========================== */
+.show-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: #004f45;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 1px;
+}
+
+.show-more-btn:hover {
+  text-decoration: underline;
+}
+
+.show-more-btn img {
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  vertical-align: middle;
+}
+
+/* ===========================
+   Responsive Behavior
+=========================== */
+@media (max-width: 768px) {
+  .reviews-section {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .reviews-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .reviews-summary {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .average-rating {
+    font-size: 28px;
+  }
+
+  .stars-summary {
+    font-size: 16px;
+  }
+}
+
+/* ===========================
+   Router Outlet
+=========================== */
+router-outlet {
+  flex: 1; /* pushes footer to bottom */
+  display: block;
+}
+
+/* ===========================
+   Property Card Layout
+=========================== */
+.property-card-layout {
+  width: 419px;
+  height: 161px;
+  opacity: 1;
+  position: absolute;
+  top: 410px;
+  left: 821px;
+  border-radius: 4px;
+  padding: 16px;
+  gap: 8px;
+}
+
+/* ===========================
+   Property Card
+=========================== */
+.property-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  font-family: Arial, sans-serif;
+}
+
+/* Row Layout */
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Header Row (Price and Rating) */
+.header-row {
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.price-section {
+  color: #333;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: -0.3px;
+}
+
+.price-section .currency {
+  font-size: 1.5rem;
+  margin-right: 2px;
+}
+
+.price-section .amount {
+  font-size: 2.2rem;
+}
+
+.price-section .unit {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.rating-section {
+  display: flex;
+  align-items: center;
+}
+
+.stars-container {
+  margin-right: 5px;
+}
+
+.star-icon {
+  height: 14px;
+  width: 14px;
+  margin-right: 2px;
+}
+
+.rating-text {
+  width: 64px;
+  height: 21px;
+  opacity: 1;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: -0.3px;
+  color: #666;
+}
+
+/* Detail Rows */
+.detail-row {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.detail-row i {
+  color: #666;
+  margin-right: 10px;
+  font-size: 1.1rem;
+  width: 20px;
+}
+
+.detail-row img {
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* Type and Availability */
+.type-availability-row {
+  justify-content: space-between;
+}
+
+.property-type-section {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* Availability Badge */
+.available-badge {
+  background-color: rgba(38, 62, 57, 1);
+  color: rgba(234, 237, 237, 1);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.available-badge img {
+  width: 8px;
+  height: 8px;
+  margin-right: 5px;
+  filter: brightness(1.5) contrast(200%);
+}
+
+/* Views Row */
+.views-row {
+  color: #777;
+  font-size: 0.9rem;
+}
+.stars-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EAEDED; /* Light grey background */
+  padding: 4px 4px;         /* Vertical g+ horizontal space */
+  gap: 4px;                  /* Space between stars */
+  margin-right: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
