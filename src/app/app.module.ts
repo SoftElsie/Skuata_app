@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { importProvidersFrom, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -33,11 +33,9 @@ import { MainModule } from './components/main.module';
 import { ContactManagerComponent } from './components/view-details/contact-manager/contact-manager.component';
 import { AuthModule } from './auth/auth.module';
 
-
-
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { provideAuth, getAuth } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -72,11 +70,11 @@ import { environment } from '../environments/environment';
     SharedModule,
     MainModule,
     RouterOutlet,
-  
-     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
+     AuthModule,
+   AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
  
-    AuthModule
+   
 
 
   ],
