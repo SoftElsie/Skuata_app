@@ -1,0 +1,352 @@
+/* Overall Container */
+.login-container {
+  min-height: 100vh;
+  background-color: #eaeded;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Logo Section */
+.logo-section {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  max-width: 80%;
+}
+
+/* Login Card */
+.login-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.login-title {
+  color: #292828;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  font-family: 'Barlow', sans-serif;
+}
+
+/* Input Field */
+.input-group {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input-icon,
+.icon-left {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+}
+
+.input-field {
+  width: 100%;
+  height: 48px;
+  padding-left: 40px;
+  border: 1px solid #7f7e7e;
+  border-radius: 4px;
+  background-color: #eaeded;
+  color: #292828;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-field::placeholder {
+  color: #7f7e7e;
+}
+
+/* Eye (Show/Hide Password) Button */
+.eye-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.eye-btn img {
+  height: 20px;
+  width: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.eye-btn img:hover {
+  opacity: 1;
+}
+
+/* Password Error */
+.error {
+  color: red;
+  font-size: 13px;
+  text-align: left;
+  margin-top: -8px;
+  margin-bottom: 12px;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  height: 48px;
+  border: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.btn-continue {
+  background-color: #263e39;
+  color: white;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.btn-continue:hover {
+  background-color: #163a34;
+}
+
+.btn-google {
+  background-color: transparent;
+  border: 2px solid #292828;
+  color: #292828;
+  margin-bottom: 16px;
+}
+
+.btn-google:hover {
+  background-color: #eaeded;
+}
+
+.google-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #292828;
+  color: #292828;
+}
+
+.btn-outline:hover {
+  background-color: #eaeded;
+}
+
+/* Divider */
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #7f7e7e;
+}
+
+.divider span {
+  background-color: #ffffff;
+  padding: 0 12px;
+  color: #7f7e7e;
+  position: relative;
+  font-size: 14px;
+}
+
+/* Signup Section */
+.signup-section p {
+  color: #7f7e7e;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  font-family: 'Barlow', sans-serif;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+/* Footer */
+.footer {
+  margin-top: 32px;
+  text-align: center;
+  color: #7f7e7e;
+  font-size: 13px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.privacy {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Chevron icon (>) */
+.chevron {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+/* --------------------------- */
+/* 🌍 Responsive Adjustments */
+/* --------------------------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .login-card {
+    max-width: 90%;
+    padding: 24px;
+  }
+
+  .login-title {
+    font-size: 1.3rem;
+  }
+
+  .input-field {
+    height: 46px;
+    font-size: 13px;
+  }
+
+  .btn {
+    height: 46px;
+    font-size: 14px;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .login-title {
+    font-size: 1.2rem;
+  }
+
+  .input-field {
+    font-size: 13px;
+    height: 44px;
+  }
+
+  .btn {
+    height: 44px;
+    font-size: 13px;
+  }
+
+  .divider span {
+    font-size: 12px;
+  }
+
+  .google-icon {
+    height: 18px;
+    width: 18px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+  }
+}
+
+/* Image buttons */
+.img-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-button {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.img-button:hover {
+  transform: scale(1.03);
+}
+/* Custom Google icon (Vector.png) */
+.google-icon-custom {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+/* Email validation error message */
+.error-message {
+  color: red;
+  font-size: 13px;
+  text-align: left;
+  margin-bottom: 12px;
+}
+.password-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  transition: opacity 0.2s;
+}
+
+.toggle-password:hover {
+  opacity: 0.7;
+}
+
+.input-field {
+  padding-right: 40px; /* Make space for the toggle icon */
+}
