@@ -17,13 +17,13 @@
               (click)="toggleFavorite(property)"
               aria-label="Add to favorites"
             >
-              <img [src]="'assets/icons/Frame 287.png'" />
+              <img [src]="'/assets/Icons/Frame 287.png'" />
             </button>
           </div>
         </div>
 
         <div class="property-address">
-          <img [src]="'assets/icons/map-pin.png'" />
+          <img [src]="'/assets/Icons/map-pin.png'" />
           <span>{{ property.address }}</span>
         </div>
 
@@ -52,12 +52,12 @@
 
         <div class="property-meta">
           <div class="meta-item" *ngIf="property.availabilityDate">
-            <img [src]="'assets/icons/calendar-check-2.png'" />
+            <img [src]="'/assets/Icons/calendar-check-2.png'" />
             <span>Availability: {{ property.availabilityDate }}</span>
           </div>
 
           <div class="meta-item">
-            <img [src]="'assets/icons/eye.png'" />
+            <img [src]="'/assets/Icons/eye.png'" />
             <span>{{ property.views }} views</span>
           </div>
         </div>
