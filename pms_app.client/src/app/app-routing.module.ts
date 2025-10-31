@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
-import { ViewDetailsComponent } from './components/view-details/view-details.component';
+
 import { ManageCaretakerComponent } from './components/manage-caretaker/manage-caretaker.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { CheckInboxComponent } from './auth/reset-password/check-inbox/check-inbox.component';
@@ -20,6 +20,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
 import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
 import { AddRoomComponent } from './components/add-room/add-room.component';
+import { ViewDetailsComponent } from './components/view-details/view-details.component';
 
 
 
