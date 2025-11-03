@@ -58,6 +58,7 @@ html, body {
   cursor: pointer;
   transition: all 0.2s;
   height: 27px;
+  width:85px;
 }
 
 .filter-buttons {
@@ -99,4 +100,8 @@ html, body {
 body {
   background-color: hsl(var(--primary-100));
 }
-
+@media (max-width: 768px) {
+  .filter-btn {
+ left: 13%;
+  }
+}
