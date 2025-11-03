@@ -35,6 +35,10 @@ RUN if [ -n "$NUGET_GITHUB_PAT" ]; then \
 # Copy everything else
 COPY . .
 
+# Build Angular client
+WORKDIR /src/pms_app.client
+RUN npm ci && npm run build -- --output-path=../PMS_app.Server/wwwroot
+
 # Restore dependencies
 WORKDIR /src/PMS_app.Server
 RUN dotnet restore "PMS_app.Server.csproj" \
