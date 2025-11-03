@@ -4,15 +4,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <SpaRoot>..\pms_app.client</SpaRoot>
+    <SpaRoot>..\pms_app.client\</SpaRoot>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:63977</SpaProxyServerUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
-      <Version>8.*-*</Version>
-    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="8.*-*" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
@@ -20,6 +18,19 @@
     <ProjectReference Include="..\pms_app.client\pms_app.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+  </ItemGroup>
+
+  <!-- 👇 Add these lines to build and copy client app when publishing -->
+  <Target Name="PublishRunClient" BeforeTargets="PrepareForPublish">
+    <!-- Install dependencies and build the client app -->
+    <Exec Command="npm install" WorkingDirectory="$(SpaRoot)" />
+    <Exec Command="npm run build" WorkingDirectory="$(SpaRoot)" />
+  </Target>
+
+  <!-- Copy built client files (adjust the dist path to match your framework) -->
+  <ItemGroup>
+    <!-- Angular 17+ outputs to dist/[app-name]/browser -->
+    <Content Include="$(SpaRoot)dist\**" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>
