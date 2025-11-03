@@ -14,7 +14,8 @@ WORKDIR /src
 
 # Copy package files first for better caching
 COPY ["pms_app.client/package.json", "pms_app.client/"]
-COPY ["pms_app.client.csproj", "./"]
+COPY ["pms_app.client/pms_app.client.csproj", "pms_app.client/"]
+
 
 # Install Node.js and npm
 RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - && \
@@ -33,6 +34,7 @@ RUN dotnet nuget add source \
 COPY . .
 
 # Restore dependencies
+WORKDIR /src/pms_app.client
 RUN dotnet restore "pms_app.client.csproj" \
     --source "https://nuget.pkg.github.com/SoftElsie/index.json" \
     --source "https://api.nuget.org/v3/index.json"
@@ -48,6 +50,6 @@ FROM base AS final
 WORKDIR /app
 ENV ASPNETCORE_URLS=http://+:80
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "ng-softelsie.dll"]
+ENTRYPOINT ["dotnet", "PMS_app.Server.dll"]
 
  
