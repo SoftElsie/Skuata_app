@@ -30,7 +30,7 @@ jobs:
             uses: docker/build-push-action@v5
             with:
               context: ./
-              file: ./DockerFile
+              file: ./Dockerfile
               push: true
               tags: phedzi/skuata:latest
               build-args: |

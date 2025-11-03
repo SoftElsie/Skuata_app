@@ -13,8 +13,8 @@ ARG NUGET_GITHUB_PAT
 WORKDIR /src
 
 # Copy package files first for better caching
-COPY ["ClientApp/package.json", "ClientApp/"]
-COPY ["ng-softelsie.csproj", "./"]
+COPY ["pms_app.client/package.json", "pms_app.client/"]
+COPY ["pms_app.client.csproj", "./"]
 
 # Install Node.js and npm
 RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - && \
@@ -33,16 +33,16 @@ RUN dotnet nuget add source \
 COPY . .
 
 # Restore dependencies
-RUN dotnet restore "ng-softelsie.csproj" \
+RUN dotnet restore "pms_app.client.csproj" \
     --source "https://nuget.pkg.github.com/SoftElsie/index.json" \
     --source "https://api.nuget.org/v3/index.json"
 
 # Build the application
-RUN dotnet build "ng-softelsie.csproj" -c ${BUILD_CONFIGURATION} -o /app/build
+RUN dotnet build "pms_app.client.csproj" -c ${BUILD_CONFIGURATION} -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "ng-softelsie.csproj" -c ${BUILD_CONFIGURATION} -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "pms_app.client.csproj" -c ${BUILD_CONFIGURATION} -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
