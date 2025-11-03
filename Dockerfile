@@ -24,19 +24,17 @@ RUN apt-get update && \
     node --version && npm --version
 
 # Conditionally add GitHub NuGet source only if credentials exist
-# Install Node.js + build dependencies
-RUN apt-get update && \
-    apt-get install -y curl git build-essential python3 && \
-    curl -sL https://deb.nodesource.com/setup_18.x | bash - && \
-    apt-get install -y nodejs && \
-    node --version && npm --version
+RUN if [ -n "$NUGET_GITHUB_PAT" ]; then \
+        dotnet nuget add source \
+        --username ${NUGET_USERNAME:-USERNAME} \
+        --password ${NUGET_GITHUB_PAT} \
+        --store-password-in-clear-text \
+        --name github "https://nuget.pkg.github.com/SoftElsie/index.json"; \
+    fi
 
-# Ensure wwwroot exists
-RUN mkdir -p /src/PMS_app.Server/wwwroot
+# Copy everything else
+COPY . .
 
-# Build Angular client
-WORKDIR /src/pms_app.client
-RUN npm ci && npm run build -- --output-path=../PMS_app.Server/wwwroot
 
 # Restore dependencies
 WORKDIR /src/PMS_app.Server
