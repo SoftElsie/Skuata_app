@@ -42,7 +42,7 @@ RUN dotnet restore "PMS_app.Server.csproj" \
     --source "https://nuget.pkg.github.com/SoftElsie/index.json" || true
 
 # Build
-RUN dotnet build "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/build
+RUN dotnet build "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/build -v diag
 
 # Stage 3: Publish
 FROM build AS publish
