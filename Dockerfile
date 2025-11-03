@@ -14,7 +14,7 @@ WORKDIR /src
 
 # Copy package files first for better caching
 COPY ["pms_app.client/package.json", "pms_app.client/"]
-COPY ["pms_app.client/pms_app.client.csproj", "pms_app.client/"]
+COPY ["PMS_app.Server/PMS_app.Server.csproj", "PMS_app.Server/"]
 
 
 # Install Node.js and npm
@@ -34,17 +34,17 @@ RUN dotnet nuget add source \
 COPY . .
 
 # Restore dependencies
-WORKDIR /src/pms_app.client
-RUN dotnet restore "pms_app.client.csproj" \
+WORKDIR /src/PMS_app.Server
+RUN dotnet restore "PMS_app.Server.csproj" \
     --source "https://nuget.pkg.github.com/SoftElsie/index.json" \
     --source "https://api.nuget.org/v3/index.json"
 
 # Build the application
-RUN dotnet build "pms_app.client.csproj" -c ${BUILD_CONFIGURATION} -o /app/build
+RUN dotnet build "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "pms_app.client.csproj" -c ${BUILD_CONFIGURATION} -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
