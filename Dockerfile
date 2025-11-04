@@ -60,7 +60,7 @@ WORKDIR /src/PMS_app.Server
 RUN dotnet publish "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/publish /p:UseAppHost=false
 
 # Adjust dist path based on your angular.json
-RUN mkdir -p /app/publish/wwwroot && cp -r /src/pms_app.client/dist/* /app/publish/wwwroot/
+COPY --from=build /src/pms_app.client/dist /app/publish/wwwroot
 
 # Stage 3: Final runtime image
 FROM base AS final
