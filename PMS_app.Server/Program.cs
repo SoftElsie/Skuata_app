@@ -27,5 +27,8 @@ app.MapControllers();
 
 app.MapFallbackToFile("index.html");
 
+var port = Environment.GetEnvironmentVariable("PORT") ?? "80";
+app.Urls.Add($"http://0.0.0.0:{port}");
+
 app.Run();
 
