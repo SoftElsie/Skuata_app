@@ -9,11 +9,35 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContactInfoComponent implements OnInit{
   contactForm!: FormGroup;
   loading = false;
-loadingButton: string | null = null;
+  loadingButton: string | null = null;
   menuItems = [
     { label: 'Contact Info', route: '/contact-info' },
     { label: 'Password & Security', route: '/security' },
     { label: 'Notification Settings', route: '/notifications' },
+  ];
+
+  cities: string[] = [
+    'Johannesburg',
+    'Cape Town',
+    'Durban',
+    'Pretoria',
+    'Port Elizabeth',
+    'Bloemfontein',
+    'Nelspruit',
+    'Polokwane',
+    'Kimberley',
+  ];
+
+  provinces: string[] = [
+    'Gauteng',
+    'Mpumalanga',
+    'Limpopo',
+    'Kwazulu Natal',
+    'Western Cape',
+    'Eastern Cape',
+    'Free State',
+    'Northern Cape',
+    'North West',
   ];
 
   constructor(private fb: FormBuilder) {
@@ -24,15 +48,15 @@ loadingButton: string | null = null;
    
     this.contactForm = this.fb.group({
 
-      firstName: ['John', Validators.required],
-      lastName: ['Doe', Validators.required],
-      email: ['john@example.com', [Validators.required, Validators.email]],
-      phoneNumber: ['0813652348', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phoneNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
 
-      address: ['23 Patrick Baird Street, Arcadia', Validators.required],
-      city: ['Pretoria', Validators.required],
-      province: ['Gauteng', Validators.required],
-      postalCode: ['0002', [Validators.required, Validators.pattern(/^[0-9]{4,6}$/)]]
+      address: ['', Validators.required],
+      city: ['', Validators.required],
+      province: ['', Validators.required],
+      postalCode: ['', [Validators.required, Validators.pattern(/^[0-9]{4,6}$/)]]
     });
   }
 

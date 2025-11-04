@@ -16,7 +16,7 @@ import { SettingsLayoutComponent } from './components/settings-layout/settings-l
 import { PasswordSecurityComponent } from './components/user-settings/password-security/password-security.component';
 import { NotificationSettingsComponent } from './components/user-settings/notification-settings/notification-settings.component';
 
-import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
+import { ProfileIconComponent } from './components/profile-Icon/profile-icon.component';
 import { RouterModule, Routes } from '@angular/router';
 
 

@@ -4,10 +4,12 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors }
 @Component({
   selector: 'app-password-security',
   templateUrl: './password-security.component.html',
-  styleUrls: ['./password-security.component.css']
+  styleUrls: []
 })
 export class PasswordSecurityComponent {
   passwordForm!: FormGroup;
+  loading = false;
+  loadingButton = '';
 
   constructor(private fb: FormBuilder) {}
 

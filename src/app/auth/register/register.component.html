@@ -2,7 +2,7 @@
   <div class="signup-container">
     <div class="full-page-wrapper" *ngIf="!showForm">
       <header class="signup-header">
-        <div class="header-icon"></div>
+        <div class="header-Icon"></div>
       </header>
 
       <main class="signup-box">
@@ -11,7 +11,7 @@
         <div class="choice-cards">
           <div class="choice-card" [class.selected]="selectedRole === 'renter'" (click)="selectRole('renter')">
             <div class="card-header">
-              <img src="assets/bed.png" alt="Bed icon" class="icon">
+              <img src="assets/bed.png" alt="Bed Icon" class="Icon">
               <input type="radio" name="role" [checked]="selectedRole === 'renter'">
             </div>
             <hr class="card-divider">
@@ -20,7 +20,7 @@
 
           <div class="choice-card" [class.selected]="selectedRole === 'owner'" (click)="selectRole('owner')">
             <div class="card-header">
-              <img src="assets/user-round.png" alt="User icon" class="icon">
+              <img src="assets/user-round.png" alt="User Icon" class="Icon">
               <input type="radio" name="role" [checked]="selectedRole === 'owner'">
             </div>
             <hr class="card-divider">
@@ -48,8 +48,8 @@
 
           <div class="form-group">
             <label for="firstName">First Name</label>
-            <div class="input-wrapper icon-field" [class.input-error]="regForm.get('firstName')!.invalid && (regForm.get('firstName')!.dirty || regForm.get('firstName')!.touched)">
-              <img src="assets/user-round.png" alt="User Icon" class="input-icon">
+            <div class="input-wrapper Icon-field" [class.input-error]="regForm.get('firstName')!.invalid && (regForm.get('firstName')!.dirty || regForm.get('firstName')!.touched)">
+              <img src="assets/user-round.png" alt="User Icon" class="input-Icon">
               <input
                 type="text"
                 id="firstName"
@@ -63,8 +63,8 @@
           </div>
           <div class="form-group">
             <label for="lastName">Last Name</label>
-            <div class="input-wrapper icon-field" [class.input-error]="regForm.get('lastName')!.invalid && (regForm.get('lastName')!.dirty || regForm.get('lastName')!.touched)">
-              <img src="assets/user-round.png" alt="User Icon" class="input-icon">
+            <div class="input-wrapper Icon-field" [class.input-error]="regForm.get('lastName')!.invalid && (regForm.get('lastName')!.dirty || regForm.get('lastName')!.touched)">
+              <img src="assets/user-round.png" alt="User Icon" class="input-Icon">
               <input
                 type="text"
                 id="lastName"
@@ -95,8 +95,8 @@
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <div class="input-wrapper icon-field" [class.input-error]="regForm.get('email')!.invalid && (regForm.get('email')!.dirty || regForm.get('email')!.touched)">
-              <img src="assets/at-sign.png" alt="Email Icon" class="input-icon">
+            <div class="input-wrapper Icon-field" [class.input-error]="regForm.get('email')!.invalid && (regForm.get('email')!.dirty || regForm.get('email')!.touched)">
+              <img src="assets/at-sign.png" alt="Email Icon" class="input-Icon">
               <input
                 type="email"
                 id="email"
@@ -112,8 +112,8 @@
 
           <div class="form-group">
             <label for="password">Password</label>
-            <div class="input-wrapper icon-field" [class.input-error]="regForm.get('password')!.invalid && (regForm.get('password')!.dirty || regForm.get('password')!.touched)">
-              <img src="assets/lock-keyhole.png" alt="Password Icon" class="input-icon">
+            <div class="input-wrapper Icon-field" [class.input-error]="regForm.get('password')!.invalid && (regForm.get('password')!.dirty || regForm.get('password')!.touched)">
+              <img src="assets/lock-keyhole.png" alt="Password Icon" class="input-Icon">
               <input
                 type="password"
                 id="password"
@@ -126,7 +126,7 @@
               <span *ngIf="regForm.get('password')!.errors?.['minlength']">Password must be at least 8 characters.</span>
             </div>
           </div>
-          <button type="submit" class="submit-button" [disabled]="regForm.invalid">Continue <img src="assets/chevron-right.png" alt="Continue" class="button-icon"></button>
+          <button type="submit" class="submit-button" [disabled]="regForm.invalid">Continue <img src="assets/chevron-right.png" alt="Continue" class="button-Icon"></button>
 
         </div>
       </form>

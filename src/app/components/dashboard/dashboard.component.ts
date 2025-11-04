@@ -44,7 +44,7 @@ loadingButton: string | null = null;
       availabilityDate: "15/10/25",
       views: 18,
       isFavorite: false,
-      roomIcon:"assets/icons/bed.png"
+      roomIcon:"assets/Icons/bed.png"
 
     },
     {
@@ -57,7 +57,7 @@ loadingButton: string | null = null;
       availability: "unavailable",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/icons/building.png"
+       roomIcon:"assets/Icons/building.png"
     },
     {
       id: 3,
@@ -70,7 +70,7 @@ loadingButton: string | null = null;
       availabilityDate: "15/10/25",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/icons/house.png"
+       roomIcon:"assets/Icons/house.png"
     },
     {
       id: 4,
@@ -82,7 +82,7 @@ loadingButton: string | null = null;
       availability: "unavailable",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/icons/bed.png"
+       roomIcon:"assets/Icons/bed.png"
     },
     {
       id: 5,
@@ -95,7 +95,7 @@ loadingButton: string | null = null;
       availabilityDate: "15/10/25",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/icons/bed.png"
+       roomIcon:"assets/Icons/bed.png"
     },
     {
       id: 6,
@@ -107,7 +107,7 @@ loadingButton: string | null = null;
       availability: "unavailable",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/icons/building.png"
+       roomIcon:"assets/Icons/building.png"
     },
      {
       id: 7,
@@ -119,7 +119,7 @@ loadingButton: string | null = null;
       availability: "unavailable",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/icons/house.png"
+       roomIcon:"assets/Icons/house.png"
     },
   ]
 
@@ -212,15 +212,15 @@ loadPrevious(): void {
    socialIcons = [
     {
       name: "LinkedIn",
-      icon: "assets/icons/linkedin.png",
+      Icon: "assets/Icons/linkedin.png",
     },
     {
       name: "Instagram",
-      icon: "assets/icons/instagram.png",
+      Icon: "assets/Icons/instagram.png",
     },
     {
       name: "Twitter",
-      icon: "assets/icons/twitter.png",
+      Icon: "assets/Icons/twitter.png",
     },
   ]
 

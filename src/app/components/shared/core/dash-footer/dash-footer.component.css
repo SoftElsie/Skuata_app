@@ -83,13 +83,13 @@
   margin: 0;
 }
 
-.social-icons {
+.social-Icons {
   display: flex;
   gap: 16px;
    color: #e67e22;
 }
 
-.social-icon {
+.social-Icon {
   color: #e67e22;
   transition: opacity 0.2s ease;
   display: flex;
@@ -97,7 +97,7 @@
   justify-content: center;
 }
 
-.social-icon:hover {
+.social-Icon:hover {
   opacity: 0.7;
 }
 
