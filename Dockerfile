@@ -25,10 +25,15 @@ RUN apt-get update && \
      node --version && npm --version
 
 # Conditionally add GitHub NuGet source if provided
-RUN if [ -n "$NUGET_GITHUB_PAT" ]; then \
+RUN if [ "${NUGET_GITHUB_PAT}" != "" ]; then \
+        echo "Adding GitHub NuGet source..."; \
         dotnet nuget add source \
-        --username ${NUGET_USERNAME:-USERNAME} \
-       --name github "https://nuget.pkg.github.com/SoftElsie/index.json"; \
+        --username "${NUGET_USERNAME:-USERNAME}" \
+        --password "${NUGET_GITHUB_PAT}" \
+        --store-password-in-clear-text \
+        --name github "https://nuget.pkg.github.com/SoftElsie/index.json"; \
+    else \
+        echo "No GitHub PAT provided, skipping private NuGet source."; \
     fi
 
 # Copy everything else
