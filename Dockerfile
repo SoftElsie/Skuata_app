@@ -47,8 +47,6 @@ RUN dotnet restore "PMS_app.Server.csproj" \
     # ✅ Build Angular app
 WORKDIR /src/pms_app.client
 RUN npm install --legacy-peer-deps
-RUN npm run build
-
 
 
 WORKDIR /src/PMS_app.Server
