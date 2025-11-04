@@ -52,6 +52,7 @@ RUN dotnet build "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/build
 # Build and publish the server + client in one go
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
+WORKDIR /src/PMS_app.Server
 RUN dotnet publish "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/publish /p:UseAppHost=false
 
 # Stage 3: Final runtime image
