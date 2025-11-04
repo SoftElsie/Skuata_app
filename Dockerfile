@@ -44,6 +44,12 @@ RUN dotnet restore "PMS_app.Server.csproj" \
     --source "https://api.nuget.org/v3/index.json" \
     --source "https://nuget.pkg.github.com/SoftElsie/index.json" || true
 
+    # ✅ Build Angular app
+WORKDIR /src/pms_app.client
+RUN npm install
+RUN npm run build --prod
+
+WORKDIR /src/PMS_app.Server
 RUN dotnet build "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/build -v diag
 
 # Build and publish the server + client in one go
