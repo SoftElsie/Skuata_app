@@ -21,19 +21,16 @@ COPY ["pms_app.client/pms_app.client.csproj", "pms_app.client/"]
 RUN apt-get update && \
     apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_18.x | bash - && \
-     apt-get install -y nodejs && \
+    apt-get install -y nodejs && \
      node --version && npm --version
 
 # Conditionally add GitHub NuGet source if provided
-RUN if [ "${NUGET_GITHUB_PAT}" != "" ]; then \
-        echo "Adding GitHub NuGet source..."; \
+RUN if [ -n "$NUGET_GITHUB_PAT" ]; then \
         dotnet nuget add source \
-        --username "${NUGET_USERNAME:-USERNAME}" \
-        --password "${NUGET_GITHUB_PAT}" \
+        --username ${NUGET_USERNAME:-USERNAME} \
+        --password ${NUGET_GITHUB_PAT} \
         --store-password-in-clear-text \
         --name github "https://nuget.pkg.github.com/SoftElsie/index.json"; \
-    else \
-        echo "No GitHub PAT provided, skipping private NuGet source."; \
     fi
 
 # Copy everything else
