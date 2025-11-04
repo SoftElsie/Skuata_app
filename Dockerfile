@@ -36,7 +36,6 @@ RUN if [ -n "$NUGET_GITHUB_PAT" ]; then \
 COPY . .
 
 
-
 # Restore dependencies
 WORKDIR /src/PMS_app.Server
 RUN dotnet restore "PMS_app.Server.csproj" \
