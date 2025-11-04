@@ -1,0 +1,16 @@
+<app-top-nav></app-top-nav>
+<hr class="divider" />
+<div class="user-settings-container">
+  <app-user-settings
+    [title]="'User Settings'"
+    [subtitle]="'Edit Profile'"
+    [menuItems]="menuItems"
+  ></app-user-settings>
+
+  <main class="settings-content">
+    
+    <router-outlet></router-outlet>
+  </main>
+</div>
+<hr class="divider" />
+<app-footer></app-footer>
