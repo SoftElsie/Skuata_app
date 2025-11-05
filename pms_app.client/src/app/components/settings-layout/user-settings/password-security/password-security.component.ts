@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors }
   selector: 'app-password-security',
   standalone: false,
   templateUrl: './password-security.component.html',
-  styleUrls: []
+  styleUrls: ['./password-security.component.css']
 })
 export class PasswordSecurityComponent {
   passwordForm!: FormGroup;

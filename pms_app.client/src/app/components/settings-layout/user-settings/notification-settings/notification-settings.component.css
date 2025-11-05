@@ -13,61 +13,66 @@
 .page-container {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  min-height: 50vh;
+  align-items: center;
+  padding: 2rem 1.5rem; /* Increased top padding for spacing consistency */
+  min-height: 100vh;
+
 }
 
-/* --- Header (Title + Button) --- */
+/* --- Header Wrapper --- */
 .header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem; /* Add some space below the header */
-  gap: 1rem;
-  width: 100%;
-  max-width: 800px;
+  width: 80%;
+  max-width: 650px;
+  margin: 6rem auto 1.5rem auto; /* adds consistent top spacing like other settings pages */
+  transform: translateX(-1rem);
 }
 
 .title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 0; /* Remove bottom margin as it's in a flex container */
-  white-space: nowrap;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  line-height: 130%;
+  letter-spacing: -1px;
 }
 
+/* --- Save Button --- */
 .save-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px; 
   background-color: #263E39;
   color: white;
-  font-weight: 600;
   border: none;
-  padding: 10px 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-left: auto;
-  font-family: Barlow;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+ 
+  min-height: 35px;
+  gap: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.save-btn img {
+  width: 18px;
+  height: 18px;
 }
 
 .save-btn:hover {
-  background-color: #1a2b27; /* Darker shade on hover */
-}
-
-.save-Icon {
-  width: 18px;
-  height: 18px;
+  transform: scale(1.03);
+  opacity: 0.95;
 }
 
 /* --- Card Container --- */
 .settings-container {
   background: white;
-  border-radius: 12px;
+
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 1000px;
+  width: 80%;
+  max-width: 650px;
   padding: 1.5rem 1.25rem;
+  margin-bottom: 3rem; /* adds breathing room below */
 }
 
 /* --- Notifications List --- */
@@ -75,8 +80,6 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  justify-content: center;
-  flex-grow: 1;
 }
 
 .notification-item {
@@ -90,6 +93,18 @@
   flex-direction: column;
   text-align: left;
   flex: 1;
+}
+
+.notification-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.25rem;
+}
+
+.notification-description {
+  font-size: 0.95rem;
+  color: #555;
 }
 
 /* --- Toggle Images --- */
@@ -106,64 +121,36 @@
 }
 
 /* --- Responsive Design --- */
-
-@media (max-width: 1024px) {
-  .page-container {
-    margin-top: 7rem;
-    align-items: flex-start;
-  }
-
-  .header-wrapper {
-    max-width: none;
-    width: 100%;
-  }
-
-  .settings-container {
-    max-width: none;
-    width: 100%;
-  }
-}
-
-/* Tablets */
 @media (max-width: 768px) {
   .header-wrapper {
-    max-width: 550px;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
+    margin-top: 2rem; /* maintain space from top */
   }
 
   .title {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   .save-btn {
-    padding: 8px 12px; /* Adjusted padding for smaller screens */
-  }
-
-  .save-btn img {
-    width: 16px;
-    height: 16px;
-  }
-
-  .settings-container {
-    max-width: 550px;
-    padding: 1.25rem;
+    /* align-self: flex-end; */
   }
 }
 
-/* Mobile phones */
 @media (max-width: 480px) {
-  .header-wrapper {
-    flex-wrap: wrap;
-  }
-
   .title {
-    white-space: normal;
+    font-size: 1.3rem;
   }
 
-  .notification-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+  .save-btn {
+    font-size: 0.85rem;
+  }
+
+  .settings-container {
+    width: 95%;
+    padding: 1rem;
   }
 }
