@@ -47,6 +47,7 @@ RUN dotnet restore "PMS_app.Server.csproj" \
     # ✅ Build Angular app
 WORKDIR /src/pms_app.client
 RUN npm install --legacy-peer-deps
+ENV NODE_OPTIONS=--max-old-space-size=4096
 RUN npm run build -- --configuration production
 RUN ls -R /src/pms_app.client/dist/pms_app.client || echo "⚠️ Angular dist folder missing!"
 
