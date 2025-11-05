@@ -51,8 +51,6 @@ RUN npm run build -- --configuration production
 RUN ls -R /src/pms_app.client/dist/pms_app.client || echo "⚠️ Angular dist folder missing!"
 
 
-
-
 WORKDIR /src/PMS_app.Server
 RUN dotnet build "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/build -v diag
 
