@@ -56,8 +56,9 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src/PMS_app.Server
 RUN dotnet publish "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/publish /p:UseAppHost=false
 
-# Copy prebuilt Angular app
-COPY pms_app.client/dist/pms_app.client /app/publish/wwwroot
+# Copy prebuilt Angular app (browser folder) into wwwroot
+COPY pms_app.client/dist/pms_app.client/browser /app/publish/wwwroot
+
 
 
 
