@@ -44,11 +44,7 @@ RUN dotnet restore "PMS_app.Server.csproj" \
     --source "https://api.nuget.org/v3/index.json" \
     --source "https://nuget.pkg.github.com/SoftElsie/index.json" || true
 
-    # ✅ Build Angular app
-WORKDIR /src/pms_app.client
-RUN npm install --legacy-peer-deps
-RUN node --max-old-space-size=8192 ./node_modules/@angular/cli/bin/ng build --configuration production --build-optimizer=false
-RUN ls -R /src/pms_app.client/dist/pms_app.client || echo "⚠️ Angular dist folder missing!"
+
 
 
 WORKDIR /src/PMS_app.Server
@@ -60,9 +56,8 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src/PMS_app.Server
 RUN dotnet publish "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/publish /p:UseAppHost=false
 
-# Adjust dist path based on your angular.json
-RUN mkdir -p /app/publish/wwwroot && \
-    cp -r /src/pms_app.client/dist/pms_app.client/* /app/publish/wwwroot/ || echo "⚠️ Angular dist folder not found"
+# Copy prebuilt Angular app
+COPY pms_app.client/dist/pms_app.client /app/publish/wwwroot
 
 
 

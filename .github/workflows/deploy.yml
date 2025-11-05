@@ -25,6 +25,12 @@ jobs:
             with:
               username: ${{secrets.SOFTELSIE_DOCKER_USERNAME}}
               password: ${{secrets.SOFTELSIE_DOCKER_HUB_ACCESS_TOKEN}}
+
+          - name: Build Angular
+            run: |
+              cd pms_app.client
+              npm ci
+               npm run build -- --configuration production
           
           - name: build and push docker image to DockerHub
             uses: docker/build-push-action@v5
