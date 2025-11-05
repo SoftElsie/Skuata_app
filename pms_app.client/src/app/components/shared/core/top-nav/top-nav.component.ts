@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { NgClass } from '@angular/common';
 import { NgIf } from '@angular/common';
 import { filter } from 'rxjs';
+import { ModalService } from '../../../../domain/services/modal.service';
 
 
 
@@ -19,7 +20,7 @@ export class TopNavComponent implements OnInit {
 
     currentLayout: 'container' | 'auth' | 'dashboard' | null = null;
 
-  constructor(public router:Router){}
+  constructor(public router:Router, private modalService: ModalService){}
   isLoggedIn = false;
   isMenuOpen = false;
   isProfileOpen = false;
@@ -74,9 +75,9 @@ ngOnInit(): void {
     this.isMenuOpen = false;
   }
   
-  goToAddRoom() {
-    this.router.navigate(['app/add-room']);
-  }
+ openAddRoomModal() {
+  this.modalService.open();
+}
 
   goToNotifications() {
     this.router.navigate(['app/notifications']);
