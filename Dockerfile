@@ -60,6 +60,7 @@ RUN dotnet publish "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/pub
 COPY pms_app.client/dist/pms_app.client /app/publish/wwwroot
 
 
+
 # Stage 3: Final runtime image
 FROM base AS final
 WORKDIR /app
