@@ -30,7 +30,11 @@ jobs:
             run: |
               cd pms_app.client
               npm ci --legacy-peer-deps
-               npm run build -- --configuration production
+              npm run build -- --configuration production
+
+          - name: Check Angular dist
+            run: ls -R pms_app.client/dist/pms_app.client
+
           
           - name: build and push docker image to DockerHub
             uses: docker/build-push-action@v5
