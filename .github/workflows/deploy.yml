@@ -39,7 +39,7 @@ jobs:
           - name: build and push docker image to DockerHub
             uses: docker/build-push-action@v5
             with:
-              context: ./
+              context: .
               file: ./Dockerfile
               push: true
               tags: phedzi/skuata:latest
