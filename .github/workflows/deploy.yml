@@ -33,7 +33,7 @@ jobs:
               npm run build -- --configuration production
 
           - name: Check Angular dist
-            run: ls -R pms_app.client/dist/pms_app.client
+            run: ls -R pms_app.client/dist/pms_app.client/browser
 
           
           - name: build and push docker image to DockerHub
