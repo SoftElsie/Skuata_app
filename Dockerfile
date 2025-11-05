@@ -49,6 +49,9 @@ WORKDIR /src/pms_app.client
 RUN npm install --legacy-peer-deps
 RUN npm run build -- --configuration production || echo "⚠️ Angular build failed or skipped"
 
+RUN ls -R /src/pms_app.client/dist
+
+
 
 WORKDIR /src/PMS_app.Server
 RUN dotnet build "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/build -v diag
