@@ -49,12 +49,12 @@ import { AuthModule } from './auth/auth.module';
     OwnerRoomComponent,
     ViewDetailsComponent,
     UserSettingsComponent,
-    SettingsLayoutComponent,
      ReviewComponent,
     PropertyCardComponent,
     AddRoomComponent,
      LoaderBtnComponent,
-     ContactManagerComponent
+     ContactManagerComponent,
+     SettingsLayoutComponent
   ],
   imports: [
     BrowserModule,
