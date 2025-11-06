@@ -67,7 +67,7 @@
 }
 
 /* --- Logged-in Buttons --- */
-.top-nav.logged-in .icon-btn,
+.top-nav.logged-in .Icon-btn,
 .top-nav.logged-in .profile-btn {
   background: none;
   border: none;
@@ -84,7 +84,7 @@
   max-width: 6rem; 
 }
 
-.top-nav.logged-in .icon {
+.top-nav.logged-in .Icon {
   height: 1.5rem;
   width: 1.5rem;
   display: block;
@@ -265,13 +265,13 @@
   color: #314d47;
 }
 
-.social-icons {
+.social-Icons {
   display: flex;
   gap: 0.8rem;
   margin-top: 0.5rem;
 }
 
-.social-icons img {
+.social-Icons img {
   width: 1.5rem;
   height: 1.5rem;
   object-fit: contain;
@@ -388,7 +388,7 @@
   .nav-link.post-room,
   .nav-link { display: none; }
 
-  .icon, .profile { display: none; }
+  .Icon, .profile { display: none; }
 
   .hamburger { display: flex; }
   .profile-dropdown {
@@ -489,7 +489,7 @@
 @media screen and (min-width: 1025px) {
   .top-nav { padding: 1rem 2rem; }
   .logo { height: 2rem; }
-  .icon, .profile { display: block; }
+  .Icon, .profile { display: block; }
   .hamburger { display: none; }
   .profile-dropdown {
     right: 1.5rem; 
