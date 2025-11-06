@@ -64,7 +64,8 @@ const routes: Routes = [
     path: 'settings',
     component: SettingsLayoutComponent,
     children: [
-     { path: 'contact-info',component:ContactInfoComponent},
+      { path: '', redirectTo: 'contact-info', pathMatch: 'full' },
+     { path: 'contact-info',component:ContactInfoComponent },
       { path: 'password-security', component: PasswordSecurityComponent },
       { path: 'notification',component:NotificationSettingsComponent},
     ]
