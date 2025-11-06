@@ -1,7 +1,9 @@
 .divider {
   border: none;
   border-top: 1px solid #00000080;
-  margin: 0 10rem; 
+  margin: 0.10rem auto;
+  max-width: 1600px;
+  margin-bottom: 20px; 
 }
 
 

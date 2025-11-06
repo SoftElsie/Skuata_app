@@ -12,7 +12,7 @@ export class DashFooterComponent {
 
   constructor(private router: Router) {}
 
-  navigationLinks = ["Home", "About Us", "Contact Us"]
+  navigationLinks = ["Home", "Contact Us", "About Us"]
   roomLinks = ["Find Rooms", "Post Rooms"]
 
    showFooter = false;
