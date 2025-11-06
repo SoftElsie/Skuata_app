@@ -5,7 +5,7 @@
   <div class="nav-left left">
     <!-- Logged-in: responsive logo -->
     <ng-container *ngIf="isLoggedIn; else fullLogo">
-      <picture (click)="router.navigate(['/app'])" style="cursor: pointer">
+      <picture>
         <source
           media="(max-width: 768px)"
           srcset="/assets/images/Logo-half.png"
@@ -16,13 +16,7 @@
 
     <!-- Not logged in: always full logo -->
     <ng-template #fullLogo>
-      <img
-        class="logo"
-        src="/assets/images/Logo-Full.png"
-        alt="UnSKUATA"
-        (click)="router.navigate(['/app'])"
-        style="cursor: pointer"
-      />
+      <img class="logo" src="/assets/images/Logo-Full.png" alt="UnSKUATA" />
     </ng-template>
 
     <!-- Navigation links (only for not logged in) -->
@@ -35,14 +29,13 @@
 
   <div class="nav-right right">
     <ng-container *ngIf="!isLoggedIn; else loggedInNav">
-      <a class="nav-link login-btn" [routerLink]="['/auth/login']">Log In</a>
-      <a class="nav-button signup" [routerLink]="['/auth/register']">
+      <!-- Need to use assets -->
+      <a class="nav-link login-btn" href="#">Log In</a>
+      <a class="nav-button signup" href="#">
         <img src="/assets/images/sign-up.png" alt="Sign Up" />
       </a>
       <span class="divider">|</span>
-      <a class="nav-link post-room" [routerLink]="['/auth/login']"
-        >Property Owner/Post Room
-      </a>
+      <a class="nav-link post-room" href="#">Property Owner/Post Room </a>
       <button class="hamburger" aria-label="Menu" (click)="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
@@ -69,13 +62,13 @@
 
           <button
             class="menu-btn-login"
-            onclick="window.location.href='auth/login'"
+            onclick="window.location.href='/login'"
           >
             Login
           </button>
           <button
             class="menu-btn-register"
-            onclick="window.location.href='auth/register'"
+            onclick="window.location.href='/register'"
           >
             Sign Up
           </button>
@@ -101,11 +94,7 @@
     </ng-container>
 
     <ng-template #loggedInNav>
-      <button
-        class="post-button"
-        aria-label="Create post"
-        (click)="openAddRoomModal()"
-      >
+      <button class="post-button" aria-label="Create post">
         <picture>
           <source
             media="(max-width: 768px)"
@@ -117,11 +106,7 @@
 
       <span class="divider">|</span>
 
-      <button
-        class="icon-btn"
-        aria-label="Notifications"
-        (click)="goToNotifications()"
-      >
+      <button class="Icon-btn" aria-label="Notifications">
         <img
           class="Icon bell"
           src="/assets/Icons/bell.png"
@@ -158,12 +143,11 @@
             <span class="notification-counter">{{ notificationCount }}</span>
           </a>
           <a [routerLink]="['/settings']">
-            <img src="/assets/Icons/pen-line.png" alt="User Icon" /> Edit
-            Profile
+            <img src="assets/Icons/pen-line.png" alt="User Icon" /> Edit Profile
           </a>
           <a [routerLink]="['/app/manage-caretaker']">
-            <img src="/assets/Icons/user-star.png" alt="Caretaker Icon" />
-            Manage Caretaker
+            <img src="assets/Icons/user-star.png" alt="Caretaker Icon" /> Manage
+            Caretaker
           </a>
           <div class="profile-support">
             <a [routerLink]="['/contact-us']">
@@ -173,9 +157,9 @@
               />
               Support
             </a>
-            <a (click)="signOut()">
-              <img src="/assets/Icons/log-out.png" alt="Sign Out Icon" />
-              Sign out
+            <a [routerLink]="['/signout']">
+              <img src="assets/Icons/log-out.png" alt="Sign Out Icon" /> Sign
+              out
             </a>
           </div>
         </div>

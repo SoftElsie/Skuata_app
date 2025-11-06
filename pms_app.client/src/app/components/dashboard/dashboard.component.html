@@ -2,11 +2,7 @@
   <app-filter (filtersChanged)="onFiltersChanged($event)"></app-filter>
 
   <div class="properties-grid">
-    <div
-      class="property-card"
-      *ngFor="let property of visibleProperties"
-      (click)="viewDetails()"
-    >
+    <div class="property-card" *ngFor="let property of visibleProperties" (click)="viewDetails()">
       <div class="property-image">
         <img [src]="property.image" [alt]="property.title" />
       </div>
@@ -76,19 +72,22 @@
       (click)="loadPrevious()"
     >
       Previous
-      <!-- <app-loader-btn
+     <!-- <app-loader-btn
         [active]="loading && loadingButton === 'previous'"
       ></app-loader-btn>-->
     </button>
 
-    <button
-      class="btn-find filter-buttons"
-      (click)="loadMore()"
-      *ngIf="currentPage * itemsPerPage < filteredProperties.length"
-    >
-      Load More
-    </button>
-  </div>
-
-  <app-dash-footer></app-dash-footer>
+  <button 
+    class="btn-find filter-buttons" 
+    (click)="loadMore()" 
+    *ngIf="currentPage * itemsPerPage < filteredProperties.length"
+  >
+    Load More
+  </button>
 </div>
+
+<app-dash-footer></app-dash-footer>
+ 
+</div>
+
+

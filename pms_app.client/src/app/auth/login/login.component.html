@@ -12,11 +12,7 @@
     <form #loginForm="ngForm" (ngSubmit)="onContinue()" novalidate>
       <!-- Email Input -->
       <div class="input-group">
-        <img
-          src="assets/Icons/user-round-email.png"
-          alt="Email Icon"
-          class="input-icon"
-        />
+        <img src="assets/Icons/user-round-email.png" alt="Email Icon" class="input-Icon" />
         <input
           type="email"
           name="email"
@@ -30,72 +26,45 @@
       </div>
 
       <!-- Email Error Message -->
-      <div
-        *ngIf="emailField.invalid && emailField.touched"
-        class="error-message"
-      >
-        <small *ngIf="emailField.errors?.['required']"
-          >Email is required.</small
-        >
-        <small *ngIf="emailField.errors?.['email']"
-          >Please enter a valid email address.</small
-        >
+      <div *ngIf="emailField.invalid && emailField.touched" class="error-message">
+        <small *ngIf="emailField.errors?.['required']">Email is required.</small>
+        <small *ngIf="emailField.errors?.['email']">Please enter a valid email address.</small>
       </div>
 
-      <!-- Password Input -->
-      <div class="input-group password-group">
-        <img
-          src="assets/Icons/lock-keyhole.svg"
-          alt="Password Icon"
-          class="input-icon"
-        />
-        <input
-          [type]="showPassword ? 'text' : 'password'"
-          name="password"
-          [(ngModel)]="password"
-          #passwordField="ngModel"
-          placeholder="Password..."
-          class="input-field"
-          required
-          minlength="6"
-          pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?':{}|<>]).+$"
-        />
-        <img
-          [src]="
-            showPassword
-              ? 'assets/Icons/eye.svg'
-              : 'assets/Icons/eye-closed.svg'
-          "
-          alt="Toggle Password Visibility"
-          class="toggle-password"
-          (click)="togglePasswordVisibility()"
-        />
-      </div>
+       <!-- Password Input -->
+<div class="input-group password-group">
+  <img src="assets/Icons/lock-keyhole.svg" alt="Password Icon" class="input-Icon" />
+  <input
+    [type]="showPassword ? 'text' : 'password'"
+    name="password"
+    [(ngModel)]="password"
+    #passwordField="ngModel"
+    placeholder="Password..."
+    class="input-field"
+    required
+    minlength="6"
+    pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?':{}|<>]).+$"
+  />
+  <img
+    [src]="showPassword ? 'assets/Icons/eye.svg' : 'assets/Icons/eye-closed.svg'"
+    alt="Toggle Password Visibility"
+    class="toggle-password"
+    (click)="togglePasswordVisibility()"
+  />
+</div>
 
-      <!-- Password Error Message -->
-      <div
-        *ngIf="passwordField.invalid && passwordField.touched"
-        class="error-message"
-      >
-        <small *ngIf="passwordField.errors?.['required']"
-          >Password is required.</small
-        >
-        <small *ngIf="passwordField.errors?.['minlength']"
-          >Password must be at least 6 characters long.</small
-        >
-        <small *ngIf="passwordField.errors?.['pattern']">
-          Password must include at least one uppercase letter and at least one
-          special character (!&#64;#$%^&* etc.).
-        </small>
-      </div>
+<!-- Password Error Message -->
+<div *ngIf="passwordField.invalid && passwordField.touched" class="error-message">
+  <small *ngIf="passwordField.errors?.['required']">Password is required.</small>
+  <small *ngIf="passwordField.errors?.['minlength']">Password must be at least 6 characters long.</small>
+  <small *ngIf="passwordField.errors?.['pattern']">
+    Password must include at least one uppercase letter and at least one special character (!&#64;#$%^&* etc.).
+  </small>
+</div>
+
 
       <!-- Continue Button -->
-      <button
-        class="btn btn-continue"
-        type="submit"
-        [disabled]="loginForm.invalid"
-        (click)="simulateLogin()"
-      >
+      <button class="btn btn-continue" type="submit" [disabled]="loginForm.invalid">
         Continue <span class="chevron">&#8250;</span>
       </button>
     </form>
@@ -107,11 +76,7 @@
 
     <!-- Google Sign In -->
     <button class="btn btn-google" (click)="onGoogleSignIn()">
-      <img
-        src="assets/Icons/Google.svg"
-        alt="Google Icon"
-        class="google-icon-custom"
-      />
+      <img src="assets/Icons/Google.svg" alt="Google Icon" class="google-Icon-custom" />
       Continue with Google
     </button>
 
