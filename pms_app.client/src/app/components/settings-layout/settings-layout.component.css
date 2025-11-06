@@ -45,6 +45,20 @@ app-user-settings {
   }
 }
 
+/* Medium screens (tablet) */
+@media (max-width: 1024px) {
+  .divider {
+    margin: 0 5rem;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 640px) {
+  .divider {
+    margin: 0 1rem; /* makes it stretch almost full width */
+  }
+}
+
 
 
 
