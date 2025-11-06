@@ -184,6 +184,7 @@
 .property-image img {
   width: 98%;
   height:90%;
+   margin-left: 3px;
   margin-top: 3px;
   object-fit: cover;
 }
@@ -351,3 +352,4 @@
     gap: 1rem;
   }
 }
+
