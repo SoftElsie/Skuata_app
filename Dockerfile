@@ -51,7 +51,6 @@ WORKDIR /src/PMS_app.Server
 RUN dotnet build "PMS_app.Server.csproj" -c ${BUILD_CONFIGURATION} -o /app/build -v diag
 
 
-
 # Build and publish the server + client in one go
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release

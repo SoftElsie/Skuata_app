@@ -26,7 +26,7 @@
   gap: 0.5rem;
 }
 
-.logo-icon {
+.logo-Icon {
   width: 40px;
   height: 40px;
   border: 2px solid #2c3e50;
@@ -58,7 +58,7 @@
   background-color: #2c3e50;
 }
 
-.icon-button {
+.Icon-button {
   background: none;
   border: none;
   cursor: pointer;
@@ -70,7 +70,7 @@
   transition: opacity 0.2s;
 }
 
-.icon-button:hover {
+.Icon-button:hover {
   opacity: 0.7;
 }
 
@@ -111,7 +111,7 @@
   padding: 0.75rem 1rem;
 }
 
-.search-icon {
+.search-Icon {
   color: #666;
   margin-right: 0.75rem;
 }
@@ -213,7 +213,7 @@
   gap: 0.5rem;
 }
 
-.icon-button-small {
+.Icon-button-small {
   background: none;
   border: none;
   cursor: pointer;
@@ -225,7 +225,7 @@
   transition: opacity 0.2s;
 }
 
-.icon-button-small:hover {
+.Icon-button-small:hover {
   opacity: 0.7;
 }
 

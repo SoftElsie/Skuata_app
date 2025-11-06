@@ -9,6 +9,8 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors }
 })
 export class PasswordSecurityComponent {
   passwordForm!: FormGroup;
+  loading = false;
+  loadingButton = '';
 
   constructor(private fb: FormBuilder) {}
 

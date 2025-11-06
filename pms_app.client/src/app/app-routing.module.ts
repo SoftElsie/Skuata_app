@@ -15,7 +15,7 @@ import { SettingsLayoutComponent } from './components/settings-layout/settings-l
 import { PasswordSecurityComponent } from './components/settings-layout/user-settings/password-security/password-security.component';
 import { NotificationSettingsComponent } from './components/settings-layout/user-settings/notification-settings/notification-settings.component';
 
-import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
+import { ProfileIconComponent } from './components/profile-Icon/profile-icon.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
 import { OwnerRoomComponent } from './components/owner-room/owner-room.component';
