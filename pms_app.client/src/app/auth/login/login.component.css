@@ -47,8 +47,8 @@
   margin-bottom: 16px;
 }
 
-.input-icon,
-.icon-left {
+.input-Icon,
+.Icon-left {
   position: absolute;
   left: 12px;
   top: 50%;
@@ -145,7 +145,7 @@
   background-color: #eaeded;
 }
 
-.google-icon {
+.google-Icon {
   height: 20px;
   width: 20px;
   margin-right: 8px;
@@ -214,7 +214,7 @@
   cursor: pointer;
 }
 
-/* Chevron icon (>) */
+/* Chevron Icon (>) */
 .chevron {
   margin-left: 8px;
   font-size: 18px;
@@ -279,7 +279,7 @@
     font-size: 12px;
   }
 
-  .google-icon {
+  .google-Icon {
     height: 18px;
     width: 18px;
   }
@@ -314,8 +314,8 @@
 .img-button:hover {
   transform: scale(1.03);
 }
-/* Custom Google icon (Vector.png) */
-.google-icon-custom {
+/* Custom Google Icon (Vector.png) */
+.google-Icon-custom {
   height: 20px;
   width: 20px;
   margin-right: 10px;
@@ -348,5 +348,5 @@
 }
 
 .input-field {
-  padding-right: 40px; /* Make space for the toggle icon */
+  padding-right: 40px; /* Make space for the toggle Icon */
 }

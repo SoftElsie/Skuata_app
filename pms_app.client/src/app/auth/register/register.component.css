@@ -3,7 +3,6 @@
   flex-direction: column;
   min-height: 100vh;
   box-sizing: border-box;
-  background-color: #F5F5F5;
 }
 
 .full-page-wrapper {
@@ -128,7 +127,7 @@ h2, .form-title {
   padding: 0;
 }
 
-.choice-card .icon {
+.choice-card .Icon {
   font-size: 24px;
   color: #7F7E7E;
 }
@@ -316,16 +315,16 @@ form {
   color: #BFBEBE;
 }
 
-.input-wrapper .material-icons {
+.input-wrapper .material-Icons {
   color: #BFBEBE;
   font-size: 18px;
 }
 
-.input-wrapper.icon-field input {
+.input-wrapper.Icon-field input {
   padding-left: 0;
 }
 
-.input-wrapper.icon-field .input-icon {
+.input-wrapper.Icon-field .input-Icon {
   padding: 0 8px;
   width: 24px;
   height: 24px;

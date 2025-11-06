@@ -25,11 +25,21 @@ jobs:
             with:
               username: ${{secrets.SOFTELSIE_DOCKER_USERNAME}}
               password: ${{secrets.SOFTELSIE_DOCKER_HUB_ACCESS_TOKEN}}
+
+          - name: Build Angular
+            run: |
+              cd pms_app.client
+              npm ci --legacy-peer-deps
+              npm run build -- --configuration production
+
+          - name: Check Angular dist
+            run: ls -R pms_app.client/dist/pms_app.client/browser
+
           
           - name: build and push docker image to DockerHub
             uses: docker/build-push-action@v5
             with:
-              context: ./
+              context: .
               file: ./Dockerfile
               push: true
               tags: phedzi/skuata:latest
@@ -44,4 +54,8 @@ jobs:
              publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
              images: 'phedzi/skuata:latest'
 
+          - name: Check wwwroot
+            run: |
+               ls -R PMS_app.Server/wwwroot || echo "No wwwroot content"           
 
+     

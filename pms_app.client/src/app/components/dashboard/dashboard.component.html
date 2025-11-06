@@ -16,18 +16,18 @@
           <h3 class="property-title">{{ property.title }}</h3>
           <div class="property-actions">
             <button
-              class="icon-button-small favorite-button"
+              class="Icon-button-small favorite-button"
               [class.active]="property.isFavorite"
               (click)="toggleFavorite(property)"
               aria-label="Add to favorites"
             >
-              <img [src]="'/assets/Icons/Frame 287.png'" />
+              <img [src]="'assets/Icons/Frame 287.png'" />
             </button>
           </div>
         </div>
 
         <div class="property-address">
-          <img [src]="'/assets/Icons/map-pin.png'" />
+          <img [src]="'assets/Icons/map-pin.png'" />
           <span>{{ property.address }}</span>
         </div>
 
@@ -56,12 +56,12 @@
 
         <div class="property-meta">
           <div class="meta-item" *ngIf="property.availabilityDate">
-            <img [src]="'/assets/Icons/calendar-check-2.png'" />
+            <img [src]="'assets/Icons/calendar-check-2.png'" />
             <span>Availability: {{ property.availabilityDate }}</span>
           </div>
 
           <div class="meta-item">
-            <img [src]="'/assets/Icons/eye.png'" />
+            <img [src]="'assets/Icons/eye.png'" />
             <span>{{ property.views }} views</span>
           </div>
         </div>
