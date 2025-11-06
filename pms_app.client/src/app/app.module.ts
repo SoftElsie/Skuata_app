@@ -12,7 +12,7 @@ import { ManageCaretakerComponent } from './components/manage-caretaker/manage-c
 import { FilterComponent } from './components/shared/widgets/filter/filter.component';
 import { ContactInfoComponent } from './components/settings-layout/user-settings/contact-info/contact-info.component';
 import { SharedModule } from './components/shared/shared.module';
-import { ProfileIconComponent } from './components/profile-Icon/profile-icon.component';
+import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
 import { UserSettingsComponent } from './components/settings-layout/user-settings/user-settings.component';
