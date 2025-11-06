@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { NgClass } from '@angular/common';
 import { NgIf } from '@angular/common';
 import { filter } from 'rxjs';
+import { ModalService } from '../../../../domain/services/modal.service';
 
 
 
@@ -19,8 +20,8 @@ export class TopNavComponent implements OnInit {
 
     currentLayout: 'container' | 'auth' | 'dashboard' | null = null;
 
-  constructor(private router:Router){}
-  isLoggedIn = true;
+  constructor(public router:Router, private modalService: ModalService){}
+  isLoggedIn = false;
   isMenuOpen = false;
   isProfileOpen = false;
   userName = 'John Doe';
@@ -46,6 +47,9 @@ ngOnInit(): void {
         this.currentLayout = null;
       }
     });
+
+    //simulate login state
+    this.checkLoginState();
 }
 
 
@@ -70,5 +74,23 @@ ngOnInit(): void {
     this.router.navigate([path]);
     this.isMenuOpen = false;
   }
- 
+  
+ openAddRoomModal() {
+  this.modalService.open();
+}
+
+  goToNotifications() {
+    this.router.navigate(['app/notifications']);
+  }
+
+
+  checkLoginState() {
+    const user = localStorage.getItem('user');
+    this.isLoggedIn = !!user;
+  }
+
+  signOut() {
+    this.isLoggedIn = false;
+    this.router.navigate(['/signout']);
+  }
 }

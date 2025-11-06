@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  constructor(private router: Router) {}
   
 email = '';
   password = '';
@@ -40,5 +42,14 @@ email = '';
   onSignUp(): void {
     console.log('Navigate to Sign-Up page');
     // 🧭 TODO: Add navigation logic
+  }
+
+  simulateLogin() {
+    // simulate user data
+    const mockUser = { name: 'TestUser' };
+    localStorage.setItem('user', JSON.stringify(mockUser));
+
+    // navigate to app home
+    this.router.navigate(['/app']);
   }
 }
