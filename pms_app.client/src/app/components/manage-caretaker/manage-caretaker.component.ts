@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-caretaker',
@@ -34,11 +35,11 @@ export class ManageCaretakerComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 3;
   totalPages = 3;
-  router: any;
   loading = false;
 loadingButton: string | null = null;
 
 
+  constructor(private router: Router) {}
 
 
   ngOnInit() {
@@ -91,5 +92,9 @@ loadingButton: string | null = null;
 goToAddCaretaker() {
   this.router.navigate(['/add-caretaker']);
 }
+
+  goBack() {
+    this.router.navigate(['/app']);
+  }
 
 }
