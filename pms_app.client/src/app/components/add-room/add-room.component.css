@@ -146,6 +146,29 @@ input, select, textarea {
 .button button:hover {
   background-color: hsl(var(--primary-600));
 }
+.dropzone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.preview {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.preview-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
 
 @media (max-width: 550px) {
   .container {
