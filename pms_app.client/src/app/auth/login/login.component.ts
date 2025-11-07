@@ -40,8 +40,9 @@ email = '';
 
   // Navigation to Sign-Up
   onSignUp(): void {
+    this.router.navigate(['auth/register']);
     console.log('Navigate to Sign-Up page');
-    // 🧭 TODO: Add navigation logic
+    
   }
 
   simulateLogin() {
