@@ -10,6 +10,7 @@ import { ModalService } from '../../domain/services/modal.service';
 export class AddRoomComponent{
     loading = false;
 loadingButton: string | null = null;
+previewUrls: string[] = [];
 
 
 handleAddRoom(): void {
@@ -41,4 +42,29 @@ handleAddRoom(): void {
   closeModal() {
     this.modalService.close();
   }
+  onFileSelected(event: Event): void {
+  const files = (event.target as HTMLInputElement).files;
+  if (files) this.readFiles(files);
+}
+
+onDragOver(event: DragEvent): void {
+  event.preventDefault();
+}
+
+onDrop(event: DragEvent): void {
+  event.preventDefault();
+  const files = event.dataTransfer?.files;
+  if (files) this.readFiles(files);
+}
+
+private readFiles(files: FileList): void {
+  this.previewUrls = [];
+  Array.from(files).forEach(file => {
+    if (file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => this.previewUrls.push(e.target.result);
+      reader.readAsDataURL(file);
+    }
+  });
+}
 }
