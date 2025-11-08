@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FilterOptions } from '../filter/filter.component';
+import { FilterComponent, FilterOptions } from '../filter/filter.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 interface Property {
   id: number
@@ -17,6 +19,8 @@ interface Property {
 
 @Component({
   selector: 'app-dashboard',
+  standalone: true,
+  imports: [CommonModule, FormsModule, FilterComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

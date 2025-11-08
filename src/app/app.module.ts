@@ -20,15 +20,7 @@ import { SharedModule } from './components/shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DashboardComponent,
-    ContactInfoComponent,
-    UserSettingsComponent,
-    TopNavComponent,
-    ManageCaretakerComponent,
-    FilterComponent,
-    RegisterComponent,
-    ResetPasswordComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +30,14 @@ import { SharedModule } from './components/shared/shared.module';
     AppRoutingModule,
     SharedModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    TopNavComponent,
+    RegisterComponent,
+    DashboardComponent,
+    ContactInfoComponent,
+    ManageCaretakerComponent,
+    FilterComponent,
+    ResetPasswordComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

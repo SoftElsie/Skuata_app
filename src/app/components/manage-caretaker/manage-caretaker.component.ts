@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-manage-caretaker',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './manage-caretaker.component.html',
   styleUrl: './manage-caretaker.component.css'
 })

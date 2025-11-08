@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact-info',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact-info.component.html',
   styleUrls: ['./contact-info.component.css']
 })
