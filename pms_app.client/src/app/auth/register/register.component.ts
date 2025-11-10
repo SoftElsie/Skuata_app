@@ -5,25 +5,7 @@ import { trigger, style, animate, transition } from '@angular/animations';
 import { FooterComponent } from "../../components/shared/core/footer/footer.component";
 import { Router } from '@angular/router';
 
-// Custom validator function
-export function passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
-  const password = control.get('password');
-  const confirmPassword = control.get('confirmPassword');
 
-  if (password && confirmPassword && password.value !== confirmPassword.value) {
-    confirmPassword.setErrors({ 'passwordMismatch': true });
-    return { 'passwordMismatch': true };
-  } else {
-    if (confirmPassword) {
-      const errors = confirmPassword.errors;
-      if (errors) {
-        delete errors['passwordMismatch'];
-        confirmPassword.setErrors(Object.keys(errors).length > 0 ? errors : null);
-      }
-    }
-    return null;
-  }
-}
 
 @Component({
   selector: 'app-Register',
@@ -46,10 +28,29 @@ export class RegisterComponent implements OnInit {
   selectedRole: string = '';
   showForm: boolean = false;
   showRoleError: boolean = false;
+  isDissolving: boolean = false;
   regForm!: FormGroup;
 
   
   showPassword = false;
+
+  // Custom validator method within the component
+  passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
+    const password = control.get('password');
+    const confirmPassword = control.get('confirmPassword');
+
+    if (password && confirmPassword && password.value !== confirmPassword.value) {
+      confirmPassword.setErrors({ 'passwordMismatch': true });
+      return { 'passwordMismatch': true };
+    } else {
+      if (confirmPassword && confirmPassword.errors && 'passwordMismatch' in confirmPassword.errors) {
+        const errors = { ...confirmPassword.errors }; // Create a copy to avoid direct modification
+        delete errors['passwordMismatch'];
+        confirmPassword.setErrors(Object.keys(errors).length > 0 ? errors : null);
+      }
+      return null;
+    }
+  }
 
   constructor(private fb: FormBuilder, private router: Router) { }
 
@@ -61,7 +62,7 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', Validators.required]
-    }, { validator: passwordMatchValidator });
+    }, { validator: this.passwordMatchValidator });
   }
 
   // Role selection
