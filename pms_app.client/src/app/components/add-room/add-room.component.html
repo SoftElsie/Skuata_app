@@ -1,0 +1,117 @@
+<main class="container">
+  <div class="header">
+    <h1>Add Rooms</h1>
+    <button (click)="closeModal()">
+      <img src="../../assets/Icons/lucide/x.svg" alt="" />
+    </button>
+  </div>
+  <form>
+    <div class="columns">
+      <div class="left-group">
+        <div>
+          <label for="name"> Name</label>
+          <input type="text" name="name" placeholder="e.g. Backroom" />
+        </div>
+        <div>
+          <label for="address"> Address</label>
+          <input type="text" name="address" />
+        </div>
+        <div>
+          <label for="city"> City</label>
+          <input type="text" name="city" />
+        </div>
+        <div>
+          <label for="price"> Price</label>
+          <input type="number" name="price" />
+        </div>
+        <div>
+          <label for="available-date"> Available Date</label>
+          <input
+            type="text"
+            onfocus="(this.type='date')"
+            name="available-date"
+            placeholder="e.g. MM/DD/YYYY"
+          />
+        </div>
+        <div>
+          <label for="availability-status"> Availability Status</label>
+          <select name="available-date" id="availability">
+            <option value=""></option>
+          </select>
+        </div>
+      </div>
+      <div class="right-group">
+        <div>
+          <label for="owner-name"> Owner&apos;s Name</label>
+          <input type="text" name="name" placeholder="e.g. Backroom" />
+        </div>
+        <div>
+          <label for="province"> Province</label>
+          <select name="province" id="province">
+            <option value=""></option>
+          </select>
+        </div>
+        <div>
+          <label for="property-type"> Property Type</label>
+          <select name="property-type" id="property-type">
+            <option value=""></option>
+          </select>
+        </div>
+        <div>
+          <label for="contact"> Contact</label>
+          <input
+            type="text"
+            name="contact"
+            placeholder="e.g. +27 83 569 9845"
+          />
+        </div>
+        <div>
+          <label for="description"> Description</label>
+          <textarea name="description" id="description" rows="6"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="upload">
+      <label for="uploadImages">Upload Images</label>
+
+      <div
+        class="dropzone"
+        (dragover)="onDragOver($event)"
+        (drop)="onDrop($event)"
+      >
+        <img src="../../assets/Icons/image-up.svg" alt="Upload Icon" />
+        <p>
+          Drop the images here, or
+          <a href="#" (click)="fileInput.click(); $event.preventDefault()"
+            >browse</a
+          >
+        </p>
+        <p class="file-support">Supports PNG, JPG, JPEG, WEBP</p>
+        <input
+          type="file"
+          id="uploadImages"
+          #fileInput
+          (change)="onFileSelected($event)"
+          accept=".png,.jpg,.jpeg,.webp"
+          multiple
+          hidden
+        />
+      </div>
+
+      <div class="preview" *ngIf="previewUrls.length > 0">
+        <div class="preview-image" *ngFor="let img of previewUrls">
+          <img [src]="img" alt="Preview" />
+        </div>
+      </div>
+    </div>
+
+    <div class="button">
+      <button (click)="addRoomAndCloseModal()" [disabled]="loading">
+        Add Room
+        <app-loader-btn
+          [active]="loading && loadingButton === 'addRoom'"
+        ></app-loader-btn>
+      </button>
+    </div>
+  </form>
+</main>

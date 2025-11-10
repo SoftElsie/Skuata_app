@@ -1,0 +1,287 @@
+
+body, .user-settings-container {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.user-settings-container {
+  display: flex;
+  gap: 2rem;
+  padding: 6rem 4rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start for better control */
+}
+
+
+
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%; /* Take full width of its container */
+  max-width: 1000px; /* Set a max-width for readability on very large screens */
+  margin-left: 0; /* Remove negative margin */
+}
+
+.form-header-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .5rem; /* Add some space below the header */
+  gap: 2rem; /* Increased gap */
+  width: 100%;
+}
+
+.save-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  background-color: #263E39;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0; /* Remove top margin as it's in a flex container */
+  margin-left: 0; /* Reset margin-left */
+  align-self: auto; /* Reset align-self */
+  font-family: Barlow;
+  margin-right: 9.8rem; /* Pull button back from the right edge */
+}
+
+
+
+.form-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0; /* Remove bottom margin as it's in a flex container */
+  white-space: nowrap;
+  margin-left: 9.8rem; /* Add margin to move it to the right */
+}
+
+
+.save-btn:hover {
+  background-color: #263E39;
+}
+
+.save-Icon {
+  width: 18px;
+  height: 18px;
+}
+.card-spacing {
+  margin-top: 0.5rem; 
+}
+
+.info-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem 1rem;
+  width: 100%;              
+  max-width: 700px;        
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  margin: 0 auto;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.full-form {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+.form-group label {
+  display: inline-block; 
+  text-align: left; 
+  width: 100%; 
+  font-weight: 500;
+  font-size: small;
+  color: #1f2937;
+}
+
+.required {
+  color: #dc2626;
+  margin-left: 3px;
+}
+
+.form-input,
+.form-select {
+padding: 0.625rem 0.875rem;
+border: 1px solid #eaeded;
+height: 40px;
+background-color: #eaeded;
+width: 70%;
+font-size: 0.875rem;
+transition: border-color 0.2s, background-color 0.2s;
+box-sizing: border-box;
+-webkit-appearance: none; 
+-moz-appearance: none;   
+appearance: none;
+line-height: normal;}
+
+.select-wrapper {
+  position: relative;
+  width: 100%; /* Ensure it takes full width of its parent */
+}
+
+.select-wrapper .form-select {
+  padding-right: 2.5rem; /* Make space for the icon */
+}
+
+.dropdown-arrow-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; 
+  width: 1rem; 
+  height: 1.5rem; 
+}
+
+
+.info-card .form-input,
+.info-card .form-select {
+  width: 100%;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  min-height: 1.25rem; /* Approximate height for one line of error message */}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #fff;
+}
+
+
+
+@media (max-width: 1024px) {
+  .user-settings-container {
+    flex-direction: column;
+    padding: 5rem 4rem;
+    min-height: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .settings-content {
+    width: 100%;
+  }
+
+  .form-header-new {
+    width: 100%;
+  }
+
+  .menu-nav {
+    flex-direction: row;
+    gap: 1rem;
+    overflow-x: auto;
+  }
+
+
+  .form-row {
+    grid-template-columns: 1fr; 
+  }
+
+  .info-card {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .form-input,
+  .form-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .user-settings-container {
+    padding: 1rem;
+    justify-content: center;
+  }
+
+  .settings-content {
+    gap: 4rem;
+    width: 90%;
+  }
+
+  .form-header-new {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem; 
+    padding-right: 1rem;
+  }
+
+  .form-title {
+    margin-left: 0;
+  }
+
+  .info-card {
+    width: 100%;
+    max-width: none;
+    
+  }
+ .save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    white-space: nowrap; /* prevents text from breaking into two lines */
+    width: fit-content;  /* adjusts to text size */
+    height: auto;        /* avoids unnecessary vertical stretching */
+
+  }
+
+  .save-btn img {
+    width: 18px;
+    height: 18px;
+  }
+
+  
+
+  .menu-nav {
+    flex-direction: column;
+  }
+
+  .form-input,
+  .form-select {
+    width: 100%;
+  }
+}

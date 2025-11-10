@@ -1,0 +1,66 @@
+.user-settings-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem; 
+  padding: 1rem 2rem 2rem 10rem;
+}
+
+
+app-user-settings {
+  flex: 0 0 250px; 
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #00000080;
+  margin: 0 10rem; 
+}
+
+.settings-content {
+  flex: 1;
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+
+  .user-settings-container {
+
+    align-items: flex-start;
+
+  }
+
+}
+
+@media (max-width: 640px) {
+  .user-settings-container {
+    flex-direction: column;
+    padding: 2rem 1rem 1rem 1rem;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  app-user-settings,
+  .settings-content {
+    width: 100%;
+  }
+}
+
+/* Medium screens (tablet) */
+@media (max-width: 1024px) {
+  .divider {
+    margin: 0 5rem;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 640px) {
+  .divider {
+    margin: 0 1rem; /* makes it stretch almost full width */
+  }
+}
+
+
+
+
+
+

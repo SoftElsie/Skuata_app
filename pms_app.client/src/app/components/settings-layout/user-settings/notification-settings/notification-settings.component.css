@@ -1,0 +1,156 @@
+/* Import Barlow font */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
+
+/* Global reset */
+* {
+  box-sizing: border-box;
+  font-family: 'Barlow', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Page layout --- */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem; /* Increased top padding for spacing consistency */
+  min-height: 100vh;
+
+}
+
+/* --- Header Wrapper --- */
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 650px;
+  margin: 6rem auto 1.5rem auto; /* adds consistent top spacing like other settings pages */
+  transform: translateX(-1rem);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  line-height: 130%;
+  letter-spacing: -1px;
+}
+
+/* --- Save Button --- */
+.save-btn {
+  background-color: #263E39;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+ 
+  min-height: 35px;
+  gap: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.save-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+.save-btn:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+/* --- Card Container --- */
+.settings-container {
+  background: white;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 650px;
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 3rem; /* adds breathing room below */
+}
+
+/* --- Notifications List --- */
+.notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex: 1;
+}
+
+.notification-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.25rem;
+}
+
+.notification-description {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* --- Toggle Images --- */
+.toggle-image {
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.toggle-image:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .header-wrapper {
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 2rem; /* maintain space from top */
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .save-btn {
+    /* align-self: flex-end; */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .save-btn {
+    font-size: 0.85rem;
+  }
+
+  .settings-container {
+    width: 95%;
+    padding: 1rem;
+  }
+}

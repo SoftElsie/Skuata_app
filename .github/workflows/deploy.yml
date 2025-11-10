@@ -1,0 +1,61 @@
+
+
+
+name: Build and Push Docker Image to Docker Hub
+
+on: 
+  push:
+    branches:
+      - main
+      - Development
+      - clean-Development
+jobs:
+    push_to_hub:
+        name: push image to repo
+        runs-on: ubuntu-latest
+        steps:
+          - name: check repo
+            uses: actions/checkout@v4
+
+          - name: List repo contents
+            run: ls -R
+
+          - name: login to DockerHub
+            uses: docker/login-action@v3
+            with:
+              username: ${{secrets.SOFTELSIE_DOCKER_USERNAME}}
+              password: ${{secrets.SOFTELSIE_DOCKER_HUB_ACCESS_TOKEN}}
+
+          - name: Build Angular
+            run: |
+              cd pms_app.client
+              npm ci --legacy-peer-deps
+              npm run build -- --configuration production
+
+          - name: Check Angular dist
+            run: ls -R pms_app.client/dist/pms_app.client/browser
+
+          
+          - name: build and push docker image to DockerHub
+            uses: docker/build-push-action@v5
+            with:
+              context: .
+              file: ./Dockerfile
+              push: true
+              tags: phedzi/skuata:latest
+              build-args: |
+                NUGET_USERNAME=${{secrets.SOFTELSIE_GITHUB_PACKAGE_INSTALLER_USERNAME}}
+                NUGET_GITHUB_PAT=${{secrets.SOFTELSIE_GITHUB_PACKAGE_INSTALLER_TOKEN}}
+
+          - name: Deploy to Azure Web App for Containers
+            uses: azure/webapps-deploy@v2
+            with:
+             app-name: 'skuata'              
+             publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+             images: 'phedzi/skuata:latest'
+
+          - name: Check wwwroot
+            run: |
+               ls -R PMS_app.Server/wwwroot || echo "No wwwroot content"           
+
+     
