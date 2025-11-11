@@ -51,6 +51,6 @@ email = '';
     localStorage.setItem('user', JSON.stringify(mockUser));
 
     // navigate to app home
-    this.router.navigate(['/app']);
+    this.router.navigate(['/app/owner-room']);
   }
 }
