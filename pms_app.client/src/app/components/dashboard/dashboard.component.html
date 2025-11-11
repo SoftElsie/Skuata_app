@@ -2,7 +2,11 @@
   <app-filter (filtersChanged)="onFiltersChanged($event)"></app-filter>
 
   <div class="properties-grid">
-    <div class="property-card" *ngFor="let property of visibleProperties" (click)="viewDetails()">
+    <div
+      class="property-card"
+      *ngFor="let property of visibleProperties"
+      (click)="viewDetails()"
+    >
       <div class="property-image">
         <img [src]="property.image" [alt]="property.title" />
       </div>
@@ -23,8 +27,10 @@
         </div>
 
         <div class="property-address">
-          <img [src]="'assets/Icons/map-pin.png'" />
-          <span>{{ property.address }}</span>
+          <div class="address-content">
+            <img [src]="'assets/Icons/map-pin.png'" />
+            <span>{{ property.address }}</span>
+          </div>
         </div>
 
         <div class="property-status">
@@ -72,22 +78,19 @@
       (click)="loadPrevious()"
     >
       Previous
-     <!-- <app-loader-btn
+      <!-- <app-loader-btn
         [active]="loading && loadingButton === 'previous'"
       ></app-loader-btn>-->
     </button>
 
-  <button 
-    class="btn-find filter-buttons" 
-    (click)="loadMore()" 
-    *ngIf="currentPage * itemsPerPage < filteredProperties.length"
-  >
-    Load More
-  </button>
+    <button
+      class="btn-find filter-buttons"
+      (click)="loadMore()"
+      *ngIf="currentPage * itemsPerPage < filteredProperties.length"
+    >
+      Load More
+    </button>
+  </div>
+
+  <app-dash-footer></app-dash-footer>
 </div>
-
-<app-dash-footer></app-dash-footer>
- 
-</div>
-
-

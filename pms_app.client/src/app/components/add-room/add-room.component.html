@@ -1,9 +1,9 @@
 <main class="container">
   <div class="header">
-    <h1>
-      Add Rooms
-    </h1>
-    <button (click)="closeModal()"><img src="../../assets/Icons/lucide/x.svg" alt=""></button>
+    <h1>Add Rooms</h1>
+    <button (click)="closeModal()">
+      <img src="../../assets/Icons/lucide/x.svg" alt="" />
+    </button>
   </div>
   <form>
     <div class="columns">
@@ -72,13 +72,39 @@
       </div>
     </div>
     <div class="upload">
-      <label for="uploadImages"> Upload Images</label>
-      <div class="dropzone">
-        <img src="../../assets/Icons/image-up.svg" alt="" />
-        <p>Drop the images here, or <a href="#">browse</a></p>
+      <label for="uploadImages">Upload Images</label>
+
+      <div
+        class="dropzone"
+        (dragover)="onDragOver($event)"
+        (drop)="onDrop($event)"
+      >
+        <img src="../../assets/Icons/image-up.svg" alt="Upload Icon" />
+        <p>
+          Drop the images here, or
+          <a href="#" (click)="fileInput.click(); $event.preventDefault()"
+            >browse</a
+          >
+        </p>
         <p class="file-support">Supports PNG, JPG, JPEG, WEBP</p>
+        <input
+          type="file"
+          id="uploadImages"
+          #fileInput
+          (change)="onFileSelected($event)"
+          accept=".png,.jpg,.jpeg,.webp"
+          multiple
+          hidden
+        />
+      </div>
+
+      <div class="preview" *ngIf="previewUrls.length > 0">
+        <div class="preview-image" *ngFor="let img of previewUrls">
+          <img [src]="img" alt="Preview" />
+        </div>
       </div>
     </div>
+
     <div class="button">
       <button (click)="addRoomAndCloseModal()" [disabled]="loading">
         Add Room

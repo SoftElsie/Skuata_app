@@ -1,6 +1,6 @@
 .search-container {
   padding:24px 0 1px 0;
-  max-width: 689px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -32,14 +32,14 @@
   color: #9ca3af;
 }
 
-.search-divider {
-  width: 1px;
-  height: 22px;
-  background: #d1d5db;
-  flex-shrink: 0;
-  position: absolute;
-  left: 64%;
-}
+  .search-divider {
+    position: static; /* Remove absolute positioning */
+    left: auto; /* Remove left property */
+    width: 1px; /* Keep its width */
+    height: 22px; /* Keep its height */
+    background: #d1d5db; /* Keep its background */
+    flex-shrink: 0; /* Prevent it from shrinking */
+  }
 
 .filter-overlay {
   position: fixed;
@@ -122,7 +122,7 @@
   font-size: 14px;
   font-weight: 600;
   color: #374151;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
   text-align: left;
 }
 
@@ -187,14 +187,28 @@
   gap: 92px;
 }
 
-.price-input {
-  flex: 1;
-  padding: 10px;
+.price-input-wrapper {
+  display: flex;
+  align-items: center;
   border: 1px solid #d1d5db;
   border-radius: 6px;
+  background: white;
+  padding: 10px;
+  flex: 1; /* Make it take up available space */
+}
+
+.price-input {
+  flex: 1;
+  padding: 0; /* Remove padding as it's now on the wrapper */
+  border: none; /* Remove border as it's now on the wrapper */
+  background: transparent; /* Make background transparent */
   font-size: 14px;
   color: #1f2937;
-  background: white;
+  outline: none; /* Remove outline on focus */
+}
+
+.currency {
+  margin-right: 5px;
 }
 
 .select-wrapper {
@@ -267,11 +281,20 @@
   background: #263E39;
   border: 2px solid #263E39;
   color: white;
+
 }
 
 .btn-apply:hover {
   background: #064e3b;
   border-color: #064e3b;
+}
+
+.btn-find{
+  padding: 0.1rem 0.2rem;
+  align-self: center;
+  border: none;
+  border-radius: 0;
+  width: 120px;
 }
 
 @keyframes fadeIn {
@@ -284,10 +307,30 @@
     padding: 16px;
   }
 
+  .search-wrapper {
+    justify-content: flex-end; /* Align content to the right on mobile */
+  }
+
   .filter-dropdown {
     right: 10px;
     left: 10px;
     width: auto;
     top: 100px;
+  }
+
+  .filter-buttons-wrapper {
+    gap: 0; /* Remove gap between the filter and find rooms buttons */
+    flex-direction: row-reverse; /* Reverse the order of buttons on mobile */
+  }
+
+  .filter-buttons {
+    flex: 1;
+    max-width: 60px; /* Reduced max-width for buttons on mobile to prevent overlap */
+    font-size: 0; /* Hide the "Filter" text on mobile */
+    overflow: hidden; /* Hide any overflowing content */
+  }
+
+  .search-input {
+    flex: 2; /* Give search input more space on mobile */
   }
 }

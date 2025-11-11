@@ -52,11 +52,6 @@
   gap: 1.5rem;
 }
 
-.divider {
-  width: 1px;
-  height: 24px;
-  background-color: #2c3e50;
-}
 
 .Icon-button {
   background: none;
@@ -184,6 +179,7 @@
 .property-image img {
   width: 98%;
   height:90%;
+   margin-left: 3px;
   margin-top: 3px;
   object-fit: cover;
 }
@@ -240,9 +236,15 @@
   color: #666;
   font-size: 0.875rem;
   margin-bottom: 1rem;
+}
+
+.address-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding-bottom: 1rem;
-  
   border-bottom: 1px solid #e0e0e0;
+  width: 80%; /* Adjust this value to control the length of the divider */
 }
 
 .property-address svg {
@@ -339,7 +341,7 @@
 
   .properties-grid {
     grid-template-columns: 1fr;
-    width: 84%;
+    width: 100%;
   }
 
   .search-container {
@@ -351,3 +353,4 @@
     gap: 1rem;
   }
 }
+

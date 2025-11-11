@@ -7,6 +7,7 @@ import { TopNavComponent } from "./core/top-nav/top-nav.component";
 import { FooterComponent } from "./core/footer/footer.component";
 import { AuthLayoutComponent } from './core/auth-layout/auth-layout.component';
 import { DashFooterComponent } from './core/dash-footer/dash-footer.component';
+import { AuthFooterComponent } from './auth-footer/auth-footer.component'; // Import AuthFooterComponent
 import { FormsModule  } from '@angular/forms';
 import { AuthFooterComponent } from "./auth-footer/auth-footer.component";
 

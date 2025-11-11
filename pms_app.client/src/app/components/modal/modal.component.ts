@@ -16,12 +16,16 @@ export class ModalComponent {
   constructor(private modalService: ModalService) {
     this.modalService.watch().subscribe((isOpen: boolean) => {
       this.isOpen = isOpen;
-      console.log('ModalComponent isOpen:', this.isOpen); // Add this line
+      console.log('ModalComponent isOpen:', this.isOpen); 
     });
   }
 
   close() {
     this.modalService.close();
     this.closeEvent.emit();
+  }
+
+  onOverlayClick(event: MouseEvent) {
+    this.close();
   }
 }

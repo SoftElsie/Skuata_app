@@ -9,26 +9,15 @@
   padding: 0 24px;
 }
 
-.logo {
-  display: block;
-  height: 2rem;
-  width: auto;
-}
-
 .footer-top {
   display: flex;
   align-items: flex-start;
-  gap: 30px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 24px;
-   margin: 0 10rem; 
-   margin-top: 11px;
+  justify-content: space-between; /* Default for larger screens */
+  gap: 0px; /* Default for larger screens */
+  margin: 0 10rem;
 }
 
-
 .footer-logo {
-  flex-shrink: 0;
 }
 
 .logo {
@@ -38,6 +27,8 @@
   font-size: 20px;
   font-weight: 500;
   color: #1a1a1a;
+  max-width: 150px; /* Default for larger screens */
+  height: auto;
 }
 
 .logo-box {
@@ -56,11 +47,19 @@
   letter-spacing: 0.5px;
 }
 
-
 .footer-nav {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+.footer-nav-rooms {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-rooms-social-group {
+  display: flex;
+  gap: 60px; /* Default for larger screens */
 }
 
 .footer-link {
@@ -68,7 +67,6 @@
   font-size: 14px;
   cursor: default;
 }
-
 
 .footer-social {
   display: flex;
@@ -86,7 +84,7 @@
 .social-Icons {
   display: flex;
   gap: 16px;
-   color: #e67e22;
+  color: #e67e22;
 }
 
 .social-Icon {
@@ -101,43 +99,114 @@
   opacity: 0.7;
 }
 
+/* --- Divider --- */ 
 .divider {
-  border: none;
-  border-top: 1px solid #00000080;
-  margin: 0 10rem; 
+   border: none;
+   border-top: 1px solid #00000080; 
+   margin: 0.10rem auto;
+   max-width: 1600px;
+   margin-bottom: 10px; }
+
+/* --- Tablet --- */
+@media (max-width: 1024px) {
+  .footer-top,
+  .footer-bottom {
+    margin: 0 3rem;
+  }
+  .footer-top {
+    justify-content: space-between; /* Maintain original behavior for tablets */
+  }
 }
 
-
-
-
-
-
-.legal-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
+/* --- Desktop --- */
+@media screen and (min-width: 1025px) {
+  .footer-top {
+    justify-content: center; /* Center content on desktop */
+    gap: 45px; /* Gap for desktop */
+  }
 }
 
-.legal-link {
-  color: #6a6a6a;
-  font-size: 13px;
-  cursor: default;
-}
-
-/* Responsive Design */
+/* --- Mobile --- */
 @media (max-width: 768px) {
   .footer-top {
-    flex-direction: column;
-    gap: 24px;
+    justify-content: flex-start; /* Logo to the left */
+    gap: 70px; /* Increased gap for mobile */
+    margin: 0 20px;
   }
+
+  .footer-top > picture,
+  .footer-top > .footer-nav,
+  .footer-top > .footer-rooms-social-group {
+    flex-shrink: 1;
+  }
+
+  .logo {
+    width: auto;
+    height: 40px;
+  }
+
+  /* Revert footer-rooms-social-group to row for mobile to match desktop */
+  .footer-rooms-social-group {
+    flex-direction: column;
+    gap: 20px; /* Adjust gap for mobile */
+    width: auto; /* Remove width: 100% */
+    margin-left: auto;
+  }
+
+  /* Revert footer-social to row for mobile to match desktop */
+  .footer-social {
+    flex-direction: row;
+    gap: 12px; /* Adjust gap for mobile */
+    align-items: center; /* Align items to center */
+    justify-content: center; /* Center social icons */
+    margin-top: 0; /* Remove margin-top */
+    text-align: left;
+  }
+
+  /* Revert footer-nav-rooms to row for mobile to match desktop */
+  .footer-nav-rooms {
+    flex-direction: column;
+    gap: 12px; /* Adjust gap for mobile */
+    align-items: flex-start; /* Align items to center */
+    margin-top: 0; /* Remove margin-top */
+  }
+
+  /* Other mobile specific styles */
+  .footer-bottom {
+    flex-direction: row;
+    align-items: center;
+    margin: 0 20px;
+    gap: 8px;
+  }
+
+  .footer-link,
+  .social-title {
+    font-size: 12px;
+  }
+
+  .social-title {
+    display: none;
+  }
+
+  .footer-nav {
+    margin: 10px auto;
+  }
+}
+
+/* --- Smaller Mobile --- */
+@media (max-width: 480px) {
+  .footer-top {
+    gap: 20px; /* Adjust gap */
+  }
+
+  .footer-social {
+    justify-content: center; /* Center social icons */
+    gap: 12px;
+  }
+
 
   .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .legal-links {
-    flex-direction: column;
-    gap: 12px;
+    margin: 0 20px;
+    align-items: flex-start; /* Align items to the left in footer-bottom */
   }
 }

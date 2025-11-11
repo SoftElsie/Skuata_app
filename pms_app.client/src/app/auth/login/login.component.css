@@ -41,14 +41,12 @@
   font-family: 'Barlow', sans-serif;
 }
 
-/* Input Field */
 .input-group {
   position: relative;
   margin-bottom: 16px;
 }
 
-.input-Icon,
-.Icon-left {
+.input-icon {
   position: absolute;
   left: 12px;
   top: 50%;
@@ -56,6 +54,12 @@
   height: 20px;
   width: 20px;
   object-fit: contain;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 12px 10px 40px; 
+  box-sizing: border-box;
 }
 
 .input-field {
