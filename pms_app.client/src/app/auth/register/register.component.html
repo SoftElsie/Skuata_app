@@ -1,6 +1,6 @@
 <div class="page-layout">
   <div class="signup-container">
-    <div class="full-page-wrapper" *ngIf="!showForm">
+    <div class="full-page-wrapper" >
       <header class="signup-header">
         <div class="header-icon">
           <picture class="header-logo">
@@ -25,7 +25,7 @@
 
           <div class="choice-card" [class.selected]="selectedRole === 'owner'" (click)="selectRole('owner')">
             <div class="card-header">
-              <img src="assets/user-round.png" alt="User icon" class="icon">
+              <img src="assets/Icons/user-round.png" alt="User icon" class="icon">
               <input type="radio" name="role" [checked]="selectedRole === 'owner'">
             </div>
             <hr class="card-divider">
@@ -40,135 +40,9 @@
         </div>
 
         <div class="login-link">
-          <span>Already have an account? <a href="#">Login</a></span>
+          <span>Already have an account? <a href="auth/login">Login</a></span>
         </div>
       </main>
     </div>
 
-    <div *ngIf="showForm">
-      <picture class="header-logo">
-       <source media="(max-width: 768px)" srcset="assets/images/mobile-logo.png">
-        <img src="assets/images/Logo-Full.png" alt="Full Logo">
-      </picture>
-       
-      <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
-
-        <h2 class="form-title">Set up your profile</h2>
-        <div class="form-container">
-
-          <div class="form-group">
-            <label for="firstName">First Name</label>
-            <div class="input-wrapper icon-field" [class.input-error]="regForm.get('firstName')!.invalid && (regForm.get('firstName')!.dirty || regForm.get('firstName')!.touched)">
-              <img src="assets/user-round.png" alt="User Icon" class="input-icon">
-              <input
-                type="text"
-                id="firstName"
-                placeholder="e.g. John"
-                formControlName="firstName"
-              >
-            </div>
-            <div class="error-message" *ngIf="regForm.get('firstName')!.invalid && (regForm.get('firstName')!.dirty || regForm.get('firstName')!.touched)">
-              <span *ngIf="regForm.get('firstName')!.errors?.['required']">First Name is required.</span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <div class="input-wrapper icon-field" [class.input-error]="regForm.get('lastName')!.invalid && (regForm.get('lastName')!.dirty || regForm.get('lastName')!.touched)">
-              <img src="assets/user-round.png" alt="User Icon" class="input-icon">
-              <input
-                type="text"
-                id="lastName"
-                placeholder="e.g. Doe"
-                formControlName="lastName"
-              >
-            </div>
-            <div class="error-message" *ngIf="regForm.get('lastName')!.invalid && (regForm.get('lastName')!.dirty || regForm.get('lastName')!.touched)">
-              <span *ngIf="regForm.get('lastName')!.errors?.['required']">Last Name is required.</span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="province">Province</label>
-            <div class="input-wrapper select-wrapper" [class.input-error]="regForm.get('province')!.invalid && (regForm.get('province')!.dirty || regForm.get('province')!.touched)">
-              <select
-                id="province"
-                formControlName="province"
-              >
-                <option value="" disabled selected hidden>Select Province</option>
-                <option value="GP">Gauteng</option>
-                <option value="KZN">KwaZulu-Natal</option>
-                <option value="LP">Limpopo</option>
-                 <option value="FS">Free State</option>
-                <option value="EC">Eastern Cape</option>
-                <option value="MP">Mpumalanga</option>
-                 <option value="GP">Gauteng</option>
-                <option value="KZN">KwaZulu-Natal</option>
-                <option value="WC">Western Cape</option>
-              </select>
-            </div>
-            <div class="error-message" *ngIf="regForm.get('province')!.invalid && (regForm.get('province')!.dirty || regForm.get('province')!.touched)">
-              <span *ngIf="regForm.get('province')!.errors?.['required']">Province is required.</span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <div class="input-wrapper icon-field" [class.input-error]="regForm.get('email')!.invalid && (regForm.get('email')!.dirty || regForm.get('email')!.touched)">
-              <img src="assets/at-sign.png" alt="Email Icon" class="input-icon">
-              <input
-                type="email"
-                id="email"
-                placeholder="johndoe@example.com"
-                formControlName="email"
-              >
-            </div>
-            <div class="error-message" *ngIf="regForm.get('email')!.invalid && (regForm.get('email')!.dirty || regForm.get('email')!.touched)">
-              <span *ngIf="regForm.get('email')!.errors?.['required']">Email is required.</span>
-              <span *ngIf="regForm.get('email')!.errors?.['email']">Enter a valid email address.</span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="password">Password</label>
-            <div class="input-wrapper icon-field" [class.input-error]="regForm.get('password')!.invalid && (regForm.get('password')!.dirty || regForm.get('password')!.touched)">
-              <img src="assets/lock-keyhole.png" alt="Password Icon" class="input-icon">
-              <input
-                type="password"
-                id="password"
-                placeholder="**************"
-                formControlName="password"
-              >
-            </div>
-            <div class="error-message" *ngIf="regForm.get('password')!.invalid && (regForm.get('password')!.dirty || regForm.get('password')!.touched)">
-              <span *ngIf="regForm.get('password')!.errors?.['required']">Password is required.</span>
-              <span *ngIf="regForm.get('password')!.errors?.['minlength']">Password must be at least 8 characters.</span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="confirmPassword">Confirm Password</label>
-            <div class="input-wrapper icon-field" [class.input-error]="regForm.get('confirmPassword')!.invalid && (regForm.get('confirmPassword')!.dirty || regForm.get('confirmPassword')!.touched) || regForm.errors?.['passwordMismatch']">
-              <img src="assets/lock-keyhole.png" alt="Password Icon" class="input-icon">
-              <input
-                type="password"
-                id="confirmPassword"
-                placeholder="**************"
-                formControlName="confirmPassword"
-              >
-            </div>
-            <div class="error-message" *ngIf="regForm.get('confirmPassword')!.invalid && (regForm.get('confirmPassword')!.dirty || regForm.get('confirmPassword')!.touched)">
-              <span *ngIf="regForm.get('confirmPassword')!.errors?.['required']">Confirm Password is required.</span>
-            </div>
-            <div class="error-message" *ngIf="regForm.get('confirmPassword')!.errors?.['passwordMismatch'] && (regForm.get('confirmPassword')!.dirty || regForm.get('confirmPassword')!.touched)">
-              <span>Passwords do not match.</span>
-            </div>
-          </div>
-          
-          <div class="form-group">
-          <button type="submit" class="submit-button" [disabled]="regForm.invalid" [class.dissolving]="isDissolving">Continue <img src="assets/chevron-right.png" alt="Continue" class="button-icon"></button>
-          </div>
-
-        </div>
-      </form>
-
-    </div>
-
-</div>
-<app-footer></app-footer>
+    
