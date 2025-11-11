@@ -1,0 +1,3 @@
+<div *ngIf="showPopup" class="network-popup" [ngClass]="{'offline': !isOnline, 'online': isOnline}">
+  {{ message }}
+</div>

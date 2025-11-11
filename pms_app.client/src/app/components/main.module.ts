@@ -9,11 +9,14 @@ import { ViewDetailsComponent } from "./view-details/view-details.component";
 
 
 
+
 @NgModule({
   declarations: [
 
     // DashboardComponent,
+
   ],
+  
   imports: [
 
     RouterModule,
