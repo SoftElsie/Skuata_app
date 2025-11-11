@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
+  standalone: false,
   templateUrl: './register-form.component.html',
   styleUrls: ['./register-form.component.css']
 })
