@@ -1,3 +1,6 @@
+
+
+
 .listings-container {
   height: 100%; 
     min-height: 100vh; 
@@ -49,11 +52,6 @@
   gap: 1.5rem;
 }
 
-.divider {
-  width: 1px;
-  height: 24px;
-  background-color: #2c3e50;
-}
 
 .Icon-button {
   background: none;
@@ -144,11 +142,11 @@
   flex: 1;
   padding: 1rem 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  width: 95%;
+  width: 74%;
 }
 
 .property-card {
@@ -238,9 +236,15 @@
   color: #666;
   font-size: 0.875rem;
   margin-bottom: 1rem;
+}
+
+.address-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding-bottom: 1rem;
-  
   border-bottom: 1px solid #e0e0e0;
+  width: 80%; /* Adjust this value to control the length of the divider */
 }
 
 .property-address svg {
@@ -337,12 +341,11 @@
 
   .properties-grid {
     grid-template-columns: 1fr;
-    width: 84%;
+    width: 100%;
   }
 
   .search-container {
     flex-direction: column;
-    gap: 1rem;
   }
 
   .footer-content {
@@ -350,3 +353,4 @@
     gap: 1rem;
   }
 }
+

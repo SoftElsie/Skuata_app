@@ -1,100 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors } from '@angular/forms';
-import { trigger, style, animate, transition } from '@angular/animations';
-import { FooterComponent } from "../../components/shared/core/footer/footer.component";
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-
-
 @Component({
-  selector: 'app-Register',
+  selector: 'app-register',
   standalone: false,
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
-  animations: [
-    trigger('slideInAnimation', [
-      transition(':enter', [
-        style({ transform: 'translateX(100%)' }),
-        animate('300ms ease-out', style({ transform: 'translateX(0)' }))
-      ]),
-      transition(':leave', [
-        animate('300ms ease-in', style({ transform: 'translateX(100%)' }))
-      ])
-    ])
-  ]
+  styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   selectedRole: string = '';
-  showForm: boolean = false;
   showRoleError: boolean = false;
-  isDissolving: boolean = false;
-  regForm!: FormGroup;
 
-  
-  showPassword = false;
+  constructor(private router: Router) {}
 
-  // Custom validator method within the component
-  passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
-    const password = control.get('password');
-    const confirmPassword = control.get('confirmPassword');
-
-    if (password && confirmPassword && password.value !== confirmPassword.value) {
-      confirmPassword.setErrors({ 'passwordMismatch': true });
-      return { 'passwordMismatch': true };
-    } else {
-      if (confirmPassword && confirmPassword.errors && 'passwordMismatch' in confirmPassword.errors) {
-        const errors = { ...confirmPassword.errors }; // Create a copy to avoid direct modification
-        delete errors['passwordMismatch'];
-        confirmPassword.setErrors(Object.keys(errors).length > 0 ? errors : null);
-      }
-      return null;
-    }
-  }
-
-  constructor(private fb: FormBuilder, private router: Router) { }
-
-  ngOnInit(): void {
-    this.regForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      province: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', Validators.required]
-    }, { validator: this.passwordMatchValidator });
-  }
-
-  // Role selection
+  // Handle role selection
   selectRole(role: string) {
     this.selectedRole = role;
-    this.showRoleError = false; // Hide error when a role is selected
+    this.showRoleError = false; // clear error when role selected
   }
 
-  // Show form only after role is selected
+  // Validate and navigate to RegisterFormComponent
   onSignUp() {
     if (!this.selectedRole) {
       this.showRoleError = true;
     } else {
-      this.showForm = true;
       this.showRoleError = false;
-      console.log('showForm is now:', this.showForm);
-    }
-  }
-
-  // Form submission with validation
-  onSubmit() {
-    if (this.regForm.valid && this.selectedRole) {
-      this.isDissolving = true;
-      setTimeout(() => {
-        console.log('Form Submitted!', this.regForm.value);
-        this.router.navigate(['/profile']);
-      }, 300);
-    } else {
-      // Mark all fields as touched to show errors
-      this.regForm.markAllAsTouched();
-      this.showRoleError = !this.selectedRole; // Show role error if not selected
-      alert('Please fill in all required fields correctly.');
+      // Navigate to RegisterFormComponent with selected role
+      this.router.navigate(['/auth/register-form'], {
+        queryParams: { role: this.selectedRole }
+      });
     }
   }
 }

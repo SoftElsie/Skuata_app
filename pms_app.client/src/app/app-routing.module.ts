@@ -22,6 +22,7 @@ import { OwnerRoomComponent } from './components/owner-room/owner-room.component
 import { AddRoomComponent } from './components/add-room/add-room.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
+import { RegisterFormComponent } from './auth/register-form/register-form.component';
 
 
 
@@ -58,6 +59,7 @@ const routes: Routes = [
       { path: 'reset-password', component: ResetPasswordComponent },
       { path: 'check-inbox', component: CheckInboxComponent },
       { path: 'register',component:RegisterComponent},
+      { path: 'register-form', component: RegisterFormComponent },
     ]
   },
   {

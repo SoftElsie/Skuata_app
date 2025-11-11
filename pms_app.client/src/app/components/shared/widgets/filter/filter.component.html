@@ -9,29 +9,31 @@
     />
 
     <div class="search-divider"></div>
-    <button
-      class="filter-btn filter-buttons"
-      (click)="handleToggleFilter()"
-      [disabled]="loading"
-    >
-      <img src="assets/Icons/sliders-horizontal.png" />
-      Filter
-      <app-loader-btn
-        [active]="loading && loadingButton === 'toggleFilter'"
-      ></app-loader-btn>
-    </button>
+    <div class="filter-buttons-wrapper">
+      <button
+        class="filter-btn filter-buttons"
+        (click)="handleToggleFilter()"
+        [disabled]="loading"
+      >
+        <img src="assets/Icons/sliders-horizontal.png" />
+        Filter
+        <app-loader-btn
+          [active]="loading && loadingButton === 'toggleFilter'"
+        ></app-loader-btn>
+      </button>
 
-    <button
-      *ngIf="showFilterButton"
-      class="btn-find filter-buttons"
-      (click)="handleApplyFilters()"
-      [disabled]="loading"
-    >
-      Find Rooms
-      <app-loader-btn
-        [active]="loading && loadingButton === 'applyFilters'"
-      ></app-loader-btn>
-    </button>
+      <button
+        *ngIf="showFilterButton"
+        class="btn-find"
+        (click)="handleApplyFilters()"
+        [disabled]="loading"
+      >
+        Find Rooms
+        <app-loader-btn
+          [active]="loading && loadingButton === 'applyFilters'"
+        ></app-loader-btn>
+      </button>
+    </div>
   </div>
 </div>
 
