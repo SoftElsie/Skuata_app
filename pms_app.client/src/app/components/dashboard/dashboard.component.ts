@@ -127,10 +127,10 @@ loadingButton: string | null = null;
   constructor( private router: Router) {}
 
    ngOnInit(): void {
-      this.filteredProperties = [...this.properties];
-    this.loadProperties();
-  }
-
+  this.loadFavorites(); // Load persisted favorites
+  this.filteredProperties = [...this.properties];
+  this.loadProperties();
+}
  loadProperties(): void {
     const start = (this.currentPage - 1) * this.itemsPerPage;
     const end = this.currentPage * this.itemsPerPage;
@@ -199,10 +199,26 @@ loadPrevious(): void {
 
     console.log("[Dashboard] Filtered results:", this.visibleProperties)
   }
+  
 
   toggleFavorite(property: Property): void {
-    property.isFavorite = !property.isFavorite
-  }
+  property.isFavorite = !property.isFavorite;
+  this.saveFavorites();
+}
+
+saveFavorites(): void {
+  const favoriteIds = this.properties
+    .filter(p => p.isFavorite)
+    .map(p => p.id);
+  localStorage.setItem('favorites', JSON.stringify(favoriteIds));
+}
+
+loadFavorites(): void {
+  const favoriteIds = JSON.parse(localStorage.getItem('favorites') || '[]');
+  this.properties.forEach(p => {
+    p.isFavorite = favoriteIds.includes(p.id);
+  });
+}
 
   viewDetails(): void {
     console.log("Viewing details for property:")
