@@ -32,6 +32,7 @@ import { ReviewComponent } from './components/view-details/review/review.compone
 import { MainModule } from './components/main.module';
 import { ContactManagerComponent } from './components/view-details/contact-manager/contact-manager.component';
 import { AuthModule } from './auth/auth.module';
+import { AboutComponent } from './components/about us/about.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { AuthModule } from './auth/auth.module';
     AddRoomComponent,
      LoaderBtnComponent,
      ContactManagerComponent,
-     SettingsLayoutComponent
+     SettingsLayoutComponent,
+     AboutComponent
   ],
   imports: [
     BrowserModule,

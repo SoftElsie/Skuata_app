@@ -1,6 +1,6 @@
 .search-container {
-  padding:24px 0 1px 0;
-  max-width: 700px;
+  padding: 24px 0 1px 0;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -32,14 +32,29 @@
   color: #9ca3af;
 }
 
-  .search-divider {
-    position: static; /* Remove absolute positioning */
-    left: auto; /* Remove left property */
-    width: 1px; /* Keep its width */
-    height: 22px; /* Keep its height */
-    background: #d1d5db; /* Keep its background */
-    flex-shrink: 0; /* Prevent it from shrinking */
-  }
+
+/* Updated divider styles */
+.search-divider {
+  width: 1px;
+  height: 28px;
+  background: #d1d5db;
+  flex-shrink: 0;
+  margin: 0 8px;
+}
+
+/* Reduced filter buttons wrapper width */
+.filter-buttons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: auto;
+  min-width: fit-content;
+}
+
+.find-rooms-btn {
+  width: 120px;
+}
 
 .filter-overlay {
   position: fixed;
@@ -51,11 +66,20 @@
   z-index: 999;
   animation: fadeIn 0.2s ease-in-out;
 }
+.filter-btn {
+
+
+  background: white;
+  border: 2px solid #263E39;
+
+}
 
 .filter-dropdown {
   position: absolute;
   top: 65px;
-  right: 260px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
   width: 360px;
   background: white;
   border-radius: 10px;
@@ -181,7 +205,6 @@
   cursor: pointer;
 }
 
-
 .price-inputs {
   display: flex;
   gap: 92px;
@@ -194,17 +217,17 @@
   border-radius: 6px;
   background: white;
   padding: 10px;
-  flex: 1; /* Make it take up available space */
+  flex: 1;
 }
 
 .price-input {
   flex: 1;
-  padding: 0; /* Remove padding as it's now on the wrapper */
-  border: none; /* Remove border as it's now on the wrapper */
-  background: transparent; /* Make background transparent */
+  padding: 0;
+  border: none;
+  background: transparent;
   font-size: 14px;
   color: #1f2937;
-  outline: none; /* Remove outline on focus */
+  outline: none;
 }
 
 .currency {
@@ -281,7 +304,6 @@
   background: #263E39;
   border: 2px solid #263E39;
   color: white;
-
 }
 
 .btn-apply:hover {
@@ -289,12 +311,12 @@
   border-color: #064e3b;
 }
 
-.btn-find{
+.btn-find {
   padding: 0.1rem 0.2rem;
   align-self: center;
   border: none;
-  border-radius: 0;
-  width: 120px;
+  border-radius: 6;
+  width: 80px;
 }
 
 @keyframes fadeIn {
@@ -302,35 +324,47 @@
   to { opacity: 1; }
 }
 
+/* --- Mobile responsiveness --- */
 @media (max-width: 768px) {
+  .search-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  
+  .search-divider {
+    display: block;
+    width: 1px;
+    height: 28px;
+    background-color: #d1d5db;
+    margin: 0 8px;
+  }
+
+  /* Hide filter label text on mobile */
+  .filter-btn span {
+    display: none;
+  }
+
+ 
+
+  .search-input {
+    flex: 1;
+  }
+
+  
+}
+
+@media (max-width: 480px) {
   .search-container {
-    padding: 16px;
+    max-width: 90%;
   }
 
   .search-wrapper {
-    justify-content: flex-end; /* Align content to the right on mobile */
-  }
-
-  .filter-dropdown {
-    right: 10px;
-    left: 10px;
-    width: auto;
-    top: 100px;
-  }
-
-  .filter-buttons-wrapper {
-    gap: 0; /* Remove gap between the filter and find rooms buttons */
-    flex-direction: row-reverse; /* Reverse the order of buttons on mobile */
-  }
-
-  .filter-buttons {
-    flex: 1;
-    max-width: 60px; /* Reduced max-width for buttons on mobile to prevent overlap */
-    font-size: 0; /* Hide the "Filter" text on mobile */
-    overflow: hidden; /* Hide any overflowing content */
+    padding: 2px 8px;
   }
 
   .search-input {
-    flex: 2; /* Give search input more space on mobile */
+    font-size: 13px;
   }
 }
