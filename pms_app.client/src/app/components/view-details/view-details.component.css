@@ -13,7 +13,6 @@
   margin-bottom: 0.5rem;
 }
 
-
 .back-btn img {
   height: 1.8rem;
   width: 1.8rem;
@@ -32,16 +31,14 @@
   background-color: #eaeded;
   border-radius: 8px;
 }
+
 /* reviews under images */
 .image-section app-reviews {
   display: flex;
   margin-top: 0.5rem;
   background: #ffffff;
   border-radius: 8px;
-  /* padding: 0.3rem; */
 }
-
-
 
 /* ---------- IMAGE SECTION ---------- */
 .main-image-container {
@@ -60,37 +57,53 @@
   border-radius: 8px;
 }
 
-/* Navigation buttons */
+/* ---------- RECTANGULAR NAVIGATION BUTTONS ---------- */
 .nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   border: none;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 0.4rem 0.8rem;
-  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 45px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  z-index: 5;
+  opacity: 0.9;
 }
 
 .nav-btn:hover {
-  background: rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-50%) scale(1.05);
+  opacity: 1;
 }
 
 .nav-btn img {
-  width: 18px;
-  height: 18px;
+  width: 34px;
+    height: 33px;
+  filter: invert(0.3);
+  transition: filter 0.3s ease;
+}
+
+
+.nav-btn:hover img {
+  filter: invert(1) drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
 }
 
 .nav-btn.prev {
-  left: 12px;
+  left: 15px;
 }
 
 .nav-btn.next {
-  right: 12px;
+  right: 15px;
 }
 
-/* Thumbnails */
+/* ---------- THUMBNAILS ---------- */
 .thumbnail-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
@@ -143,12 +156,14 @@
   border-radius: 8px;
   padding: 0.5rem 0rem;
 }
+
 .right-side {
   flex: 1 1 50%;
   background-color: #eaeded;
   border-radius: 8px;
   padding: 0.5rem 0.5rem;
 }
+
 .details-section h2 {
   text-align: left;
   font-size: 1.6rem;
@@ -164,7 +179,6 @@
   margin-bottom: 1rem;
   justify-content: left;
   align-items: left;
-
 }
 
 .details-section a {
@@ -175,6 +189,7 @@
 .details-section a:hover {
   text-decoration: underline;
 }
+
 /* ---------- MODAL ---------- */
 .modal-overlay {
   position: fixed;
@@ -227,6 +242,7 @@
   color: #000;
 }
 
+/* ---------- RESPONSIVE STYLES ---------- */
 
 /* Mobile (≤ 768px) – Stack layout */
 @media (max-width: 768px) {
@@ -267,19 +283,21 @@
   .back-btn {
     font-size: 1.3rem;
   }
+
   .back-btn img {
     height: 1.5rem;
     width: 1.5rem;
   }
 
   .nav-btn {
-    padding: 0.5rem;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 50px;
+    border-radius: 6px;
   }
+
   .nav-btn img {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -296,7 +314,6 @@
   .thumbnail-gallery {
     gap: 4px;
   }
-  
 
   .thumb img {
     height: 70px;
@@ -323,17 +340,22 @@
 /* Tablet & Small Desktop */
 @media (min-width: 768px) {
   .thumb img {
-    height: 75px;}
+    height: 75px;
+  }
+
   .property-layout {
     flex-wrap: nowrap;
     gap: 2rem;
   }
-  
+
   .details-section h2 {
-    font-size: 1.25rem;}
+    font-size: 1.25rem;
+  }
 
   .details-section p {
-    font-size: 0.9rem;}
+    font-size: 0.9rem;
+  }
+
   .main-image-container {
     height: 380px;
   }
@@ -341,5 +363,4 @@
   .more-photos {
     font-size: 0.9rem;
   }
-
 }

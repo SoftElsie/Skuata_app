@@ -26,26 +26,31 @@
         </button>
       </div>
 
-      <div class="thumbnail-gallery">
-        <div
-          class="thumb"
-          *ngFor="let thumb of property.thumbnails; let i = index"
-          [class.active]="i === currentImageIndex"
-          (click)="selectImage(i)"
-        >
-          <img [src]="thumb.url" [alt]="thumb.alt" />
-        </div>
+   <div class="thumbnail-gallery">
+  <div
+    class="thumb"
+    *ngFor="let thumb of showAllThumbnails ? property.thumbnails : property.thumbnails.slice(0, 4); let i = index"
+    [class.active]="i === currentImageIndex"
+    (click)="selectImage(i)"
+  >
+    <img [src]="thumb.url" [alt]="thumb.alt" />
+  </div>
 
-        <div class="thumb more">
-          <img
-            [src]="property.thumbnails[property.thumbnails.length - 1].url"
-            [alt]="property.thumbnails[property.thumbnails.length - 1].alt"
-          />
-          <span class="more-photos">
-            +{{ property.additionalThumbnails }} more
-          </span>
-        </div>
-      </div>
+  <!-- show "+N more" only if there are extra thumbnails -->
+  <div
+    class="thumb more"
+    *ngIf="!showAllThumbnails && getRemainingThumbnails() > 0"
+    (click)="toggleShowAllThumbnails()"
+  >
+    <img
+      [src]="property.thumbnails[property.thumbnails.length - 1].url"
+      [alt]="property.thumbnails[property.thumbnails.length - 1].alt"
+    />
+    <span class="more-photos">+{{ getRemainingThumbnails() }} more</span>
+  </div>
+</div>
+
+
       <app-reviews></app-reviews>
     </div>
 
