@@ -16,17 +16,17 @@
 
       
       <div class="footer-nav">
-        <span *ngFor="let link of navigationLinks" class="footer-link">
+        <a *ngFor="let link of navigationLinks" class="footer-link" (click)="navigateTo(link)" href="javascript:void(0)">
           {{ link }}
-        </span>
+        </a>
       </div>
 
       
       <div class="footer-rooms-social-group">
         <div class="footer-nav footer-nav-rooms">
-          <span *ngFor="let link of roomLinks" class="footer-link">
+          <a *ngFor="let link of roomLinks" class="footer-link" (click)="navigateTo(link)" href="javascript:void(0)">
             {{ link }}
-          </span>
+          </a>
         </div>
 
         <div class="footer-social">

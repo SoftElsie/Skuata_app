@@ -23,6 +23,7 @@ import { AddRoomComponent } from './components/add-room/add-room.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 import { RegisterFormComponent } from './auth/register-form/register-form.component';
+import { AboutComponent } from './components/about us/about.component';
 
 
 
@@ -46,6 +47,7 @@ const routes: Routes = [
    {  path:'profile',component:ProfileIconComponent},
       { path: 'view-details',component:ViewDetailsComponent},
        { path: 'user-settings',component:UserSettingsComponent},
+      { path: 'about-us', component: AboutComponent },
       
   {  path:'add-caretaker',component:AddCaretakerComponent},
   {  path:'owner-room',component:OwnerRoomComponent},

@@ -132,6 +132,7 @@
 }
 
 
+
 .pagination-buttons {
   display: flex;
   justify-content: center;
@@ -436,7 +437,7 @@
 
   .properties-grid {
     grid-template-columns: 1fr;
-    width: 100%;
+    width: 93%;
   }
 
   .search-container {
@@ -447,4 +448,10 @@
     flex-direction: column;
     gap: 1rem;
   }
+  .badge.remove {
+  background: #ef4444;
+  padding: 2px 1px;
+  height: 19px;
+  width: 65px;
+}
 }

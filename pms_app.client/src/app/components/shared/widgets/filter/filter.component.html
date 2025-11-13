@@ -15,8 +15,8 @@
         (click)="handleToggleFilter()"
         [disabled]="loading"
       >
-        <img src="assets/Icons/sliders-horizontal.png" />
-        Filter
+        <img src="assets/Icons/sliders-horizontal.svg" />
+        <span>Filter</span>
         <app-loader-btn
           [active]="loading && loadingButton === 'toggleFilter'"
         ></app-loader-btn>
@@ -36,7 +36,7 @@
     </div>
   </div>
 </div>
-
+<div class="search-divider"></div>
 <div class="filter-overlay" *ngIf="isFilterOpen" (click)="closeFilter()"></div>
 
 <div class="filter-dropdown" [class.open]="isFilterOpen">
