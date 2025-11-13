@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -32,6 +32,8 @@ import { ReviewComponent } from './components/view-details/review/review.compone
 import { MainModule } from './components/main.module';
 import { ContactManagerComponent } from './components/view-details/contact-manager/contact-manager.component';
 import { AuthModule } from './auth/auth.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { NetworkStatus } from './components/network-status/network-status';
 
 
 @NgModule({
@@ -54,7 +56,8 @@ import { AuthModule } from './auth/auth.module';
     AddRoomComponent,
      LoaderBtnComponent,
      ContactManagerComponent,
-     SettingsLayoutComponent
+     SettingsLayoutComponent,
+      
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,14 @@ import { AuthModule } from './auth/auth.module';
     SharedModule,
     MainModule,
     RouterOutlet,
-    AuthModule
+    NetworkStatus,
+    AuthModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
 
 
   ],
