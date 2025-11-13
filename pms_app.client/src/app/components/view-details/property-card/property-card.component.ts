@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 
 // Define an interface for the property data structure
@@ -32,13 +32,37 @@ export class PropertyCardComponent {
     views: 18
   };
 
+  hoveredStar: number = 0;   // Track which star is hovered
+  selectedRating: number = 0; // Track user's selected rating
+
   constructor() { }
 
   /**
-   * Generates an array of star icons for the rating display.
-   * @param rating The current rating (e.g., 3.2)
-   * @param max The max rating (e.g., 5)
-   * @returns An array of numbers where 1 is full, 0.5 is half, and 0 is empty.
+   * Handle star hover (light up to hovered star)
+   */
+  hoverStar(star: number): void {
+    this.hoveredStar = star;
+  }
+
+  /**
+   * Reset star highlight when mouse leaves
+   */
+  resetHover(): void {
+    this.hoveredStar = 0;
+  }
+
+  /**
+   * When a star is clicked, record the rating
+   */
+  selectStar(star: number): void {
+    this.selectedRating = star;
+    this.property.rating = star; // Update visual immediately
+    console.log('User rated this property:', star);
+    // TODO: optionally send rating to backend service here
+  }
+
+  /**
+   * Generate an array of star icons for the rating display
    */
   getStars(rating: number, max: number): boolean[] {
     const stars = [];

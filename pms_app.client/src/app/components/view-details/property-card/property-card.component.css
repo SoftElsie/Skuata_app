@@ -8,12 +8,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #EAEDED; /* Light grey background */
-
-  padding: 4px 4px;         /* Vertical g+ horizontal space */
-  gap: 4px;                  /* Space between stars */
+  background-color: #EAEDED; 
+  padding: 4px 4px;        
+  gap: 4px;                 
   margin-right: 8px;      
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+}
+.interactive-star {
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.2s ease;
+}
+
+.interactive-star:hover {
+  transform: scale(1.2);
+  filter: brightness(1.1);
 }
 
 
