@@ -11,6 +11,7 @@ import { ContactManagerComponent } from './contact-manager/contact-manager.compo
   styleUrls: ['./view-details.component.css'],
 })
 export class ViewDetailsComponent {
+  showAllThumbnails = false;
   property = {
     name: 'Backroom',
     description:'The room stretches on endlessly; it by the sickly hum of buzzing fluorescent lights. The carpet beneath your feet is damp, though no water is in sight. The yellow wallpaper is stained, peeling in places, repeating in an unsettlingly perfect pattern. Every corridor looks the same, yet somehow feels unfamiliar when you turn around The room stretches on endlessly; it by the sickly hum of buzzing fluorescent lights. The carpet beneath your feet is damp, though no water is in sight. The yellow wallpaper is stained, peeling in places, repeating in an unsettlingly perfect pattern. Every corridor looks the same, yet somehow feels unfamiliar when you turn around',
@@ -21,6 +22,8 @@ export class ViewDetailsComponent {
       { url: '/assets/images/image-card-2.png', alt: 'Thumbnail 2' },
       { url: '/assets/images/image-card-2.png', alt: 'Thumbnail 3' },
       { url: '/assets/images/image-card-2.png', alt: 'Thumbnail 4' },
+       { url: '/assets/images/image-card-3.png', alt: 'Thumbnail 5' },
+       { url: '/assets/images/image-card-3.png', alt: 'Thumbnail 6' },
 
     ],
     additionalThumbnails: 3,
@@ -62,4 +65,14 @@ export class ViewDetailsComponent {
   selectImage(index: number): void {
     this.currentImageIndex = index;
   }
+
+  getRemainingThumbnails(): number {
+  const displayedCount = 4; // number of thumbnails you show in gallery
+  const total = this.property.thumbnails.length;
+  return total > displayedCount ? total - displayedCount : 0;
+}
+
+toggleShowAllThumbnails(): void {
+  this.showAllThumbnails = !this.showAllThumbnails;
+}
 }

@@ -39,7 +39,8 @@
           <label class="flat-switch" (click)="$event.stopPropagation()">
           <input
             type="checkbox"
-            (change)="toggleActive(property)"
+              [checked]="property.availability === 'available'"
+              (change)="toggleActive(property, $event)"
           />
           <span class="flat-slider"></span>
         </label>
