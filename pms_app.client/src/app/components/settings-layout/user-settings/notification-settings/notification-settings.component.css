@@ -27,11 +27,12 @@
   width: 80%;
   max-width: 650px;
   margin: 6rem auto 1.5rem auto; /* adds consistent top spacing like other settings pages */
+  margin-top: 4rem;
   transform: translateX(-1rem);
 }
 
 .title {
-  font-size: 24px;
+ font-size: 1.25rem;
   font-weight: 700;
   color: #333;
   line-height: 130%;
