@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { importProvidersFrom, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -67,11 +67,8 @@ import { AuthModule } from './auth/auth.module';
     SharedModule,
     MainModule,
     RouterOutlet,
-    AuthModule
-
-
+    AuthModule,
   ],
-
   bootstrap: [AppComponent]
 })
 export class AppModule { }
