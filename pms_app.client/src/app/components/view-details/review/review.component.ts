@@ -73,7 +73,10 @@ export class ReviewComponent implements OnInit {
 
   overallRating: number = 0;
   totalRatings: number = 0;
-
+  currentPage: number = 0;
+  pageSize: number = 2;
+  isLastPage: boolean = false;
+  isExpanded: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -93,18 +96,24 @@ export class ReviewComponent implements OnInit {
     this.totalRatings = this.allReviews.length;
   }
 
-  updateDisplayedReviews(): void {
-    this.reviews = this.allReviews.slice(0, this.displayCount);
-  }
+updateDisplayedReviews(): void {
+  const start = this.currentPage * this.pageSize;
+  const end = start + this.pageSize;
+  this.reviews = this.allReviews.slice(start, end);
+  this.isLastPage = end >= this.allReviews.length;
+}
 
-  loadMoreReviews(): void {
-    this.displayCount += this.initialDisplayCount;
-    if (this.displayCount > this.allReviews.length) {
-      this.displayCount = this.allReviews.length;
-    }
+loadMoreReviews(): void {
+  if (!this.isLastPage) {
+    this.currentPage++;
     this.updateDisplayedReviews();
   }
+}
 
+showLess(): void {
+  this.currentPage = 0;
+  this.updateDisplayedReviews();
+}
   getOverallStars(rating: number): boolean[] {
     const stars = [];
     const roundedRating = Math.round(rating * 2) / 2; // Round to nearest 0.5
