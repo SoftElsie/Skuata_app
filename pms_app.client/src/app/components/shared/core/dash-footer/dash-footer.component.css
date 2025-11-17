@@ -101,11 +101,20 @@
 
 /* --- Divider --- */ 
 .divider {
-   border: none;
-   border-top: 1px solid #00000080; 
-   margin: 0.10rem auto;
-   max-width: 1600px;
-   margin-bottom: 10px; }
+  border: none;
+  border-top: 1px solid #00000080;
+  width: calc(100% - 20rem); /* same left+right spacing as 10rem each side */
+  max-width: 1600px;
+  margin: 0 auto 20px;
+}
+
+
+@media (max-width: 768px) {
+  .divider {
+    width: calc(100% - 2rem); /* or full width with side margin */
+    margin: 0 auto 10px;
+  }
+}
 
 /* --- Tablet --- */
 @media (max-width: 1024px) {
