@@ -12,8 +12,8 @@ export class DashFooterComponent {
 
   constructor(private router: Router) {}
 
-  navigationLinks = ["Home", "Contact Us", "About Us"]
-  roomLinks = ["Find Rooms", "Post Rooms"]
+  navigationLinks: any[] = ["Home", "Contact Us", "About Us"]
+  roomLinks: any[] = ["Find Rooms", "Post Rooms"]
 
    showFooter = false;
 
@@ -32,7 +32,27 @@ export class DashFooterComponent {
     },
   ]
 
- 
+  navigateTo(link: string) {
+    switch (link) {
+      case 'Home':
+        this.router.navigate(['/app']);
+        break;
+      case 'Find Rooms':
+        this.router.navigate(['/app']);
+        break;
+      case 'Post Rooms':
+        this.router.navigate(['/app/add-room']);
+        break;
+      case 'Contact Us':
+     this.router.navigate(['/app/add-room']);
+        break;
+      case 'About Us':
+        this.router.navigate(['/app/about-us']);
+        break;
+      default:
+        break;
+    }
+  }
 
   legalLinks = ["Terms of Service", "Privacy Policy", "Cookie Settings"]
 }
