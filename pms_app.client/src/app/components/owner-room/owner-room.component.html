@@ -1,24 +1,30 @@
 <div class="listings-container">
-  
-  <app-filter  [showFilterButton]="false" (filtersChanged)="onFiltersChanged($event)"></app-filter>
-   
+  <app-filter
+    [showFilterButton]="false"
+    (filtersChanged)="onFiltersChanged($event)"
+  ></app-filter>
+
   <div class="properties-grid">
-    <div class="property-card" *ngFor="let property of visibleProperties" (click)="viewDetails(property)">
+    <div
+      class="property-card"
+      *ngFor="let property of visibleProperties"
+      (click)="viewDetails(property)"
+    >
       <div class="property-image">
         <img [src]="property.image" [alt]="property.title" />
       </div>
-      
+
       <div class="property-content">
         <div class="property-header">
           <h3 class="property-title">{{ property.title }}</h3>
           <div class="property-actions">
-     
+            <span class="badge edit" (click)="editRoom(property)">
+              <img [src]="'assets/Icons/pen-line.png'" /> Edit
+            </span>
 
-              <span class="badge edit"> 
-                 <img [src]="'assets/Icons/pen-line.png'"/>   Edit</span>
-              <span class="badge remove">
-                <img [src]="'assets/Icons/trash-2.png'"/> Remove</span>
-            
+            <span class="badge remove">
+              <img [src]="'assets/Icons/trash-2.png'" /> Remove</span
+            >
           </div>
         </div>
 
@@ -28,12 +34,16 @@
         </div>
 
         <div class="property-status">
-          <span 
-            class="availability-badge" 
+          <span
+            class="availability-badge"
             [class.available]="property.availability === 'available'"
             [class.unavailable]="property.availability === 'unavailable'"
           >
-            {{ property.availability === 'available' ? 'Available' : 'Unavailable' }}
+            {{
+              property.availability === "available"
+                ? "Available"
+                : "Unavailable"
+            }}
           </span>
           <div class="details-switch">
             <label class="flat-switch" (click)="$event.stopPropagation()">
@@ -42,19 +52,17 @@
             </label>
           </div>
         </div>
-      <div class="property-details"
-            [class.unavailable-text]="property.availability === 'unavailable'"
-          >
-            <div class="property-price">R {{ property.price }}/mo</div>
-            <div class="meta-item">
-              <img [src]="'assets/Icons/eye.png'" />
-              <span>{{ property.views }} views</span>
-            </div>
+        <div
+          class="property-details"
+          [class.unavailable-text]="property.availability === 'unavailable'"
+        >
+          <div class="property-price">R {{ property.price }}/mo</div>
+          <div class="meta-item">
+            <img [src]="'assets/Icons/eye.png'" />
+            <span>{{ property.views }} views</span>
           </div>
-
         </div>
-
+      </div>
     </div>
   </div>
-
 </div>
