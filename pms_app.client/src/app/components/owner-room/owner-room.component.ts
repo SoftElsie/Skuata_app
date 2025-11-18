@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FilterOptions } from '../shared/widgets/filter/filter.component';
+import { ModalService } from '../../domain/services/modal.service';
 interface Property {
   id: number;
   image: string;
@@ -9,6 +10,7 @@ interface Property {
   views: number;
   isFavorite: boolean;
   availability: "available" | "unavailable"
+  
 
 }
 @Component({
@@ -18,6 +20,7 @@ interface Property {
   styleUrls: ['./owner-room.component.css']
 })
 export class OwnerRoomComponent {
+  constructor(private modalService: ModalService) {}
   searchQuery = '';
   visibleProperties: Property[] = [] 
    filteredProperties: Property[] = [];
@@ -70,9 +73,22 @@ export class OwnerRoomComponent {
     ]
   
      ngOnInit(): void {
-        this.filteredProperties = [...this.properties];
-      this.loadProperties();
+  this.filteredProperties = [...this.properties];
+  this.loadProperties();
+
+  this.modalService.watchSavedRoom().subscribe(updatedRoom => {
+    if (!updatedRoom) return;
+
+    const index = this.properties.findIndex(p => p.id === updatedRoom.id);
+    if (index !== -1) {
+      this.properties[index] = { ...this.properties[index], ...updatedRoom };
     }
+
+    this.filteredProperties = [...this.properties];
+    this.loadProperties();
+  });
+}
+
   
    loadProperties(): void {
       const start = (this.currentPage - 1) * this.itemsPerPage;
@@ -133,5 +149,9 @@ export class OwnerRoomComponent {
   console.log(`${property.title} is now ${property.active ? 'active' : 'inactive'}`);
 }
 
+editRoom(property: any) {
+    this.modalService.open('edit', property);
   }
-  
+}
+
+   
