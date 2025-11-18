@@ -35,15 +35,11 @@
           >
             {{ property.availability === 'available' ? 'Available' : 'Unavailable' }}
           </span>
-        <div class="details-switch">
-          <label class="flat-switch" (click)="$event.stopPropagation()">
-          <input
-            type="checkbox"
-              [checked]="property.availability === 'available'"
-              (change)="toggleActive(property, $event)"
-          />
-          <span class="flat-slider"></span>
-        </label>
+          <div class="details-switch">
+            <label class="flat-switch" (click)="$event.stopPropagation()">
+              <input type="checkbox" (change)="toggleActive(property,$event)" />
+              <span class="flat-slider"></span>
+            </label>
           </div>
         </div>
       <div class="property-details"
