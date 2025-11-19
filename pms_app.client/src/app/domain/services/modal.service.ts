@@ -1,3 +1,4 @@
+// modal.service.ts
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -25,4 +26,8 @@ export class ModalService {
     this.display.next(false);
     this.modalContent.next(null); // Clear content when closing
   }
+  private roomSaved = new BehaviorSubject<any>(null);
+watchSavedRoom() { return this.roomSaved.asObservable(); }
+emitSavedRoom(room: any) { this.roomSaved.next(room); }
+
 }
