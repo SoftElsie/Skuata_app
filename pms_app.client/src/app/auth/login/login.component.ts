@@ -61,9 +61,21 @@ export class LoginComponent implements AfterViewInit {
     client.requestAccessToken();
   }
 
-  onContinue(): void {
-    console.log('Manual login');
+ onContinue(): void {
+  if (!this.email || !this.password) {
+    console.log('Form is invalid');
+    return;
   }
+
+  console.log('Manual login clicked');
+  console.log('Email:', this.email);
+  console.log('Password:', this.password);
+
+  // Navigate to the "app" route
+  this.router.navigate(['/app']);
+}
+
+
 
   onSignUp(): void {
     this.router.navigate(['auth/register']);
