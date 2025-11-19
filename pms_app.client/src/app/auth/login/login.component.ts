@@ -72,4 +72,8 @@ export class LoginComponent implements AfterViewInit {
   simulateLogin() {
     console.log('Simulated login clicked');
   }
+
+  goToResetPassword(): void {
+    this.router.navigate(['/auth/reset-password']);
+  }
 }

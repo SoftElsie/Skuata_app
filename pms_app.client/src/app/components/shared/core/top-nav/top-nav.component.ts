@@ -6,7 +6,7 @@ import { NgClass } from '@angular/common';
 import { NgIf } from '@angular/common';
 import { filter } from 'rxjs';
 import { ModalService } from '../../../../domain/services/modal.service';
-
+import { AddRoomComponent } from '../../../add-room/add-room.component';
 
 
 @Component({
@@ -88,7 +88,7 @@ toggleProfile() {
   }
   
  openAddRoomModal() {
-  this.modalService.open();
+  this.modalService.open(AddRoomComponent);
 }
 
   goToNotifications() {

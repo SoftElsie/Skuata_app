@@ -7,31 +7,24 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ModalService {
   private display = new BehaviorSubject<boolean>(false);
-  private mode = new BehaviorSubject<'add' | 'edit'>('add');
-  private roomData = new BehaviorSubject<any>(null);
+  private modalContent = new BehaviorSubject<any>(null); // To store the component type
 
   watch(): Observable<boolean> {
     return this.display.asObservable();
   }
 
-  watchMode(): Observable<'add' | 'edit'> {
-    return this.mode.asObservable();
+  watchContent(): Observable<any> {
+    return this.modalContent.asObservable();
   }
 
-  watchRoomData(): Observable<any> {
-    return this.roomData.asObservable();
-  }
-
-  open(mode: 'add' | 'edit' = 'add', data: any = null) {
-    this.mode.next(mode);
-    this.roomData.next(data);
+  open(component: any) {
+    this.modalContent.next(component);
     this.display.next(true);
   }
 
   close() {
     this.display.next(false);
-    this.mode.next('add');
-    this.roomData.next(null);
+    this.modalContent.next(null); // Clear content when closing
   }
   private roomSaved = new BehaviorSubject<any>(null);
 watchSavedRoom() { return this.roomSaved.asObservable(); }

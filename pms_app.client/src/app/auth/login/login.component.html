@@ -94,10 +94,13 @@
         class="btn btn-continue"
         type="submit"
         [disabled]="loginForm.invalid"
-        (click)="simulateLogin()"
       >
-        Continue <span class="chevron">&#8250;</span>
+        <span>Continue</span> <span class="chevron">&#8250;</span>
       </button>
+      <div class="reset-password-link-container">
+        <p class="forgot-password-text">Forgot your password?</p>
+        <a (click)="goToResetPassword()" class="reset-password-link">Forgot Password</a>
+      </div>
     </form>
 
     <!-- Divider -->

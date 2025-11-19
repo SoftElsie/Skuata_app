@@ -16,7 +16,7 @@
 }
 
 .logo-img {
-  height: 60px;
+  height: 40px;
   width: auto;
   max-width: 80%;
 }
@@ -130,8 +130,12 @@
 .btn-continue {
   background-color: #263e39;
   color: white;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .btn-continue:hover {
@@ -325,7 +329,24 @@
   margin-right: 10px;
   object-fit: contain;
 }
-/* Email validation error message */
+.reset-password-link {
+  color: #F2A250;
+  text-decoration: underline;
+  margin-top: 4px;
+}
+
+.reset-password-link-container {
+  display: flex;
+  flex-direction: column; /* Added to stack text and link */
+  align-items: flex-end; /* Align items to the right */
+  margin-top: 4px; /* Add some top margin */
+}
+
+.forgot-password-text {
+  font-size: 14px;
+  color: #7f7e7e;
+  margin-bottom: 0px; /* Space between text and link */
+}
 .error-message {
   color: red;
   font-size: 13px;

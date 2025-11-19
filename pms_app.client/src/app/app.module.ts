@@ -81,7 +81,6 @@ import { NetworkStatus } from './components/network-status/network-status';
           // or after 30 seconds (whichever comes first).
           registrationStrategy: 'registerWhenStable:30000'
         })
-      ],
-  bootstrap: [AppComponent]
+      ], bootstrap: [AppComponent]
 })
 export class AppModule { }
