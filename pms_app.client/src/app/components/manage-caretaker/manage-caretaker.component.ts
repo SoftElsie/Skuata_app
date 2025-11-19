@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalService } from '../../domain/services/modal.service';
+import { AddCaretakerComponent } from '../add-caretaker/add-caretaker.component';
 
 @Component({
   selector: 'app-manage-caretaker',
@@ -39,7 +41,7 @@ export class ManageCaretakerComponent implements OnInit {
 loadingButton: string | null = null;
 
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private modalService: ModalService) {}
 
 
   ngOnInit() {
@@ -55,13 +57,13 @@ loadingButton: string | null = null;
     return Array.from({ length: this.totalPages }, (_, i) => i + 1);
   }
   
-    addCaretaker() {
+    openAddCaretakerModal() {
   if (this.loading) return;
   this.loading = true;
   this.loadingButton = 'addCaretaker';
 
   setTimeout(() => {
-    this.router.navigate(['/add-caretaker']);
+    this.modalService.open(AddCaretakerComponent);
     this.loading = false;
     this.loadingButton = null;
   }, 200); // short delay to show loader
@@ -88,9 +90,6 @@ loadingButton: string | null = null;
     this.loading = false;
     this.loadingButton = null;
   });
-}
-goToAddCaretaker() {
-  this.router.navigate(['/add-caretaker']);
 }
 
   goBack() {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalService } from '../../domain/services/modal.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class AddCaretakerComponent {
   loading = false;
 loadingButton: string | null = null;
 
-  constructor(private form: FormBuilder) {
+  constructor(private form: FormBuilder, private modalService: ModalService) {
     this.addCaretakerForm = this.form.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -50,8 +51,11 @@ loadingButton: string | null = null;
     }
   }
 
+  closeModal() {
+    this.modalService.close();
+  }
 
-handleAddCaretaker(): void {
+handleAddCaretakerAndCloseModal(): void {
   if (this.addCaretakerForm.invalid) {
     this.addCaretakerForm.markAllAsTouched();
     return;
@@ -71,6 +75,7 @@ handleAddCaretaker(): void {
 
     this.loading = false;
     this.loadingButton = null;
+    this.modalService.close(); // Close modal on successful submission
   }, 500);
 }
 

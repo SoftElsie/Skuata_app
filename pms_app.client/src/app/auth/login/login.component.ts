@@ -27,6 +27,7 @@ email = '';
       console.log('Email:', this.email);
       console.log('Password:', this.password);
       // 🔐 TODO: Add authentication logic
+      this.simulateLogin(); // Call simulateLogin here
     } else {
       console.warn('Please fill in both fields');
     }
@@ -52,5 +53,9 @@ email = '';
 
     // navigate to app home
     this.router.navigate(['/app/owner-room']);
+  }
+
+  goToResetPassword(): void {
+    this.router.navigate(['/auth/reset-password']);
   }
 }
