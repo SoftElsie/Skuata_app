@@ -153,7 +153,7 @@ toggleActive(property: any, event: Event) {
 }
 
 editRoom(property: any) {
-    this.modalService.open('edit', property);
+    this.modalService.openM('edit', property);
   }
 }
 
