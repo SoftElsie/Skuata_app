@@ -15,14 +15,20 @@
         <div class="property-header">
           <h3 class="property-title">{{ property.title }}</h3>
           <div class="property-actions">
-            <button
-              class="Icon-button-small favorite-button"
-              [class.active]="property.isFavorite"
-              (click)="toggleFavorite(property)"
-              aria-label="Add to favorites"
-            >
-              <img [src]="'assets/Icons/heart-ico.svg'" />
-            </button>
+
+          <button
+         class="favorite-container"
+         (click)="toggleFavorite(property); $event.stopPropagation()"
+         aria-label="Add to favorites"
+     >
+     <img 
+       [src]="property.isFavorite ? 'assets/Icons/Heart-icon.svg' : 'assets/Icons/heart-ico.svg'"
+       class="favorite-heart"
+       alt="Heart Icon"
+  />
+</button>
+
+
           </div>
         </div>
 

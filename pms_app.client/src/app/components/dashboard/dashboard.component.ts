@@ -129,7 +129,28 @@ loadingButton: string | null = null;
    ngOnInit(): void {
       this.filteredProperties = [...this.properties];
     this.loadProperties();
+    this.loadFavorites();
   }
+  
+  loadFavorites(): void {
+  const data = localStorage.getItem('favorites');
+
+  if (data) {
+    const favorites = JSON.parse(data);
+
+    // Update main property list
+    this.properties = this.properties.map(p => {
+      const saved = favorites.find((x: any) => x.id === p.id);
+      return saved ? { ...p, isFavorite: saved.isFavorite } : p;
+    });
+
+    // Update filtered list
+    this.filteredProperties = [...this.properties];
+
+    // Update visible list (pagination)
+    this.loadProperties();
+  }
+}
 
  loadProperties(): void {
     const start = (this.currentPage - 1) * this.itemsPerPage;
@@ -172,6 +193,15 @@ loadPrevious(): void {
   }, 800);
 }
 
+saveFavorites(): void {
+  const favorites = this.properties.map(p => ({
+    id: p.id,
+    isFavorite: p.isFavorite
+  }));
+
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+
   onSearch(): void {
     console.log("Searching for:", this.searchQuery)
 
@@ -201,8 +231,29 @@ loadPrevious(): void {
   }
 
   toggleFavorite(property: Property): void {
-    property.isFavorite = !property.isFavorite
+  property.isFavorite = !property.isFavorite;
+
+  // Update in main list
+  const index = this.properties.findIndex(p => p.id === property.id);
+  if (index !== -1) {
+    this.properties[index].isFavorite = property.isFavorite;
   }
+
+  // Update filtered list
+  const filteredIndex = this.filteredProperties.findIndex(p => p.id === property.id);
+  if (filteredIndex !== -1) {
+    this.filteredProperties[filteredIndex].isFavorite = property.isFavorite;
+  }
+
+  // Update visible list
+  const visibleIndex = this.visibleProperties.findIndex(p => p.id === property.id);
+  if (visibleIndex !== -1) {
+    this.visibleProperties[visibleIndex].isFavorite = property.isFavorite;
+  }
+
+  this.saveFavorites();
+}
+
 
   viewDetails(): void {
     console.log("Viewing details for property:")
