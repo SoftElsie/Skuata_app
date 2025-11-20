@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddCaretakerComponent } from './components/add-caretaker/add-caretaker.component';
 import { RateReviewComponent } from './components/rate-review/rate-review.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 const routes: Routes = [
@@ -18,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), CommonModule],
+  exports: [RouterModule, FormsModule, ReactiveFormsModule]
 })
 export class AppRoutingModule { }
