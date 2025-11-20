@@ -82,14 +82,39 @@ button:disabled {
 .star-container {
   display: flex;
   justify-content: center;
-  gap: .25em;
+  gap: .65em;
   background-color: hsl(var(--primary-100));
   padding: .5em;
     border-radius: .15em;
 }
 
 .star {
+  width: 20px;
   cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(59%) sepia(10%) saturate(346%) hue-rotate(120deg) brightness(96%) contrast(86%);
+
+}
+
+.rated {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(18%) saturate(2504%) hue-rotate(319deg) brightness(96%) contrast(98%);
+  scale: 1.5;
+
+  transition: all .25s ease-in-out;
+
+}
+
+.star-counter {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: .1em solid hsl(var(--primary-900));
+  background-color: hsl(var(--primary-600)) ;
+  font-weight: 600;
+  color: hsl(var(--neutral-00));
+  transition: all .25s ease;
 }
 
 .input-icon {
