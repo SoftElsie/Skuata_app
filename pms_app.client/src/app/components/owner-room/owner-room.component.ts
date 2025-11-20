@@ -144,12 +144,9 @@ export class OwnerRoomComponent {
       console.log("Viewing details for property:", property.id)
      
     }
-toggleActive(property: any, event: Event) {
-  const checked = (event.target as HTMLInputElement).checked;
-
-  property.availability = checked ? 'available' : 'unavailable';
-
-  console.log(`${property.title} is now ${property.availability}`);
+  toggleActive(property: any) {
+  property.active = !property.active;
+  console.log(`${property.title} is now ${property.active ? 'active' : 'inactive'}`);
 }
 
 editRoom(property: any) {
