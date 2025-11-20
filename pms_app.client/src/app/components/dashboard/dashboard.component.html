@@ -80,9 +80,9 @@
       (click)="loadPrevious()"
     >
       Previous
-      <!-- <app-loader-btn
+      <app-loader-btn
         [active]="loading && loadingButton === 'previous'"
-      ></app-loader-btn>-->
+      ></app-loader-btn>
     </button>
 
     <button
@@ -91,6 +91,9 @@
       *ngIf="currentPage * itemsPerPage < filteredProperties.length"
     >
       Load More
+      <app-loader-btn
+        [active]="loading && loadingButton === 'next'"
+      ></app-loader-btn>
     </button>
   </div>
 
