@@ -1,4 +1,7 @@
-import { NgModule, isDevMode } from '@angular/core';
+
+import { isDevMode, NgModule } from '@angular/core';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -32,56 +35,52 @@ import { ReviewComponent } from './components/view-details/review/review.compone
 import { MainModule } from './components/main.module';
 import { ContactManagerComponent } from './components/view-details/contact-manager/contact-manager.component';
 import { AuthModule } from './auth/auth.module';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { AboutComponent } from './components/about us/about.component';
 import { NetworkStatus } from './components/network-status/network-status';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DashboardComponent,
-    AddCaretakerComponent,
-    ModalComponent,
-    NotificationSettingsComponent,
-    PasswordSecurityComponent,
-    ManageCaretakerComponent,
-    ContactInfoComponent,
-    FilterComponent,
-    ProfileIconComponent ,
-    OwnerRoomComponent,
-    ViewDetailsComponent,
-    UserSettingsComponent,
-     ReviewComponent,
-    PropertyCardComponent,
-    AddRoomComponent,
-     LoaderBtnComponent,
-     ContactManagerComponent,
-     SettingsLayoutComponent,
-      
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    CommonModule,
-    RouterModule,
-    SharedModule,
-    MainModule,
-    RouterOutlet,
-    NetworkStatus,
-    AuthModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })
-
-
-  ],
-
-  bootstrap: [AppComponent]
+      declarations: [
+          AboutComponent, 
+        AppComponent,
+        DashboardComponent,
+        AddCaretakerComponent,
+        ModalComponent,
+        NotificationSettingsComponent,
+        PasswordSecurityComponent,
+        ManageCaretakerComponent,
+        ContactInfoComponent,
+        FilterComponent,
+        ProfileIconComponent ,
+        OwnerRoomComponent,
+        ViewDetailsComponent,
+        UserSettingsComponent,
+         ReviewComponent,
+        PropertyCardComponent,
+        AddRoomComponent,
+         LoaderBtnComponent,
+         ContactManagerComponent,
+         SettingsLayoutComponent,
+        NetworkStatus
+      ],
+      imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CommonModule,
+        RouterModule,
+        SharedModule,
+        MainModule,
+        AuthModule,
+      // Workaround for NG6008
+        ServiceWorkerModule.register('ngsw-worker.js', {
+          enabled: !isDevMode(),
+          // Register the ServiceWorker as soon as the application is stable
+          // or after 30 seconds (whichever comes first).
+          registrationStrategy: 'registerWhenStable:30000'
+        })
+      ], bootstrap: [AppComponent]
 })
 export class AppModule { }

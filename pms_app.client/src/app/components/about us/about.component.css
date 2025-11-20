@@ -1,0 +1,25 @@
+.about-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.about-container {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 50px; /* Adjust this value as needed */
+}
+
+.about-title {
+  text-align: center;
+ 
+}
+
+p {
+  text-align: justify;
+  margin: 50px 50px 50px 50px; /* Increased bottom margin to 20px */
+  line-height: 1.6;
+  font-size: 16px; /* Increased font size */
+}

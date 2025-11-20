@@ -6,7 +6,7 @@ import { NgClass } from '@angular/common';
 import { NgIf } from '@angular/common';
 import { filter } from 'rxjs';
 import { ModalService } from '../../../../domain/services/modal.service';
-
+import { AddRoomComponent } from '../../../add-room/add-room.component';
 
 
 @Component({
@@ -66,9 +66,21 @@ ngOnInit(): void {
   }
   
 
-  toggleProfile() {
-    this.isProfileOpen = !this.isProfileOpen;
+toggleProfile() {
+  this.isProfileOpen = !this.isProfileOpen;
+
+  if (this.isProfileOpen) {
+    const close = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.profile-dropdown') && !target.closest('.profile-btn')) {
+        this.isProfileOpen = false;
+        document.removeEventListener('click', close);
+      }
+    };
+    setTimeout(() => document.addEventListener('click', close), 0);
   }
+}
+
 
   navigateTo(path: string) {
     this.router.navigate([path]);
@@ -76,7 +88,7 @@ ngOnInit(): void {
   }
   
  openAddRoomModal() {
-  this.modalService.open();
+  this.modalService.open(AddRoomComponent);
 }
 
   goToNotifications() {

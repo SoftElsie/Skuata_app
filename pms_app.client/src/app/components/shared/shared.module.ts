@@ -8,6 +8,7 @@ import { FooterComponent } from "./core/footer/footer.component";
 import { AuthLayoutComponent } from './core/auth-layout/auth-layout.component';
 import { DashFooterComponent } from './core/dash-footer/dash-footer.component';
 import { FormsModule  } from '@angular/forms';
+import { AuthFooterComponent } from "./auth-footer/auth-footer.component";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { FormsModule  } from '@angular/forms';
    FooterComponent,
    AuthLayoutComponent,
    DashFooterComponent,
- 
+   AuthFooterComponent
   ],
 
   imports: [
@@ -30,7 +31,9 @@ import { FormsModule  } from '@angular/forms';
  ContainerLayoutComponent,
  TopNavComponent,
  FooterComponent,
- DashFooterComponent
+ AuthLayoutComponent,
+ DashFooterComponent,
+ AuthFooterComponent
   ],
   providers: [],
 

@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 export interface FilterOptions {
   minPrice: number
@@ -9,8 +11,6 @@ export interface FilterOptions {
   
   searchQuery: string
 }
-
-
 
 @Component({
   selector: 'app-filter',

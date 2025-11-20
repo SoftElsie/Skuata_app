@@ -1,7 +1,7 @@
 <main class="container">
   <div class="header">
     <h1>Add Caretaker</h1>
-    <button><img src="../assets/Icons/lucide/x.svg" alt="" /></button>
+    <button (click)="closeModal()"><img src="../assets/Icons/lucide/x.svg" alt="" /></button>
   </div>
   <form
     [formGroup]="addCaretakerForm"
@@ -85,7 +85,7 @@
       <button
         type="submit"
         [disabled]="addCaretakerForm.invalid || loading"
-        (click)="handleAddCaretaker()"
+        (click)="handleAddCaretakerAndCloseModal()"
       >
         Add Caretaker
         <app-loader-btn

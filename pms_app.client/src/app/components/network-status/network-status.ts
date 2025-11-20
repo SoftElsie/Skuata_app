@@ -5,8 +5,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-network-status',
-  standalone: true,   
-  imports: [CommonModule],  
+  standalone: false,   
   templateUrl: './network-status.html',
   styleUrls: ['./network-status.css'],
 })
@@ -16,7 +15,6 @@ export class NetworkStatus implements OnInit {
   message = '';
 
   constructor(private offline: OfflineIndicator, private swUpdate: SwUpdate, private ngZone: NgZone) {}
-
   ngOnInit() {
     this.offline.onlineStatus$.subscribe((status) => {
       const previous = this.offline.previousStatus;
