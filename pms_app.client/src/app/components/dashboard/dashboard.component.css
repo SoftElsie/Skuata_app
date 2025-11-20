@@ -179,10 +179,11 @@
 .Icon-button-small:hover {
   opacity: 0.7;
 }
-
 .favorite-button.active svg {
   fill: #e67e22;
 }
+
+
 
 .property-address {
   display: flex;
