@@ -37,11 +37,12 @@
   font-weight: 500;
   font-size: 1.8rem;
   margin-top: -.5em;
+  text-align: center;
 }
 
 .container section img {
   width: 10em;
-  margin: -1em auto;
+  margin: 1em auto; /* Changed from -1em to 1em */
   opacity: .75;
 }
 
@@ -94,4 +95,24 @@ section svg{
   color: hsl(var(--neutral-900));
   width: 95%;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    justify-content: flex-start; /* Align content to the top */
+  }
+
+  #logo {
+    margin: 4em auto 4em auto; /* Increased top margin */
+    /* Removed negative margin-top */
+  }
+  #logo img {
+    display: block;
+    margin: 0 auto;
+    width: 4em; /* Increase logo size */
+  }
+
+  .container section {
+    /* Removed negative margin-top */
+  }
 }

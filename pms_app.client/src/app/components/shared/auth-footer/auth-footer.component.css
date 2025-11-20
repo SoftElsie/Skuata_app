@@ -32,9 +32,4 @@ footer a {
   color: #115757;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-  }
-}
+

@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalService } from '../../domain/services/modal.service';
+import { AddRoomComponent } from '../add-room/add-room.component';
 
 interface Room {
   id: string;
@@ -32,7 +33,7 @@ export class ProfileIconComponent {
 }
 
 openAddRoomModal() {
-  this.modalService.open();
+  this.modalService.open(AddRoomComponent);
 }
 
   closeDialog() {
