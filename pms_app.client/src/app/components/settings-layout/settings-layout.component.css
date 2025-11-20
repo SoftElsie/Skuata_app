@@ -1,7 +1,7 @@
 .user-settings-container {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 8rem;
   /* ↓ Reduced padding and top margin for tighter vertical spacing */
   padding: 0.5rem 2rem 1.5rem 8rem;
   margin-top: 0 !important;
@@ -16,6 +16,7 @@ app-user-settings {
 .settings-content {
   flex: 1;
   padding-top: 0.5rem; /* ↓ was 2rem */
+  width: 100%;
 }
 
 .divider {
@@ -38,8 +39,8 @@ app-user-settings {
 @media (max-width: 768px) {
   .user-settings-container {
     flex-direction: column;
-    padding: 0.5rem 1rem;
-    gap: 1rem;
+    padding: 0.5rem 0.5rem;
+    gap: 2rem;
   }
 
   .settings-content {

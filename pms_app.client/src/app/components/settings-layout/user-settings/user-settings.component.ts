@@ -13,7 +13,6 @@ export class UserSettingsComponent {
   @Input() subtitle: string = 'Edit Profile';
   @Input() menuItems: { label: string; route?: string }[] = [
     { label: 'Contact Info', route: '/app/contact-info' },
-    { label: 'Password and Security', route: '/security' },
     { label: 'Notification Settings', route: '/notification' },
   ];
 
