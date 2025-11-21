@@ -24,6 +24,7 @@ import { ViewDetailsComponent } from './components/view-details/view-details.com
 import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 import { RegisterFormComponent } from './auth/register-form/register-form.component';
 import { AboutComponent } from './components/about us/about.component';
+import { RateReviewComponent } from './components/view-details/rate-review/rate-review';
 
 
 
@@ -51,6 +52,7 @@ const routes: Routes = [
       
   {  path:'add-caretaker',component:AddCaretakerComponent},
   {  path:'owner-room',component:OwnerRoomComponent},
+  {  path:'rate-review',component:RateReviewComponent},
     ]
   },
    {

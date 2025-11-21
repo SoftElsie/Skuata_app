@@ -1,8 +1,11 @@
 
 import { Component, Input } from '@angular/core';
+import { ModalService } from '../../../domain/services/modal.service';
+import { RateReviewComponent } from '../rate-review/rate-review';
 
 // Define an interface for the property data structure
 export interface Property {
+  id:number;
   price: number;
   unit: string; // e.g., '/mo'
   rating: number; // e.g., 3.2
@@ -21,7 +24,9 @@ export interface Property {
 })
 export class PropertyCardComponent {
   // Use @Input to pass data into the component
+  
   @Input() property: Property = {
+     id: 1,
     price: 1500,
     unit: '/mo',
     rating: 3,
@@ -35,7 +40,7 @@ export class PropertyCardComponent {
   hoveredStar: number = 0;   // Track which star is hovered
   selectedRating: number = 0; // Track user's selected rating
 
-  constructor() { }
+  constructor(private modalService: ModalService) { }
 
   /**
    * Handle star hover (light up to hovered star)
@@ -70,5 +75,11 @@ export class PropertyCardComponent {
       stars.push(i <= rating);
     }
     return stars;
+  }
+
+    openRateReview() {
+    this.modalService.open(RateReviewComponent, {
+      propertyId: this.property?.id
+    });
   }
 }

@@ -37,6 +37,7 @@ import { ContactManagerComponent } from './components/view-details/contact-manag
 import { AuthModule } from './auth/auth.module';
 import { AboutComponent } from './components/about us/about.component';
 import { NetworkStatus } from './components/network-status/network-status';
+import { RateReviewComponent } from './components/view-details/rate-review/rate-review';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { NetworkStatus } from './components/network-status/network-status';
          LoaderBtnComponent,
          ContactManagerComponent,
          SettingsLayoutComponent,
-        NetworkStatus
+        NetworkStatus,
+        RateReviewComponent
       ],
       imports: [
         BrowserModule,
