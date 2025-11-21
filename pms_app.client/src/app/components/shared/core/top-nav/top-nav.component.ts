@@ -88,7 +88,10 @@ toggleProfile() {
   }
   
  openAddRoomModal() {
-  this.modalService.open(AddRoomComponent);
+  this.modalService.open(AddRoomComponent, {
+    mode: 'add',
+    room: null,
+  });
 }
 
   goToNotifications() {

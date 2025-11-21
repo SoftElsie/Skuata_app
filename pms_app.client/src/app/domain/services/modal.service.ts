@@ -19,10 +19,14 @@ export class ModalService {
     return this.modalContent.asObservable();
   }
 
-  open(component: any) {
-    this.modalContent.next(component);
-    this.display.next(true);
-  }
+  open(component: any, inputs: any = {}) {
+  this.modalContent.next({
+    component,
+    inputs
+  });
+  this.display.next(true);
+}
+
 
   close() {
     this.display.next(false);
