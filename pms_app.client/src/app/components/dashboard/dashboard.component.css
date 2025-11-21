@@ -219,6 +219,8 @@
 .favorite-heart {
   width: 22px;  /* smaller heart icon */
   height: 22px;
+.favorite-button.active svg {
+  fill: #e67e22;
 }
 
 
