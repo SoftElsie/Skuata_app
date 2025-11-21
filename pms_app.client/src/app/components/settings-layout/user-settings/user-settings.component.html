@@ -5,14 +5,18 @@
     <h2 class="page-title">{{ title }}</h2>
     <h4 class="menu-title">{{ subtitle }}</h4>
     <nav class="menu-nav">
-      <a
-        *ngFor="let item of menuItems"
-        [routerLink]="item.route"
-        routerLinkActive="active"
-        class="menu-item"
-      >
-        {{ item.label }}
-      </a>
+      <ng-container *ngFor="let item of menuItems">
+        <a
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          class="menu-item"
+        >
+          {{ item.label }}
+        </a>
+        <ng-container *ngIf="item.label === 'Notification Settings'">
+          <div class="menu-divider"></div>
+        </ng-container>
+      </ng-container>
       <div class="menu-item">
         <button class="delete-account-btn" (click)="onDeleteAccount()">
           Delete Account

@@ -13,7 +13,7 @@
 .page-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   padding: 2rem 1.5rem; /* Increased top padding for spacing consistency */
   min-height: 100vh;
 
@@ -26,9 +26,10 @@
   align-items: center;
   width: 80%;
   max-width: 650px;
-  margin: 6rem auto 1.5rem auto; /* adds consistent top spacing like other settings pages */
+  margin: 6rem 0 1.5rem 0;
   margin-top: 4rem;
-  transform: translateX(-1rem);
+  margin-left: 140px;
+
 }
 
 .title {
@@ -49,15 +50,15 @@
   align-items: center;
   justify-content: center;
   padding: 6px 14px;
- 
-  min-height: 35px;
+
+height:40px;
   gap: 6px;
   transition: all 0.2s ease-in-out;
 }
 
 .save-btn img {
   width: 18px;
-  height: 18px;
+ height:40;
 }
 
 .save-btn:hover {
@@ -74,6 +75,7 @@
   max-width: 650px;
   padding: 1.5rem 1.25rem;
   margin-bottom: 3rem; /* adds breathing room below */
+  margin-left: 120px;
 }
 
 /* --- Notifications List --- */
@@ -129,7 +131,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
-    margin-top: 2rem; /* maintain space from top */
+    margin: 2rem auto 0 auto; /* maintain space from top and center horizontally */
   }
 
   .title {
@@ -138,6 +140,10 @@
 
   .save-btn {
     /* align-self: flex-end; */
+    margin-left: auto;
+  }
+  .page-container {
+    align-items: center;
   }
 }
 
@@ -146,12 +152,19 @@
     font-size: 1.3rem;
   }
 
+  .header-wrapper {
+    margin-left: 10px;
+  }
+
   .save-btn {
     font-size: 0.85rem;
+    margin-left: auto;
   }
 
   .settings-container {
     width: 95%;
     padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
