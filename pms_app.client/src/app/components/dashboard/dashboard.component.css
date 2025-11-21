@@ -179,6 +179,46 @@
 .Icon-button-small:hover {
   opacity: 0.7;
 }
+
+.property-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* This creates the small space under the room image */
+  margin-top: 8px; 
+}
+
+.Icon-button-small {
+  background: #ffffff;
+  border: none;
+  padding: 4px;  /* smaller container padding */
+  border-radius: 30%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3px; /* creates tiny space from the image */
+}
+
+.favorite-container {
+  width: 30px;  /* reduced size */
+  height: 20px;
+  background: #f5fafa;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+  margin-right: 3px; /* tiny gap from picture */
+}
+
+.favorite-heart {
+  width: 22px;  /* smaller heart icon */
+  height: 22px;
 .favorite-button.active svg {
   fill: #e67e22;
 }
