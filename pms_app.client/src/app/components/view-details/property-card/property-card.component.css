@@ -173,6 +173,24 @@
   font-weight: 600;
 }
 
+.review-rate{
+    background-color: rgba(38, 62, 57, 1);
+  color: rgba(234, 237, 237, 1);
+ width: 127px;
+    height: 36px;
+  border-radius: 2px;
+  gap: 4px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .available-badge img {
   width: 16px;
   height: 16px;

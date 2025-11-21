@@ -7,22 +7,10 @@
     </div>
 
     <div class="rating-section">
-     <div class="stars-container">
-  <span *ngFor="let star of [1, 2, 3, 4, 5]">
-    <img
-      [src]="star <= (hoveredStar || property.rating) ? 'assets/Vector.svg' : 'assets/star.svg'"
-      alt="Star"
-      width="16"
-      height="16"
-      (mouseenter)="hoverStar(star)"
-      (mouseleave)="resetHover()"
-      (click)="selectStar(star)"
-      class="interactive-star"
-    />
-  </span>
-</div>
+     <div  class="review-rate default-extra-small" (click)="openRateReview()">
+        <img src="assets/Icons/message-square-more.png" alt="Review-and-rate"> Review & Rate
+      </div>
 
-      <span class="rating-text">{{ property.rating | number:'1.1-1' }} out of {{ property.maxRating }}</span>
     </div>
   </div>
 
