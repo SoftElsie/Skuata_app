@@ -149,7 +149,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.75rem;
+   margin-top: 8px;
 }
 
 .property-title {
@@ -180,14 +180,14 @@
   opacity: 0.7;
 }
 
-.property-header {
+/*.property-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  /* This creates the small space under the room image */
+ 
   margin-top: 8px; 
-}
+}*/
 
 .Icon-button-small {
   background: #ffffff;
@@ -219,6 +219,7 @@
 .favorite-heart {
   width: 22px;  /* smaller heart icon */
   height: 22px;
+}
 .favorite-button.active svg {
   fill: #e67e22;
 }
@@ -232,16 +233,19 @@
   color: #666;
   font-size: 0.875rem;
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.address-content {
+/*.address-content {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e0e0e0;
-  width: 80%; /* Adjust this value to control the length of the divider */
-}
+  width: 80%; 
+}*/
 
 .property-address svg {
   flex-shrink: 0;
