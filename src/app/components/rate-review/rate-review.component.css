@@ -1,0 +1,134 @@
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  background-color: hsl(var(--neutral-00));
+  padding: 1.5em 1em;
+  gap: .8em;
+  border-radius: .3em;
+  margin: 0 auto;
+}
+
+main h1 {
+  font-size: 1.15rem
+}
+
+main p {
+  font-size: .95rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: .75em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .3em;
+  text-align: left;
+  position: relative;
+}
+
+.form-group label {
+  font-size: .85rem;
+  font-weight: 500;
+}
+
+textarea {
+  width: 100%;
+  padding: .85em .5em .85em 2.5em;
+  border: .125em solid hsl(var(--secondary-600));
+  border-radius: .2em;
+  background-color: hsl(var(--primary-100));
+  font-family: Inter, sans-serif;
+  font-size: .9rem;
+  color: hsl(var(--neutral-900));
+  resize: none;
+}
+
+textarea:focus {
+  outline: hsl(var(--secondary-600));
+  border: .2em solid hsl(var(--secondary-600));
+}
+
+button {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  padding: .65em 3.5em;
+  border: none;
+  border-radius: .25em;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: hsl(var(--neutral-00));
+  background-color: hsl(var(--primary-900));
+  transition: background-color .15s ease-in-out;
+  cursor: pointer;
+
+}
+button:hover {
+  background-color: hsl(var(--primary-600));
+}
+
+button:disabled {
+  background-color: hsl(var(--neutral-300));
+  cursor: not-allowed;
+}
+
+.star-container {
+  display: flex;
+  justify-content: center;
+  gap: .65em;
+  background-color: hsl(var(--primary-100));
+  padding: .5em;
+    border-radius: .15em;
+}
+
+.star {
+  width: 20px;
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(59%) sepia(10%) saturate(346%) hue-rotate(120deg) brightness(96%) contrast(86%);
+
+}
+
+.rated {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(18%) saturate(2504%) hue-rotate(319deg) brightness(96%) contrast(98%);
+  scale: 1.5;
+
+  transition: all .25s ease-in-out;
+
+}
+
+.star-counter {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: .1em solid hsl(var(--primary-900));
+  background-color: hsl(var(--primary-600)) ;
+  font-weight: 600;
+  color: hsl(var(--neutral-00));
+  transition: all .25s ease;
+}
+
+.input-icon {
+  position: absolute;
+  top: 2em;
+  left: .4em;
+  color: hsl(var(--primary-300));
+
+}
+
+.icon-color {
+  filter: brightness(0) saturate(100%) invert(59%) sepia(10%) saturate(346%) hue-rotate(120deg) brightness(96%) contrast(86%);
+}
+
+button .icon-color {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7483%) hue-rotate(143deg) brightness(100%) contrast(100%);
+}
