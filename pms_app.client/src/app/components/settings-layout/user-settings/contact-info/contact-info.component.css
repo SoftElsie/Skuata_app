@@ -24,6 +24,7 @@ body,
   margin-left: 0;
 }
 
+
 .form-header-new {
   display: flex;
   justify-content: flex-start;
@@ -61,9 +62,21 @@ body,
   padding: 10px 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+<<<<<<< Updated upstream
   min-width: 80px;
   min-height: 35px;
   /* margin-left: auto; */
+=======
+  font-family: Barlow, sans-serif;
+  margin: 0;
+  align-self: flex-start;
+  border-radius: 6px;
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+  white-space: nowrap;
+  min-width: 80px;
+  min-height: 35px;
+
+>>>>>>> Stashed changes
 }
 
 .save-btn:hover {
@@ -71,9 +84,11 @@ body,
 }
 
 .save-Icon {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(100%) saturate(4%) hue-rotate(184deg) brightness(105%) contrast(94%);
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+
 }
 
 .card-spacing {

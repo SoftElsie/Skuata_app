@@ -16,7 +16,7 @@
         <div class="choice-cards">
           <div class="choice-card" [class.selected]="selectedRole === 'renter'" (click)="selectRole('renter')">
             <div class="card-header">
-              <img src="assets/bed.png" alt="Bed icon" class="icon">
+              <img src="assets/Icons/bed.svg" alt="Bed icon" class="icon">
               <input type="radio" name="role" [checked]="selectedRole === 'renter'">
             </div>
             <hr class="card-divider">
@@ -25,7 +25,7 @@
 
           <div class="choice-card" [class.selected]="selectedRole === 'owner'" (click)="selectRole('owner')">
             <div class="card-header">
-              <img src="assets/Icons/user-round.png" alt="User icon" class="icon">
+              <img src="assets/Icons/lucide/user-round.svg" alt="User icon" class="icon">
               <input type="radio" name="role" [checked]="selectedRole === 'owner'">
             </div>
             <hr class="card-divider">

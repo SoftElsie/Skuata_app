@@ -1,6 +1,6 @@
 <div class="search-container">
   <div class="search-wrapper">
-    <img [src]="'assets/Icons/search.png'" />
+    <img [src]="'assets/Icons/lucide/search.svg'" class="search"/>
     <input
       type="text"
       class="search-input"
@@ -43,7 +43,7 @@
   <div class="filter-header">
     <h2>Filter</h2>
     <button class="close-btn" (click)="closeFilter()" aria-label="Close filter">
-   <img [src]="'assets/Icons/square-x.png'" />
+   <img [src]="'assets/Icons/lucide/square-x.svg'" />
     </button>
   </div>
 
@@ -170,11 +170,11 @@
 
   <div class="filter-actions">
     <button class="btn-clear" (click)="clearAllFilters()">
-      <img [src]="'assets/Icons/paintbrush.png'" />
+      <img [src]="'assets/Icons/lucide/paintbrush.svg'" class="paint-brush" />
       Clear All
     </button>
     <button class="btn-apply" (click)="applyFilters()">
-     <img [src]="'assets/Icons/eye.png'" />
+     <img [src]="'assets/Icons/lucide/eye.svg'" class="filter-eye"/>
       Show Results
     </button>
   </div>

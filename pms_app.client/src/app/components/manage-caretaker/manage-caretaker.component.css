@@ -143,7 +143,11 @@ td a{
   color: white;
   margin-right: 0.4rem;
 }
+.icons{
+  
+filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(2848%) hue-rotate(126deg) brightness(110%) contrast(85%);
 
+}
 .edit-btn img,
 .delete-btn img {
   width: 1rem;
@@ -151,7 +155,7 @@ td a{
 }
 
 .delete-btn {
-  background-color: #e74c3c;
+  background-color: #C14B40;
   color: white;
 }
 

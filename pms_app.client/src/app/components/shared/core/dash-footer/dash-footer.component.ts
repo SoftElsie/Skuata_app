@@ -20,15 +20,16 @@ export class DashFooterComponent {
   socialIcons = [
     {
       name: "LinkedIn",
-      Icon: "assets/Icons/linkedin.png",
+      Icon: "assets/Icons/lucide/linkedin.svg",
     },
     {
       name: "Instagram",
-      Icon: "assets/Icons/instagram.png",
+      Icon: "assets/Icons/lucide/instagram.svg",
     },
     {
       name: "Twitter",
-      Icon: "assets/Icons/twitter.png",
+      Icon: "assets/Icons/lucide/twitter.svg",
+      
     },
   ]
 

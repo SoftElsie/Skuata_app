@@ -84,7 +84,9 @@
 .social-Icons {
   display: flex;
   gap: 16px;
-  color: #e67e22;
+filter: brightness(0) saturate(100%) invert(63%) sepia(44%) saturate(631%) hue-rotate(348deg) brightness(80%) contrast(86%);
+
+
 }
 
 .social-Icon {
@@ -93,6 +95,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  .svg {
+filter: brightness(0) saturate(100%) invert(63%) sepia(44%) saturate(631%) hue-rotate(348deg) brightness(80%) contrast(86%);
+}
 }
 
 .social-Icon:hover {

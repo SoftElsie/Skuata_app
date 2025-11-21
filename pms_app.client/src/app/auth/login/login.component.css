@@ -54,6 +54,9 @@
   height: 20px;
   width: 20px;
   object-fit: contain;
+ 
+filter: brightness(0) saturate(100%) invert(87%) sepia(19%) saturate(7061%) hue-rotate(328deg) brightness(81%) contrast(83%);
+
 }
 
 .input-field {

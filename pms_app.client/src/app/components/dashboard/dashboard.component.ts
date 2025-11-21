@@ -45,7 +45,7 @@ loadingButton: string | null = null;
       availabilityDate: "15/10/25",
       views: 18,
       isFavorite: false,
-      roomIcon:"assets/Icons/bed.png"
+      roomIcon:"assets/Icons/bed.svg"
 
     },
     {
@@ -58,7 +58,7 @@ loadingButton: string | null = null;
       availability: "unavailable",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/Icons/building.png"
+       roomIcon:"assets/Icons/lucide/building.svg"
     },
     {
       id: 3,
@@ -71,7 +71,7 @@ loadingButton: string | null = null;
       availabilityDate: "15/10/25",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/Icons/house.png"
+       roomIcon:"assets/Icons/house.svg"
     },
     {
       id: 4,
@@ -83,7 +83,7 @@ loadingButton: string | null = null;
       availability: "unavailable",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/Icons/bed.png"
+       roomIcon:"assets/Icons/bed.svg"
     },
     {
       id: 5,
@@ -96,7 +96,7 @@ loadingButton: string | null = null;
       availabilityDate: "15/10/25",
       views: 18,
       isFavorite: false,
-       roomIcon:"assets/Icons/bed.png"
+       roomIcon:"assets/Icons/bed.svg"
     },
     {
       id: 6,

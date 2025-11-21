@@ -30,7 +30,7 @@
 
         <div class="property-address">
           <div class="address-content">
-            <img [src]="'assets/Icons/map-pin.png'" />
+            <img class="map-pin-icon" [src]="'assets/Icons/lucide/map-pin.svg'" />
             <span>{{ property.address }}</span>
           </div>
         </div>
@@ -60,12 +60,12 @@
 
         <div class="property-meta">
           <div class="meta-item" *ngIf="property.availabilityDate">
-            <img [src]="'assets/Icons/calendar-check-2.png'" />
+            <img [src]="'assets/Icons/lucide/calendar-check-2.svg'" />
             <span>Availability: {{ property.availabilityDate }}</span>
           </div>
 
           <div class="meta-item">
-            <img [src]="'assets/Icons/eye.png'" />
+            <img [src]="'assets/Icons/eye.svg'" />
             <span>{{ property.views }} views</span>
           </div>
         </div>

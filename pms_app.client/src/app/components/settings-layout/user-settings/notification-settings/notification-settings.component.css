@@ -122,6 +122,9 @@ height:40px;
   transform: scale(1.05);
   opacity: 0.9;
 }
+.save-icon{
+  filter: brightness(0) saturate(100%) invert(74%) sepia(100%) saturate(4%) hue-rotate(184deg) brightness(105%) contrast(94%);
+}
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {

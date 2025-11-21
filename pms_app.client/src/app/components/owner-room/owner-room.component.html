@@ -19,17 +19,17 @@
           <h3 class="property-title">{{ property.title }}</h3>
           <div class="property-actions">
             <span class="badge edit" (click)="editRoom(property)">
-              <img [src]="'assets/Icons/pen-line.png'" /> Edit
+              <img [src]="'assets/Icons/lucide/pen-line.svg'"  class="pen-line"/> Edit
             </span>
 
             <span class="badge remove">
-              <img [src]="'assets/Icons/trash-2.png'" /> Remove</span
+              <img [src]="'assets/Icons/lucide/trash-2.svg'" class="trash-can"/> Remove</span
             >
           </div>
         </div>
 
         <div class="property-address">
-          <img [src]="'assets/Icons/map-pin.png'" />
+          <img [src]="'assets/Icons/lucide/map-pin.svg'" />
           <span>{{ property.address }}</span>
         </div>
 
@@ -58,7 +58,7 @@
         >
           <div class="property-price">R {{ property.price }}/mo</div>
           <div class="meta-item">
-            <img [src]="'assets/Icons/eye.png'" />
+            <img [src]="'assets/Icons/lucide/eye.svg'" />
             <span>{{ property.views }} views</span>
           </div>
         </div>

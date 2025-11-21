@@ -323,6 +323,23 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+.search{
+filter: brightness(0) saturate(100%) invert(20%) sepia(11%) saturate(1301%) hue-rotate(117deg) brightness(95%) contrast(91%);
+
+}
+
+
+
+.filter-eye{
+  
+filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(2814%) hue-rotate(166deg) brightness(103%) contrast(84%);
+}
+
+.paint-brush{
+filter: brightness(0) saturate(100%) invert(18%) sepia(66%) saturate(248%) hue-rotate(117deg) brightness(91%) contrast(88%);
+}
+
+
 
 /* --- Mobile responsiveness --- */
 @media (max-width: 768px) {

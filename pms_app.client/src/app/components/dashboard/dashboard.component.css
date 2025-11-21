@@ -194,6 +194,7 @@
   margin-bottom: 1rem;
 }
 
+
 .address-content {
   display: flex;
   align-items: center;
@@ -311,6 +312,13 @@
   }
 }
 
+
+.map-pin-icon {
+  width: 16px;
+  height: 16px;
+  
+filter: brightness(0) saturate(100%) invert(41%) sepia(4%) saturate(1994%) hue-rotate(117deg) brightness(96%) contrast(78%);
+}
 
   .filter-btn {
  left:5%;

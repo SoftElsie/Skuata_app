@@ -13,7 +13,7 @@
           <div class="form-group">
             <label for="firstName">First Name</label>
             <div class="input-wrapper icon-field" [class.input-error]="regForm.get('firstName')!.invalid && (regForm.get('firstName')!.dirty || regForm.get('firstName')!.touched)">
-              <img src="assets/Icons/user-round.png" alt="User Icon" class="input-icon">
+  
               <input
                 type="text"
                 id="firstName"
@@ -28,7 +28,7 @@
           <div class="form-group">
             <label for="lastName">Last Name</label>
             <div class="input-wrapper icon-field" [class.input-error]="regForm.get('lastName')!.invalid && (regForm.get('lastName')!.dirty || regForm.get('lastName')!.touched)">
-              <img src="assets/Icons/user-round.png" alt="User Icon" class="input-icon">
+       
               <input
                 type="text"
                 id="lastName"
@@ -65,7 +65,7 @@
           <div class="form-group">
             <label for="email">Email</label>
             <div class="input-wrapper icon-field" [class.input-error]="regForm.get('email')!.invalid && (regForm.get('email')!.dirty || regForm.get('email')!.touched)">
-              <img src="assets/Icons/at-sign.png" alt="Email Icon" class="input-icon">
+              <img src="assets/Icons/at-sign.svg" alt="Email Icon" class="input-icon">
               <input
                 type="email"
                 id="email"
@@ -82,7 +82,7 @@
           <div class="form-group">
             <label for="password">Password</label>
             <div class="input-wrapper icon-field" [class.input-error]="regForm.get('password')!.invalid && (regForm.get('password')!.dirty || regForm.get('password')!.touched)">
-              <img src="assets/Icons/lock-keyhole.png" alt="Password Icon" class="input-icon">
+              <img src="assets/Icons/lucide/lock-keyhole.svg" alt="Password Icon" class="input-icon">
               <input
                 type="password"
                 id="password"
@@ -100,7 +100,7 @@
           <div class="form-group">
             <label for="confirmPassword">Confirm Password</label>
             <div class="input-wrapper icon-field" [class.input-error]="regForm.get('confirmPassword')!.invalid && (regForm.get('confirmPassword')!.dirty || regForm.get('confirmPassword')!.touched) || regForm.errors?.['passwordMismatch']">
-              <img src="assets/Icons/lock-keyhole.png" alt="Password Icon" class="input-icon">
+              <img src="assets/Icons/lucide/lock-keyhole.svg" alt="Password Icon" class="input-icon">
               <input
                 type="password"
                 id="confirmPassword"
@@ -117,7 +117,7 @@
           </div>
           
       
-          <button type="submit" class="submit-button" [disabled]="regForm.invalid" [class.dissolving]="isDissolving">Continue <img src="assets/chevron-right.png" alt="Continue" class="button-icon"></button>
+          <button type="submit" class="submit-button" [disabled]="regForm.invalid" [class.dissolving]="isDissolving">Continue <img src="assets/Icons/lucide/chevron-right.svg" alt="Continue" class="button-icon"></button>
      
 
         </div>
