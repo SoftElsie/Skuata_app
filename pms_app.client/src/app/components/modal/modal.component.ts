@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, Injector } from '@angular/core';
 import { ModalService } from '../../domain/services/modal.service';
 
 @Component({
@@ -13,19 +13,38 @@ export class ModalComponent {
 
   isOpen = false;
   currentModalComponent: any;
+  componentInputs: any = {};
+  modalInjector: Injector | undefined;   // FIX HERE
 
-  constructor(private modalService: ModalService) {
-    this.modalService.watch().subscribe((isOpen: boolean) => {
-      this.isOpen = isOpen;
-      console.log('ModalComponent isOpen:', this.isOpen); 
+  constructor(
+    private modalService: ModalService,
+    private injector: Injector
+  ) {
+
+    this.modalService.watchContent().subscribe(config => {
+      if (!config) return;
+
+      this.currentModalComponent = config.component;
+      this.componentInputs = config.inputs || {};
+      this.title = config.inputs?.title || '';
+
+      // create injector ONCE — using undefined instead of null
+      this.modalInjector = Injector.create({
+        providers: [{ provide: 'inputs', useValue: this.componentInputs }],
+        parent: this.injector
+      });
+
+      this.isOpen = true;
     });
-    this.modalService.watchContent().subscribe(component => {
-      this.currentModalComponent = component;
+
+    this.modalService.watch().subscribe(isOpen => {
+      this.isOpen = isOpen;
     });
   }
 
   close() {
     this.modalService.close();
+    this.modalInjector = undefined;   // FIX HERE
     this.closeEvent.emit();
   }
 

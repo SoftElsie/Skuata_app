@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject, Optional } from '@angular/core';
 import { ModalService } from '../../domain/services/modal.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class AddRoomComponent {
   // NEW: track mode ('add' or 'edit')
   mode: 'add' | 'edit' = 'add';
 
-  constructor(private modalService: ModalService) {}
+  constructor( private modalService: ModalService, @Optional() @Inject('inputs') public inputs: any) {}
    room = {
     title: '',
     address: '',
@@ -31,27 +31,22 @@ export class AddRoomComponent {
   };
 
   ngOnInit() {
-    this.modalService.watchMode().subscribe(mode => (this.mode = mode));
-    this.modalService.watchRoomData().subscribe(data => {
-      if (data && this.mode === 'edit') {
-        this.room = { ...data }; // prefill form fields
-      } else {
-        this.room = {
-          title: '',
-          address: '',
-          city: '',
-          price: '',
-          availableDate: '',
-          availability: '',
-          ownerName: '',
-          province: '',
-          propertyType: '',
-          contact: '',
-          description: ''
-        };
-      }
-    });
-  }
+  this.mode = this.inputs.mode || 'add';
+  this.room = this.inputs.room ? { ...this.inputs.room } : {
+    title: '',
+    address: '',
+    city: '',
+    price: '',
+    availableDate: '',
+    availability: '',
+    ownerName: '',
+    province: '',
+    propertyType: '',
+    contact: '',
+    description: ''
+  };
+}
+
 
   handleAddRoom(): void {
     if (this.loading) return;

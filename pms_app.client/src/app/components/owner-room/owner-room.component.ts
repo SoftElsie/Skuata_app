@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FilterOptions } from '../shared/widgets/filter/filter.component';
 import { ModalService } from '../../domain/services/modal.service';
+import { AddRoomComponent } from '../add-room/add-room.component';
 interface Property {
   id: number;
   image: string;
@@ -150,8 +151,12 @@ export class OwnerRoomComponent {
 }
 
 editRoom(property: any) {
-    this.modalService.openM('edit', property);
-  }
+  this.modalService.open(AddRoomComponent, {
+    mode: 'edit',
+    room: property,
+  });
+}
+
 }
 
    
