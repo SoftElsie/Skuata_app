@@ -1,0 +1,15 @@
+.divider {
+  border: none;
+  border-top: 1px solid #00000080;
+
+}
+
+.content-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure it takes at least the full viewport height */
+}
+
+.content {
+  flex-grow: 1; /* Allow the content to grow and push the footer down */
+}

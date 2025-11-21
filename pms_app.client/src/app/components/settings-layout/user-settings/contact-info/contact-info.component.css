@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
+
+body,
+.user-settings-container {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.user-settings-container {
+  display: flex;
+  gap: 1rem; /* Reduced global gap */
+  padding: 6rem 4rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: 0;
+}
+
+.form-header-new {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  margin-top: -3.5rem;
+  padding: 1.5rem 0; /* Increased vertical padding */
+  gap: 26rem;
+  width: 100%;
+  flex-wrap: nowrap;
+  padding-left: 20px;
+}
+
+.form-title {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 600;
+  font-family: 'Barlow';
+  color: #111827;
+  white-space: nowrap;
+  margin: 0;
+  padding-left: 0.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: 'Barlow', sans-serif;
+}
+
+.save-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #263E39;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 80px;
+  min-height: 35px;
+  /* margin-left: auto; */
+}
+
+.save-btn:hover {
+  background-color: #1d322d;
+}
+
+.save-Icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.card-spacing {
+  margin-top: 0.5rem;
+}
+
+.info-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem 1rem;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-left: 20px; /* Push to the right */
+  margin-right: auto; /* Push to the left */
+  border-radius: 8px;
+}
+
+.card-title {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.full-form {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  text-align: left;
+  width: 100%;
+  font-weight: 500;
+  font-size: small;
+  color: #1f2937;
+}
+
+.required {
+  color: #dc2626;
+  margin-left: 3px;
+}
+
+.form-input,
+.form-select {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #eaeded;
+  height: 40px;
+  background-color: #eaeded;
+  width: 70%;
+  font-size: clamp(0.8rem, 1.5vw, 0.875rem);
+  transition: border-color 0.2s, background-color 0.2s;
+  box-sizing: border-box;
+  appearance: none;
+  line-height: normal;
+  border-radius: 5px;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper .form-select {
+  padding-right: 2.5rem;
+}
+
+.dropdown-arrow-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 1rem;
+  height: 1.5rem;
+}
+
+.info-card .form-input,
+.info-card .form-select {
+  width: 100%;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  min-height: 1.25rem;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #fff;
+}
+
+/* ------------------- RESPONSIVENESS ------------------- */
+
+@media (max-width: 1024px) {
+  .user-settings-container {
+    flex-direction: column;
+    padding: 2rem 0.5rem; /* Reduced horizontal padding */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem; /* Reverted gap to original */
+  }
+
+  .settings-content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .form-header-new {
+    width: 100%;
+    gap: 1rem;
+    margin-bottom: 0.5rem; /* Reverted bottom margin */
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    padding: 1rem;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+  }
+
+  .form-input,
+  .form-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+    .user-settings-container {
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem; /* optional: adjust padding for mobile */
+    }
+    .settings-content {
+    margin-left: 0; /* remove any left offset */
+    width: 100%;
+  }
+
+
+  .form-header-new {
+    flex-wrap: nowrap;
+    justify-content: space-between; /* Move to the left */
+    align-items: flex-start; /* Align items to the top */
+    gap: 2rem;
+    padding-left: 0;
+  }
+
+  .form-title {
+    font-size: 1.5rem; /* Increased font size for tablet */
+  }
+
+
+  .save-btn {
+    margin-left: auto; /* Align to the left */
+  }
+
+
+  .save-Icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .form-header-new {
+    margin-top: -5.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-settings-container {
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.2rem; /* Reduced top padding */
+  }
+
+  .settings-content {
+    gap: 5rem;
+    width: 100%;
+    padding: 1rem;
+    
+  }
+
+  .form-header-new {
+    width: 100%;
+    padding: 1rem 0; /* Adjusted vertical padding, removed horizontal padding */
+    gap: 4rem; /* Increased gap to 4rem */
+    justify-content: space-between; /* Move to the left */
+    align-items: flex-start; /* Align items to the top */
+    padding-left: 0;
+    margin-top: -6.0rem; /* Increased negative margin to move further upward */
+  }
+
+  .form-title {
+    font-size: 1.15rem; /* Adjusted font size for mobile */
+    padding-left: 0;
+  }
+
+  .save-btn {
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    width: fit-content;
+    height: auto;
+    margin-left: auto; /* Push to the right */
+  }
+
+  .save-Icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .info-card {
+    padding: 0.8rem;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .form-input,
+  .form-select {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+}

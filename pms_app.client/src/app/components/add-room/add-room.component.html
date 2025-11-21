@@ -1,0 +1,162 @@
+<main class="container">
+  <div class="header">
+    <h1>{{ mode === "edit" ? "Edit Room" : "Add Room" }}</h1>
+
+    <button (click)="closeModal()">
+      <img src="../../assets/Icons/lucide/x.svg" alt="" />
+    </button>
+  </div>
+
+  <form>
+    <div class="columns">
+      <div class="left-group">
+        <div>
+          <label for="name"> Name</label>
+          <input
+            type="text"
+            name="title"
+            [(ngModel)]="room.title"
+            placeholder="e.g. Backroom"
+          />
+        </div>
+
+        <div>
+          <label for="address"> Addresss</label>
+          <input type="text" name="address" [(ngModel)]="room.address" />
+        </div>
+
+        <div>
+          <label for="city"> City</label>
+          <input type="text" name="city" [(ngModel)]="room.city" />
+        </div>
+
+        <div>
+          <label for="price"> Price</label>
+          <input type="number" name="price" [(ngModel)]="room.price" />
+        </div>
+
+        <div>
+          <label for="available-date"> Available Date</label>
+          <input
+            type="text"
+            onfocus="(this.type='date')"
+            name="available-date"
+            placeholder="e.g. MM/DD/YYYY"
+            [(ngModel)]="room.availableDate"
+          />
+        </div>
+
+        <div>
+          <label for="availability-status"> Availability Status</label>
+          <select
+            name="availability"
+            id="availability"
+            [(ngModel)]="room.availability"
+          >
+            <option value=""></option>
+            <option value="available">Available</option>
+            <option value="unavailable">Unavailable</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="right-group">
+        <div>
+          <label for="owner-name"> Owner's Name</label>
+          <input
+            type="text"
+            name="ownerName"
+            placeholder="e.g. Backroom"
+            [(ngModel)]="room.ownerName"
+          />
+        </div>
+
+        <div>
+          <label for="province"> Province</label>
+          <select name="province" id="province" [(ngModel)]="room.province">
+            <option value=""></option>
+            <option value="Gauteng">Gauteng</option>
+            <option value="Western Cape">Western Cape</option>
+            <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="property-type"> Property Type</label>
+          <select
+            name="propertyType"
+            id="property-type"
+            [(ngModel)]="room.propertyType"
+          >
+            <option value=""></option>
+            <option value="Backroom">Backroom</option>
+            <option value="Flat">Flat</option>
+            <option value="House">House</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="contact"> Contact</label>
+          <input
+            type="text"
+            name="contact"
+            placeholder="e.g. +27 83 569 9845"
+            [(ngModel)]="room.contact"
+          />
+        </div>
+
+        <div>
+          <label for="description"> Description</label>
+          <textarea
+            name="description"
+            id="description"
+            rows="6"
+            [(ngModel)]="room.description"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="upload">
+      <label for="uploadImages">Upload Images</label>
+
+      <div
+        class="dropzone"
+        (dragover)="onDragOver($event)"
+        (drop)="onDrop($event)"
+      >
+        <img src="../../assets/Icons/image-up.svg" alt="Upload Icon" />
+        <p>
+          Drop the images here, or
+          <a href="#" (click)="fileInput.click(); $event.preventDefault()"
+            >browse</a
+          >
+        </p>
+        <p class="file-support">Supports PNG, JPG, JPEG, WEBP</p>
+
+        <input
+          type="file"
+          id="uploadImages"
+          #fileInput
+          (change)="onFileSelected($event)"
+          accept=".png,.jpg,.jpeg,.webp"
+          multiple
+          hidden
+        />
+      </div>
+
+      <div class="preview" *ngIf="previewUrls.length > 0">
+        <div class="preview-image" *ngFor="let img of previewUrls">
+          <img [src]="img" alt="Preview" />
+        </div>
+      </div>
+    </div>
+
+    <div class="button">
+      <button (click)="addOrEditRoom()" [disabled]="loading">
+        {{ mode === "edit" ? "Save Changes" : "Add Room" }}
+        <app-loader-btn [active]="loading"></app-loader-btn>
+      </button>
+    </div>
+  </form>
+</main>

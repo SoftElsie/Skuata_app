@@ -1,0 +1,27 @@
+<!-- sidebar.component.html -->
+<aside class="form-sidebar">
+  <div class="menu-section">
+    <img src="assets/Icons/error-left.svg" alt="Error Left Icon" class="error-Icon" (click)="goBack()">
+    <h2 class="page-title">{{ title }}</h2>
+    <h4 class="menu-title">{{ subtitle }}</h4>
+    <nav class="menu-nav">
+      <ng-container *ngFor="let item of menuItems">
+        <a
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          class="menu-item"
+        >
+          {{ item.label }}
+        </a>
+        <ng-container *ngIf="item.label === 'Notification Settings'">
+          <div class="menu-divider"></div>
+        </ng-container>
+      </ng-container>
+      <div class="menu-item">
+        <button class="delete-account-btn" (click)="onDeleteAccount()">
+          Delete Account
+        </button>
+      </div>
+    </nav>
+  </div>
+</aside>

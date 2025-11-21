@@ -1,0 +1,167 @@
+/* ========== USER SETTINGS PAGE STYLES ========== */
+.form-sidebar {
+  width: 260px;
+  padding: 1rem 1rem; /* ↓ reduced padding */
+  margin-top: 0.25rem; /* ↓ tighter below nav */
+  font-family: Barlow, sans-serif;
+}
+.page-title {
+  text-align: left;
+  border-bottom: 2px solid #cccccc;
+  width: 100%;
+  max-width: 229px;
+  font-family: Barlow, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 0 !important; /* ↓ no top gap */
+  margin-bottom: 0.5rem;    /* ↓ smaller gap below */
+  line-height: 130%;
+  letter-spacing: -1px;
+}
+
+.error-Icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 1rem;
+}
+
+.menu-title {
+  font-family: Barlow, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: -1px;
+  text-align: left;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: left;
+  color: #1e293b;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+  background-color: #C1CAC8;
+}
+
+.menu-item.active {
+  font-weight: 600;
+  border-left: 3px solid #c18140;
+  border-radius: 0;
+  color: #0f172a;
+}
+
+.delete-account-btn {
+  background: none;
+  border: none;
+  color: #dc2626;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.9rem;
+  font-family: Barlow, sans-serif;
+}
+
+.menu-divider {
+  border-top: 2px solid #cccccc; /* Darker gray line */
+  margin: 1rem 0; /* Top and bottom margin for spacing */
+  width: 90%; /* Reduce width slightly */
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+/* Medium Screens (Tablets, small laptops) */
+@media (max-width: 1024px) {
+  .form-sidebar {
+    width: 220px;
+    padding: 1.5rem 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+}
+
+/* Small Screens (Tablets & large phones) */
+@media (max-width: 768px) {
+  .form-sidebar {
+    width: 100%;
+    padding: 1.5rem;
+    margin-top: 0.1rem;
+  }
+
+  .menu-section {
+    position: relative;
+  }
+
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 0.25rem;
+  }
+  .menu-title {
+    padding-left: 1.5rem;
+  }
+
+  .menu-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .menu-item {
+    text-align: left;
+    padding-left: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .delete-account-btn {
+    width: 100%;
+    text-align: left;
+  }
+  .menu-divider {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Extra Small Screens (Phones under 480px) */
+@media (max-width: 480px) {
+  .form-sidebar {
+    padding: 1.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .menu-item {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
+
+  .menu-title {
+    font-size: 20px;
+    padding-left: 0.65rem;
+  }
+
+  .delete-account-btn {
+    font-size: 0.85rem;
+  }
+  .menu-divider {
+    margin-top: 0.5rem;
+  }
+}

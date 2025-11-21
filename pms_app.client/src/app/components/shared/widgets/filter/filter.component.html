@@ -1,0 +1,181 @@
+<div class="search-container">
+  <div class="search-wrapper">
+    <img [src]="'assets/Icons/search.png'" />
+    <input
+      type="text"
+      class="search-input"
+      placeholder="City, Local Area, Street..."
+      [(ngModel)]="filters.searchQuery"
+    />
+
+    <div class="search-divider"></div>
+    <div class="filter-buttons-wrapper">
+      <button
+        class="filter-btn filter-buttons"
+        (click)="handleToggleFilter()"
+        [disabled]="loading"
+      >
+        <img src="assets/Icons/sliders-horizontal.svg" />
+        <span>Filter</span>
+        <app-loader-btn
+          [active]="loading && loadingButton === 'toggleFilter'"
+        ></app-loader-btn>
+      </button>
+
+      <button
+        *ngIf="showFilterButton"
+        class="btn-find"
+        (click)="handleApplyFilters()"
+        [disabled]="loading"
+      >
+        Find Rooms
+        <app-loader-btn
+          [active]="loading && loadingButton === 'applyFilters'"
+        ></app-loader-btn>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="search-divider"></div>
+<div class="filter-overlay" *ngIf="isFilterOpen" (click)="closeFilter()"></div>
+
+<div class="filter-dropdown" [class.open]="isFilterOpen">
+  <div class="filter-header">
+    <h2>Filter</h2>
+    <button class="close-btn" (click)="closeFilter()" aria-label="Close filter">
+   <img [src]="'assets/Icons/square-x.png'" />
+    </button>
+  </div>
+
+  <div class="filter-content">
+      
+    <div class="filter-section">
+      <label class="filter-label">Price Range</label>
+      <div class="price-range-container">
+        <div class="range-slider">
+          <div class="range-track"></div>
+          <div
+            class="range-fill"
+            [style.left.%]="getMinPricePercentage()"
+            [style.right.%]="100 - getMaxPricePercentage()"
+          ></div>
+          <input
+            type="range"
+            class="range-input range-min"
+            [min]="priceMin"
+            [max]="priceMax"
+            [value]="filters.minPrice"
+            (input)="onMinPriceChange($event)"
+            step="100"
+          />
+          <input
+            type="range"
+            class="range-input range-max"
+            [min]="priceMin"
+            [max]="priceMax"
+            [value]="filters.maxPrice"
+            (input)="onMaxPriceChange($event)"
+            step="100"
+          />
+        </div>
+        <div class="price-inputs">
+          <div class="price-input-wrapper">
+            <span class="currency">R</span>
+            <input 
+              type="number" 
+              class="price-input"
+              [value]="filters.minPrice"
+              (change)="onMinPriceChange($event)"
+              [min]="priceMin"
+              [max]="filters.maxPrice">
+          </div>
+          <div class="price-input-wrapper">
+            <span class="currency">R</span>
+            <input 
+              type="number" 
+              class="price-input"
+              [value]="filters.maxPrice"
+              (change)="onMaxPriceChange($event)"
+              [min]="filters.minPrice"
+              [max]="priceMax"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <label class="filter-label">Province</label>
+      <div class="select-wrapper">
+        <select class="filter-select" [(ngModel)]="filters.province">
+          <option value="">Select province...</option>
+          <option *ngFor="let province of provinces" [value]="province">
+            {{ province }}
+          </option>
+        </select>
+        <svg
+          class="select-arrow"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+        >
+          <path
+            d="M4 6L8 10L12 6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+
+    
+    <div class="filter-section">
+      <label class="filter-label">City</label>
+      <div class="select-wrapper">
+        <select 
+          class="filter-select"
+          [(ngModel)]="filters.city">
+          <option value="">Select city...</option>
+          <option *ngFor="let city of cities" [value]="city">
+            {{ city }}
+          </option>
+        </select>
+        <svg class="select-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
+     
+    <div class="filter-section">
+      <label class="filter-label">Room Type</label>
+      <div class="select-wrapper">
+        <select 
+          class="filter-select"
+          [(ngModel)]="filters.roomType">
+          <option value="">Select room type...</option>
+          <option *ngFor="let type of roomTypes" [value]="type">
+            {{ type }}
+          </option>
+        </select>
+        <svg class="select-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-actions">
+    <button class="btn-clear" (click)="clearAllFilters()">
+      <img [src]="'assets/Icons/paintbrush.png'" />
+      Clear All
+    </button>
+    <button class="btn-apply" (click)="applyFilters()">
+     <img [src]="'assets/Icons/eye.png'" />
+      Show Results
+    </button>
+  </div>
+</div>
